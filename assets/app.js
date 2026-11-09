@@ -265,7 +265,9 @@
     $('#lsort').value = libState.sort;
     renderLib();
     const q = $('#lq'); let t;
-    q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => { libState.q = q.value; renderLib(); }, 120); });
+    let qs;
+    q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => { libState.q = q.value; renderLib(); }, 120);
+      clearTimeout(qs); qs = setTimeout(() => { const v = q.value.trim().toLowerCase(); if (v.length > 2) trackEvent(`recherche/${v}`, `Recherche : ${v}`); }, 1500); });
   }
   function renderLib() {
     const l = filtered();
@@ -531,8 +533,65 @@
       const w = BY[f.get('livre')] || BY[slug] || LIB[0];
       const msg = `Assalamou aleykoum Kiraam 🌙\nJe souhaite précommander le Xassida :\n📖 ${w.title} (${w.titleAr})\n• Édition : ${f.get('ed')}\n• Quantité : ${f.get('qte')}\n• Nom : ${f.get('nom')}\n• Ville : ${f.get('ville')}\n${location.origin}${R}livre/${w.slug}/`;
       const url = waLink(msg);
+      trackEvent(`precommande/${w.slug}`, `Précommande · ${w.title} × ${f.get('qte')} · ${f.get('ed')} · ${f.get('ville')}`);
       if (url) window.open(url, '_blank', 'noopener'); else alert('La précommande ouvre très bientôt, inch Allah.');
     };
+  }
+
+  // ---------- Statistiques (GoatCounter, sans cookies) ----------
+  const STATS = 'https://kiraam.goatcounter.com';
+  const gcq = [];
+  function gc(o) {
+    try { if (localStorage.getItem('skipgc') === 't') return; } catch {}
+    if (window.goatcounter && window.goatcounter.count) { while (gcq.length) window.goatcounter.count(gcq.shift()); window.goatcounter.count(o); }
+    else { gcq.push(o); if (gcq.length === 1) { let n = 0; const t = setInterval(() => { if ((window.goatcounter && window.goatcounter.count) || ++n > 40) { clearInterval(t); if (window.goatcounter && window.goatcounter.count) while (gcq.length) window.goatcounter.count(gcq.shift()); } }, 250); } }
+  }
+  const trackPage = () => gc({ path: location.pathname.replace(R, '/') + location.search, title: document.title });
+  const trackEvent = (name, title) => gc({ path: name, title: title || name, event: true });
+  // clics suivis : PDF, WhatsApp, écoute, partage, favoris
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href], [data-listen], [data-share], [data-fav]'); if (!a) return;
+    const h = a.getAttribute('href') || '';
+    if (/\.pdf$/.test(h)) { const m = h.match(/pdf\/([a-z0-9-]+?)(?:-(arabe|phonetique|francais|anglais))?\.pdf$/); if (m) trackEvent(`pdf/${m[2] || 'complet'}/${m[1]}`, `PDF ${m[2] || 'complet'} · ${BY[m[1]] ? BY[m[1]].title : m[1]}`); }
+    else if (/wa\.me/.test(h)) trackEvent('whatsapp/contact', 'Contact WhatsApp');
+    else if (a.dataset.listen) trackEvent(`ecoute/${a.dataset.listen}`, `Écoute · ${BY[a.dataset.listen] ? BY[a.dataset.listen].title : ''}`);
+    else if (a.dataset.share) trackEvent(`partage/${a.dataset.share}`, 'Partage');
+    else if (a.dataset.fav && !favs.has(a.dataset.fav)) trackEvent(`favori/${a.dataset.fav}`, 'Ajout aux favoris');
+  }, true);
+
+  // ---------- Administration ----------
+  function adminView() {
+    document.querySelector('meta[name=robots]') || document.head.insertAdjacentHTML('beforeend', '<meta name="robots" content="noindex,nofollow">');
+    let skip = false; try { skip = localStorage.getItem('skipgc') === 't'; } catch {}
+    const nV = LIB.reduce((a, w) => a + w.bayts, 0), nAud = Object.keys(AUDIO).length;
+    const tile = (href, icon, title, text) => `<a class="adm-tile" href="${href}" target="_blank" rel="noopener"><span class="ico">${ic(icon)}</span><b>${title}</b><small>${text}</small></a>`;
+    view.innerHTML = banner('Administration', 'لَوْحَةُ الْإِدَارَة', 'facade-nuit') + `<section class="block" style="padding-top:44px"><div class="wrap">
+      <div class="adm-grid">
+        ${tile(STATS, 'search', 'Visites et trafic', 'Visiteurs, pages vues, pays, appareils, sites d\'origine')}
+        ${tile(STATS + '/?filter=pdf', 'download', 'Téléchargements PDF', 'Par Xassida et par langue')}
+        ${tile(STATS + '/?filter=precommande', 'rehal', 'Précommandes', 'Formulaires envoyés vers WhatsApp')}
+        ${tile(STATS + '/?filter=ecoute', 'audio', 'Écoutes', 'Lecteur audio ouvert, par Xassida')}
+        ${tile('https://search.google.com/search-console', 'search', 'Google Search Console', 'Position dans Google, mots-clés, indexation')}
+        ${tile(`https://wa.me/${WHATSAPP}`, 'share', 'WhatsApp Kiraam', 'Précommandes et messages des lecteurs')}
+        ${tile('https://github.com/faalvisuel/kiraam/actions/workflows/pages.yml', 'layers', 'Mise en ligne', 'Relancer le déploiement du site')}
+        ${tile('https://github.com/faalvisuel/kiraam/blob/main/data/audio.json', 'audio', 'Gérer l\'audio', 'Ajouter ou retirer des enregistrements')}
+      </div>
+      <div class="adm-row">
+        <div class="adm-card"><h3>Le catalogue</h3>
+          <div class="kv"><div><b>${LIB.length}</b><span>Xassidas</span></div><div><b>${fmt(nV)}</b><span>bayits</span></div><div><b>${LIB.length * 5}</b><span>PDF</span></div><div><b>${nAud}</b><span>avec audio</span></div></div></div>
+        <div class="adm-card"><h3>Mes propres visites</h3>
+          <p class="sub">Sur cet appareil, vos visites ${skip ? '<b>ne sont pas comptées</b>' : '<b>sont comptées</b>'} dans les statistiques.</p>
+          <button class="btn ${skip ? 'btn-line' : 'btn-bx'}" data-skipgc>${skip ? 'Compter à nouveau mes visites' : 'Ne plus compter mes visites'}</button></div>
+      </div>
+      <div class="adm-card"><h3>Ce qui est mesuré</h3>
+        <ul class="adm-list">
+          <li><b>Pages</b> : chaque page vue (accueil, Xassida, lecture…), sans cookies ni données personnelles.</li>
+          <li><b>pdf/&lt;langue&gt;/&lt;xassida&gt;</b> : téléchargement d'un PDF (complet, arabe, phonetique, francais, anglais).</li>
+          <li><b>precommande/&lt;xassida&gt;</b> : formulaire de précommande envoyé (quantité dans le titre).</li>
+          <li><b>ecoute/&lt;xassida&gt;</b>, <b>favori/&lt;xassida&gt;</b>, <b>partage/&lt;xassida&gt;</b>, <b>whatsapp/contact</b>, <b>recherche/&lt;mot&gt;</b>.</li>
+        </ul>
+        <p class="sub">Cette page n'est liée nulle part sur le site et n'est pas indexée par Google. Les chiffres eux-mêmes sont protégés par votre mot de passe GoatCounter.</p></div>
+    </div></section>`;
   }
 
   // ---------- Router ----------
@@ -554,11 +613,13 @@
       case 'galerie': setNav('gallery'); galleryView(); break;
       case 'a-propos': setNav('about'); aboutView(); break;
       case 'charte': setNav('about'); brandView(); break;
+      case 'admin': setNav(''); adminView(); break;
       default: notFound();
     }
     if (!(page === 'lire' && c)) window.scrollTo(0, 0);
     stagger();
     onScroll();
+    if (page !== 'admin') trackPage();
   }
 
   // ---------- Events ----------
@@ -578,6 +639,7 @@
   function updateFavCount() { const d = $('#favCount'); d.hidden = !favs.size; d.textContent = favs.size; }
 
   document.addEventListener('click', e => {
+    if (e.target.closest('[data-skipgc]')) { try { localStorage.getItem('skipgc') === 't' ? localStorage.removeItem('skipgc') : localStorage.setItem('skipgc', 't'); } catch {} adminView(); return; }
     const po = e.target.closest('[data-preorder]'); if (po) { openPreorder(po.dataset.preorder || null); return; }
     if (e.target.closest('[data-mclose]') || e.target.classList.contains('modal')) { $('#preorder').classList.remove('open'); return; }
     const dlb = e.target.closest('[data-dl]');

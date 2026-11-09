@@ -179,10 +179,11 @@ def main():
         ('charte/', 'Charte graphique de Kiraam | Kiraam', "Logo, couleurs, typographies et icônes de Kiraam.", '<section class="wrap prose"><h1>Charte graphique</h1></section>'),
         ('lectures/', 'Mes lectures | Kiraam', 'Reprenez la lecture de vos Xassidas là où vous vous étiez arrêté.', ''),
         ('favoris/', 'Mes favoris | Kiraam', 'Vos Xassidas favoris.', ''),
+        ('admin/', 'Administration | Kiraam', 'Administration Kiraam.', ''),
     ]
     for p, t, d, m in fixed:
-        r = page(shell, site, p, t, d, 'og/kiraam.jpg', m)
-        if p not in ('lectures/', 'favoris/'):
+        r = page(shell, site, p, t, d, 'og/kiraam.jpg', m, extra='\n<meta name="robots" content="noindex,nofollow">' if p == 'admin/' else '')
+        if p not in ('lectures/', 'favoris/', 'admin/'):
             urls.append(r)
 
     # --- 404 (chemin racine absolu car servie depuis n'importe quelle adresse)
@@ -203,7 +204,7 @@ def main():
         sm.append(f'<url><loc>{site}/{u}</loc><lastmod>{today}</lastmod><priority>{prio(u)}</priority></url>')
     sm.append('</urlset>')
     open(os.path.join(ROOT_DIR, 'sitemap.xml'), 'w').write('\n'.join(sm))
-    open(os.path.join(ROOT_DIR, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n')
+    open(os.path.join(ROOT_DIR, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: {site}/sitemap.xml\n')
     print(len(urls), 'pages indexables ·', site)
 
 
