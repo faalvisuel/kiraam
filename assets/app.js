@@ -559,39 +559,111 @@
     else if (a.dataset.fav && !favs.has(a.dataset.fav)) trackEvent(`favori/${a.dataset.fav}`, 'Ajout aux favoris');
   }, true);
 
-  // ---------- Administration ----------
+  // ---------- Administration : tableau de bord Kiraam ----------
+  const AKEY = 'kiraam:gckey';
+  const getKey = () => { try { return localStorage.getItem(AKEY) || ''; } catch { return ''; } };
+  let admPeriod = 7;
+  async function gapi(path, params = {}) {
+    const u = new URL(STATS + '/api/v0/' + path);
+    Object.entries(params).forEach(([k, v]) => [].concat(v).forEach(x => u.searchParams.append(k, x)));
+    const r = await fetch(u, { headers: { Authorization: 'Bearer ' + getKey(), 'Content-Type': 'application/json' } });
+    if (r.status === 401 || r.status === 403) throw new Error('auth');
+    if (!r.ok) throw new Error('http ' + r.status);
+    return r.json();
+  }
+  const isoHour = d => { const x = new Date(d); x.setUTCMinutes(0, 0, 0); return x.toISOString().replace('.000', ''); };
+  const SIZE_FR = { 'Phones': 'Téléphones', 'Large phones, small tablets': 'Grands téléphones', 'Tablets and small laptops': 'Tablettes', 'Computer monitors': 'Ordinateurs', 'Computer monitors larger than HD': 'Grands écrans', '(unknown)': 'Inconnu' };
+  const FMT_FR = { complet: 'Complet', arabe: 'Arabe seul', phonetique: 'Arabe + phonétique', francais: 'Français', anglais: 'Anglais' };
+
   function adminView() {
     document.querySelector('meta[name=robots]') || document.head.insertAdjacentHTML('beforeend', '<meta name="robots" content="noindex,nofollow">');
     let skip = false; try { skip = localStorage.getItem('skipgc') === 't'; } catch {}
-    const nV = LIB.reduce((a, w) => a + w.bayts, 0), nAud = Object.keys(AUDIO).length;
-    const tile = (href, icon, title, text) => `<a class="adm-tile" href="${href}" target="_blank" rel="noopener"><span class="ico">${ic(icon)}</span><b>${title}</b><small>${text}</small></a>`;
-    view.innerHTML = banner('Administration', 'لَوْحَةُ الْإِدَارَة', 'facade-nuit') + `<section class="block" style="padding-top:44px"><div class="wrap">
-      <div class="adm-grid">
-        ${tile(STATS, 'search', 'Visites et trafic', 'Visiteurs, pages vues, pays, appareils, sites d\'origine')}
-        ${tile(STATS + '/?filter=pdf', 'download', 'Téléchargements PDF', 'Par Xassida et par langue')}
-        ${tile(STATS + '/?filter=precommande', 'rehal', 'Précommandes', 'Formulaires envoyés vers WhatsApp')}
-        ${tile(STATS + '/?filter=ecoute', 'audio', 'Écoutes', 'Lecteur audio ouvert, par Xassida')}
-        ${tile('https://search.google.com/search-console', 'search', 'Google Search Console', 'Position dans Google, mots-clés, indexation')}
-        ${tile(`https://wa.me/${WHATSAPP}`, 'share', 'WhatsApp Kiraam', 'Précommandes et messages des lecteurs')}
-        ${tile('https://github.com/faalvisuel/kiraam/actions/workflows/pages.yml', 'layers', 'Mise en ligne', 'Relancer le déploiement du site')}
-        ${tile('https://github.com/faalvisuel/kiraam/blob/main/data/audio.json', 'audio', 'Gérer l\'audio', 'Ajouter ou retirer des enregistrements')}
+    const key = getKey();
+    view.innerHTML = `<section class="adm"><div class="wrap">
+      <header class="adm-head">
+        <div><p class="ar">لَوْحَةُ الْإِدَارَة</p><h1>Tableau de bord</h1><p class="sub">Les visiteurs de Kiraam, en temps réel.</p></div>
+        <div class="adm-tools">
+          <div class="seg adm-period">${[[1, "Aujourd'hui"], [7, '7 jours'], [30, '30 jours'], [365, '1 an']].map(([d, l]) => `<button data-period="${d}" class="${admPeriod === d ? 'on' : ''}">${l}</button>`).join('')}</div>
+          <button class="btn btn-line sm" data-skipgc title="Vos visites sur cet appareil">${ic('heart')}${skip ? 'Mes visites : ignorées' : 'Mes visites : comptées'}</button>
+        </div>
+      </header>
+      <div id="admBody">${key ? '<div class="adm-loading"><span class="spin"></span>Chargement des statistiques…</div>' : connectCard()}</div>
+      <div class="adm-links">
+        <a href="${STATS}" target="_blank" rel="noopener">${ic('share')}GoatCounter</a>
+        <a href="https://search.google.com/search-console" target="_blank" rel="noopener">${ic('search')}Search Console</a>
+        <a href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener">${ic('share')}WhatsApp</a>
+        <a href="https://github.com/faalvisuel/kiraam/actions/workflows/pages.yml" target="_blank" rel="noopener">${ic('layers')}Mise en ligne</a>
+        <a href="https://github.com/faalvisuel/kiraam/blob/main/data/audio.json" target="_blank" rel="noopener">${ic('audio')}Audio</a>
+        ${key ? '<button data-admout>Déconnecter</button>' : ''}
       </div>
-      <div class="adm-row">
-        <div class="adm-card"><h3>Le catalogue</h3>
-          <div class="kv"><div><b>${LIB.length}</b><span>Xassidas</span></div><div><b>${fmt(nV)}</b><span>bayits</span></div><div><b>${LIB.length * 5}</b><span>PDF</span></div><div><b>${nAud}</b><span>avec audio</span></div></div></div>
-        <div class="adm-card"><h3>Mes propres visites</h3>
-          <p class="sub">Sur cet appareil, vos visites ${skip ? '<b>ne sont pas comptées</b>' : '<b>sont comptées</b>'} dans les statistiques.</p>
-          <button class="btn ${skip ? 'btn-line' : 'btn-bx'}" data-skipgc>${skip ? 'Compter à nouveau mes visites' : 'Ne plus compter mes visites'}</button></div>
-      </div>
-      <div class="adm-card"><h3>Ce qui est mesuré</h3>
-        <ul class="adm-list">
-          <li><b>Pages</b> : chaque page vue (accueil, Xassida, lecture…), sans cookies ni données personnelles.</li>
-          <li><b>pdf/&lt;langue&gt;/&lt;xassida&gt;</b> : téléchargement d'un PDF (complet, arabe, phonetique, francais, anglais).</li>
-          <li><b>precommande/&lt;xassida&gt;</b> : formulaire de précommande envoyé (quantité dans le titre).</li>
-          <li><b>ecoute/&lt;xassida&gt;</b>, <b>favori/&lt;xassida&gt;</b>, <b>partage/&lt;xassida&gt;</b>, <b>whatsapp/contact</b>, <b>recherche/&lt;mot&gt;</b>.</li>
-        </ul>
-        <p class="sub">Cette page n'est liée nulle part sur le site et n'est pas indexée par Google. Les chiffres eux-mêmes sont protégés par votre mot de passe GoatCounter.</p></div>
     </div></section>`;
+    if (key) loadAdmin();
+  }
+  function connectCard(err) {
+    return `<div class="adm-connect">
+      <div class="adm-ico">${ic('khatam')}</div>
+      <h2>Connecter vos statistiques</h2>
+      <p>Une seule fois, sur cet appareil. La clé reste dans ce navigateur et n'est envoyée qu'à GoatCounter.</p>
+      <ol>
+        <li>Ouvrez <a href="${STATS}/user/api" target="_blank" rel="noopener">kiraam.goatcounter.com → votre nom en haut → <b>API</b></a>.</li>
+        <li>Cliquez <b>New API key</b>, cochez <b>Read statistics</b>, puis <b>Create</b>.</li>
+        <li>Copiez la clé et collez-la ci-dessous.</li>
+      </ol>
+      <form id="admKey" class="adm-keyform"><div class="control">${ic('khatam')}<input name="k" placeholder="Collez votre clé API ici" autocomplete="off" required></div><button class="btn btn-gold" type="submit">Afficher mes statistiques</button></form>
+      ${err ? `<p class="adm-err">${err}</p>` : ''}
+    </div>`;
+  }
+  const bars = (rows, total) => rows.length ? rows.map(r => `<div class="bar"><span class="lbl">${r.label}</span><span class="trk"><i style="width:${Math.max(3, r.n / (total || rows[0].n || 1) * 100).toFixed(1)}%"></i></span><b>${fmt(r.n)}</b></div>`).join('') : '<p class="adm-empty">Pas encore de données.</p>';
+
+  async function loadAdmin() {
+    const body = $('#admBody'); if (!body) return;
+    const end = new Date(), start = new Date(end - admPeriod * 864e5);
+    if (admPeriod === 1) start.setHours(0, 0, 0, 0);
+    const P = { start: isoHour(start), end: isoHour(new Date(+end + 36e5)) };
+    try {
+      const [tot, h1, refs, locs, sizes, sys] = await Promise.all([
+        gapi('stats/total', P), gapi('stats/hits', { ...P, limit: 100 }),
+        gapi('stats/toprefs', { ...P, limit: 8 }), gapi('stats/locations', { ...P, limit: 8 }),
+        gapi('stats/sizes', { ...P, limit: 6 }), gapi('stats/systems', { ...P, limit: 6 })]);
+      let hits = h1.hits || [];
+      if (h1.more) { try { const h2 = await gapi('stats/hits', { ...P, limit: 100, exclude_paths: hits.map(h => h.path_id) }); hits = hits.concat(h2.hits || []); } catch {} }
+      const pages = hits.filter(h => !h.event), evs = hits.filter(h => h.event);
+      const ev = p => evs.filter(h => h.path.startsWith(p));
+      const sum = a => a.reduce((x, h) => x + h.count, 0);
+      const pdf = ev('pdf/'), po = ev('precommande/'), au = ev('ecoute/'), fv = ev('favori/'), sr = ev('recherche/'), wa = ev('whatsapp/');
+      const visits = Math.max(0, (tot.total || 0) - (tot.total_events || 0));
+      // jours
+      const days = (tot.stats || []).map(s => ({ d: s.day, n: s.daily != null ? s.daily : (s.hourly || []).reduce((a, b) => a + b, 0) }));
+      const mx = Math.max(1, ...days.map(x => x.n));
+      const chart = days.length ? `<div class="chart">${days.map(x => `<div class="col" title="${x.d} : ${x.n} visites"><i style="height:${(x.n / mx * 100).toFixed(1)}%"></i><span>${admPeriod <= 31 ? new Date(x.d).toLocaleDateString('fr-FR', { day: 'numeric', month: admPeriod > 7 ? 'numeric' : 'short' }) : ''}</span></div>`).join('')}</div>` : '<p class="adm-empty">Pas encore de visites sur cette période.</p>';
+      // regroupements
+      const bySlug = (arr, re) => { const m = {}; arr.forEach(h => { const s = (h.path.match(re) || [])[1]; if (s) m[s] = (m[s] || 0) + h.count; }); return Object.entries(m).sort((a, b) => b[1] - a[1]); };
+      const topPdf = bySlug(pdf, /^pdf\/[a-z]+\/(.+)$/).slice(0, 6);
+      const fmts = {}; pdf.forEach(h => { const f = h.path.split('/')[1]; fmts[f] = (fmts[f] || 0) + h.count; });
+      const pageName = p => { const s = p.match(/^\/(livre|lire)\/([^/]+)/); if (s && BY[s[2]]) return (s[1] === 'lire' ? 'Lecture · ' : '') + BY[s[2]].title; return { '/': 'Accueil', '/bibliotheque/': 'Bibliothèque', '/serigne-touba/': 'Serigne Touba', '/galerie/': 'Touba en images', '/a-propos/': 'À propos', '/favoris/': 'Favoris', '/lectures/': 'Mes lectures', '/charte/': 'Charte' }[p.split('?')[0]] || p; };
+      const kpi = (icon, n, l, cls = '') => `<div class="kpi ${cls}"><span class="ico">${ic(icon)}</span><b>${fmt(n)}</b><span>${l}</span></div>`;
+      body.innerHTML = `
+        <div class="kpis">
+          ${kpi('mihrab', visits, 'visiteurs', 'main')}${kpi('download', sum(pdf), 'PDF téléchargés')}${kpi('rehal', sum(po), 'précommandes')}
+          ${kpi('audio', sum(au), 'écoutes')}${kpi('heart', sum(fv), 'favoris ajoutés')}${kpi('share', sum(wa), 'contacts WhatsApp')}
+        </div>
+        <div class="adm-card wide"><h3>${ic('verses')}Visiteurs par jour</h3>${chart}</div>
+        <div class="adm-cols">
+          <div class="adm-card"><h3>${ic('read')}Pages les plus vues</h3>${bars(pages.slice(0, 8).map(h => ({ label: esc(pageName(h.path)), n: h.count })))}</div>
+          <div class="adm-card"><h3>${ic('download')}Xassidas les plus téléchargés</h3>${topPdf.length ? topPdf.map(([s, n]) => `<div class="tx"><img src="${R}covers/${s}.webp" alt=""><span><b>${esc(BY[s] ? BY[s].title : s)}</b><small class="ar">${esc(BY[s] ? BY[s].titleAr : '')}</small></span><em>${fmt(n)}</em></div>`).join('') : '<p class="adm-empty">Pas encore de téléchargements.</p>'}</div>
+          <div class="adm-card"><h3>${ic('lang')}Versions PDF</h3>${bars(Object.entries(fmts).sort((a, b) => b[1] - a[1]).map(([f, n]) => ({ label: FMT_FR[f] || f, n })))}</div>
+          <div class="adm-card"><h3>${ic('rehal')}Précommandes</h3>${po.length ? po.map(h => `<div class="po-row">${ic('khatam')}<span>${esc((h.title || h.path).replace(/^Précommande · /, ''))}</span><em>${h.count}</em></div>`).join('') : '<p class="adm-empty">Pas encore de précommande.</p>'}<p class="adm-note">Les coordonnées des clients arrivent sur votre WhatsApp.</p></div>
+          <div class="adm-card"><h3>${ic('minaret')}Pays</h3>${bars((locs.stats || []).map(s => ({ label: esc(s.name || 'Inconnu'), n: s.count })))}</div>
+          <div class="adm-card"><h3>${ic('share')}D'où viennent les visiteurs</h3>${bars((refs.stats || []).map(s => ({ label: esc(s.name || 'Accès direct'), n: s.count })))}</div>
+          <div class="adm-card"><h3>${ic('mihrab')}Appareils</h3>${bars((sizes.stats || []).map(s => ({ label: SIZE_FR[s.name] || esc(s.name), n: s.count })))}</div>
+          <div class="adm-card"><h3>${ic('layers')}Systèmes</h3>${bars((sys.stats || []).map(s => ({ label: esc(s.name || 'Inconnu'), n: s.count })))}</div>
+          <div class="adm-card"><h3>${ic('audio')}Xassidas écoutés</h3>${bars(bySlug(au, /^ecoute\/(.+)$/).slice(0, 6).map(([s, n]) => ({ label: esc(BY[s] ? BY[s].title : s), n })))}</div>
+          <div class="adm-card"><h3>${ic('search')}Recherches</h3>${sr.length ? `<div class="chips-s">${sr.slice(0, 20).map(h => `<span>${esc(h.path.replace('recherche/', ''))} <b>${h.count}</b></span>`).join('')}</div>` : '<p class="adm-empty">Pas encore de recherche.</p>'}</div>
+        </div>`;
+    } catch (err) {
+      if (err.message === 'auth') { try { localStorage.removeItem(AKEY); } catch {} body.innerHTML = connectCard('Clé refusée : vérifiez qu\'elle a bien la permission « Read statistics ».'); }
+      else body.innerHTML = `<div class="adm-connect"><h2>Statistiques indisponibles</h2><p>Impossible de joindre GoatCounter (${esc(err.message)}). Vérifiez votre connexion ou désactivez le bloqueur de publicités pour ce site, puis rechargez.</p><button class="btn btn-bx" data-period="${admPeriod}">Réessayer</button></div>`;
+    }
   }
 
   // ---------- Router ----------
@@ -639,6 +711,8 @@
   function updateFavCount() { const d = $('#favCount'); d.hidden = !favs.size; d.textContent = favs.size; }
 
   document.addEventListener('click', e => {
+    const pd = e.target.closest('[data-period]'); if (pd) { admPeriod = +pd.dataset.period; adminView(); return; }
+    if (e.target.closest('[data-admout]')) { try { localStorage.removeItem(AKEY); } catch {} adminView(); return; }
     if (e.target.closest('[data-skipgc]')) { try { localStorage.getItem('skipgc') === 't' ? localStorage.removeItem('skipgc') : localStorage.setItem('skipgc', 't'); } catch {} adminView(); return; }
     const po = e.target.closest('[data-preorder]'); if (po) { openPreorder(po.dataset.preorder || null); return; }
     if (e.target.closest('[data-mclose]') || e.target.classList.contains('modal')) { $('#preorder').classList.remove('open'); return; }
@@ -683,6 +757,9 @@
     if (e.target.closest('[data-tr]')) { prefs.tr = !prefs.tr; savePrefs(); $('.reader').classList.toggle('hide-tr', !prefs.tr); e.target.closest('[data-tr]').classList.toggle('on', prefs.tr); return; }
     const fs = e.target.closest('[data-fs]');
     if (fs) { prefs.fs = Math.min(1.6, Math.max(.8, +(prefs.fs + .1 * fs.dataset.fs).toFixed(2))); savePrefs(); $('.reader').style.setProperty('--fs', prefs.fs); fitVerses(); }
+  });
+  document.addEventListener('submit', e => {
+    if (e.target.id === 'admKey') { e.preventDefault(); const k = new FormData(e.target).get('k').trim(); if (k) { try { localStorage.setItem(AKEY, k); } catch {} adminView(); } }
   });
   document.addEventListener('change', e => { if (e.target.id === 'lsort') { libState.sort = e.target.value; renderLib(); } });
 
