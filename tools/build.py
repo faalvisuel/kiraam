@@ -102,12 +102,12 @@ def cover_html(w, pal):
 
 
 CSS = """
-@page { size: 148mm 210mm; margin: 18mm 15mm 17mm 15mm; background: #FBF2D8;
+@page { size: 148mm 210mm; margin: 18mm 15mm 17mm 15mm; background: #FBF2D8; border: .6mm double #1A7A42; padding: 3mm 3mm;
   @bottom-center { content: counter(page); font-family: Corm; font-size: 10pt; color: #8B6A3E; }
   @top-center { content: string(booktitle); font-family: Corm; font-size: 8.5pt; letter-spacing: .18em; text-transform: uppercase; color: #A88A5A; }
 }
-@page cover { margin: 0; @bottom-center { content: none } @top-center { content: none } }
-@page front { @bottom-center { content: none } @top-center { content: none } }
+@page cover { margin: 0; border: 0; padding: 0; @bottom-center { content: none } @top-center { content: none } }
+@page front { border: 0; padding: 0; @bottom-center { content: none } @top-center { content: none } }
 html { font-family: Inter; color: #2A1A16; }
 .cover { page: cover; position: relative; width: 148mm; height: 210mm; overflow: hidden; text-align: center; }
 .spine { position: absolute; left: 0; top: 0; bottom: 0; width: 9mm; }
@@ -140,10 +140,10 @@ html { font-family: Inter; color: #2A1A16; }
 h2.part { font-family: Corm; font-weight: 600; font-size: 17pt; color: #1A7A42; text-align: center; margin: 2mm 0 6mm; break-after: avoid; }
 h2.part small { display: block; font-size: 9pt; letter-spacing: .2em; text-transform: uppercase; color: #A88A5A; font-weight: 400 }
 h2.part.newpage { break-before: page; }
-.bayt { break-inside: avoid; padding: 2.8mm 2mm 3.2mm; border-radius: 2mm; margin-bottom: 1.8mm; background: #FFF9E8; border: .35mm solid #E2C27A; box-shadow: inset 0 0 0 .8mm #FFF9E8, inset 0 0 0 1mm #9CC7A4; }
-.bayt.alt { background: #FFF4D6; box-shadow: inset 0 0 0 .8mm #FFF4D6, inset 0 0 0 1mm #E8A35A; }
-.medal { display: inline-block; min-width: 6.2mm; height: 6.2mm; line-height: 6.2mm; border-radius: 3.1mm; background: #1A7A42; color: #F2DCA4; font-family: Inter; font-size: 7pt; text-align: center; }
-.medal.ar { font-family: Amiri; font-size: 9pt; line-height: 6mm; }
+.bayt { break-inside: avoid; padding: 2.2mm 1mm 2.6mm; margin: 0; background: none; border: 0; border-bottom: .15mm solid #E6CF9C; }
+.bayt.alt { background: none; }
+.medal { display: inline-block; min-width: 5mm; height: 5mm; line-height: 5mm; border-radius: 2.5mm; background: none; color: #D41F3F; border: .25mm solid #E08A2E; font-family: Inter; font-size: 6.5pt; text-align: center; }
+.medal.ar { font-family: Amiri; font-size: 8.5pt; line-height: 4.8mm; }
 .tlonly { display: table; width: 100%; }
 .tlonly .mc { display: table-cell; width: 7mm; vertical-align: top; padding-top: .6mm; }
 .tlonly .tlx { display: table-cell; padding-left: 3mm; font-family: Corm; font-size: 12pt; line-height: 1.45; color: #2A1A16; }
@@ -152,11 +152,14 @@ h2.part.newpage { break-before: page; }
 .kl { font-family: KL; color: #1A1210; }
 .km { font-family: KM; color: #D41F3F; position: absolute; left: 0; top: 0; right: 0; white-space: nowrap; }
 .kl .g { color: #1A7A42; } .kl .p { color: #1C4F9C; }
-.bayt td { font-family: KL; font-size: 14.5pt; line-height: 2; color: #1A1210; text-align: center; width: 47%; vertical-align: top; }
-.bayt td.wide { width: 94%; }
-.bayt td.n { width: 6%; font-size: 9.5pt; color: #B48A3A; }
+.bayt td { font-family: KL; font-size: 15pt; line-height: 2; color: #1A1210; width: 47%; vertical-align: top; padding: 0 1.5mm; }
+.bayt td:nth-child(2) { text-align: right; }
+.bayt td:nth-child(3) { text-align: left; }
+.bayt td.wide { text-align: center; }
+
+.bayt td.n { width: 6%; font-size: 9.5pt; color: #B48A3A; text-align: center; padding: 1.6mm 0 0; }
 .tr { font-family: Corm; font-style: italic; font-size: 10pt; color: #B5512A; text-align: center; margin-top: .6mm; }
-.fr { font-family: Inter; font-size: 8pt; line-height: 1.55; color: #3A2A24; text-align: center; margin: 1.6mm 6mm 0; padding-top: 1.4mm; border-top: .2mm dashed #E3CFA6; }
+.fr { font-family: Inter; font-size: 8pt; line-height: 1.55; color: #3A2A24; text-align: center; margin: .8mm 6mm 0; }
 """
 
 
