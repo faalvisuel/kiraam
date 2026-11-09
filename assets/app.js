@@ -114,11 +114,13 @@
       <div class="hero-in">
         <span class="pill">${ic('khatam')}Bienvenue sur Kiraam</span>
         <h1>Les écrits de Serigne Touba,<br><span class="highlight">à portée de cœur<span class="ar">قَصَائِدُ خَادِمِ الرَّسُول</span></span></h1>
-        <p class="lead">${LIB.length} livres et ${nK} khassidas de Cheikh Ahmadou Bamba Khadimou Rassoul, en arabe vocalisé avec translittération et traduction. À lire en ligne ou à télécharger en PDF, librement.</p>
+        <p class="lead">${LIB.length} livres et ${nK} khassidas de Cheikh Ahmadou Bamba Khadimou Rassoul, en arabe vocalisé avec translittération et traduction. À lire en ligne, à télécharger en PDF… et désormais à recevoir en <b>livre imprimé</b>.</p>
         <div class="hero-actions">
           <a class="btn btn-gold" href="${R}bibliotheque/">${ic('rehal')}Explorer la bibliothèque</a>
-          <a class="btn btn-glass" href="${R}livre/${daily.slug}/">${ic('khatam')}Khassida du jour : ${esc(daily.title)}</a>
+          <button class="btn btn-bx hero-po" data-preorder="">${ic('khatam')}Précommander un livre imprimé</button>
         </div>
+        <p class="hero-note">${ic('download')}Lecture et PDF gratuits · ${ic('rehal')}Livres reliés aux couvertures Kiraam, livrés au Sénégal et ailleurs</p>
+        <a class="hero-daily" href="${R}livre/${daily.slug}/">${ic('khatam')}Khassida du jour : <b>${esc(daily.title)}</b></a>
       </div>
     </section>
 
@@ -486,7 +488,8 @@
 
   // ---------- Précommande ----------
   function openPreorder(slug) {
-    const w = BY[slug];
+    const w = BY[slug] || BY.jazbu || LIB[0];
+    const chooser = !BY[slug];
     let m = $('#preorder');
     if (!m) { m = document.createElement('div'); m.id = 'preorder'; m.className = 'modal'; document.body.appendChild(m); }
     m.innerHTML = `<form class="modal-in" id="poForm">
@@ -494,6 +497,7 @@
       <div class="po-head"><img src="${R}covers/${w.slug}.webp" alt=""><div><span class="eyebrow">${ic('rehal')}Précommande</span><h3>${esc(w.title)}</h3><p class="ar">${esc(w.titleAr)}</p></div></div>
       <p class="sub">Le livre imprimé est en préparation. Réservez le vôtre : nous vous recontactons sur WhatsApp pour confirmer le prix et la livraison. Aucun paiement maintenant.</p>
       <div class="po-grid">
+        ${chooser ? `<label class="field" style="grid-column:1/-1"><span>Livre</span><div class="control"><select name="livre" id="poBook">${LIB.map(x => `<option value="${x.slug}"${x.slug === w.slug ? ' selected' : ''}>${esc(x.title)} — ${esc(x.titleAr)}</option>`).join('')}</select></div></label>` : ''}
         <label class="field"><span>Votre nom</span><div class="control"><input name="nom" required autocomplete="name" placeholder="Prénom et nom"></div></label>
         <label class="field"><span>Ville</span><div class="control"><input name="ville" required autocomplete="address-level2" placeholder="Dakar, Touba, Paris…"></div></label>
         <label class="field"><span>Édition</span><div class="control"><select name="ed">${FORMATS.slice(0, 4).map(([f, n, d]) => `<option value="${n}">${n} — ${d}</option>`).join('')}</select></div></label>
@@ -503,9 +507,12 @@
       ${WHATSAPP ? '' : '<p class="count" style="margin:10px 0 0">La précommande ouvre bientôt.</p>'}
     </form>`;
     m.classList.add('open');
+    const sel = $('#poBook');
+    if (sel) sel.onchange = () => { const b = BY[sel.value]; m.querySelector('.po-head img').src = `${R}covers/${b.slug}.webp`; m.querySelector('.po-head h3').textContent = b.title; m.querySelector('.po-head .ar').textContent = b.titleAr; };
     $('#poForm').onsubmit = ev => {
       ev.preventDefault();
       const f = new FormData(ev.target);
+      const w = BY[f.get('livre')] || BY[slug] || LIB[0];
       const msg = `Assalamou aleykoum Kiraam 🌙\nJe souhaite précommander le livre :\n📖 ${w.title} (${w.titleAr})\n• Édition : ${f.get('ed')}\n• Quantité : ${f.get('qte')}\n• Nom : ${f.get('nom')}\n• Ville : ${f.get('ville')}\n${location.origin}${R}livre/${w.slug}/`;
       const url = waLink(msg);
       if (url) window.open(url, '_blank', 'noopener'); else alert('La précommande ouvre très bientôt, inch Allah.');
@@ -550,7 +557,7 @@
   function updateFavCount() { const d = $('#favCount'); d.hidden = !favs.size; d.textContent = favs.size; }
 
   document.addEventListener('click', e => {
-    const po = e.target.closest('[data-preorder]'); if (po) { openPreorder(po.dataset.preorder); return; }
+    const po = e.target.closest('[data-preorder]'); if (po) { openPreorder(po.dataset.preorder || null); return; }
     if (e.target.closest('[data-mclose]') || e.target.classList.contains('modal')) { $('#preorder').classList.remove('open'); return; }
     const dlb = e.target.closest('[data-dl]');
     if (dlb) { const d = dlb.parentElement; d.classList.toggle('open'); dlb.setAttribute('aria-expanded', d.classList.contains('open')); return; }

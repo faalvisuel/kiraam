@@ -102,13 +102,14 @@ def cover_html(w, pal):
 
 
 CSS = """
-@page { size: 148mm 210mm; margin: 18mm 15mm 17mm 15mm; background: #FBF2D8; border: .6mm double #1A7A42; padding: 3mm 3mm;
-  @bottom-center { content: counter(page); font-family: Corm; font-size: 10pt; color: #8B6A3E; }
-  @top-center { content: string(booktitle); font-family: Corm; font-size: 8.5pt; letter-spacing: .18em; text-transform: uppercase; color: #A88A5A; }
+@page { size: 148mm 210mm; margin: 21mm 17mm 20mm 17mm; background: #FBF2D8;
+  @bottom-center { content: counter(page); font-family: Corm; font-weight: 600; font-size: 9pt; color: #F2DCA4; vertical-align: bottom; padding-bottom: 4.5mm; }
+  @top-center { content: string(booktitle); font-family: Corm; font-weight: 600; font-size: 8pt; letter-spacing: .18em; text-transform: uppercase; color: #8B5A2B; vertical-align: bottom; padding-bottom: 2.5mm; }
 }
 @page cover { margin: 0; border: 0; padding: 0; @bottom-center { content: none } @top-center { content: none } }
-@page front { border: 0; padding: 0; @bottom-center { content: none } @top-center { content: none } }
+@page front { @bottom-center { content: none } @top-center { content: none } }
 html { font-family: Inter; color: #2A1A16; }
+.pframe { position: fixed; top: -21mm; left: -17mm; width: 148mm; height: 210mm; z-index: -1; }
 .cover { page: cover; position: relative; width: 148mm; height: 210mm; overflow: hidden; text-align: center; }
 .spine { position: absolute; left: 0; top: 0; bottom: 0; width: 9mm; }
 .frame { position: absolute; left: 8mm; right: 8mm; top: 8mm; bottom: 8mm; border: .5mm solid; }
@@ -152,7 +153,7 @@ h2.part.newpage { break-before: page; }
 .kl { font-family: KL; color: #1A1210; }
 .km { font-family: KM; color: #D41F3F; position: absolute; left: 0; top: 0; right: 0; white-space: nowrap; }
 .kl .g { color: #1A7A42; } .kl .p { color: #1C4F9C; }
-.bayt td { font-family: KL; font-size: 15pt; line-height: 2; color: #1A1210; width: 47%; vertical-align: top; padding: 0 1.5mm; }
+.bayt td { font-family: KL; font-size: 13.5pt; line-height: 2; color: #1A1210; width: 47%; vertical-align: top; padding: 0 1.5mm; }
 .bayt td:nth-child(2) { text-align: right; }
 .bayt td:nth-child(3) { text-align: left; }
 .bayt td.wide { text-align: center; }
@@ -174,7 +175,7 @@ MODES = {
 
 def pdf_html(w, parts_data, pal, mode='complet'):
     label, show_ar, show_tr, tl = MODES[mode]
-    body = [cover_html(w, pal)]
+    body = ['<img class="pframe" src="file:///home/claude/build/page-frame.svg" alt="">', cover_html(w, pal)]
     nparts = len(w['parts'])
     body.append(f"""<section class="front">
 <div class="basmala" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
@@ -199,7 +200,7 @@ def pdf_html(w, parts_data, pal, mode='complet'):
                 continue
             ar = b['ar']
             plain = [re.sub(r'[\u064B-\u0652\u0670\u06E1-\u06ED]', '', x) for x in ar]
-            long_ = any(len(x) > 26 for x in plain)
+            long_ = any(len(x) > 22 for x in plain)
             rows = ([[x] for x in ar] if long_ else [ar[j:j + 2] for j in range(0, len(ar), 2)]) or [['']]
             tr_txt = '  ·  '.join(t for t in b['tr'] if t)
             tbl = ''
