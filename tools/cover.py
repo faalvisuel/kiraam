@@ -75,7 +75,7 @@ def fr_size(t):
 
 def cover_html(w, p):
     parts = len(w['parts'])
-    sub = f"{parts} parties · {w['bayts']} vers" if parts > 1 else f"Khassida · {w['bayts']} vers"
+    sub = f"{parts} parties · {w['bayts']} bayits" if parts > 1 else f"Xassida · {w['bayts']} bayits"
     return f"""
 <section class="kc" style="background:{p['bg']}">
   {arch_svg(p)}
@@ -120,8 +120,8 @@ def verso_svg(p):
 
 def verso_html(w, p, first, langs):
     np_ = len(w['parts'])
-    about = (f"« {e(w['title'])} » est un khassida de Cheikh Ahmadou Bamba Khadimou Rassoul, guide spirituel et fondateur de Touba. "
-             f"Cette édition réunit ses {w['bayts']} vers" + (f", répartis en {np_} parties," if np_ > 1 else "") +
+    about = (f"« {e(w['title'])} » est un Xassida de Cheikh Ahmadou Bamba Khadimou Rassoul, guide spirituel et fondateur de Touba. "
+             f"Cette édition réunit ses {w['bayts']} bayits" + (f", répartis en {np_} parties," if np_ > 1 else "") +
              " en arabe vocalisé, avec leur translittération et leur traduction.")
     from kfmt import kline
     ar = " ۞ ".join(kline(x) for x in first['ar'])
@@ -137,7 +137,7 @@ def verso_html(w, p, first, langs):
     <div class="kv-langs" style="color:{p['soft']}">{e(langs)}</div>
   </div>
   <div class="kv-sign" style="color:{p['line']}">K I R A A M</div>
-  <div class="kv-sub" style="color:{p['soft']}">Bibliothèque des khassidas de Serigne Touba · lecture et PDF gratuits</div>
+  <div class="kv-sub" style="color:{p['soft']}">Bibliothèque des Xassidas de Serigne Touba · lecture et PDF gratuits</div>
 </section>"""
 
 

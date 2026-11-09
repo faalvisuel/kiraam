@@ -83,7 +83,7 @@ def star_pattern(color):
 
 def cover_html(w, pal):
     parts = len(w['parts'])
-    sub = f"{parts} parties" if parts > 1 else "Khassida"
+    sub = f"{parts} parties" if parts > 1 else "Xassida"
     return f"""
 <section class="cover" style="background-color:{pal['bg2']};background-image:{star_pattern(pal['pat'])},radial-gradient(circle at 50% 38%, {pal['bg1']} 0%, {pal['bg2']} 78%);">
   <div class="spine" style="background:linear-gradient(90deg, rgba(0,0,0,.28), rgba(0,0,0,0) 70%)"></div>
@@ -96,7 +96,7 @@ def cover_html(w, pal):
   <div class="incipit" style="color:{pal['ink']}" dir="rtl">{e(w['incipit'])}</div>
   <div class="title" style="color:{pal['ink']}">{e(w['title'])}</div>
   <div class="rule" style="background:{pal['line']}"></div>
-  <div class="sub" style="color:{pal['soft']}">{sub} · {w['bayts']} vers</div></div>
+  <div class="sub" style="color:{pal['soft']}">{sub} · {w['bayts']} bayits</div></div>
   <div class="author" style="color:{pal['soft']}">Cheikh Ahmadou Bamba<br/><span>Khadimou Rassoul · Serigne Touba</span></div>
 </section>"""
 
@@ -183,7 +183,7 @@ def pdf_html(w, parts_data, pal, mode='complet'):
 <h1>{e(w['title'])}</h1>
 <div class="ar" dir="rtl">{e(w['incipit'])}</div>
 <div class="orn">✦ ✦ ✦</div>
-<div class="meta">Œuvre de Cheikh Ahmadou Bamba Khadimou Rassoul<br/>{nparts} {'parties' if nparts > 1 else 'partie'} · {w['bayts']} vers · mètre {e(w['meter'])}<br/>{label}</div>
+<div class="meta">Œuvre de Cheikh Ahmadou Bamba Khadimou Rassoul<br/>{nparts} {'parties' if nparts > 1 else 'partie'} · {w['bayts']} bayits · mètre {e(w['meter'])}<br/>{label}</div>
 <div class="credit">Édition Kiraam · Textes issus du « Khassida Dataset » de Daour (github.com/DaurDiop/khassida_dataset, licence MIT).<br/>Diffusion libre et gratuite. Toute erreur de saisie peut être signalée à Kiraam.</div>
 </section>""")
     for i, (num, pname, bayts) in enumerate(parts_data):

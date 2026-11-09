@@ -1,4 +1,4 @@
-/* Kiraam — bibliothèque des khassidas de Serigne Touba */
+/* Kiraam — bibliothèque des Xassidas de Serigne Touba */
 (() => {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
@@ -76,11 +76,11 @@
         ${w.parts.length > 1 ? `<span class="tag">${ic('layers')}${w.parts.length} parties</span>` : ''}
         ${AUDIO[w.slug] ? `<span class="aud">${ic('audio')}Audio</span>` : ''}
       </a>
-      <button class="fav${favs.has(w.slug) ? ' on' : ''}" data-fav="${w.slug}" aria-label="Ajouter aux favoris">${ic('khatam')}</button>
+      <button class="fav${favs.has(w.slug) ? ' on' : ''}" data-fav="${w.slug}" aria-label="Ajouter aux favoris" title="Ajouter aux favoris">${ic('heart')}</button>
       <div class="body">
         <div class="t-ar">${esc(w.titleAr)}</div>
         <a class="t-fr" href="${R}livre/${w.slug}/">${esc(w.title)}</a>
-        <div class="meta"><span>${ic('verses')}${w.bayts} vers</span><span>${ic('lang')}${w.langs.map(l => l.toUpperCase()).join(' · ')}</span></div>
+        <div class="meta"><span>${ic('verses')}${w.bayts} bayits</span><span>${ic('lang')}${w.langs.map(l => l.toUpperCase()).join(' · ')}</span></div>
         ${opts.progress && p ? `<div class="progress" title="${pct}% lu"><i style="width:${pct}%"></i></div>` : ''}
         <div class="foot">
           <a class="btn btn-bx sm" href="${R}lire/${w.slug}/${p ? p.part : 1}/">${ic('read')}${p ? 'Reprendre' : 'Lire'}</a>
@@ -99,7 +99,7 @@
   }
 
   const sec = (eyebrowIcon, eyebrow, title, sub, right = '') => `
-    <div class="sec-head"><div><span class="eyebrow">${ic(eyebrowIcon)}${eyebrow}</span><h2>${title}</h2>${sub ? `<p>${sub}</p>` : ''}</div>${right}</div>`;
+    <div class="sec-head"><div><h2>${title}</h2>${sub ? `<p>${sub}</p>` : ''}</div>${right}</div>`;
 
   // ---------- Home ----------
   function homeView() {
@@ -112,23 +112,22 @@
     <section class="hero">
       <img class="hero-img" src="${R}assets/photos/mosquee-touba.webp" alt="La Grande Mosquée de Touba">
       <div class="hero-in">
-        <span class="pill">${ic('khatam')}Bienvenue sur Kiraam</span>
         <h1>Les écrits de Serigne Touba,<br><span class="highlight">à portée de cœur<span class="ar">قَصَائِدُ خَادِمِ الرَّسُول</span></span></h1>
-        <p class="lead">${LIB.length} livres et ${nK} khassidas de Cheikh Ahmadou Bamba Khadimou Rassoul, en arabe vocalisé avec translittération et traduction. À lire en ligne, à télécharger en PDF… et désormais à recevoir en <b>livre imprimé</b>.</p>
+        <p class="lead">${LIB.length} Xassidas (${nK} parties, ${fmt(nV)} bayits) de Cheikh Ahmadou Bamba Khadimou Rassoul, en arabe vocalisé avec translittération et traduction. À lire en ligne, à télécharger en PDF… et désormais à recevoir en <b>Xassida imprimé</b>.</p>
         <div class="hero-actions">
           <a class="btn btn-gold" href="${R}bibliotheque/">${ic('rehal')}Explorer la bibliothèque</a>
-          <button class="btn btn-bx hero-po" data-preorder="">${ic('khatam')}Précommander un livre imprimé</button>
+          <button class="btn btn-bx hero-po" data-preorder="">${ic('khatam')}Précommander un Xassida imprimé</button>
         </div>
-        <p class="hero-note">${ic('download')}Lecture et PDF gratuits · ${ic('rehal')}Livres reliés aux couvertures Kiraam, livrés au Sénégal et ailleurs</p>
-        <a class="hero-daily" href="${R}livre/${daily.slug}/">${ic('khatam')}Khassida du jour : <b>${esc(daily.title)}</b></a>
+        <p class="hero-note">${ic('download')}Lecture et PDF gratuits · ${ic('rehal')}Xassidas reliés aux couvertures Kiraam, livrés au Sénégal et ailleurs</p>
+        <a class="hero-daily" href="${R}livre/${daily.slug}/">${ic('khatam')}Xassida du jour : <b>${esc(daily.title)}</b></a>
       </div>
     </section>
 
     <form class="finder" id="finder" role="search">
-      <div class="finder-tabs"><button type="button" class="on">${ic('search')}Trouver un khassida</button><button type="button" data-go="livre/${daily.slug}/">${ic('khatam')}Du jour</button></div>
+      <div class="finder-tabs"><button type="button" class="on">${ic('search')}Trouver un Xassida</button><button type="button" data-go="livre/${daily.slug}/">${ic('khatam')}Du jour</button></div>
       <div class="finder-row">
-        <div class="field"><label for="fq">Nom du khassida ou premiers mots</label><div class="control">${ic('search')}<input id="fq" placeholder="Jazbu, Mawahibu, مَوَاهِب…" autocomplete="off"></div></div>
-        <div class="field"><label for="fl">Longueur</label><div class="control">${ic('verses')}<select id="fl"><option value="all">Toutes</option><option value="short">Courts (≤ 25 vers)</option><option value="mid">Moyens</option><option value="long">Longs (100+ vers)</option></select></div></div>
+        <div class="field"><label for="fq">Nom du Xassida ou premiers mots</label><div class="control">${ic('search')}<input id="fq" placeholder="Jazbu, Mawahibu, مَوَاهِب…" autocomplete="off"></div></div>
+        <div class="field"><label for="fl">Longueur</label><div class="control">${ic('verses')}<select id="fl"><option value="all">Toutes</option><option value="short">Courts (≤ 25 bayits)</option><option value="mid">Moyens</option><option value="long">Longs (100+ bayits)</option></select></div></div>
         <div class="field"><label for="ft">Traduction</label><div class="control">${ic('lang')}<select id="ft"><option value="fr">Français</option><option value="en">Anglais</option><option value="it">Italien</option></select></div></div>
         <button class="btn btn-bx" type="submit">${ic('search')}Rechercher</button>
       </div>
@@ -137,23 +136,23 @@
     <section class="block"><div class="wrap about">
       <div>
         <span class="eyebrow">${ic('mihrab')}Kiraam, la bibliothèque</span>
-        <h2 class="h2">Les khassidas, <em>réunis</em> pour tous</h2>
-        <p>Kiraam rassemble l'œuvre poétique de Serigne Touba dans une bibliothèque simple et belle. Chaque khassida se lit en ligne, vers par vers, ou se télécharge en livre PDF pour le daara, la dahira ou la maison.</p>
+        <h2 class="h2">Les Xassidas, <em>réunis</em> pour tous</h2>
+        <p>Kiraam rassemble l'œuvre poétique de Serigne Touba dans une bibliothèque simple et belle. Chaque Xassida se lit en ligne, bayit par bayit, ou se télécharge en PDF pour le daara, la dahira ou la maison.</p>
         <ul class="checks">
           <li>${ic('khatam')}Texte arabe entièrement vocalisé, fidèle à la récitation</li>
           <li>${ic('khatam')}Translittération latine pour accompagner la lecture</li>
           <li>${ic('khatam')}Traductions française, anglaise et italienne</li>
-          <li>${ic('khatam')}${LIB.length} livres PDF gratuits, prêts à imprimer</li>
+          <li>${ic('khatam')}${LIB.length} Xassidas en PDF gratuits, prêts à imprimer</li>
         </ul>
         <div class="hero-actions" style="justify-content:flex-start">
-          <a class="btn btn-bx" href="${R}bibliotheque/">${ic('rehal')}Voir les livres</a>
+          <a class="btn btn-bx" href="${R}bibliotheque/">${ic('rehal')}Voir les Xassidas</a>
           <a class="btn btn-line" href="${R}serigne-touba/">${ic('minaret')}Serigne Touba</a>
         </div>
       </div>
       <div class="collage">
         <div class="main"><img src="${R}assets/photos/minaret-jour.webp" alt="Le minaret de la Grande Mosquée de Touba" loading="lazy"></div>
-        <div class="float f1"><img class="av" src="${R}assets/img/serigne-touba.webp" alt=""><span><b>${nK}</b>khassidas de Khadimou Rassoul</span></div>
-        <div class="float f2">${ic('download')}<span><b>${LIB.length}</b>livres PDF gratuits</span></div>
+        <div class="float f1"><img class="av" src="${R}assets/img/serigne-touba.webp" alt=""><span><b>${fmt(nV)}</b>bayits de Khadimou Rassoul</span></div>
+        <div class="float f2">${ic('download')}<span><b>${LIB.length}</b>Xassidas en PDF gratuits</span></div>
       </div>
     </div></section>
 
@@ -162,43 +161,43 @@
       <div class="track">${reading.map(w => card(w, { progress: true })).join('')}</div></div></section>` : ''}
 
     <section class="block" style="padding-top:${reading.length ? 0 : 20}px"><div class="wrap carousel">
-      ${sec('rehal', 'Œuvres majeures', 'Les grands <em>khassidas</em>', 'Jazbul Qulūb, Mawāhibu Nāfiʿ, Matlabul Fawzayni… les œuvres les plus récitées.',
+      ${sec('rehal', 'Œuvres majeures', 'Les grands <em>Xassidas</em>', 'Jazbul Qulūb, Mawāhibu Nāfiʿ, Matlabul Fawzayni… les œuvres les plus récitées.',
         `<div class="arrows"><button class="ibtn" data-scroll="-1" aria-label="Précédent">${ic('back')}</button><button class="ibtn" data-scroll="1" aria-label="Suivant">${ic('arrow')}</button></div>`)}
       <div class="track" id="featTrack">${feat.map(w => card(w)).join('')}</div>
     </div></section>
 
     <section class="band"><img class="band-img" src="${R}assets/photos/vitrail.webp" alt="" loading="lazy">
       <div class="wrap band-in">
-        <div><span class="eyebrow">${ic('khatam')}Kiraam en chiffres</span><h2>Au service de l'œuvre de Khadimou Rassoul</h2><p>Une bibliothèque qui grandit avec la communauté : chaque correction profite à tous.</p></div>
+        <div><h2>Au service de l'œuvre de Khadimou Rassoul</h2></div>
         <div class="stats">
-          <div class="stat"><div class="ico">${ic('rehal')}</div><b>${LIB.length}</b><span>livres</span></div>
-          <div class="stat"><div class="ico">${ic('read')}</div><b>${nK}</b><span>khassidas</span></div>
-          <div class="stat"><div class="ico">${ic('verses')}</div><b>${fmt(nV)}</b><span>vers</span></div>
+          <div class="stat"><div class="ico">${ic('rehal')}</div><b>${LIB.length}</b><span>Xassidas</span></div>
+          <div class="stat"><div class="ico">${ic('read')}</div><b>${nK}</b><span>parties</span></div>
+          <div class="stat"><div class="ico">${ic('verses')}</div><b>${fmt(nV)}</b><span>bayits</span></div>
           <div class="stat"><div class="ico">${ic('lang')}</div><b>4</b><span>langues</span></div>
         </div>
       </div>
     </section>
 
     <section class="block"><div class="wrap">
-      ${sec('search', 'Toute la bibliothèque', 'Trouvez votre <em>khassida</em>', 'Filtrez par longueur ou par traduction, ou cherchez par nom.', `<a class="btn btn-line" href="${R}bibliotheque/">Les ${LIB.length} livres${ic('arrow')}</a>`)}
+      ${sec('search', 'Toute la bibliothèque', 'Trouvez votre <em>Xassida</em>', 'Filtrez par longueur ou par traduction, ou cherchez par nom.', `<a class="btn btn-line" href="${R}bibliotheque/">Les ${LIB.length} Xassidas${ic('arrow')}</a>`)}
       <div class="grid">${LIB.slice(0, 8).map(w => card(w)).join('')}</div>
     </div></section>
 
     <section class="block" style="padding-top:0"><div class="wrap">
-      <div class="center">${sec('minaret', 'Touba, la ville sainte', 'Souvenirs de la <em>Grande Mosquée</em>', 'Là où les khassidas résonnent jour et nuit.')}</div>
+      <div class="center">${sec('minaret', 'Touba, la ville sainte', 'Souvenirs de la <em>Grande Mosquée</em>', 'Là où les Xassidas résonnent jour et nuit.')}</div>
       ${galleryGrid(PHOTOS.slice(1, 6))}
     </div></section>
 
     <section class="block" style="padding-top:0"><div class="wrap"><div class="preorder" style="padding:34px 36px">
-      <div><b style="font-size:30px">${ic('rehal')}Les khassidas en livres imprimés</b><span style="font-size:15px;max-width:560px">Kiraam prépare des éditions reliées, avec les mêmes couvertures. Précommandez votre livre depuis sa page : nous vous recontactons sur WhatsApp.</span></div>
-      <a class="btn btn-gold" href="${R}livre/jazbu/">${ic('khatam')}Choisir un livre</a></div></div></section>
+      <div><b style="font-size:30px">${ic('rehal')}Les Xassidas en version imprimée</b><span style="font-size:15px;max-width:560px">Kiraam prépare des éditions reliées, avec les mêmes couvertures. Précommandez votre Xassida depuis sa page : nous vous recontactons sur WhatsApp.</span></div>
+      <a class="btn btn-gold" href="${R}livre/jazbu/">${ic('khatam')}Choisir un Xassida</a></div></div></section>
 
     <section class="wrap"><div class="quote">
       <div class="arch-portrait"><img src="${R}assets/img/serigne-touba.webp" alt="Serigne Touba" loading="lazy"></div>
       <div>
         <p class="ar-big">الشَّيْخُ أَحْمَدُ بَمْبَا</p>
         <h3>Khadimou Rassoul, le Serviteur du Prophète <span class="saw">ﷺ</span></h3>
-        <p>Fondateur de Touba et de la Mouridiyya, Cheikh Ahmadou Bamba a consacré sa plume à la louange du Prophète et à l'éducation des âmes. Ses khassidas sont récités chaque jour, du Sénégal au monde entier.</p>
+        <p>Fondateur de Touba et de la Mouridiyya, Cheikh Ahmadou Bamba a consacré sa plume à la louange du Prophète et à l'éducation des âmes. Ses Xassidas sont récités chaque jour, du Sénégal au monde entier.</p>
         <a class="btn btn-bx" href="${R}serigne-touba/">${ic('minaret')}Découvrir sa vie</a>
       </div>
     </div></section>`;
@@ -221,7 +220,7 @@
     major: ['Œuvres majeures', 'khatam', w => w.featured],
     multi: ['En plusieurs parties', 'layers', w => w.parts.length > 1],
     audio: ['Avec audio', 'audio', w => !!AUDIO[w.slug]],
-    favs: ['Mes favoris', 'khatam', w => favs.has(w.slug)]
+    favs: ['Mes favoris', 'heart', w => favs.has(w.slug)]
   };
   function filtered() {
     const nq = norm(libState.q);
@@ -254,9 +253,9 @@
   function renderLib() {
     const l = filtered();
     const extra = [libState.len !== 'all' ? { short: 'courts', mid: 'moyens', long: 'longs' }[libState.len] : '', libState.lang !== 'fr' ? 'traduits en ' + { en: 'anglais', it: 'italien' }[libState.lang] : ''].filter(Boolean).join(', ');
-    $('#libOut').innerHTML = `<p class="count">${l.length} livre${l.length > 1 ? 's' : ''}${libState.q ? ` pour « ${esc(libState.q)} »` : ''}${extra ? ` · ${extra} <button class="chip" style="height:28px;margin-left:6px" data-reset>Effacer</button>` : ''}</p>` +
+    $('#libOut').innerHTML = `<p class="count">${l.length} Xassida${l.length > 1 ? 's' : ''}${libState.q ? ` pour « ${esc(libState.q)} »` : ''}${extra ? ` · ${extra} <button class="chip" style="height:28px;margin-left:6px" data-reset>Effacer</button>` : ''}</p>` +
       (l.length ? `<div class="grid">${l.map(w => card(w)).join('')}</div>` :
-        `<div class="empty"><div class="ar">لَا شَيْء</div><h3>Aucun khassida trouvé</h3><p>Essayez une autre orthographe : « Jazbu », « Mawahibu », « Matlabul »…</p></div>`);
+        `<div class="empty"><div class="ar">لَا شَيْء</div><h3>Aucun Xassida trouvé</h3><p>Essayez une autre orthographe : « Jazbu », « Mawahibu », « Matlabul »…</p></div>`);
   }
 
   // ---------- Book page ----------
@@ -266,38 +265,37 @@
     const related = LIB.filter(x => x !== w && (x.featured || x.parts.length > 1)).sort(() => .5 - Math.random()).slice(0, 4);
     view.innerHTML = banner(esc(w.title), esc(w.titleAr), 'minaret-dome', `<a href="${R}bibliotheque/">Bibliothèque</a>${ic('arrow')}${esc(w.title)}`) + `
     <div class="wrap book">
-      <div class="book-cover"><div class="flip" data-flip role="button" tabindex="0" aria-label="Retourner le livre">
+      <div class="book-cover"><div class="flip" data-flip role="button" tabindex="0" aria-label="Retourner le Xassida">
         <div class="face front" style="background-image:url('${R}covers/${w.slug}.webp')" role="img" aria-label="Couverture de ${esc(w.title)}"></div>
         <div class="face back" style="background-image:url('${R}covers/${w.slug}-verso.webp')" role="img" aria-label="Quatrième de couverture de ${esc(w.title)}"></div>
-      </div><p class="flip-hint">${ic('khatam')}Survolez ou touchez le livre pour voir le verso</p></div>
+      </div><p class="flip-hint">${ic('khatam')}Cliquez ou touchez le Xassida pour voir le verso</p></div>
       <div class="book-info">
-        <span class="eyebrow">${ic('khatam')}${w.parts.length > 1 ? `Œuvre en ${w.parts.length} parties` : 'Khassida'}</span>
         <div class="t-ar">${esc(w.titleAr)}</div>
         <h1>${esc(w.title)}</h1>
-        <p class="by">Cheikh Ahmadou Bamba Khadimou Rassoul · Serigne Touba${w.aka ? `<br><small>Aussi écrit : ${w.aka.map(esc).join(', ')}</small>` : ''}</p>
-        <div class="kv"><div><b>${w.bayts}</b><span>vers</span></div><div><b>${w.parts.length}</b><span>${w.parts.length > 1 ? 'parties' : 'partie'}</span></div><div><b>${w.pages}</b><span>pages PDF</span></div><div><b>${w.langs.length + 1}</b><span>langues</span></div></div>
+        <p class="by">Cheikh Ahmadou Bamba Khadimou Rassoul · Serigne Touba</p>
+        <div class="kv"><div><b>${w.bayts}</b><span>bayits</span></div><div><b>${w.parts.length}</b><span>${w.parts.length > 1 ? 'parties' : 'partie'}</span></div><div><b>${w.pages}</b><span>pages PDF</span></div><div><b>${w.langs.length + 1}</b><span>langues</span></div></div>
         <div class="langs"><span>العربية</span><span>Translittération</span>${w.langs.map(l => `<span>${{ fr: 'Français', en: 'English', it: 'Italiano' }[l]}</span>`).join('')}</div>
         <div class="actions">
           <a class="btn btn-gold" href="${R}lire/${w.slug}/${p ? p.part : 1}/">${ic('read')}${p ? 'Reprendre la lecture' : 'Lire en ligne'}</a>
           ${AUDIO[w.slug] ? `<button class="btn btn-bx" data-listen="${w.slug}" data-i="0">${ic('play')}Écouter</button>` : ''}
           <div class="dl"><button class="btn btn-line" data-dl aria-expanded="false">${ic('download')}Télécharger le PDF${ic('min', 'chev')}</button>
             <div class="dl-menu" role="menu">${FORMATS.filter(([f]) => !w.pdfs || w.pdfs[f]).map(([f, n, d]) => `<a role="menuitem" href="${pdfUrl(w, f)}" download><b>${n}</b><small>${d}${w.pdfs ? ' · ' + mb(w.pdfs[f]) : ''}</small></a>`).join('')}</div></div>
-          <button class="ibtn${favs.has(w.slug) ? ' on' : ''}" data-fav="${w.slug}" aria-label="Favori">${ic('khatam')}</button>
+          <button class="ibtn${favs.has(w.slug) ? ' on' : ''}" data-fav="${w.slug}" aria-label="Ajouter aux favoris" title="Ajouter aux favoris">${ic('heart')}<span class="fav-lbl">${favs.has(w.slug) ? 'Dans mes favoris' : 'Favori'}</span></button>
           <button class="ibtn" data-share="${w.slug}" aria-label="Partager">${ic('share')}</button>
         </div>
-        <div class="preorder"><div><b>${ic('rehal')}Bientôt en livre imprimé</b><span>Réservez votre exemplaire relié de ${esc(w.title)}. Nous vous recontactons sur WhatsApp.</span></div>
+        <div class="preorder"><div><b>${ic('rehal')}Bientôt en Xassida imprimé</b><span>Réservez votre exemplaire relié de ${esc(w.title)}. Nous vous recontactons sur WhatsApp.</span></div>
           <button class="btn btn-gold" data-preorder="${w.slug}">${ic('khatam')}Précommander</button></div>
         ${w.parts.length > 1 ? `<div class="parts">${w.partNames.map((n, i) => `<a href="${R}lire/${w.slug}/${i + 1}/"><span>${esc(n)}</span><small>${ic('arrow')}</small></a>`).join('')}</div>` : ''}
         ${AUDIO[w.slug] ? `<div class="listen"><h3>${ic('audio')}Écouter</h3><p class="sub">${AUDIO[w.slug].length} déclamation${AUDIO[w.slug].length > 1 ? 's' : ''} par les kourels · le lecteur continue pendant que vous lisez</p>
           <div class="recs">${AUDIO[w.slug].map((r, i) => recRow(w, r, i)).join('')}</div></div>` : ''}
-        <div class="excerpt" id="excerpt"><h3>Premiers vers</h3><p class="count">Chargement…</p></div>
+        <div class="excerpt" id="excerpt"><h3>Premiers bayits</h3><p class="count">Chargement…</p></div>
       </div>
     </div>
     <section class="block" style="padding-top:40px"><div class="wrap">${sec('rehal', 'À lire aussi', 'Dans la <em>même</em> bibliothèque', '')}<div class="grid">${related.map(x => card(x)).join('')}</div></div></section>`;
     try {
       const d = await getPart(w.parts[0]);
       const ex = $('#excerpt'); if (!ex) return;
-      ex.innerHTML = `<h3>Premiers vers</h3>` + d.bayts.slice(0, 3).map(b => `<div class="v"><div class="ar">${b.ar.map(a => `<span>${kline(a)}</span>`).join('<span class="sep">۞</span>')}</div><div class="tr">${esc(b.tr.join(' · '))}</div><div class="tl">${esc(b.fr)}</div></div>`).join('') +
+      ex.innerHTML = `<h3>Premiers bayits</h3>` + d.bayts.slice(0, 3).map(b => `<div class="v"><div class="ar">${b.ar.map(a => `<span>${kline(a)}</span>`).join('<span class="sep">۞</span>')}</div><div class="tr">${esc(b.tr.join(' · '))}</div><div class="tl">${esc(b.fr)}</div></div>`).join('') +
         `<div style="text-align:center;margin-top:16px"><a class="btn btn-line sm" href="${R}lire/${w.slug}/1/">Lire la suite${ic('arrow')}</a></div>`;
     } catch {}
   }
@@ -312,7 +310,7 @@
   async function readerView(slug, partIdx, baytN) {
     const w = BY[slug]; if (!w) return notFound();
     partIdx = Math.min(Math.max(1, partIdx || 1), w.parts.length);
-    view.innerHTML = `<div class="empty"><div class="ar">بِسْمِ اللَّهِ</div><p>Ouverture du livre…</p></div>`;
+    view.innerHTML = `<div class="empty"><div class="ar">بِسْمِ اللَّهِ</div><p>Ouverture du Xassida…</p></div>`;
     let data;
     try { data = await getPart(w.parts[partIdx - 1]); }
     catch { view.innerHTML = `<div class="empty"><h3>Impossible de charger ce texte</h3><p>Vérifiez votre connexion et réessayez.</p></div>`; return; }
@@ -323,8 +321,8 @@
     const prev = partIdx > 1 ? partIdx - 1 : null, next = partIdx < w.parts.length ? partIdx + 1 : null;
     view.innerHTML = `<div class="wrap"><div class="reader${prefs.tr ? '' : ' hide-tr'}${lang === 'none' ? ' hide-tl' : ''}" style="--fs:${prefs.fs}">
       <div class="rbar">
-        <a class="ibtn" href="${R}livre/${w.slug}/" aria-label="Retour au livre">${ic('back')}</a>
-        <div class="t"><b>${esc(w.title)}</b><small>${w.parts.length > 1 ? `Partie ${partIdx} / ${w.parts.length} · ` : ''}${data.bayts.length} vers</small></div>
+        <a class="ibtn" href="${R}livre/${w.slug}/" aria-label="Retour au Xassida">${ic('back')}</a>
+        <div class="t"><b>${esc(w.title)}</b><small>${w.parts.length > 1 ? `Partie ${partIdx} / ${w.parts.length} · ` : ''}${data.bayts.length} bayits</small></div>
         ${AUDIO[w.slug] ? `<button class="ibtn rb-au" data-listen="${w.slug}" data-i="0" aria-label="Écouter">${ic('audio')}</button>` : ''}
         <a class="ibtn rb-dl" href="${R}pdf/${w.slug}.pdf" download aria-label="Télécharger le PDF complet">${ic('download')}</a>
         <div class="tools">
@@ -386,9 +384,9 @@
         <span class="eyebrow">${ic('minaret')}Cheikh Ahmadou Bamba Mbacké</span>
         <h2 class="h2">Khadimou Rassoul, <em>le Serviteur</em> du Prophète <span class="saw">ﷺ</span></h2>
         <p>Guide spirituel sénégalais, fondateur de la Mouridiyya et de la ville sainte de Touba, Cheikh Ahmadou Bamba a consacré sa vie à l'adoration de Dieu, au service du Prophète Muhammad <span class="saw">ﷺ</span> et à l'éducation de ses disciples par le savoir et le travail.</p>
-        <p>Il a laissé une œuvre écrite immense en langue arabe : des poèmes de louange au Prophète, d'invocation, de jurisprudence, de soufisme et d'éducation de l'âme. Ces khassidas sont récités chaque jour dans les daaras, les dahiras et lors du Grand Magal de Touba.</p>
+        <p>Il a laissé une œuvre écrite immense en langue arabe : des poèmes de louange au Prophète, d'invocation, de jurisprudence, de soufisme et d'éducation de l'âme. Ces Xassidas sont récités chaque jour dans les daaras, les dahiras et lors du Grand Magal de Touba.</p>
         <ol class="timeline">${T.map(([i, y, t]) => `<li><span class="k">${ic(i)}</span><b>${y}</b>${t}</li>`).join('')}</ol>
-        <a class="btn btn-bx" href="${R}bibliotheque/">${ic('rehal')}Lire ses khassidas</a>
+        <a class="btn btn-bx" href="${R}bibliotheque/">${ic('rehal')}Lire ses Xassidas</a>
       </div>
       <aside><div class="arch-portrait"><img src="${R}assets/img/serigne-touba.webp" alt="Photographie de Serigne Touba"></div></aside>
     </div>`;
@@ -406,25 +404,25 @@
     view.innerHTML = banner('À propos de Kiraam', 'كِرَام', 'lanternes') + `<div class="wrap"><article class="prose">
       <p><b>Kiraam</b> (كِرَام, « les nobles ») est une bibliothèque libre et gratuite consacrée aux écrits de Cheikh Ahmadou Bamba Khadimou Rassoul.</p>
       <h2>Le contenu</h2><ul>
-        <li>${LIB.length} livres regroupant ${nK} khassidas et ${fmt(LIB.reduce((a, w) => a + w.bayts, 0))} vers.</li>
+        <li>${LIB.length} Xassidas en ${nK} parties, soit ${fmt(LIB.reduce((a, w) => a + w.bayts, 0))} bayits.</li>
         <li>Texte arabe vocalisé, translittération latine, traduction française pour tous les textes ; anglaise et italienne pour une partie d'entre eux.</li>
-        <li>Chaque livre est disponible en PDF (format A5) avec sa couverture.</li></ul>
+        <li>Chaque Xassida est disponible en PDF (format A5) avec sa couverture.</li></ul>
       <h2>Sources</h2>
       <p>Les textes proviennent du <a href="https://github.com/DaurDiop/khassida_dataset" target="_blank" rel="noopener">Khassida Dataset</a> de Daour, publié sous licence MIT, qui intègre les traductions de l'application <a href="https://github.com/DaurDiop/karamati-khatou-yadi" target="_blank" rel="noopener">Karamati Khatou Yadi</a>. Qu'Allah les récompense. Les photographies de la Grande Mosquée de Touba sont de THIERLens.</p>
       <h2>Audio</h2>
       <p>Les déclamations sont celles des kourels (Hizbut Tarqiyyah, Nurud Darayni, Safinatoul Amane…), publiées sur Audiomack (audio seul, sans vidéo) et, en complément, sur YouTube. Kiraam les intègre avec les lecteurs officiels de ces plateformes, sans copier les fichiers ; les droits restent à leurs auteurs. Vous êtes un kourel et souhaitez voir vos enregistrements ici, ou les retirer ? Écrivez-nous.</p>
       <h2>Signaler une erreur</h2>
-      <p>Une faute dans un vers, un titre ou une traduction ? Écrivez-nous ${WHATSAPP ? `sur <a href="${waLink('Assalamou aleykoum, je souhaite signaler une correction sur Kiraam : ')}" target="_blank" rel="noopener">WhatsApp</a>` : 'via la page de contact'} : chaque correction profite à tous.</p>
+      <p>Une faute dans un bayit, un titre ou une traduction ? Écrivez-nous ${WHATSAPP ? `sur <a href="${waLink('Assalamou aleykoum, je souhaite signaler une correction sur Kiraam : ')}" target="_blank" rel="noopener">WhatsApp</a>` : 'via la page de contact'} : chaque correction profite à tous.</p>
       <p><a href="${R}charte/">Voir la charte graphique de Kiraam →</a></p>
     </article></div>`;
   }
 
   function brandView() {
     const C = [['Bordeaux', '#6B1424', 'Couleur principale'], ['Grenat', '#2C060E', 'Fonds profonds'], ['Or', '#C29B4A', 'Accents, ornements'], ['Or clair', '#D9B66C', 'Sur fonds sombres'], ['Ivoire', '#F8F3EA', 'Fond de page']];
-    const I = [['mihrab', 'Accueil · mihrab'], ['rehal', 'Bibliothèque · rehal'], ['fanous', 'Lectures · fanous'], ['khatam', 'Favoris · khatam'], ['minaret', 'Serigne Touba · minaret'], ['hilal', 'À propos · hilal'], ['read', 'Lire'], ['download', 'Télécharger'], ['search', 'Rechercher'], ['lang', 'Langues']];
+    const I = [['mihrab', 'Accueil · mihrab'], ['rehal', 'Bibliothèque · rehal'], ['fanous', 'Lectures · fanous'], ['heart', 'Favoris · cœur'], ['minaret', 'Serigne Touba · minaret'], ['hilal', 'À propos · hilal'], ['read', 'Lire'], ['download', 'Télécharger'], ['search', 'Rechercher'], ['lang', 'Langues']];
     view.innerHTML = banner('Charte graphique', 'هُوِيَّةُ كِرَام', 'vitrail') + `<div class="wrap"><article class="prose" style="max-width:1000px">
       <h2>Le symbole</h2>
-      <p>Il réunit trois éléments de la Grande Mosquée de Touba : l'<b>arche en fer à cheval</b> de ses portes et fenêtres, l'<b>étoile à huit branches</b> de ses vitraux, et le <b>finial à trois sphères</b> qui couronne ses coupoles. Une porte ouverte vers la lumière des khassidas.</p>
+      <p>Il réunit trois éléments de la Grande Mosquée de Touba : l'<b>arche en fer à cheval</b> de ses portes et fenêtres, l'<b>étoile à huit branches</b> de ses vitraux, et le <b>finial à trois sphères</b> qui couronne ses coupoles. Une porte ouverte vers la lumière des Xassidas.</p>
       <div class="brand-grid">
         <div class="brand-tile" style="background:#FBF8F2"><img src="${R}assets/brand/kiraam-logo.svg" alt="Logo horizontal"></div>
         <div class="brand-tile" style="background:#2C060E"><img src="${R}assets/brand/kiraam-logo-blanc.svg" alt="Logo horizontal blanc"></div>
@@ -495,9 +493,9 @@
     m.innerHTML = `<form class="modal-in" id="poForm">
       <button type="button" class="ibtn mclose" data-mclose aria-label="Fermer">${ic('close')}</button>
       <div class="po-head"><img src="${R}covers/${w.slug}.webp" alt=""><div><span class="eyebrow">${ic('rehal')}Précommande</span><h3>${esc(w.title)}</h3><p class="ar">${esc(w.titleAr)}</p></div></div>
-      <p class="sub">Le livre imprimé est en préparation. Réservez le vôtre : nous vous recontactons sur WhatsApp pour confirmer le prix et la livraison. Aucun paiement maintenant.</p>
+      <p class="sub">Le Xassida imprimé est en préparation. Réservez le vôtre : nous vous recontactons sur WhatsApp pour confirmer le prix et la livraison. Aucun paiement maintenant.</p>
       <div class="po-grid">
-        ${chooser ? `<label class="field" style="grid-column:1/-1"><span>Livre</span><div class="control"><select name="livre" id="poBook">${LIB.map(x => `<option value="${x.slug}"${x.slug === w.slug ? ' selected' : ''}>${esc(x.title)} — ${esc(x.titleAr)}</option>`).join('')}</select></div></label>` : ''}
+        ${chooser ? `<label class="field" style="grid-column:1/-1"><span>Xassida</span><div class="control"><select name="livre" id="poBook">${LIB.map(x => `<option value="${x.slug}"${x.slug === w.slug ? ' selected' : ''}>${esc(x.title)} — ${esc(x.titleAr)}</option>`).join('')}</select></div></label>` : ''}
         <label class="field"><span>Votre nom</span><div class="control"><input name="nom" required autocomplete="name" placeholder="Prénom et nom"></div></label>
         <label class="field"><span>Ville</span><div class="control"><input name="ville" required autocomplete="address-level2" placeholder="Dakar, Touba, Paris…"></div></label>
         <label class="field"><span>Édition</span><div class="control"><select name="ed">${FORMATS.slice(0, 4).map(([f, n, d]) => `<option value="${n}">${n} — ${d}</option>`).join('')}</select></div></label>
@@ -513,7 +511,7 @@
       ev.preventDefault();
       const f = new FormData(ev.target);
       const w = BY[f.get('livre')] || BY[slug] || LIB[0];
-      const msg = `Assalamou aleykoum Kiraam 🌙\nJe souhaite précommander le livre :\n📖 ${w.title} (${w.titleAr})\n• Édition : ${f.get('ed')}\n• Quantité : ${f.get('qte')}\n• Nom : ${f.get('nom')}\n• Ville : ${f.get('ville')}\n${location.origin}${R}livre/${w.slug}/`;
+      const msg = `Assalamou aleykoum Kiraam 🌙\nJe souhaite précommander le Xassida :\n📖 ${w.title} (${w.titleAr})\n• Édition : ${f.get('ed')}\n• Quantité : ${f.get('qte')}\n• Nom : ${f.get('nom')}\n• Ville : ${f.get('ville')}\n${location.origin}${R}livre/${w.slug}/`;
       const url = waLink(msg);
       if (url) window.open(url, '_blank', 'noopener'); else alert('La précommande ouvre très bientôt, inch Allah.');
     };
@@ -532,8 +530,8 @@
       case 'bibliotheque': setNav('library'); libraryView(); break;
       case 'livre': setNav('library'); bookView(a); break;
       case 'lire': setNav('library'); readerView(a, parseInt(b, 10), parseInt(c, 10)); break;
-      case 'lectures': setNav('reading'); listPage('Mes lectures', 'قِرَاءَاتِي', 'lanternes', Object.entries(progress).sort((x, y) => y[1].at - x[1].at).map(([s]) => BY[s]).filter(Boolean), 'اِقْرَأْ', 'Aucune lecture en cours', 'Ouvrez un khassida : votre progression sera retenue sur cet appareil.', true); break;
-      case 'favoris': setNav('favs'); listPage('Mes favoris', 'مُفَضَّلَاتِي', 'minaret-dome', LIB.filter(w => favs.has(w.slug)), '✦', 'Pas encore de favoris', "Touchez l'étoile d'un livre pour le retrouver ici."); break;
+      case 'lectures': setNav('reading'); listPage('Mes lectures', 'قِرَاءَاتِي', 'lanternes', Object.entries(progress).sort((x, y) => y[1].at - x[1].at).map(([s]) => BY[s]).filter(Boolean), 'اِقْرَأْ', 'Aucune lecture en cours', 'Ouvrez un Xassida : votre progression sera retenue sur cet appareil.', true); break;
+      case 'favoris': setNav('favs'); listPage('Mes favoris', 'مُفَضَّلَاتِي', 'minaret-dome', LIB.filter(w => favs.has(w.slug)), '✦', 'Pas encore de favoris', "Touchez l'étoile d'un Xassida pour le retrouver ici."); break;
       case 'serigne-touba': setNav('bio'); bioView(); break;
       case 'galerie': setNav('gallery'); galleryView(); break;
       case 'a-propos': setNav('about'); aboutView(); break;
@@ -554,6 +552,11 @@
   $('#menuBtn').onclick = () => { drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); };
   drawer.addEventListener('click', e => { if (e.target === drawer || e.target.closest('[data-close-drawer]')) closeDrawer(); });
 
+  function toast(msg, on) {
+    let t = $('#toast'); if (!t) { t = document.createElement('div'); t.id = 'toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.innerHTML = `${ic('heart')}<span>${esc(msg)}</span>${on ? `<a href="${R}favoris/">Voir</a>` : ''}`;
+    t.classList.toggle('on', !!on); t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600);
+  }
   function updateFavCount() { const d = $('#favCount'); d.hidden = !favs.size; d.textContent = favs.size; }
 
   document.addEventListener('click', e => {
@@ -570,13 +573,15 @@
     const fav = e.target.closest('[data-fav]');
     if (fav) {
       const s = fav.dataset.fav; favs.has(s) ? favs.delete(s) : favs.add(s); store.set('favs', [...favs]);
-      $$(`[data-fav="${s}"]`).forEach(x => x.classList.toggle('on', favs.has(s)));
+      $$(`[data-fav="${s}"]`).forEach(x => { x.classList.toggle('on', favs.has(s)); x.classList.remove('pop'); void x.offsetWidth; if (favs.has(s)) x.classList.add('pop'); });
+      $$(`[data-fav="${s}"] .fav-lbl`).forEach(x => x.textContent = favs.has(s) ? 'Dans mes favoris' : 'Favori');
+      toast(favs.has(s) ? `${BY[s].title} ajouté à vos favoris` : `${BY[s].title} retiré des favoris`, favs.has(s));
       updateFavCount(); return;
     }
     const sh = e.target.closest('[data-share]');
     if (sh) {
       const w = BY[sh.dataset.share]; const url = location.origin + R + 'livre/' + w.slug + '/';
-      if (navigator.share) navigator.share({ title: `${w.title} · Kiraam`, text: `${w.title} — ${w.titleAr} · khassida de Serigne Touba`, url }).catch(() => {});
+      if (navigator.share) navigator.share({ title: `${w.title} · Kiraam`, text: `${w.title} — ${w.titleAr} · Xassida de Serigne Touba`, url }).catch(() => {});
       else navigator.clipboard?.writeText(url).then(() => { sh.title = 'Lien copié'; sh.classList.add('on'); setTimeout(() => sh.classList.remove('on'), 1200); });
       return;
     }
@@ -627,7 +632,7 @@
     LIB = d.works.map(w => Object.assign(w, { _s: norm([w.title, w.titleAr, w.slug, w.incipit, ...w.partNames, ...(w.aka || [])].join(' ')) }));
     LIB.forEach(w => BY[w.slug] = w);
     const nK = LIB.reduce((a, w) => a + w.parts.length, 0);
-    $('#tbCount').textContent = `${LIB.length} livres · ${nK} khassidas`;
+    $('#tbCount').textContent = `${LIB.length} Xassidas · ${fmt(LIB.reduce((a, w) => a + w.bayts, 0))} bayits`;
     updateFavCount();
     $$('[data-wa]').forEach(a => { if (WHATSAPP) a.href = waLink('Assalamou aleykoum Kiraam, '); else a.remove(); });
     route();

@@ -62,7 +62,7 @@ def book_image(w):
     d.text((x0, 330), w['title'], font=ff, fill=(255, 246, 230), anchor='ls')
     d.line((x0, 362, x0 + 70, 362), fill=GOLD, width=3)
     np = len(w['parts'])
-    d.text((x0, 410), f"{np} PARTIES · {w['bayts']} VERS" if np > 1 else f"KHASSIDA · {w['bayts']} VERS", font=inter(20), fill=GOLD_L, anchor='ls')
+    d.text((x0, 410), f"{np} PARTIES · {w['bayts']} BAYITS" if np > 1 else f"XASSIDA · {w['bayts']} BAYITS", font=inter(20), fill=GOLD_L, anchor='ls')
     d.text((x0, 470), 'Cheikh Ahmadou Bamba', font=corm(34), fill=(255, 246, 230), anchor='ls')
     d.text((x0, 506), 'Serigne Touba · Khadimou Rassoul', font=corm(26), fill=(222, 200, 160), anchor='ls')
     d.text((x0, 572), 'PDF gratuit · arabe · translittération · traduction', font=inter(17), fill=(210, 180, 140), anchor='ls')
@@ -78,8 +78,8 @@ def site_image(n_books, n_k):
     lg = Image.open(os.path.join(ROOT, 'assets/brand/kiraam-logo-vertical-blanc.png')).convert('RGBA'); lg.thumbnail((360, 360))
     bg.paste(lg, ((W - lg.width) // 2, 60), lg)
     d = ImageDraw.Draw(bg)
-    d.text((W // 2, 495), 'Les khassidas de Serigne Touba', font=corm(56), fill=(255, 246, 230), anchor='ms')
-    d.text((W // 2, 548), f'{n_books} livres · {n_k} khassidas · PDF gratuits · arabe et traduction', font=inter(21), fill=GOLD_L, anchor='ms')
+    d.text((W // 2, 495), 'Les Xassidas de Serigne Touba', font=corm(56), fill=(255, 246, 230), anchor='ms')
+    d.text((W // 2, 548), f'{n_books} Xassidas · PDF gratuits · arabe et traduction · livres imprimés', font=inter(21), fill=GOLD_L, anchor='ms')
     bg.save(os.path.join(OUT, 'kiraam.jpg'), quality=85, optimize=True, progressive=True)
 
 
