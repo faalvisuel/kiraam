@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiraam · Bibliothèque des Khassidas de Serigne Touba</title>
+<meta name="description" content="Kiraam réunit les khassidas de Cheikh Ahmadou Bamba Khadimou Rassoul : texte arabe, translittération, traductions et PDF à télécharger gratuitement.">
+<meta name="theme-color" content="#5A0F1E">
+<meta property="og:title" content="Kiraam · Khassidas de Serigne Touba">
+<meta property="og:description" content="111 livres, 193 khassidas : lire, écouter le texte, télécharger en PDF.">
+<meta property="og:image" content="covers/jazbu.webp">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/amiri-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" aria-label="Navigation">
+    <a class="logo" href="#/">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l4.6 11.1L36 18l-11.4 4.9L20 34l-4.6-11.1L4 18l11.4-4.9z" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="11" y="9" width="18" height="18" transform="rotate(45 20 18)" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="20" cy="18" r="2.6" fill="currentColor"/></svg>
+      <span>Kiraam<small>كِرَام</small></span>
+    </a>
+    <nav>
+      <a href="#/" data-nav="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z"/></svg>Accueil</a>
+      <a href="#/bibliotheque" data-nav="library"><svg viewBox="0 0 24 24"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 4.5l3.8-1 3.5 15.5-3.8 1z"/></svg>Bibliothèque</a>
+      <a href="#/lectures" data-nav="reading"><svg viewBox="0 0 24 24"><path d="M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1z M12 6v14"/></svg>Mes lectures</a>
+      <a href="#/favoris" data-nav="favs"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Favoris</a>
+      <span class="nav-sep"></span>
+      <a href="#/serigne-touba" data-nav="bio"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/></svg>Serigne Touba</a>
+      <a href="#/a-propos" data-nav="about"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>À propos</a>
+    </nav>
+    <div class="side-card">
+      <p class="ar" dir="rtl">خَادِمُ الرَّسُول</p>
+      <p>Les écrits de Cheikh Ahmadou Bamba, libres et gratuits pour tous.</p>
+      <a href="#/bibliotheque" class="btn btn-gold small">Explorer</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Rechercher un khassida… (ex. Jazbu, Mawahibu)" autocomplete="off" aria-label="Rechercher">
+        <kbd>/</kbd>
+      </label>
+      <div class="top-right">
+        <span class="count-pill" id="countPill"></span>
+      </div>
+    </header>
+    <div id="view" class="view" tabindex="-1"></div>
+  </main>
+
+  <aside class="panel" id="panel" aria-label="Détails du livre"></aside>
+</div>
+
+<nav class="tabbar" aria-label="Navigation mobile">
+  <a href="#/" data-nav="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z"/></svg>Accueil</a>
+  <a href="#/bibliotheque" data-nav="library"><svg viewBox="0 0 24 24"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 4.5l3.8-1 3.5 15.5-3.8 1z"/></svg>Livres</a>
+  <a href="#/lectures" data-nav="reading"><svg viewBox="0 0 24 24"><path d="M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1z M12 6v14"/></svg>Lectures</a>
+  <a href="#/favoris" data-nav="favs"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Favoris</a>
+  <a href="#/serigne-touba" data-nav="bio"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/></svg>Serigne Touba</a>
+</nav>
+
+<div class="sheet-backdrop" id="backdrop"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>

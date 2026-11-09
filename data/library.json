@@ -1,0 +1,2612 @@
+{
+"source": "https://github.com/DaurDiop/khassida_dataset",
+"license": "MIT",
+"works": [
+{
+"slug": "ahazanil-baaqi",
+"title": "Ahazanil Baaqi",
+"incipit": "أَعَاذَنِى الْبَاقِى مِنَ الشَّيْطَانِ",
+"parts": [
+1
+],
+"partNames": [
+"Ahazanil Baaqi"
+],
+"bayts": 25,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 177596,
+"pages": 7,
+"palette": "bordeaux"
+},
+{
+"slug": "ahuzu-bil-laahi-min-mayli",
+"title": "Ahuzu Bil Laahi Min Mayli",
+"incipit": "أَعُوذُ بِاللَّهِ مِنْ مَّيْلِى لِغَيْرِ رِضَى",
+"parts": [
+2
+],
+"partNames": [
+"Ahuzu Bil Laahi Min Mayli"
+],
+"bayts": 24,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 184012,
+"pages": 9,
+"palette": "ivoire"
+},
+{
+"slug": "ahyaytu-mawlidan",
+"title": "Ahyaytu Mawlidan",
+"incipit": "أَحْيَيْتُ مَوْلِدَ النَّبِى مِنْ أَسَشِ",
+"parts": [
+3
+],
+"partNames": [
+"Ahyaytu Mawlidan"
+],
+"bayts": 18,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 175374,
+"pages": 6,
+"palette": "grenat"
+},
+{
+"slug": "ajabani-khayru-baaqin",
+"title": "Ajabani Khayru Baaqin",
+"incipit": "أَجَابَنِى خَيْرُ بَاقٍ فِيهِ قَدْ طَّابَا",
+"parts": [
+4
+],
+"partNames": [
+"Ajabani Khayru Baaqin"
+],
+"bayts": 6,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 149284,
+"pages": 4,
+"palette": "vin"
+},
+{
+"slug": "ajabani-rabbus-sama",
+"title": "Ajabani Rabbus Sama",
+"incipit": "أَجَابَنِى رَبُّ السَّمَآ",
+"parts": [
+5,
+6
+],
+"partNames": [
+"Ajabani Rabbus Sama 1",
+"Ajabani Rabbus Sama 2"
+],
+"bayts": 39,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 205235,
+"pages": 16,
+"palette": "bordeaux"
+},
+{
+"slug": "alaa-inani",
+"title": "Alaa Inani",
+"incipit": "أَلَاإِنَّنِى أُثْنِى عَلَى خَيْرِمُنْعِمِ",
+"parts": [
+7
+],
+"partNames": [
+"Alaa Inani"
+],
+"bayts": 26,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 184077,
+"pages": 9,
+"palette": "ivoire"
+},
+{
+"slug": "alal-mustafa-minni",
+"title": "Alal Mustafa Minni",
+"incipit": "عَلَى الْمُصْطَفَى مِنِّى صَلَاةٌ تَقِى الضَّيْرَا",
+"parts": [
+8
+],
+"partNames": [
+"Alal Mustafa Minni"
+],
+"bayts": 10,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 162883,
+"pages": 5,
+"palette": "grenat"
+},
+{
+"slug": "alhamdu-yujaazi",
+"title": "Alhamdu Yujaazi",
+"incipit": "الْحَمْدُ لِلَّهِ الَّذِى يُجَازِ",
+"parts": [
+9
+],
+"partNames": [
+"Alhamdu Yujaazi"
+],
+"bayts": 21,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 174405,
+"pages": 7,
+"palette": "vin"
+},
+{
+"slug": "anta-rabbi",
+"title": "Anta Rabbi",
+"incipit": "أَنْتَ رَبِّى وَكُنْتَ لِى بِوِدَادِى",
+"parts": [
+10
+],
+"partNames": [
+"Anta Rabbi"
+],
+"bayts": 27,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 179813,
+"pages": 8,
+"palette": "bordeaux"
+},
+{
+"slug": "ashaabul-jannati",
+"title": "Ashaabul Jannati",
+"incipit": "إِلَيْكَ يَاخَيْرَ الْبَرِيَّةِ سَلَامْ",
+"parts": [
+11
+],
+"partNames": [
+"Ashaabul Jannati"
+],
+"bayts": 25,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 169767,
+"pages": 8,
+"palette": "ivoire"
+},
+{
+"slug": "ashinu",
+"title": "Ashinu",
+"incipit": "الشِّينُ مُعْجَمَةً وَالْكَافُ وَالرَّاءُ",
+"parts": [
+12
+],
+"partNames": [
+"Ashinu"
+],
+"bayts": 42,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 200047,
+"pages": 13,
+"palette": "grenat"
+},
+{
+"slug": "ashkuru-laaha",
+"title": "Ashkuru Laaha",
+"incipit": "أَشْكُرُ اللَّهَ ذَا الْوَرَى بِانْتِفَاعِ",
+"parts": [
+13
+],
+"partNames": [
+"Ashkuru Laaha"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 158306,
+"pages": 5,
+"palette": "vin"
+},
+{
+"slug": "asiru",
+"title": "Asiru",
+"incipit": "أَسِيرُ مَعَ الْأَبْرَارِ حِينَ أَسِيرُ",
+"parts": [
+14
+],
+"partNames": [
+"Asiru"
+],
+"bayts": 56,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 212006,
+"pages": 16,
+"palette": "bordeaux"
+},
+{
+"slug": "asma-ul-husna",
+"title": "Asma Ul Husna",
+"incipit": "يَاللَّهُ يَامَنْ لَّاإِلَاهَ غَيْرُهُ",
+"parts": [
+15
+],
+"partNames": [
+"Asma Ul Husna"
+],
+"bayts": 40,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 192403,
+"pages": 10,
+"palette": "ivoire"
+},
+{
+"slug": "astaghfirulaha-bihi",
+"title": "Astaghfirulaha Bihi",
+"incipit": "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ وَأَتُوبْ",
+"parts": [
+16
+],
+"partNames": [
+"Astaghfirulaha Bihi"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 156584,
+"pages": 5,
+"palette": "grenat"
+},
+{
+"slug": "ataaba",
+"title": "Ataaba",
+"incipit": "أَطَابَ لِى الْمَمَرَّ كَالْأَوْطَانِ",
+"parts": [
+17,
+18,
+19,
+20
+],
+"partNames": [
+"Ataaba 1",
+"Ataaba 2",
+"Ataaba 3",
+"Ataaba 4"
+],
+"bayts": 116,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 255449,
+"pages": 28,
+"palette": "vin"
+},
+{
+"slug": "ayyasa",
+"title": "Ayyasa",
+"incipit": "أَيَّسَ مِنِّى اللَّهُ عِنْدَ جِوَلِ",
+"parts": [
+21
+],
+"partNames": [
+"Ayyasa"
+],
+"bayts": 23,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 175471,
+"pages": 7,
+"palette": "bordeaux"
+},
+{
+"slug": "bakh-bakhaa",
+"title": "Bakh Bakhaa",
+"incipit": "قَلَّبْتُ كُلِّ لِكَرِيمٍ وَبَخَا",
+"parts": [
+22
+],
+"partNames": [
+"Bakh Bakhaa"
+],
+"bayts": 26,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 171210,
+"pages": 8,
+"palette": "ivoire"
+},
+{
+"slug": "barakatu",
+"title": "Barakatu",
+"incipit": "بَرَكَتُ الَّذِى الْوُجُودُ وَالْقِدَمْ",
+"parts": [
+23
+],
+"partNames": [
+"Barakatu"
+],
+"bayts": 20,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 165299,
+"pages": 6,
+"palette": "grenat"
+},
+{
+"slug": "bismil-ilaahil-lazi",
+"title": "Bismil Ilaahil Lazi",
+"incipit": "لبِسْمِ الْإِلَهِ الَّذِى الْقُرْءَانُ قَدْ نَزَلَا",
+"parts": [
+24
+],
+"partNames": [
+"Bismil Ilaahil Lazi"
+],
+"bayts": 19,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 168585,
+"pages": 7,
+"palette": "vin"
+},
+{
+"slug": "bismil-laahi-ikfini",
+"title": "Bismil Laahi Ikfini",
+"incipit": "لبِسْمِ الْإِلَهِ اكْفِنِى الْأَكْدَارَ يَاللَّهُ",
+"parts": [
+25,
+26
+],
+"partNames": [
+"Bismil Laahi Ikfini 1",
+"Bismil Laahi Ikfini 2"
+],
+"bayts": 101,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 253970,
+"pages": 28,
+"palette": "bordeaux"
+},
+{
+"slug": "bushra-lana",
+"title": "Bushra Lana",
+"incipit": "بُشْرَى لَنَا قَدْ أَتَانَا الْجُودُ وَالْكَرَمُ",
+"parts": [
+27
+],
+"partNames": [
+"Bushra Lana"
+],
+"bayts": 25,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 176579,
+"pages": 9,
+"palette": "ivoire"
+},
+{
+"slug": "faaqa-jamiha",
+"title": "Faaqa Jamiha",
+"incipit": "فَاقَ جَمِيعَ الْأَنْبِيَآ وَالرُّسُولِ",
+"parts": [
+28
+],
+"partNames": [
+"Faaqa Jamiha"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 154458,
+"pages": 5,
+"palette": "grenat"
+},
+{
+"slug": "farrij",
+"title": "Farrij",
+"incipit": "فَرِّجْ بِجَاهِ الْمُصْطَفَى عَنْ أُمَّتِهْ",
+"parts": [
+29
+],
+"partNames": [
+"Farrij"
+],
+"bayts": 15,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 159186,
+"pages": 5,
+"palette": "vin"
+},
+{
+"slug": "fazal-lazina",
+"title": "Fazal Lazina",
+"incipit": "فَازَالَّذِينَ حَافَظُواْ عَلَى صِيَامْ",
+"parts": [
+30
+],
+"partNames": [
+"Fazal Lazina"
+],
+"bayts": 17,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 170269,
+"pages": 6,
+"palette": "bordeaux"
+},
+{
+"slug": "fazat-qilami",
+"title": "Fazat Qilami",
+"incipit": "فَازَتْ قِلَامَى الْيَوْمَ بِالْخَيْرَيْنِ",
+"parts": [
+31
+],
+"partNames": [
+"Fazat Qilami"
+],
+"bayts": 14,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 168117,
+"pages": 5,
+"palette": "ivoire"
+},
+{
+"slug": "fuzti",
+"title": "Fuzti",
+"incipit": "فُزْتِ بِظَرْ فِى الْحَسَنَاتْ",
+"parts": [
+32
+],
+"partNames": [
+"Fuzti"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 170801,
+"pages": 6,
+"palette": "grenat"
+},
+{
+"slug": "hajat-qasa-idi",
+"title": "Hajat Qasa Idi",
+"incipit": "هَاجَتْ قَصَآئِدِى قُلُوبُ الْحَمَلَهْ",
+"parts": [
+33
+],
+"partNames": [
+"Hajat Qasa Idi"
+],
+"bayts": 33,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 187169,
+"pages": 9,
+"palette": "vin"
+},
+{
+"slug": "halal-muntaqa",
+"title": "Halal Muntaqa",
+"incipit": "عَلَى الْمُنْتَقَى خَيْرِ الْبَرَايَا مُحَمَّدِ",
+"parts": [
+34
+],
+"partNames": [
+"Halal Muntaqa"
+],
+"bayts": 20,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 172440,
+"pages": 8,
+"palette": "bordeaux"
+},
+{
+"slug": "halaman",
+"title": "Halaman",
+"incipit": "عَلَى مَنْ عَلَىَّ وَلَسْتُ صَدِيحْ",
+"parts": [
+35
+],
+"partNames": [
+"Halaman"
+],
+"bayts": 36,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 177858,
+"pages": 9,
+"palette": "ivoire"
+},
+{
+"slug": "halayka-yaa-mukhtaru",
+"title": "Halayka Yaa Mukhtaru",
+"incipit": "عَلَيْكَ يَامُخْتَارُ بِاجْتِهَادِ",
+"parts": [
+36
+],
+"partNames": [
+"Halayka Yaa Mukhtaru"
+],
+"bayts": 11,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 154058,
+"pages": 5,
+"palette": "grenat"
+},
+{
+"slug": "hamdi-wa-shukri",
+"title": "Hamdi Wa Shukri",
+"incipit": "حَمْدِى وَشُكْرِى لِمَنْ كُلِّى بِهِ صَارَا",
+"parts": [
+37
+],
+"partNames": [
+"Hamdi Wa Shukri"
+],
+"bayts": 4,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 142401,
+"pages": 3,
+"palette": "vin"
+},
+{
+"slug": "hamidtu",
+"title": "Hamidtu",
+"incipit": "حَمِدْتُّ مَنْ يَّعِصِمُنِى مِنَ الضَّرَرْ",
+"parts": [
+38
+],
+"partNames": [
+"Hamidtu"
+],
+"bayts": 19,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 163401,
+"pages": 6,
+"palette": "bordeaux"
+},
+{
+"slug": "hammat-sulaymaa",
+"title": "Hammat Sulaymaa",
+"incipit": "هَمَّتْ سُلَيْمَى بِصَرْ فِى عَنْ مَّزِيَّاتِ",
+"parts": [
+39,
+40
+],
+"partNames": [
+"Hammat Sulaymaa 1",
+"Hammat Sulaymaa 2"
+],
+"bayts": 115,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 262386,
+"pages": 29,
+"palette": "ivoire"
+},
+{
+"slug": "huqqal-bukaa",
+"title": "Huqqal Bukaa",
+"incipit": "حُقَّ الْبُكَآءُ عَلَى سَدَاتٍ أَمْوَاتِ",
+"parts": [
+41,
+42
+],
+"partNames": [
+"Huqqal Bukaa 1",
+"Huqqal Bukaa 2"
+],
+"bayts": 78,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 234660,
+"pages": 23,
+"palette": "grenat"
+},
+{
+"slug": "ihdi-jamihana",
+"title": "Ihdi Jamihana",
+"incipit": "إِهْدِ جَمِيعَنَا الصِّرَاطَى الْمُسْتَقِيمْ",
+"parts": [
+43
+],
+"partNames": [
+"Ihdi Jamihana"
+],
+"bayts": 6,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 155240,
+"pages": 4,
+"palette": "vin"
+},
+{
+"slug": "ilaa-ghayrinaa",
+"title": "Ilaa Ghayrinaa",
+"incipit": "إِلَى غَيْرِنَا قَدْ وَجَّهَ الْكَيْدَ وَالسَّعْيَا",
+"parts": [
+44
+],
+"partNames": [
+"Ilaa Ghayrinaa"
+],
+"bayts": 24,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 177955,
+"pages": 10,
+"palette": "bordeaux"
+},
+{
+"slug": "ilaa-nabiyyin",
+"title": "Ilaa Nabiyyin",
+"incipit": "إِلَى نَبِىٍّ رَّسُولٍ جَآءَنَا بِهُدَى",
+"parts": [
+45
+],
+"partNames": [
+"Ilaa Nabiyyin"
+],
+"bayts": 13,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 168592,
+"pages": 6,
+"palette": "ivoire"
+},
+{
+"slug": "inani-huztu",
+"title": "Inani Huztu",
+"incipit": "إِنَّنِى عُذْتُ بِالْإِلَاهِ الْمُعِينِ",
+"parts": [
+46,
+47
+],
+"partNames": [
+"Inani Huztu 1",
+"Inani Huztu 2"
+],
+"bayts": 59,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 209906,
+"pages": 14,
+"palette": "grenat"
+},
+{
+"slug": "innabna-laahi",
+"title": "Innabna Laahi",
+"incipit": "إِنَّ ابْنَ عَبْدِ اللَّهِ فَاقَ كُلَّ مَنْ",
+"parts": [
+48
+],
+"partNames": [
+"Innabna Laahi"
+],
+"bayts": 24,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 178192,
+"pages": 7,
+"palette": "vin"
+},
+{
+"slug": "inni-ukhatibu",
+"title": "Inni Ukhatibu",
+"incipit": "إِنِّى أُخَاطِبُ النَّصَارَى طُرَّا",
+"parts": [
+49
+],
+"partNames": [
+"Inni Ukhatibu"
+],
+"bayts": 15,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 166538,
+"pages": 5,
+"palette": "bordeaux"
+},
+{
+"slug": "innii-aquulu",
+"title": "Innii Aquulu",
+"incipit": "إِنِّى أَقَولُ وَإِنِّى الْيَوْمَ ذُو خَجَلِ",
+"parts": [
+50
+],
+"partNames": [
+"Innii Aquulu"
+],
+"bayts": 19,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 174721,
+"pages": 7,
+"palette": "ivoire"
+},
+{
+"slug": "inniya-ahmadu",
+"title": "Inniya Ahmadu",
+"incipit": "إِنِّىَ أَحْمَدُ مُرَبِّىَ الْوَكِيلْ",
+"parts": [
+51
+],
+"partNames": [
+"Inniya Ahmadu"
+],
+"bayts": 43,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 195233,
+"pages": 11,
+"palette": "grenat"
+},
+{
+"slug": "jalibatul-maraghibi",
+"title": "Jalibatul Maraghibi",
+"incipit": "يَقُولُ عَبْدُ اللَّهِ وَهْوَ أَحْمَدُ",
+"parts": [
+52,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+53
+],
+"partNames": [
+"Jalibatul Maraghibi 1",
+"Jalibatul Maraghibi 2",
+"Jalibatul Maraghibi 3",
+"Jalibatul Maraghibi 4",
+"Jalibatul Maraghibi 5",
+"Jalibatul Maraghibi 6",
+"Jalibatul Maraghibi 7",
+"Jalibatul Maraghibi 8",
+"Jalibatul Maraghibi 9",
+"Jalibatul Maraghibi 10"
+],
+"bayts": 533,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 542104,
+"pages": 111,
+"palette": "vin"
+},
+{
+"slug": "jawartu",
+"title": "Jawartu",
+"incipit": "جَاوَرْتُ بِالْفُرْقَانِ رَبِّىَ الْمُعِينْ",
+"parts": [
+62
+],
+"partNames": [
+"Jawartu"
+],
+"bayts": 29,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 174827,
+"pages": 8,
+"palette": "bordeaux"
+},
+{
+"slug": "jazbu",
+"title": "Jazbu",
+"incipit": "الْحَمْدُ لِلْحَقِّ الْمُبِينْ مَنْ كَوْنُهُ لِىَ يَبِينْ",
+"parts": [
+63,
+64,
+65,
+66
+],
+"partNames": [
+"Jazbu 1",
+"Jazbu 2",
+"Jazbu 3",
+"Jazbu 4"
+],
+"bayts": 185,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 352657,
+"pages": 61,
+"palette": "ivoire"
+},
+{
+"slug": "kafaaka-rabbuka",
+"title": "Kafaaka Rabbuka",
+"incipit": "كَفَاكَ رَبُّكَ يَكْفِيكُمْ كَفَأْكِفَةً",
+"parts": [
+67
+],
+"partNames": [
+"Kafaaka Rabbuka"
+],
+"bayts": 3,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 138716,
+"pages": 3,
+"palette": "grenat"
+},
+{
+"slug": "kawin-liya",
+"title": "Kawin Liya",
+"incipit": "كَوِّنْ لِىَ الْيَوْمَ نَصْرًا عَزَّ مَوْلَايَا",
+"parts": [
+68
+],
+"partNames": [
+"Kawin Liya"
+],
+"bayts": 37,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 196261,
+"pages": 12,
+"palette": "vin"
+},
+{
+"slug": "khatimatu-munajati",
+"title": "Khatimatu Munajati",
+"incipit": "وَصَّلَ لِى الْحَقُّ مِنَ الْحَقِّ الْمُبِينْ",
+"parts": [
+69
+],
+"partNames": [
+"Khatimatu Munajati"
+],
+"bayts": 39,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 191654,
+"pages": 11,
+"palette": "bordeaux"
+},
+{
+"slug": "khayra-dayfin",
+"title": "Khayra Dayfin",
+"incipit": "يَاخَيْرَ ضَيْفٍ أَتَى بِالْبِشْرِ وَالْمَدَدِ",
+"parts": [
+70
+],
+"partNames": [
+"Khayra Dayfin"
+],
+"bayts": 14,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 169933,
+"pages": 6,
+"palette": "ivoire"
+},
+{
+"slug": "kun-katiman",
+"title": "Kun Katiman",
+"incipit": "كُنْ كَاتِمًا لِّلضُّرِّ وَالْبُوسَىى تَنَلْ",
+"parts": [
+71
+],
+"partNames": [
+"Kun Katiman"
+],
+"bayts": 8,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 152422,
+"pages": 4,
+"palette": "grenat"
+},
+{
+"slug": "lamyabdu",
+"title": "Lamyabdu",
+"incipit": "لَمْ يَبْدُ مِثْلُ الْمُصْطَفَى مُحَمَّدِ",
+"parts": [
+72
+],
+"partNames": [
+"Lamyabdu"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 163646,
+"pages": 5,
+"palette": "vin"
+},
+{
+"slug": "lil-mustafa-nawaytu",
+"title": "Lil Mustafa Nawaytu",
+"incipit": "لِلْمُصْطَفَى نَوَيْتُ مَا يُجَدِّدُ",
+"parts": [
+73
+],
+"partNames": [
+"Lil Mustafa Nawaytu"
+],
+"bayts": 28,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 173503,
+"pages": 8,
+"palette": "bordeaux"
+},
+{
+"slug": "lirabbin-ghafurin",
+"title": "Lirabbin Ghafurin",
+"incipit": "لِرَبٍّ غَفُورٍ قَدْ مَحَا عَنِّىَ الذَّنْبَا",
+"parts": [
+74
+],
+"partNames": [
+"Lirabbin Ghafurin"
+],
+"bayts": 44,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 197149,
+"pages": 14,
+"palette": "ivoire"
+},
+{
+"slug": "lirabbin-kariimin",
+"title": "Lirabbin Kariimin",
+"incipit": "لِرَبٍّ كَرِيمٍ وَاسِعٍ خَيْرِ مَعْبُودِ",
+"parts": [
+75
+],
+"partNames": [
+"Lirabbin Kariimin"
+],
+"bayts": 17,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 166744,
+"pages": 8,
+"palette": "grenat"
+},
+{
+"slug": "liyan-qaada",
+"title": "Liyan Qaada",
+"incipit": "لِىَ انْقَادَ مِمَّنْ بِالَّذِى رُمْتُهُ مَنَّا",
+"parts": [
+76
+],
+"partNames": [
+"Liyan Qaada"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 160895,
+"pages": 6,
+"palette": "vin"
+},
+{
+"slug": "madahtu-nabiyyal-muntaqa",
+"title": "Madahtu Nabiyyal Muntaqa",
+"incipit": "مَدَحْتُ النَّبِىَّ الْمُنْتَقَى النُّورَ أَزْمَانَا",
+"parts": [
+77
+],
+"partNames": [
+"Madahtu Nabiyyal Muntaqa"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 165801,
+"pages": 6,
+"palette": "bordeaux"
+},
+{
+"slug": "madal-khabiru",
+"title": "Madal Khabiru",
+"incipit": "مَدَّ الْخَبِيرُ لِى وَالْكَبِيرُ",
+"parts": [
+78
+],
+"partNames": [
+"Madal Khabiru"
+],
+"bayts": 24,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 165006,
+"pages": 7,
+"palette": "ivoire"
+},
+{
+"slug": "madhun-nabiyyil-muntaqa",
+"title": "Madhun Nabiyyil Muntaqa",
+"incipit": "مَدْحُ النَّبِىِّ الْمُنَتَقَى ذَادٌ إِلَى",
+"parts": [
+79
+],
+"partNames": [
+"Madhun Nabiyyil Muntaqa"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 155839,
+"pages": 5,
+"palette": "grenat"
+},
+{
+"slug": "mafatihul-bishri",
+"title": "Mafatihul Bishri",
+"incipit": "أَحَدُ صَلِّ وَلْتُسَلِّمْ سَرْمَدَا",
+"parts": [
+80,
+81,
+82,
+83,
+84,
+85
+],
+"partNames": [
+"Mafatihul Bishri 1",
+"Mafatihul Bishri 2",
+"Mafatihul Bishri 3",
+"Mafatihul Bishri 4",
+"Mafatihul Bishri 5",
+"Mafatihul Bishri 6"
+],
+"bayts": 374,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 425429,
+"pages": 77,
+"palette": "vin"
+},
+{
+"slug": "mafatihul-jinan",
+"title": "Mafatihul Jinan",
+"incipit": "أَحْبَبْتُ رَبَّ الْعَالَمِينْ",
+"parts": [
+86,
+87,
+88,
+89,
+90,
+91,
+92
+],
+"partNames": [
+"Mafatihul Jinan 1",
+"Mafatihul Jinan 2",
+"Mafatihul Jinan 3",
+"Mafatihul Jinan 4",
+"Mafatihul Jinan 5",
+"Mafatihul Jinan 6",
+"Mafatihul Jinan 7"
+],
+"bayts": 168,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 270959,
+"pages": 36,
+"palette": "bordeaux"
+},
+{
+"slug": "man-zanani",
+"title": "Man Zanani",
+"incipit": "مَنْ ظَنَّنِى غَيْرَ خَدِيمِ الْمُصْطَفَى",
+"parts": [
+93
+],
+"partNames": [
+"Man Zanani"
+],
+"bayts": 15,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 157381,
+"pages": 5,
+"palette": "ivoire"
+},
+{
+"slug": "maramiya",
+"title": "Maramiya",
+"incipit": "مَرَامِىَ عِنْدَ اللَّهِ أَحْوِيهِ سَرْمَدًا",
+"parts": [
+94
+],
+"partNames": [
+"Maramiya"
+],
+"bayts": 5,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 145479,
+"pages": 4,
+"palette": "grenat"
+},
+{
+"slug": "matlabul-fawzayni",
+"title": "Matlabul Fawzayni",
+"incipit": "الْحَمْدُ لِلَّهِ الْكَرِيمِ ذِى الْمِنَنْ",
+"parts": [
+95,
+96,
+97,
+98
+],
+"partNames": [
+"Matlabul Fawzayni 1",
+"Matlabul Fawzayni 2",
+"Matlabul Fawzayni 3",
+"Matlabul Fawzayni 4"
+],
+"bayts": 236,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 338339,
+"pages": 49,
+"palette": "vin"
+},
+{
+"slug": "matlabushiffa",
+"title": "Matlabushiffa",
+"incipit": "حَمْدًا لِّمُنْزِلِ الضَّنَى وَالدَّآءِ",
+"parts": [
+99
+],
+"partNames": [
+"Matlabushiffa"
+],
+"bayts": 55,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 192228,
+"pages": 13,
+"palette": "bordeaux"
+},
+{
+"slug": "matlabut-taqabbuli",
+"title": "Matlabut Taqabbuli",
+"incipit": "الْحَمْدُ لِلَّهِ الَّذِى يُبَدِّلُ",
+"parts": [
+100,
+101
+],
+"partNames": [
+"Matlabut Taqabbuli 1",
+"Matlabut Taqabbuli 2"
+],
+"bayts": 60,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 200579,
+"pages": 14,
+"palette": "ivoire"
+},
+{
+"slug": "mawahibu",
+"title": "Mawahibu",
+"incipit": "لبِسْمِ الْإِلَهِ يَنْمُو لُهَائِى",
+"parts": [
+102,
+103,
+104
+],
+"partNames": [
+"Mawahibu 1",
+"Mawahibu 2",
+"Mawahibu 3"
+],
+"bayts": 166,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 275045,
+"pages": 35,
+"palette": "grenat"
+},
+{
+"slug": "midadi",
+"title": "Midadi",
+"incipit": "مِدَادِى وَأَقْلَامِى لِمَنْ زَحْزَحَ الْيَمَّا",
+"parts": [
+105
+],
+"partNames": [
+"Midadi"
+],
+"bayts": 66,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 217986,
+"pages": 19,
+"palette": "vin"
+},
+{
+"slug": "miftahun-nasri",
+"title": "Miftahun Nasri",
+"incipit": "الْحَمْدُ لِلَّهِ الْمُجِيبِ ذِى الْقَدَرْ",
+"parts": [
+106
+],
+"partNames": [
+"Miftahun Nasri"
+],
+"bayts": 15,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 161429,
+"pages": 6,
+"palette": "bordeaux"
+},
+{
+"slug": "mim-ra-shin",
+"title": "Mim Ra Shin",
+"incipit": "مِدَادِى وَأَقْلَامِى وَقَلْبِى وَجُثْمَانِى",
+"parts": [
+107
+],
+"partNames": [
+"Mim Ra Shin"
+],
+"bayts": 3,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 150468,
+"pages": 3,
+"palette": "ivoire"
+},
+{
+"slug": "minal-haqqi",
+"title": "Minal Haqqi",
+"incipit": "مِنَ الْحَقِّ جَآءَ الْحَقُّ لِلْحَقِّ فِى الصَّحْبِ",
+"parts": [
+108
+],
+"partNames": [
+"Minal Haqqi"
+],
+"bayts": 10,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 154996,
+"pages": 5,
+"palette": "grenat"
+},
+{
+"slug": "minal-lawhil-mahfuzi",
+"title": "Minal Lawhil Mahfuzi",
+"incipit": "مِنِّى لِمَنْ لَّهُ الْوُجُودُ وَالْقِدَمْ",
+"parts": [
+109
+],
+"partNames": [
+"Minal Lawhil Mahfuzi"
+],
+"bayts": 14,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 167299,
+"pages": 5,
+"palette": "vin"
+},
+{
+"slug": "minanul-baaqil-qadiim",
+"title": "Minanul Baaqil Qadiim",
+"incipit": "بَرَّأَنِى الْبَاقِى مِنَ الْأَمْرَاضِ",
+"parts": [
+110,
+111,
+112,
+113
+],
+"partNames": [
+"Minanul Baaqil Qadiim 1",
+"Minanul Baaqil Qadiim 2",
+"Minanul Baaqil Qadiim 3",
+"Minanul Baaqil Qadiim 4"
+],
+"bayts": 217,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 327121,
+"pages": 46,
+"palette": "bordeaux"
+},
+{
+"slug": "mumitu",
+"title": "Mumitu",
+"incipit": "مُمِيتُ كُفَّ مَنْ تَوَجَّهَ بِضُرّْ",
+"parts": [
+114
+],
+"partNames": [
+"Mumitu"
+],
+"bayts": 14,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 168896,
+"pages": 5,
+"palette": "ivoire"
+},
+{
+"slug": "muqadamatul-amdah",
+"title": "Muqadamatul Amdah",
+"incipit": "وَثِقْتُ بِرَبِّ الْعَرْشِ ذِى الْجُودِ وَالْعَفْوِ",
+"parts": [
+115,
+116,
+117,
+118
+],
+"partNames": [
+"Muqadamatul Amdah 1",
+"Muqadamatul Amdah 2",
+"Muqadamatul Amdah 3",
+"Muqadamatul Amdah 4"
+],
+"bayts": 192,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 353424,
+"pages": 56,
+"palette": "grenat"
+},
+{
+"slug": "nuuru-daarayni",
+"title": "Nuuru Daarayni",
+"incipit": "الْحَمْدُ لِلَّهِ الَّذِى يُصَلِّى",
+"parts": [
+119,
+130,
+141,
+143,
+144,
+145,
+146,
+147,
+148,
+120,
+121,
+122,
+123,
+124,
+125,
+126,
+127,
+128,
+129,
+131,
+132,
+133,
+134,
+135,
+136,
+137,
+138,
+139,
+140,
+142
+],
+"partNames": [
+"Nuuru Daarayni 1",
+"Nuuru Daarayni 2",
+"Nuuru Daarayni 3",
+"Nuuru Daarayni 4",
+"Nuuru Daarayni 5",
+"Nuuru Daarayni 6",
+"Nuuru Daarayni 7",
+"Nuuru Daarayni 8",
+"Nuuru Daarayni 9",
+"Nuuru Daarayni 10",
+"Nuuru Daarayni 11",
+"Nuuru Daarayni 12",
+"Nuuru Daarayni 13",
+"Nuuru Daarayni 14",
+"Nuuru Daarayni 15",
+"Nuuru Daarayni 16",
+"Nuuru Daarayni 17",
+"Nuuru Daarayni 18",
+"Nuuru Daarayni 19",
+"Nuuru Daarayni 20",
+"Nuuru Daarayni 21",
+"Nuuru Daarayni 22",
+"Nuuru Daarayni 23",
+"Nuuru Daarayni 24",
+"Nuuru Daarayni 25",
+"Nuuru Daarayni 26",
+"Nuuru Daarayni 27",
+"Nuuru Daarayni 28",
+"Nuuru Daarayni 29",
+"Nuuru Daarayni 30"
+],
+"bayts": 1517,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 1240729,
+"pages": 309,
+"palette": "vin"
+},
+{
+"slug": "qalu-liyarkan",
+"title": "Qalu Liyarkan",
+"incipit": "قَالُو لِىَ ارْكَنْ لِأَبْوَابِ السَّلَاطِينِ",
+"parts": [
+149
+],
+"partNames": [
+"Qalu Liyarkan"
+],
+"bayts": 10,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 164240,
+"pages": 5,
+"palette": "bordeaux"
+},
+{
+"slug": "raa-iya",
+"title": "Raa Iya",
+"incipit": "قَلْبِى لَهُ فِى عِتَابِ الْجِسْمِ تَكْرَارُ",
+"parts": [
+150
+],
+"partNames": [
+"Raa Iya 1"
+],
+"bayts": 38,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 197866,
+"pages": 12,
+"palette": "ivoire"
+},
+{
+"slug": "rabbi-karrimun",
+"title": "Rabbi Karrimun",
+"incipit": "رَبِّى كَرِيمٌ وَاسِعٌ وَيُفَضِّلُ",
+"parts": [
+151
+],
+"partNames": [
+"Rabbi Karrimun"
+],
+"bayts": 19,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 176348,
+"pages": 6,
+"palette": "grenat"
+},
+{
+"slug": "rabbiya-ahmadu",
+"title": "Rabbiya Ahmadu",
+"incipit": "رَبِّىَ أَحْمَدُ عَلَى مُحَمَّدِ",
+"parts": [
+152
+],
+"partNames": [
+"Rabbiya Ahmadu"
+],
+"bayts": 28,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 181705,
+"pages": 8,
+"palette": "vin"
+},
+{
+"slug": "raditu",
+"title": "Raditu",
+"incipit": "رَضِيتُ عَنِ الْمَوْلَى تَعَالَى الَّذِى رَبَّى",
+"parts": [
+153
+],
+"partNames": [
+"Raditu"
+],
+"bayts": 72,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 226870,
+"pages": 23,
+"palette": "bordeaux"
+},
+{
+"slug": "rumna-shukur",
+"title": "Rumna Shukur",
+"incipit": "رُمْنَا شُكُورَ الَّذِى بِالْكَافِ وَالنُّونِ",
+"parts": [
+154,
+155
+],
+"partNames": [
+"Rumna Shukur 1",
+"Rumna Shukur 2"
+],
+"bayts": 89,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 246277,
+"pages": 24,
+"palette": "ivoire"
+},
+{
+"slug": "sabhun-taqii",
+"title": "Sabhun Taqii",
+"incipit": "سَبْعٌ تَقِى أَبْوَابَ كُلِّ نَارِ",
+"parts": [
+156
+],
+"partNames": [
+"Sabhun Taqii"
+],
+"bayts": 30,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 175927,
+"pages": 8,
+"palette": "grenat"
+},
+{
+"slug": "safar",
+"title": "Safar",
+"incipit": "صَلَاةُ الَّذِى فِى كُلِّ شَهْرٍ وَفِى صَفَرْ",
+"parts": [
+157
+],
+"partNames": [
+"Safar"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 157821,
+"pages": 6,
+"palette": "vin"
+},
+{
+"slug": "safaru-bamsashin",
+"title": "Safaru Bamsashin",
+"incipit": "صَحَّحْتَ لِى رَبَّ الْبَرِيَّةِ الْبَدَنْ",
+"parts": [
+158
+],
+"partNames": [
+"Safaru Bamsashin"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 165461,
+"pages": 5,
+"palette": "bordeaux"
+},
+{
+"slug": "sana-ilaahi",
+"title": "Sana Ilaahi",
+"incipit": "صَانَ إِلَاهِى بِالْمُنَى جِهَاتِى",
+"parts": [
+159
+],
+"partNames": [
+"Sana Ilaahi"
+],
+"bayts": 5,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 152899,
+"pages": 3,
+"palette": "ivoire"
+},
+{
+"slug": "shakawtu",
+"title": "Shakawtu",
+"incipit": "شَكَوْتُ أُمُورِى وَذَنْبِى الْعَظِيمْ",
+"parts": [
+160
+],
+"partNames": [
+"Shakawtu"
+],
+"bayts": 13,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 153545,
+"pages": 5,
+"palette": "grenat"
+},
+{
+"slug": "shakuru-rafihu",
+"title": "Shakuru Rafihu",
+"incipit": "شُكْرِى لِرَبٍّ كَرِيمٍ كَانَ شَكَّارَا",
+"parts": [
+161
+],
+"partNames": [
+"Shakuru Rafihu"
+],
+"bayts": 8,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 160442,
+"pages": 4,
+"palette": "vin"
+},
+{
+"slug": "sindidi",
+"title": "Sindidi",
+"incipit": "يَاللَّهُ بِالْمُصْطَفَى الصِّنْدِيدِ يَاللَّهُ",
+"parts": [
+162
+],
+"partNames": [
+"Sindidi"
+],
+"bayts": 50,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 198576,
+"pages": 14,
+"palette": "bordeaux"
+},
+{
+"slug": "tawbatun-nasuuh",
+"title": "Tawbatun Nasuuh",
+"incipit": "حَمْدًا لِّرَبِّنَا الْقَرِيبْ",
+"parts": [
+163,
+164
+],
+"partNames": [
+"Tawbatun Nasuuh 1",
+"Tawbatun Nasuuh 2"
+],
+"bayts": 53,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 220291,
+"pages": 18,
+"palette": "ivoire"
+},
+{
+"slug": "taysirul-hasiru",
+"title": "Taysirul Hasiru",
+"incipit": "يَاللَّهُ يَامَنْ لَّآإِلَاهَ غَيْرُهُ",
+"parts": [
+165,
+166,
+167,
+168,
+169
+],
+"partNames": [
+"Taysirul Hasiru 1",
+"Taysirul Hasiru 2",
+"Taysirul Hasiru 3",
+"Taysirul Hasiru 4",
+"Taysirul Hasiru 5"
+],
+"bayts": 295,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 381640,
+"pages": 62,
+"palette": "grenat"
+},
+{
+"slug": "tuhfatu-mutadarihin",
+"title": "Tuhfatu Mutadarihin",
+"incipit": "الْحَمْدُ لِلَّهِ وَصَلَّى أَبَدَا",
+"parts": [
+170
+],
+"partNames": [
+"Tuhfatu Mutadarihin"
+],
+"bayts": 58,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 205940,
+"pages": 12,
+"palette": "vin"
+},
+{
+"slug": "wa-kaana-haqqan",
+"title": "Wa Kaana Haqqan",
+"incipit": "وَجَّهْتُ كُلِّىَ بِحَمْدٍ وَشُكُورْ",
+"parts": [
+171,
+172,
+173
+],
+"partNames": [
+"Wa Kaana Haqqan 1",
+"Wa Kaana Haqqan 2",
+"Wa Kaana Haqqan 3"
+],
+"bayts": 152,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 281666,
+"pages": 33,
+"palette": "bordeaux"
+},
+{
+"slug": "wadudu",
+"title": "Wadudu",
+"incipit": "وَدُودُ كُنْ لِّى أَبَدًا بِالْوُدِّ",
+"parts": [
+174
+],
+"partNames": [
+"Wadudu"
+],
+"bayts": 22,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 175115,
+"pages": 7,
+"palette": "ivoire"
+},
+{
+"slug": "wajjahtu-hamdan",
+"title": "Wajjahtu Hamdan",
+"incipit": "وَجَّهْتُ لِلَّهِ حَمْدًا وَهْوَ كَرَّمَنِى",
+"parts": [
+175
+],
+"partNames": [
+"Wajjahtu Hamdan"
+],
+"bayts": 16,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 164332,
+"pages": 6,
+"palette": "grenat"
+},
+{
+"slug": "wajjahtu-kulliya",
+"title": "Wajjahtu Kulliya",
+"incipit": "وَجَّهْتُ كُلِّىَ ذَا قُرْبٍ مِّنَ اللَّهِ",
+"parts": [
+176
+],
+"partNames": [
+"Wajjahtu Kulliya"
+],
+"bayts": 25,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 172713,
+"pages": 8,
+"palette": "vin"
+},
+{
+"slug": "wajjahtu-wajhii",
+"title": "Wajjahtu Wajhii",
+"incipit": "وَجَّهْتُ لِلَّهِ وَجْهِى وَهْوَ يُبْقِنِى",
+"parts": [
+177
+],
+"partNames": [
+"Wajjahtu Wajhii"
+],
+"bayts": 38,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 190022,
+"pages": 12,
+"palette": "bordeaux"
+},
+{
+"slug": "wajjahtu-wajhiya",
+"title": "Wajjahtu Wajhiya",
+"incipit": "وَجَّهْتُ وَجْهِىَ ذَا قُرْبٍ مِّنَ اللَّهِ",
+"parts": [
+178
+],
+"partNames": [
+"Wajjahtu Wajhiya"
+],
+"bayts": 25,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 171901,
+"pages": 8,
+"palette": "ivoire"
+},
+{
+"slug": "wal-baladu",
+"title": "Wal Baladu",
+"incipit": "وَجَّهْتُ كُلِّ لِلْوَدُودِ الصَّمَدِ",
+"parts": [
+179
+],
+"partNames": [
+"Wal Baladu"
+],
+"bayts": 30,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 183558,
+"pages": 8,
+"palette": "grenat"
+},
+{
+"slug": "walaqad-karamna",
+"title": "Walaqad Karamna",
+"incipit": "وَجَّحْتُ وَجْهِى لِمَنْ تَكْرِيمُهُ بَانَا",
+"parts": [
+180,
+181,
+182
+],
+"partNames": [
+"Walaqad Karamna 1",
+"Walaqad Karamna 2",
+"Walaqad Karamna 3"
+],
+"bayts": 86,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 248605,
+"pages": 25,
+"palette": "vin"
+},
+{
+"slug": "waqani",
+"title": "Waqani",
+"incipit": "وَقَانِى حَفِيظٌ قَاهِرٌ جَلَّ مَانِعُ",
+"parts": [
+183
+],
+"partNames": [
+"Waqani"
+],
+"bayts": 17,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 163482,
+"pages": 7,
+"palette": "bordeaux"
+},
+{
+"slug": "wawassaynal",
+"title": "Wawassaynal",
+"incipit": "وَجَّهْتُ وَجْهِىَ لِمَنْ لِّى طَيَّا",
+"parts": [
+184
+],
+"partNames": [
+"Wawassaynal"
+],
+"bayts": 25,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 167914,
+"pages": 7,
+"palette": "ivoire"
+},
+{
+"slug": "yaa-kitaabal-kariimi",
+"title": "Yaa Kitaabal Kariimi",
+"incipit": "يَاكِتَابَ الْكَرِيمِ أَنْتَ حَبِيبِى",
+"parts": [
+185
+],
+"partNames": [
+"Yaa Kitaabal Kariimi"
+],
+"bayts": 17,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 161049,
+"pages": 6,
+"palette": "grenat"
+},
+{
+"slug": "yaa-mukrima-dayfi",
+"title": "Yaa Mukrima Dayfi",
+"incipit": "يَامُكْرِمَ الضَّيْفِ جَارًا كَانَ أَوْزَارَا",
+"parts": [
+186
+],
+"partNames": [
+"Yaa Mukrima Dayfi"
+],
+"bayts": 14,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 163032,
+"pages": 6,
+"palette": "vin"
+},
+{
+"slug": "yaa-rakhmanu",
+"title": "Yaa Rakhmanu",
+"incipit": "رَبِّى بِمَا يَشْرَهُ الْأَذْهَنَ قَدْ فَجَئَا",
+"parts": [
+187
+],
+"partNames": [
+"Yaa Rakhmanu"
+],
+"bayts": 9,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": true,
+"pdfSize": 154811,
+"pages": 5,
+"palette": "bordeaux"
+},
+{
+"slug": "yaa-zal-wujuudi",
+"title": "Yaa Zal Wujuudi",
+"incipit": "يَاذَا الْوُجُودِ وَالْبَقَآءِ وَالْقِدَمْ",
+"parts": [
+188
+],
+"partNames": [
+"Yaa Zal Wujuudi"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 163438,
+"pages": 5,
+"palette": "ivoire"
+},
+{
+"slug": "yaqini",
+"title": "Yaqini",
+"incipit": "يَقِينِى إِلَى الْجَنَّاتِ مَالَيْسَ يُحْمَدُ",
+"parts": [
+189
+],
+"partNames": [
+"Yaqini"
+],
+"bayts": 16,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 163671,
+"pages": 6,
+"palette": "grenat"
+},
+{
+"slug": "yarabbi",
+"title": "Yarabbi",
+"incipit": "يَارَبِّ بِالْمُصْطَفَى الْمُخْتَارِ مِنْ مُّضَرِ",
+"parts": [
+190
+],
+"partNames": [
+"Yarabbi"
+],
+"bayts": 7,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 149957,
+"pages": 4,
+"palette": "vin"
+},
+{
+"slug": "yassara",
+"title": "Yassara",
+"incipit": "يَسَّرَ لِى مُيَسِّرُ الْعَسِيرِ",
+"parts": [
+191
+],
+"partNames": [
+"Yassara"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 154097,
+"pages": 5,
+"palette": "bordeaux"
+},
+{
+"slug": "yasurru",
+"title": "Yasurru",
+"incipit": "يَسُرُّ رَسُولَ اللَّهِ خَطِّى بِمَوْلِدِ",
+"parts": [
+192
+],
+"partNames": [
+"Yasurru"
+],
+"bayts": 12,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 158456,
+"pages": 5,
+"palette": "ivoire"
+},
+{
+"slug": "zallat",
+"title": "Zallat",
+"incipit": "ذَلَّتْ لِعِزَّةِ رَبٍّ أَنْزَلَ السُّوَرَا",
+"parts": [
+193
+],
+"partNames": [
+"Zallat"
+],
+"bayts": 9,
+"meter": "Rajas",
+"langs": [
+"en",
+"fr",
+"it"
+],
+"featured": false,
+"pdfSize": 154850,
+"pages": 5,
+"palette": "grenat"
+}
+]
+}
