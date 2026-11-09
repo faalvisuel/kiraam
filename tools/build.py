@@ -44,7 +44,7 @@ def compact(k):
         en_v = ' '.join(s['translations'].get('en', '') for s in segs).strip()
         bayts.append({
             'n': b.get('appNumber', b['number']),
-            'ar': [s['text'] for s in segs],
+            'ar': [re.sub(r'^ل(?=بِسْمِ)', '', s['text']) for s in segs],
             'tr': [s.get('transcription', '') for s in segs],
             'fr': t.get('fr.karamati') or fr_v,
             'en': t.get('en.karamati') or en_v,

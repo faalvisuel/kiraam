@@ -243,7 +243,7 @@
     try {
       const d = await getPart(w.parts[0]);
       const ex = $('#excerpt'); if (!ex) return;
-      ex.innerHTML = `<h3>Premiers vers</h3>` + d.bayts.slice(0, 3).map(b => `<div class="v"><div class="ar">${b.ar.map(esc).join(' &nbsp;۞&nbsp; ')}</div><div class="tr">${esc(b.tr.join(' · '))}</div><div class="tl">${esc(b.fr)}</div></div>`).join('') +
+      ex.innerHTML = `<h3>Premiers vers</h3>` + d.bayts.slice(0, 3).map(b => `<div class="v"><div class="ar">${b.ar.map(a => `<span>${esc(a)}</span>`).join('<span class="sep">۞</span>')}</div><div class="tr">${esc(b.tr.join(' · '))}</div><div class="tl">${esc(b.fr)}</div></div>`).join('') +
         `<div style="text-align:center;margin-top:16px"><a class="btn btn-line sm" href="#/lire/${w.slug}/1">Lire la suite${ic('arrow')}</a></div>`;
     } catch {}
   }
@@ -271,11 +271,13 @@
       <div class="rbar">
         <a class="ibtn" href="#/livre/${w.slug}" aria-label="Retour au livre">${ic('back')}</a>
         <div class="t"><b>${esc(w.title)}</b><small>${w.parts.length > 1 ? `Partie ${partIdx} / ${w.parts.length} · ` : ''}${data.bayts.length} vers</small></div>
+        <a class="ibtn rb-dl" href="pdf/${w.slug}.pdf" download aria-label="Télécharger le PDF">${ic('download')}</a>
+        <div class="tools">
         ${w.parts.length > 1 ? `<select class="select" id="partSel" aria-label="Partie">${w.partNames.map((n, i) => `<option value="${i + 1}"${i + 1 === partIdx ? ' selected' : ''}>${esc(n)}</option>`).join('')}</select>` : ''}
         <div class="seg" role="group" aria-label="Traduction">${langs.map(l => `<button data-lang="${l}" class="${lang === l ? 'on' : ''}">${l.toUpperCase()}</button>`).join('')}<button data-lang="none" class="${lang === 'none' ? 'on' : ''}" title="Arabe seul">ع</button></div>
         <div class="seg"><button data-tr class="${prefs.tr ? 'on' : ''}" title="Translittération">Aa</button></div>
         <div class="seg"><button data-fs="-1" aria-label="Réduire le texte">A−</button><button data-fs="1" aria-label="Agrandir le texte">A+</button></div>
-        <a class="ibtn" href="pdf/${w.slug}.pdf" download aria-label="Télécharger le PDF">${ic('download')}</a>
+        </div>
       </div>
       <header class="rhead">
         <div class="basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
