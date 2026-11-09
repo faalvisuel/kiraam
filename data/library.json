@@ -324,7 +324,11 @@
 "featured": true,
 "pdfSize": 124154,
 "pages": 10,
-"palette": "ivoire"
+"palette": "ivoire",
+"aka": [
+"Asmaoul Husna",
+"Asmaoul Housna"
+]
 },
 {
 "slug": "astaghfirulaha-bihi",
@@ -493,7 +497,11 @@
 "featured": false,
 "pdfSize": 185718,
 "pages": 28,
-"palette": "bordeaux"
+"palette": "bordeaux",
+"aka": [
+"Ikfini",
+"Bismil Ilahi Ikfini"
+]
 },
 {
 "slug": "bushra-lana",
@@ -1046,7 +1054,12 @@
 "featured": true,
 "pdfSize": 473588,
 "pages": 111,
-"palette": "vin"
+"palette": "vin",
+"aka": [
+"Jalibatoul Marakhib",
+"Dialibatoul Marakhib",
+"Jaalibatul Maraakhib"
+]
 },
 {
 "slug": "jawartu",
@@ -1098,7 +1111,13 @@
 "featured": true,
 "pdfSize": 283667,
 "pages": 61,
-"palette": "ivoire"
+"palette": "ivoire",
+"aka": [
+"Jazbul Qulub",
+"Jazbou",
+"Jazboul Khouloub",
+"Diazbou"
+]
 },
 {
 "slug": "kafaaka-rabbuka",
@@ -1167,7 +1186,11 @@
 "featured": true,
 "pdfSize": 122966,
 "pages": 11,
-"palette": "bordeaux"
+"palette": "bordeaux",
+"aka": [
+"Khatimatoul Mounadiati",
+"Khatimatou Mounajati"
+]
 },
 {
 "slug": "khayra-dayfin",
@@ -1190,7 +1213,11 @@
 "featured": false,
 "pdfSize": 100873,
 "pages": 6,
-"palette": "ivoire"
+"palette": "ivoire",
+"aka": [
+"Ya Khayra Dayfin",
+"Ya Khayra Dayfi"
+]
 },
 {
 "slug": "kun-katiman",
@@ -1430,7 +1457,11 @@
 "featured": true,
 "pdfSize": 356936,
 "pages": 77,
-"palette": "vin"
+"palette": "vin",
+"aka": [
+"Mafatihoul Bichri",
+"Mafatihul Bichri"
+]
 },
 {
 "slug": "mafatihul-jinan",
@@ -1465,7 +1496,12 @@
 "featured": true,
 "pdfSize": 202287,
 "pages": 36,
-"palette": "bordeaux"
+"palette": "bordeaux",
+"aka": [
+"Mafatihoul Jinane",
+"Mafatikhul Jinane",
+"Mafatihoul Djinane"
+]
 },
 {
 "slug": "man-zanani",
@@ -1540,7 +1576,12 @@
 "featured": true,
 "pdfSize": 269857,
 "pages": 49,
-"palette": "vin"
+"palette": "vin",
+"aka": [
+"Matlaboul Fawzeyni",
+"Matlabul Fawzeyni",
+"Matlaboul Faouzeyni"
+]
 },
 {
 "slug": "matlabushiffa",
@@ -1563,7 +1604,12 @@
 "featured": true,
 "pdfSize": 123608,
 "pages": 13,
-"palette": "bordeaux"
+"palette": "bordeaux",
+"aka": [
+"Matlaboul Chifai",
+"Matlabou Chifai",
+"Matlaboul Shifa"
+]
 },
 {
 "slug": "matlabut-taqabbuli",
@@ -1615,7 +1661,12 @@
 "featured": true,
 "pdfSize": 206578,
 "pages": 35,
-"palette": "grenat"
+"palette": "grenat",
+"aka": [
+"Mawahibou",
+"Mawahibou Nafi",
+"Mawahibu Nafih"
+]
 },
 {
 "slug": "midadi",
@@ -1759,7 +1810,11 @@
 "featured": false,
 "pdfSize": 258834,
 "pages": 46,
-"palette": "bordeaux"
+"palette": "bordeaux",
+"aka": [
+"Minanoul Bakhil Khadim",
+"Minanul Bakhil Khadim"
+]
 },
 {
 "slug": "mumitu",
@@ -1811,7 +1866,12 @@
 "featured": false,
 "pdfSize": 284887,
 "pages": 56,
-"palette": "grenat"
+"palette": "grenat",
+"aka": [
+"Moukhadimatoul Amdah",
+"Mouqadimatoul Amdah",
+"Muqaddamaatul Amdaah"
+]
 },
 {
 "slug": "nuuru-daarayni",
@@ -1892,7 +1952,13 @@
 "featured": true,
 "pdfSize": 1171963,
 "pages": 309,
-"palette": "vin"
+"palette": "vin",
+"aka": [
+"Nourou Darayni",
+"Nourou Daarayni",
+"Nurud Darayni",
+"Noorou Dareyni"
+]
 },
 {
 "slug": "qalu-liyarkan",
@@ -2193,7 +2259,11 @@
 "featured": false,
 "pdfSize": 129356,
 "pages": 14,
-"palette": "bordeaux"
+"palette": "bordeaux",
+"aka": [
+"Sindidi",
+"As Sindidi"
+]
 },
 {
 "slug": "tawbatun-nasuuh",
@@ -2218,7 +2288,12 @@
 "featured": true,
 "pdfSize": 151218,
 "pages": 18,
-"palette": "ivoire"
+"palette": "ivoire",
+"aka": [
+"Tawbatou Nassouh",
+"Tawbatoun Nassouha",
+"Tawbatou Nasouh"
+]
 },
 {
 "slug": "taysirul-hasiru",
@@ -2249,7 +2324,11 @@
 "featured": false,
 "pdfSize": 312593,
 "pages": 62,
-"palette": "grenat"
+"palette": "grenat",
+"aka": [
+"Taysiroul Hasir",
+"Tayssiroul Assir"
+]
 },
 {
 "slug": "tuhfatu-mutadarihin",
@@ -2272,7 +2351,10 @@
 "featured": false,
 "pdfSize": 138008,
 "pages": 12,
-"palette": "vin"
+"palette": "vin",
+"aka": [
+"Touhfatoul Moutadarihin"
+]
 },
 {
 "slug": "wa-kaana-haqqan",
@@ -2299,7 +2381,11 @@
 "featured": false,
 "pdfSize": 212566,
 "pages": 33,
-"palette": "bordeaux"
+"palette": "bordeaux",
+"aka": [
+"Wa Kana Haqqan",
+"Wa Kaana Hakhan"
+]
 },
 {
 "slug": "wadudu",
@@ -2464,7 +2550,11 @@
 "featured": false,
 "pdfSize": 179936,
 "pages": 25,
-"palette": "vin"
+"palette": "vin",
+"aka": [
+"Wa Laqad Karamna",
+"Walakhad Karamna"
+]
 },
 {
 "slug": "waqani",
@@ -2579,7 +2669,11 @@
 "featured": true,
 "pdfSize": 85405,
 "pages": 5,
-"palette": "bordeaux"
+"palette": "bordeaux",
+"aka": [
+"Ya Rahmanou",
+"Ya Rakhmanou"
+]
 },
 {
 "slug": "yaa-zal-wujuudi",

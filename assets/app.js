@@ -4,6 +4,15 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const view = $('#view');
+  const rootMeta = document.querySelector('meta[name="kiraam-root"]');
+  const R = new URL(rootMeta ? rootMeta.content : './', location.href).pathname;
+  const segs = () => location.pathname.slice(R.length).split('/').filter(Boolean).map(decodeURIComponent);
+  // les liens du gabarit sont relatifs à la page d'arrivée : on les fige en chemins absolus
+  document.querySelectorAll('a[href], img[src], link[rel~="icon"], link[rel="apple-touch-icon"]').forEach(el => {
+    const attr = el.tagName === 'IMG' ? 'src' : 'href', v = el.getAttribute(attr);
+    if (v && !/^(https?:|#|mailto:|\/|data:)/.test(v)) el.setAttribute(attr, new URL(v, location.href).pathname);
+  });
+  function navigate(path, replace) { history[replace ? 'replaceState' : 'pushState'](null, '', R + path); route(); }
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const arNum = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
   const stripAr = s => s.replace(/[ً-ٰٟۖ-ۭ]/g, '');
@@ -34,29 +43,29 @@
     const p = progress[w.slug];
     const pct = p ? Math.min(100, Math.round(p.done / w.bayts * 100)) : 0;
     return `<article class="card">
-      <a class="cv" href="#/livre/${w.slug}" aria-label="${esc(w.title)}">
-        <img src="covers/${w.slug}.webp" alt="" loading="lazy" width="641" height="910">
+      <a class="cv" href="${R}livre/${w.slug}/" aria-label="${esc(w.title)}">
+        <img src="${R}covers/${w.slug}.webp" alt="" loading="lazy" width="641" height="910">
         ${w.parts.length > 1 ? `<span class="tag">${ic('layers')}${w.parts.length} parties</span>` : ''}
         ${AUDIO[w.slug] ? `<span class="aud">${ic('audio')}Audio</span>` : ''}
       </a>
       <button class="fav${favs.has(w.slug) ? ' on' : ''}" data-fav="${w.slug}" aria-label="Ajouter aux favoris">${ic('khatam')}</button>
       <div class="body">
         <div class="t-ar">${esc(w.titleAr)}</div>
-        <a class="t-fr" href="#/livre/${w.slug}">${esc(w.title)}</a>
+        <a class="t-fr" href="${R}livre/${w.slug}/">${esc(w.title)}</a>
         <div class="meta"><span>${ic('verses')}${w.bayts} vers</span><span>${ic('lang')}${w.langs.map(l => l.toUpperCase()).join(' · ')}</span></div>
         ${opts.progress && p ? `<div class="progress" title="${pct}% lu"><i style="width:${pct}%"></i></div>` : ''}
         <div class="foot">
-          <a class="btn btn-bx sm" href="#/lire/${w.slug}/${p ? p.part : 1}">${ic('read')}${p ? 'Reprendre' : 'Lire'}</a>
-          <a class="pdf" href="pdf/${w.slug}.pdf" download>${ic('download')}<span>PDF · ${mb(w.pdfSize)}</span></a>
+          <a class="btn btn-bx sm" href="${R}lire/${w.slug}/${p ? p.part : 1}/">${ic('read')}${p ? 'Reprendre' : 'Lire'}</a>
+          <a class="pdf" href="${R}pdf/${w.slug}.pdf" download>${ic('download')}<span>PDF · ${mb(w.pdfSize)}</span></a>
         </div>
       </div>
     </article>`;
   }
 
   function banner(title, ar, img, crumb) {
-    return `<header class="banner"><img src="assets/photos/${img}.webp" alt="">
+    return `<header class="banner"><img src="${R}assets/photos/${img}.webp" alt="">
       <div class="wrap banner-in">
-        <div class="crumbs"><a href="#/">Accueil</a>${ic('arrow')}<span>${crumb || title}</span></div>
+        <div class="crumbs"><a href="${R}">Accueil</a>${ic('arrow')}<span>${crumb || title}</span></div>
         <h1>${title}</h1>${ar ? `<div class="ar">${ar}</div>` : ''}
       </div></header>`;
   }
@@ -73,20 +82,20 @@
     const reading = Object.entries(progress).sort((a, b) => b[1].at - a[1].at).map(([s]) => BY[s]).filter(Boolean).slice(0, 8);
     view.innerHTML = `
     <section class="hero">
-      <img class="hero-img" src="assets/photos/mosquee-touba.webp" alt="La Grande Mosquée de Touba">
+      <img class="hero-img" src="${R}assets/photos/mosquee-touba.webp" alt="La Grande Mosquée de Touba">
       <div class="hero-in">
         <span class="pill">${ic('khatam')}Bienvenue sur Kiraam</span>
         <h1>Les écrits de Serigne Touba,<br><span class="highlight">à portée de cœur<span class="ar">قَصَائِدُ خَادِمِ الرَّسُول</span></span></h1>
         <p class="lead">${LIB.length} livres et ${nK} khassidas de Cheikh Ahmadou Bamba Khadimou Rassoul, en arabe vocalisé avec translittération et traduction. À lire en ligne ou à télécharger en PDF, librement.</p>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="#/bibliotheque">${ic('rehal')}Explorer la bibliothèque</a>
-          <a class="btn btn-glass" href="#/livre/${daily.slug}">${ic('khatam')}Khassida du jour : ${esc(daily.title)}</a>
+          <a class="btn btn-gold" href="${R}bibliotheque/">${ic('rehal')}Explorer la bibliothèque</a>
+          <a class="btn btn-glass" href="${R}livre/${daily.slug}/">${ic('khatam')}Khassida du jour : ${esc(daily.title)}</a>
         </div>
       </div>
     </section>
 
     <form class="finder" id="finder" role="search">
-      <div class="finder-tabs"><button type="button" class="on">${ic('search')}Trouver un khassida</button><button type="button" data-go="#/livre/${daily.slug}">${ic('khatam')}Du jour</button></div>
+      <div class="finder-tabs"><button type="button" class="on">${ic('search')}Trouver un khassida</button><button type="button" data-go="livre/${daily.slug}/">${ic('khatam')}Du jour</button></div>
       <div class="finder-row">
         <div class="field"><label for="fq">Nom du khassida ou premiers mots</label><div class="control">${ic('search')}<input id="fq" placeholder="Jazbu, Mawahibu, مَوَاهِب…" autocomplete="off"></div></div>
         <div class="field"><label for="fl">Longueur</label><div class="control">${ic('verses')}<select id="fl"><option value="all">Toutes</option><option value="short">Courts (≤ 25 vers)</option><option value="mid">Moyens</option><option value="long">Longs (100+ vers)</option></select></div></div>
@@ -107,19 +116,19 @@
           <li>${ic('khatam')}${LIB.length} livres PDF gratuits, prêts à imprimer</li>
         </ul>
         <div class="hero-actions" style="justify-content:flex-start">
-          <a class="btn btn-bx" href="#/bibliotheque">${ic('rehal')}Voir les livres</a>
-          <a class="btn btn-line" href="#/serigne-touba">${ic('minaret')}Serigne Touba</a>
+          <a class="btn btn-bx" href="${R}bibliotheque/">${ic('rehal')}Voir les livres</a>
+          <a class="btn btn-line" href="${R}serigne-touba/">${ic('minaret')}Serigne Touba</a>
         </div>
       </div>
       <div class="collage">
-        <div class="main"><img src="assets/photos/minaret-jour.webp" alt="Le minaret de la Grande Mosquée de Touba" loading="lazy"></div>
-        <div class="float f1"><img class="av" src="assets/img/serigne-touba.webp" alt=""><span><b>${nK}</b>khassidas de Khadimou Rassoul</span></div>
+        <div class="main"><img src="${R}assets/photos/minaret-jour.webp" alt="Le minaret de la Grande Mosquée de Touba" loading="lazy"></div>
+        <div class="float f1"><img class="av" src="${R}assets/img/serigne-touba.webp" alt=""><span><b>${nK}</b>khassidas de Khadimou Rassoul</span></div>
         <div class="float f2">${ic('download')}<span><b>${LIB.length}</b>livres PDF gratuits</span></div>
       </div>
     </div></section>
 
     ${reading.length ? `<section class="block" style="padding-top:0"><div class="wrap">
-      ${sec('fanous', 'Mes lectures', 'Reprendre <em>là où</em> vous étiez', '', `<a class="btn btn-line" href="#/lectures">Tout voir${ic('arrow')}</a>`)}
+      ${sec('fanous', 'Mes lectures', 'Reprendre <em>là où</em> vous étiez', '', `<a class="btn btn-line" href="${R}lectures/">Tout voir${ic('arrow')}</a>`)}
       <div class="track">${reading.map(w => card(w, { progress: true })).join('')}</div></div></section>` : ''}
 
     <section class="block" style="padding-top:${reading.length ? 0 : 20}px"><div class="wrap carousel">
@@ -128,7 +137,7 @@
       <div class="track" id="featTrack">${feat.map(w => card(w)).join('')}</div>
     </div></section>
 
-    <section class="band"><img class="band-img" src="assets/photos/vitrail.webp" alt="" loading="lazy">
+    <section class="band"><img class="band-img" src="${R}assets/photos/vitrail.webp" alt="" loading="lazy">
       <div class="wrap band-in">
         <div><span class="eyebrow">${ic('khatam')}Kiraam en chiffres</span><h2>Au service de l'œuvre de Khadimou Rassoul</h2><p>Une bibliothèque qui grandit avec la communauté : chaque correction profite à tous.</p></div>
         <div class="stats">
@@ -141,7 +150,7 @@
     </section>
 
     <section class="block"><div class="wrap">
-      ${sec('search', 'Toute la bibliothèque', 'Trouvez votre <em>khassida</em>', 'Filtrez par longueur ou par traduction, ou cherchez par nom.', `<a class="btn btn-line" href="#/bibliotheque">Les ${LIB.length} livres${ic('arrow')}</a>`)}
+      ${sec('search', 'Toute la bibliothèque', 'Trouvez votre <em>khassida</em>', 'Filtrez par longueur ou par traduction, ou cherchez par nom.', `<a class="btn btn-line" href="${R}bibliotheque/">Les ${LIB.length} livres${ic('arrow')}</a>`)}
       <div class="grid">${LIB.slice(0, 8).map(w => card(w)).join('')}</div>
     </div></section>
 
@@ -151,24 +160,24 @@
     </div></section>
 
     <section class="wrap"><div class="quote">
-      <div class="arch-portrait"><img src="assets/img/serigne-touba.webp" alt="Serigne Touba" loading="lazy"></div>
+      <div class="arch-portrait"><img src="${R}assets/img/serigne-touba.webp" alt="Serigne Touba" loading="lazy"></div>
       <div>
         <p class="ar-big">الشَّيْخُ أَحْمَدُ بَمْبَا</p>
         <h3>Khadimou Rassoul, le Serviteur du Prophète <span class="saw">ﷺ</span></h3>
         <p>Fondateur de Touba et de la Mouridiyya, Cheikh Ahmadou Bamba a consacré sa plume à la louange du Prophète et à l'éducation des âmes. Ses khassidas sont récités chaque jour, du Sénégal au monde entier.</p>
-        <a class="btn btn-bx" href="#/serigne-touba">${ic('minaret')}Découvrir sa vie</a>
+        <a class="btn btn-bx" href="${R}serigne-touba/">${ic('minaret')}Découvrir sa vie</a>
       </div>
     </div></section>`;
 
     $('#finder').addEventListener('submit', e => {
       e.preventDefault();
       libState.q = $('#fq').value; libState.len = $('#fl').value; libState.lang = $('#ft').value;
-      location.hash = '#/bibliotheque';
+      navigate('bibliotheque/');
     });
   }
 
   function galleryGrid(list) {
-    return `<div class="gallery">${list.map(([f, cap]) => `<figure data-photo="${f}"><img src="assets/photos/${f}-sm.webp" alt="${esc(cap)}" loading="lazy"><figcaption>${esc(cap)}</figcaption></figure>`).join('')}</div>`;
+    return `<div class="gallery">${list.map(([f, cap]) => `<figure data-photo="${f}"><img src="${R}assets/photos/${f}-sm.webp" alt="${esc(cap)}" loading="lazy"><figcaption>${esc(cap)}</figcaption></figure>`).join('')}</div>`;
   }
 
   // ---------- Library ----------
@@ -221,24 +230,24 @@
     const w = BY[slug]; if (!w) return notFound();
     const p = progress[w.slug];
     const related = LIB.filter(x => x !== w && (x.featured || x.parts.length > 1)).sort(() => .5 - Math.random()).slice(0, 4);
-    view.innerHTML = banner(esc(w.title), esc(w.titleAr), 'minaret-dome', `<a href="#/bibliotheque">Bibliothèque</a>${ic('arrow')}${esc(w.title)}`) + `
+    view.innerHTML = banner(esc(w.title), esc(w.titleAr), 'minaret-dome', `<a href="${R}bibliotheque/">Bibliothèque</a>${ic('arrow')}${esc(w.title)}`) + `
     <div class="wrap book">
-      <div class="book-cover"><div class="cv"><img src="covers/${w.slug}.webp" alt="Couverture de ${esc(w.title)}"></div></div>
+      <div class="book-cover"><div class="cv"><img src="${R}covers/${w.slug}.webp" alt="Couverture de ${esc(w.title)}"></div></div>
       <div class="book-info">
         <span class="eyebrow">${ic('khatam')}${w.parts.length > 1 ? `Œuvre en ${w.parts.length} parties` : 'Khassida'}</span>
         <div class="t-ar">${esc(w.titleAr)}</div>
         <h1>${esc(w.title)}</h1>
-        <p class="by">Cheikh Ahmadou Bamba Khadimou Rassoul · Serigne Touba</p>
+        <p class="by">Cheikh Ahmadou Bamba Khadimou Rassoul · Serigne Touba${w.aka ? `<br><small>Aussi écrit : ${w.aka.map(esc).join(', ')}</small>` : ''}</p>
         <div class="kv"><div><b>${w.bayts}</b><span>vers</span></div><div><b>${w.parts.length}</b><span>${w.parts.length > 1 ? 'parties' : 'partie'}</span></div><div><b>${w.pages}</b><span>pages PDF</span></div><div><b>${w.langs.length + 1}</b><span>langues</span></div></div>
         <div class="langs"><span>العربية</span><span>Translittération</span>${w.langs.map(l => `<span>${{ fr: 'Français', en: 'English', it: 'Italiano' }[l]}</span>`).join('')}</div>
         <div class="actions">
-          <a class="btn btn-gold" href="#/lire/${w.slug}/${p ? p.part : 1}">${ic('read')}${p ? 'Reprendre la lecture' : 'Lire en ligne'}</a>
+          <a class="btn btn-gold" href="${R}lire/${w.slug}/${p ? p.part : 1}/">${ic('read')}${p ? 'Reprendre la lecture' : 'Lire en ligne'}</a>
           ${AUDIO[w.slug] ? `<button class="btn btn-bx" data-listen="${w.slug}" data-i="0">${ic('play')}Écouter</button>` : ''}
-          <a class="btn btn-line" href="pdf/${w.slug}.pdf" download>${ic('download')}Télécharger le PDF · ${mb(w.pdfSize)}</a>
+          <a class="btn btn-line" href="${R}pdf/${w.slug}.pdf" download>${ic('download')}Télécharger le PDF · ${mb(w.pdfSize)}</a>
           <button class="ibtn${favs.has(w.slug) ? ' on' : ''}" data-fav="${w.slug}" aria-label="Favori">${ic('khatam')}</button>
           <button class="ibtn" data-share="${w.slug}" aria-label="Partager">${ic('share')}</button>
         </div>
-        ${w.parts.length > 1 ? `<div class="parts">${w.partNames.map((n, i) => `<a href="#/lire/${w.slug}/${i + 1}"><span>${esc(n)}</span><small>${ic('arrow')}</small></a>`).join('')}</div>` : ''}
+        ${w.parts.length > 1 ? `<div class="parts">${w.partNames.map((n, i) => `<a href="${R}lire/${w.slug}/${i + 1}/"><span>${esc(n)}</span><small>${ic('arrow')}</small></a>`).join('')}</div>` : ''}
         ${AUDIO[w.slug] ? `<div class="listen"><h3>${ic('audio')}Écouter</h3><p class="sub">${AUDIO[w.slug].length} déclamation${AUDIO[w.slug].length > 1 ? 's' : ''} par les kourels · le lecteur continue pendant que vous lisez</p>
           <div class="recs">${AUDIO[w.slug].map((r, i) => recRow(w, r, i)).join('')}</div></div>` : ''}
         <div class="excerpt" id="excerpt"><h3>Premiers vers</h3><p class="count">Chargement…</p></div>
@@ -249,13 +258,13 @@
       const d = await getPart(w.parts[0]);
       const ex = $('#excerpt'); if (!ex) return;
       ex.innerHTML = `<h3>Premiers vers</h3>` + d.bayts.slice(0, 3).map(b => `<div class="v"><div class="ar">${b.ar.map(a => `<span>${esc(a)}</span>`).join('<span class="sep">۞</span>')}</div><div class="tr">${esc(b.tr.join(' · '))}</div><div class="tl">${esc(b.fr)}</div></div>`).join('') +
-        `<div style="text-align:center;margin-top:16px"><a class="btn btn-line sm" href="#/lire/${w.slug}/1">Lire la suite${ic('arrow')}</a></div>`;
+        `<div style="text-align:center;margin-top:16px"><a class="btn btn-line sm" href="${R}lire/${w.slug}/1/">Lire la suite${ic('arrow')}</a></div>`;
     } catch {}
   }
 
   // ---------- Reader ----------
   function getPart(n) {
-    if (!partCache[n]) partCache[n] = fetch(`data/k/${n}.json`).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+    if (!partCache[n]) partCache[n] = fetch(`${R}data/k/${n}.json`).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
     return partCache[n];
   }
   const numBadge = n => `<span class="num"><svg class="ic" viewBox="0 0 24 24"><path d="M12 1.5l3 4.3 5.2-.5-.5 5.2L24 12l-4.3 3 .5 5.2-5.2-.5L12 24l-3-4.3-5.2.5.5-5.2L0 12l4.3-3-.5-5.2 5.2.5z" transform="scale(.92) translate(1 0)"/></svg>${arNum(n)}</span>`;
@@ -267,17 +276,17 @@
     let data;
     try { data = await getPart(w.parts[partIdx - 1]); }
     catch { view.innerHTML = `<div class="empty"><h3>Impossible de charger ce texte</h3><p>Vérifiez votre connexion et réessayez.</p></div>`; return; }
-    if (location.hash.split('/')[2] !== slug) return;
+    if (segs()[1] !== slug) return;
     const has = l => data.bayts.some(b => b[l]);
     const langs = ['fr', 'en', 'it'].filter(has);
     const lang = prefs.lang === 'none' || langs.includes(prefs.lang) ? prefs.lang : 'fr';
     const prev = partIdx > 1 ? partIdx - 1 : null, next = partIdx < w.parts.length ? partIdx + 1 : null;
     view.innerHTML = `<div class="wrap"><div class="reader${prefs.tr ? '' : ' hide-tr'}${lang === 'none' ? ' hide-tl' : ''}" style="--fs:${prefs.fs}">
       <div class="rbar">
-        <a class="ibtn" href="#/livre/${w.slug}" aria-label="Retour au livre">${ic('back')}</a>
+        <a class="ibtn" href="${R}livre/${w.slug}/" aria-label="Retour au livre">${ic('back')}</a>
         <div class="t"><b>${esc(w.title)}</b><small>${w.parts.length > 1 ? `Partie ${partIdx} / ${w.parts.length} · ` : ''}${data.bayts.length} vers</small></div>
         ${AUDIO[w.slug] ? `<button class="ibtn rb-au" data-listen="${w.slug}" data-i="0" aria-label="Écouter">${ic('audio')}</button>` : ''}
-        <a class="ibtn rb-dl" href="pdf/${w.slug}.pdf" download aria-label="Télécharger le PDF">${ic('download')}</a>
+        <a class="ibtn rb-dl" href="${R}pdf/${w.slug}.pdf" download aria-label="Télécharger le PDF">${ic('download')}</a>
         <div class="tools">
         ${w.parts.length > 1 ? `<select class="select" id="partSel" aria-label="Partie">${w.partNames.map((n, i) => `<option value="${i + 1}"${i + 1 === partIdx ? ' selected' : ''}>${esc(n)}</option>`).join('')}</select>` : ''}
         <div class="seg" role="group" aria-label="Traduction">${langs.map(l => `<button data-lang="${l}" class="${lang === l ? 'on' : ''}">${l.toUpperCase()}</button>`).join('')}<button data-lang="none" class="${lang === 'none' ? 'on' : ''}" title="Arabe seul">ع</button></div>
@@ -299,11 +308,11 @@
           <div class="tl">${esc(b[lang === 'none' ? 'fr' : lang] || b.fr || '')}</div></div>`;
       }).join('')}
       <nav class="rnav">
-        ${prev ? `<a class="btn btn-line" href="#/lire/${w.slug}/${prev}">${ic('back')}${esc(w.partNames[prev - 1])}</a>` : '<span></span>'}
-        ${next ? `<a class="btn btn-bx" href="#/lire/${w.slug}/${next}">${esc(w.partNames[next - 1])}${ic('arrow')}</a>` : `<a class="btn btn-bx" href="#/bibliotheque">Fin · retour à la bibliothèque</a>`}
+        ${prev ? `<a class="btn btn-line" href="${R}lire/${w.slug}/${prev}/">${ic('back')}${esc(w.partNames[prev - 1])}</a>` : '<span></span>'}
+        ${next ? `<a class="btn btn-bx" href="${R}lire/${w.slug}/${next}/">${esc(w.partNames[next - 1])}${ic('arrow')}</a>` : `<a class="btn btn-bx" href="${R}bibliotheque/">Fin · retour à la bibliothèque</a>`}
       </nav>
     </div></div>`;
-    if (w.parts.length > 1) $('#partSel').onchange = e => location.hash = `#/lire/${w.slug}/${e.target.value}`;
+    if (w.parts.length > 1) $('#partSel').onchange = e => navigate(`lire/${w.slug}/${e.target.value}/`);
     let offset = 0;
     for (let i = 0; i < partIdx - 1; i++) { try { offset += (await getPart(w.parts[i])).bayts.length; } catch {} }
     const mark = idx => {
@@ -323,7 +332,7 @@
   function listPage(title, ar, img, items, emptyAr, emptyTitle, emptyText, prog) {
     view.innerHTML = banner(title, ar, img) + `<section class="block" style="padding-top:50px"><div class="wrap">${items.length
       ? `<div class="grid">${items.map(w => card(w, { progress: prog })).join('')}</div>`
-      : `<div class="empty"><div class="ar">${emptyAr}</div><h3>${emptyTitle}</h3><p>${emptyText}</p><a class="btn btn-bx" href="#/bibliotheque">${ic('rehal')}Parcourir la bibliothèque</a></div>`}</div></section>`;
+      : `<div class="empty"><div class="ar">${emptyAr}</div><h3>${emptyTitle}</h3><p>${emptyText}</p><a class="btn btn-bx" href="${R}bibliotheque/">${ic('rehal')}Parcourir la bibliothèque</a></div>`}</div></section>`;
   }
 
   function bioView() {
@@ -339,9 +348,9 @@
         <p>Guide spirituel sénégalais, fondateur de la Mouridiyya et de la ville sainte de Touba, Cheikh Ahmadou Bamba a consacré sa vie à l'adoration de Dieu, au service du Prophète Muhammad <span class="saw">ﷺ</span> et à l'éducation de ses disciples par le savoir et le travail.</p>
         <p>Il a laissé une œuvre écrite immense en langue arabe : des poèmes de louange au Prophète, d'invocation, de jurisprudence, de soufisme et d'éducation de l'âme. Ces khassidas sont récités chaque jour dans les daaras, les dahiras et lors du Grand Magal de Touba.</p>
         <ol class="timeline">${T.map(([i, y, t]) => `<li><span class="k">${ic(i)}</span><b>${y}</b>${t}</li>`).join('')}</ol>
-        <a class="btn btn-bx" href="#/bibliotheque">${ic('rehal')}Lire ses khassidas</a>
+        <a class="btn btn-bx" href="${R}bibliotheque/">${ic('rehal')}Lire ses khassidas</a>
       </div>
-      <aside><div class="arch-portrait"><img src="assets/img/serigne-touba.webp" alt="Photographie de Serigne Touba"></div></aside>
+      <aside><div class="arch-portrait"><img src="${R}assets/img/serigne-touba.webp" alt="Photographie de Serigne Touba"></div></aside>
     </div>`;
   }
 
@@ -366,7 +375,7 @@
       <p>Les déclamations sont celles des kourels (Hizbut Tarqiyyah, Nurud Darayni, Safinatoul Amane…), diffusées par leurs propres chaînes YouTube et Audiomack. Kiraam les intègre avec les lecteurs officiels de ces plateformes, sans copier les fichiers ; les droits restent à leurs auteurs. Vous êtes un kourel et souhaitez voir vos enregistrements ici, ou les retirer ? Écrivez-nous sur le dépôt GitHub.</p>
       <h2>Signaler une erreur</h2>
       <p>Une faute dans un vers, un titre ou une traduction ? Ouvrez une « issue » sur le <a href="https://github.com/faalvisuel/kiraam" target="_blank" rel="noopener">dépôt GitHub</a> : chaque correction profite à tous.</p>
-      <p><a href="#/charte">Voir la charte graphique de Kiraam →</a></p>
+      <p><a href="${R}charte/">Voir la charte graphique de Kiraam →</a></p>
     </article></div>`;
   }
 
@@ -377,12 +386,12 @@
       <h2>Le symbole</h2>
       <p>Il réunit trois éléments de la Grande Mosquée de Touba : l'<b>arche en fer à cheval</b> de ses portes et fenêtres, l'<b>étoile à huit branches</b> de ses vitraux, et le <b>finial à trois sphères</b> qui couronne ses coupoles. Une porte ouverte vers la lumière des khassidas.</p>
       <div class="brand-grid">
-        <div class="brand-tile" style="background:#FBF8F2"><img src="assets/brand/kiraam-logo.svg" alt="Logo horizontal"></div>
-        <div class="brand-tile" style="background:#2C060E"><img src="assets/brand/kiraam-logo-blanc.svg" alt="Logo horizontal blanc"></div>
-        <div class="brand-tile" style="background:#FBF8F2"><img src="assets/brand/kiraam-logo-vertical.svg" alt="Logo vertical" style="max-height:200px"></div>
-        <div class="brand-tile" style="background:#6B1424"><img src="assets/brand/kiraam-logo-vertical-blanc.svg" alt="Logo vertical blanc" style="max-height:200px"></div>
-        <div class="brand-tile" style="background:#fff"><img src="assets/brand/kiraam-icone.svg" alt="Icône d'application"></div>
-        <div class="brand-tile" style="background:#fff"><img src="assets/brand/kiraam-symbole-bordeaux.svg" alt="Symbole"></div>
+        <div class="brand-tile" style="background:#FBF8F2"><img src="${R}assets/brand/kiraam-logo.svg" alt="Logo horizontal"></div>
+        <div class="brand-tile" style="background:#2C060E"><img src="${R}assets/brand/kiraam-logo-blanc.svg" alt="Logo horizontal blanc"></div>
+        <div class="brand-tile" style="background:#FBF8F2"><img src="${R}assets/brand/kiraam-logo-vertical.svg" alt="Logo vertical" style="max-height:200px"></div>
+        <div class="brand-tile" style="background:#6B1424"><img src="${R}assets/brand/kiraam-logo-vertical-blanc.svg" alt="Logo vertical blanc" style="max-height:200px"></div>
+        <div class="brand-tile" style="background:#fff"><img src="${R}assets/brand/kiraam-icone.svg" alt="Icône d'application"></div>
+        <div class="brand-tile" style="background:#fff"><img src="${R}assets/brand/kiraam-symbole-bordeaux.svg" alt="Symbole"></div>
       </div>
       <h2>Couleurs</h2>
       <div class="swatches">${C.map(([n, h, u]) => `<div class="sw"><i style="background:${h}"></i><div><b>${n}</b>${h}<br>${u}</div></div>`).join('')}</div>
@@ -399,7 +408,7 @@
   }
 
   function notFound() {
-    view.innerHTML = `<div class="empty" style="padding:140px 20px"><div class="ar">؟</div><h3>Page introuvable</h3><a class="btn btn-bx" href="#/">Retour à l'accueil</a></div>`;
+    view.innerHTML = `<div class="empty" style="padding:140px 20px"><div class="ar">؟</div><h3>Page introuvable</h3><a class="btn btn-bx" href="${R}">Retour à l'accueil</a></div>`;
   }
 
   // ---------- Audio ----------
@@ -433,7 +442,7 @@
   function route() {
     closeDrawer();
     readerObs && readerObs.disconnect();
-    const [, page, a, b, c] = location.hash.split('/');
+    const [page, a, b, c] = segs();
     const onHero = ['', 'bibliotheque', 'livre', 'serigne-touba', 'galerie', 'a-propos', 'charte', 'lectures', 'favoris'].includes(page || '');
     document.body.classList.toggle('on-hero', onHero);
     switch (page || '') {
@@ -477,14 +486,14 @@
     }
     const sh = e.target.closest('[data-share]');
     if (sh) {
-      const w = BY[sh.dataset.share]; const url = location.href.split('#')[0] + '#/livre/' + w.slug;
+      const w = BY[sh.dataset.share]; const url = location.origin + R + 'livre/' + w.slug + '/';
       if (navigator.share) navigator.share({ title: `${w.title} · Kiraam`, text: `${w.title} — ${w.titleAr} · khassida de Serigne Touba`, url }).catch(() => {});
       else navigator.clipboard?.writeText(url).then(() => { sh.title = 'Lien copié'; sh.classList.add('on'); setTimeout(() => sh.classList.remove('on'), 1200); });
       return;
     }
     const sc = e.target.closest('[data-scroll]');
     if (sc) { const t = sc.closest('.carousel').querySelector('.track'); t.scrollBy({ left: sc.dataset.scroll * t.clientWidth * .8, behavior: 'smooth' }); return; }
-    const go = e.target.closest('[data-go]'); if (go) { location.hash = go.dataset.go; return; }
+    const go = e.target.closest('[data-go]'); if (go) { navigate(go.dataset.go); return; }
     const f = e.target.closest('[data-filter]');
     if (f) { libState.f = f.dataset.filter; $$('[data-filter]').forEach(x => x.classList.toggle('on', x === f)); renderLib(); return; }
     if (e.target.closest('[data-reset]')) { libState.len = 'all'; libState.lang = 'fr'; renderLib(); return; }
@@ -494,7 +503,7 @@
     if (lg) {
       prefs.lang = lg.dataset.lang; savePrefs(); const r = $('.reader');
       r.classList.toggle('hide-tl', prefs.lang === 'none'); $$('[data-lang]', r).forEach(x => x.classList.toggle('on', x === lg));
-      if (prefs.lang !== 'none') { const [, , s, p] = location.hash.split('/'); getPart(BY[s].parts[(parseInt(p, 10) || 1) - 1]).then(d => $$('.verse', r).forEach((v, i) => { v.querySelector('.tl').textContent = d.bayts[i][prefs.lang] || d.bayts[i].fr || ''; })); }
+      if (prefs.lang !== 'none') { const [, s, p] = segs(); getPart(BY[s].parts[(parseInt(p, 10) || 1) - 1]).then(d => $$('.verse', r).forEach((v, i) => { v.querySelector('.tl').textContent = d.bayts[i][prefs.lang] || d.bayts[i].fr || ''; })); }
       return;
     }
     if (e.target.closest('[data-tr]')) { prefs.tr = !prefs.tr; savePrefs(); $('.reader').classList.toggle('hide-tr', !prefs.tr); e.target.closest('[data-tr]').classList.toggle('on', prefs.tr); return; }
@@ -506,15 +515,27 @@
   let lb;
   function openLightbox(f) {
     if (!lb) { lb = document.createElement('div'); lb.className = 'lightbox'; lb.innerHTML = `<img alt=""><button class="ibtn" aria-label="Fermer">${ic('close')}</button>`; document.body.appendChild(lb); lb.onclick = () => lb.classList.remove('open'); }
-    lb.querySelector('img').src = `assets/photos/${f}.webp`; lb.classList.add('open');
+    lb.querySelector('img').src = `${R}assets/photos/${f}.webp`; lb.classList.add('open');
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); lb && lb.classList.remove('open'); } });
-  window.addEventListener('hashchange', route);
+  window.addEventListener('popstate', route);
+  // liens internes : navigation sans rechargement
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || a.target || a.hasAttribute('download')) return;
+    const u = new URL(a.href, location.href);
+    if (u.origin !== location.origin || !u.pathname.startsWith(R) || /\.[a-z0-9]{2,4}$/i.test(u.pathname)) return;
+    e.preventDefault();
+    history.pushState(null, '', u.pathname + u.search);
+    route();
+  });
 
   // ---------- Boot ----------
-  Promise.all([fetch('data/library.json').then(r => r.json()), fetch('data/audio.json').then(r => r.json()).catch(() => ({ audio: {} }))]).then(([d, a]) => {
+  Promise.all([fetch(R + 'data/library.json').then(r => r.json()), fetch(R + 'data/audio.json').then(r => r.json()).catch(() => ({ audio: {} }))]).then(([d, a]) => {
     AUDIO = a.audio || {};
-    LIB = d.works.map(w => Object.assign(w, { _s: norm([w.title, w.titleAr, w.slug, w.incipit, ...w.partNames].join(' ')) }));
+    if (location.hash.startsWith('#/')) { const h = location.hash.slice(2).replace(/\/?$/, '/'); history.replaceState(null, '', R + (h === '/' ? '' : h)); }
+    const qp = new URLSearchParams(location.search).get('q'); if (qp) libState.q = qp;
+    LIB = d.works.map(w => Object.assign(w, { _s: norm([w.title, w.titleAr, w.slug, w.incipit, ...w.partNames, ...(w.aka || [])].join(' ')) }));
     LIB.forEach(w => BY[w.slug] = w);
     const nK = LIB.reduce((a, w) => a + w.parts.length, 0);
     $('#tbCount').textContent = `${LIB.length} livres · ${nK} khassidas`;

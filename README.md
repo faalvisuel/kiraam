@@ -20,6 +20,21 @@ covers/<livre>.webp   couvertures
 tools/build.py        générateur des PDF, couvertures et données
 ```
 
+## Référencement (SEO)
+
+Chaque livre a sa page (`/livre/<livre>/`) et chaque khassida son texte intégral (`/lire/<livre>/<partie>/`),
+avec titre, description, Open Graph, données structurées (schema.org) et image de partage (`og/`).
+
+Après toute modification des données, ou en changeant d'adresse (Cloudflare, nom de domaine) :
+
+```bash
+python3 tools/prerender.py --site https://faalvisuel.github.io/kiraam   # ou https://kiraam.com
+```
+
+Cela régénère les pages, `sitemap.xml`, `robots.txt` et `404.html`.
+Les orthographes alternatives (« Mawahibou », « Nourou Darayni »…) sont dans `tools/aliases.json`.
+`index.html` est généré à partir de `tools/shell.html` : modifier le gabarit, pas le fichier généré.
+
 ## Régénérer les PDF
 
 ```bash

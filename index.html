@@ -3,16 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kiraam · Les khassidas de Serigne Touba</title>
-<meta name="description" content="Kiraam, la bibliothèque des khassidas de Cheikh Ahmadou Bamba Khadimou Rassoul : 111 livres, 193 khassidas en arabe, translittération et traduction, PDF gratuits.">
+<title>Kiraam — Khassidas de Serigne Touba en PDF, arabe et traduction</title>
+<meta name="description" content="Kiraam : les khassidas de Serigne Touba (Cheikh Ahmadou Bamba) en PDF gratuit. 111 livres, 193 khassidas en arabe vocalisé avec translittération et traduction française, à lire ou écouter en ligne.">
+<link rel="canonical" href="https://faalvisuel.github.io/kiraam/">
 <meta name="theme-color" content="#4A0B16">
-<meta property="og:title" content="Kiraam · Les khassidas de Serigne Touba">
-<meta property="og:description" content="111 livres, 193 khassidas à lire en ligne ou télécharger en PDF.">
-<meta property="og:image" content="assets/photos/mosquee-touba.webp">
-<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/brand/kiraam-icone-512.png">
-<link rel="preload" href="assets/photos/mosquee-touba.webp" as="image">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="kiraam-root" content="./">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kiraam">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Kiraam — Khassidas de Serigne Touba en PDF, arabe et traduction">
+<meta property="og:description" content="Kiraam : les khassidas de Serigne Touba (Cheikh Ahmadou Bamba) en PDF gratuit. 111 livres, 193 khassidas en arabe vocalisé avec translittération et traduction française, à lire ou écouter en ligne.">
+<meta property="og:url" content="https://faalvisuel.github.io/kiraam/">
+<meta property="og:image" content="https://faalvisuel.github.io/kiraam/og/kiraam.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/brand/kiraam-icone-512.png">
+<link rel="preload" href="./assets/fonts/amiri-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebSite", "name": "Kiraam", "alternateName": "كرام", "url": "https://faalvisuel.github.io/kiraam/", "inLanguage": ["fr", "ar"], "potentialAction": {"@type": "SearchAction", "target": "https://faalvisuel.github.io/kiraam/bibliotheque/?q={search_term_string}", "query-input": "required name=search_term_string"}}, {"@context": "https://schema.org", "@type": "Organization", "name": "Kiraam", "url": "https://faalvisuel.github.io/kiraam/", "logo": "https://faalvisuel.github.io/kiraam/assets/brand/kiraam-icone-512.png"}]</script>
+<link rel="preload" href="./assets/photos/mosquee-touba.webp" as="image">
+<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
 
@@ -52,47 +62,48 @@
 
 <header class="header" id="header">
   <div class="wrap header-in">
-    <a href="#/" class="brand" aria-label="Kiraam, accueil">
-      <img class="logo-dark" src="assets/brand/kiraam-logo.svg" alt="Kiraam" width="190" height="52">
-      <img class="logo-light" src="assets/brand/kiraam-logo-blanc.svg" alt="" width="190" height="52">
+    <a href="./" class="brand" aria-label="Kiraam, accueil">
+      <img class="logo-dark" src="./assets/brand/kiraam-logo.svg" alt="Kiraam" width="190" height="52">
+      <img class="logo-light" src="./assets/brand/kiraam-logo-blanc.svg" alt="" width="190" height="52">
     </a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="#/" data-nav="home">Accueil</a>
-      <a href="#/bibliotheque" data-nav="library">Bibliothèque</a>
-      <a href="#/serigne-touba" data-nav="bio">Serigne Touba</a>
-      <a href="#/galerie" data-nav="gallery">Touba</a>
-      <a href="#/a-propos" data-nav="about">À propos</a>
+      <a href="./" data-nav="home">Accueil</a>
+      <a href="./bibliotheque/" data-nav="library">Bibliothèque</a>
+      <a href="./serigne-touba/" data-nav="bio">Serigne Touba</a>
+      <a href="./galerie/" data-nav="gallery">Touba</a>
+      <a href="./a-propos/" data-nav="about">À propos</a>
     </nav>
     <div class="header-actions">
-      <a href="#/favoris" class="hbtn" aria-label="Favoris" data-nav="favs"><svg class="ic"><use href="#i-khatam"/></svg><span class="dot" id="favCount" hidden></span></a>
-      <a href="#/lectures" class="hbtn" aria-label="Mes lectures" data-nav="reading"><svg class="ic"><use href="#i-fanous"/></svg></a>
-      <a href="#/bibliotheque" class="btn btn-gold cta"><svg class="ic"><use href="#i-rehal"/></svg>Lire un khassida</a>
+      <a href="./favoris/" class="hbtn" aria-label="Favoris" data-nav="favs"><svg class="ic"><use href="#i-khatam"/></svg><span class="dot" id="favCount" hidden></span></a>
+      <a href="./lectures/" class="hbtn" aria-label="Mes lectures" data-nav="reading"><svg class="ic"><use href="#i-fanous"/></svg></a>
+      <a href="./bibliotheque/" class="btn btn-gold cta"><svg class="ic"><use href="#i-rehal"/></svg>Lire un khassida</a>
       <button class="hbtn menu-btn" id="menuBtn" aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
     </div>
   </div>
 </header>
 
-<main id="view" tabindex="-1"></main>
+<main id="view" tabindex="-1"><section class="wrap prose"><h1>Kiraam — les khassidas de Serigne Touba</h1>
+<p>Kiraam : les khassidas de Serigne Touba (Cheikh Ahmadou Bamba) en PDF gratuit. 111 livres, 193 khassidas en arabe vocalisé avec translittération et traduction française, à lire ou écouter en ligne.</p><h2>Tous les livres</h2><ul><li><a href="livre/ahazanil-baaqi/">Ahazanil Baaqi — <span class="ar">أَعَاذَنِي الْبَاقِي</span></a></li><li><a href="livre/ahuzu-bil-laahi-min-mayli/">Ahuzu Bil Laahi Min Mayli — <span class="ar">أَعُوذُ بِاللَّهِ مِنْ مَيْلِي</span></a></li><li><a href="livre/ahyaytu-mawlidan/">Ahyaytu Mawlidan — <span class="ar">أَحْيَيْتُ مَوْلِدًا</span></a></li><li><a href="livre/ajabani-khayru-baaqin/">Ajabani Khayru Baaqin — <span class="ar">أَجَابَنِي خَيْرُ بَاقٍ</span></a></li><li><a href="livre/ajabani-rabbus-sama/">Ajabani Rabbus Sama — <span class="ar">أَجَابَنِي رَبُّ السَّمَا</span></a></li><li><a href="livre/alaa-inani/">Alaa Inani — <span class="ar">أَلَا إِنَّنِي</span></a></li><li><a href="livre/alal-mustafa-minni/">Alal Mustafa Minni — <span class="ar">عَلَى الْمُصْطَفَى مِنِّي</span></a></li><li><a href="livre/alhamdu-yujaazi/">Alhamdu Yujaazi — <span class="ar">الْحَمْدُ لِلَّهِ الَّذِي يُجَازِي</span></a></li><li><a href="livre/anta-rabbi/">Anta Rabbi — <span class="ar">أَنْتَ رَبِّي</span></a></li><li><a href="livre/ashaabul-jannati/">Ashaabul Jannati — <span class="ar">أَصْحَابُ الْجَنَّةِ</span></a></li><li><a href="livre/ashinu/">Ashinu — <span class="ar">الشِّينُ</span></a></li><li><a href="livre/ashkuru-laaha/">Ashkuru Laaha — <span class="ar">أَشْكُرُ اللَّهَ</span></a></li><li><a href="livre/asiru/">Asiru — <span class="ar">أَسِيرُ</span></a></li><li><a href="livre/asma-ul-husna/">Asma Ul Husna — <span class="ar">الْأَسْمَاءُ الْحُسْنَى</span></a></li><li><a href="livre/astaghfirulaha-bihi/">Astaghfirulaha Bihi — <span class="ar">أَسْتَغْفِرُ اللَّهَ بِهِ</span></a></li><li><a href="livre/ataaba/">Ataaba — <span class="ar">أَطَابَ</span></a></li><li><a href="livre/ayyasa/">Ayyasa — <span class="ar">أَيَّسَ</span></a></li><li><a href="livre/bakh-bakhaa/">Bakh Bakhaa — <span class="ar">بَخْ بَخَا</span></a></li><li><a href="livre/barakatu/">Barakatu — <span class="ar">بَرَكَتُ</span></a></li><li><a href="livre/bismil-ilaahil-lazi/">Bismil Ilaahil Lazi — <span class="ar">بِسْمِ الْإِلَهِ الَّذِي</span></a></li><li><a href="livre/bismil-laahi-ikfini/">Bismil Laahi Ikfini — <span class="ar">بِسْمِ الْإِلَهِ اكْفِنِي</span></a></li><li><a href="livre/bushra-lana/">Bushra Lana — <span class="ar">بُشْرَى لَنَا</span></a></li><li><a href="livre/faaqa-jamiha/">Faaqa Jamiha — <span class="ar">فَاقَ جَمِيعَ</span></a></li><li><a href="livre/farrij/">Farrij — <span class="ar">فَرِّجْ</span></a></li><li><a href="livre/fazal-lazina/">Fazal Lazina — <span class="ar">فَازَ الَّذِينَ</span></a></li><li><a href="livre/fazat-qilami/">Fazat Qilami — <span class="ar">فَازَتْ قِلَامِي</span></a></li><li><a href="livre/fuzti/">Fuzti — <span class="ar">فُزْتِ</span></a></li><li><a href="livre/hajat-qasa-idi/">Hajat Qasa Idi — <span class="ar">هَاجَتْ قَصَائِدِي</span></a></li><li><a href="livre/halal-muntaqa/">Halal Muntaqa — <span class="ar">عَلَى الْمُنْتَقَى</span></a></li><li><a href="livre/halaman/">Halaman — <span class="ar">عَلَى مَنْ</span></a></li><li><a href="livre/halayka-yaa-mukhtaru/">Halayka Yaa Mukhtaru — <span class="ar">عَلَيْكَ يَا مُخْتَارُ</span></a></li><li><a href="livre/hamdi-wa-shukri/">Hamdi Wa Shukri — <span class="ar">حَمْدِي وَشُكْرِي</span></a></li><li><a href="livre/hamidtu/">Hamidtu — <span class="ar">حَمِدْتُ</span></a></li><li><a href="livre/hammat-sulaymaa/">Hammat Sulaymaa — <span class="ar">هَمَّتْ سُلَيْمَى</span></a></li><li><a href="livre/huqqal-bukaa/">Huqqal Bukaa — <span class="ar">حُقَّ الْبُكَاءُ</span></a></li><li><a href="livre/ihdi-jamihana/">Ihdi Jamihana — <span class="ar">اِهْدِ جَمِيعَنَا</span></a></li><li><a href="livre/ilaa-ghayrinaa/">Ilaa Ghayrinaa — <span class="ar">إِلَى غَيْرِنَا</span></a></li><li><a href="livre/ilaa-nabiyyin/">Ilaa Nabiyyin — <span class="ar">إِلَى نَبِيٍّ</span></a></li><li><a href="livre/inani-huztu/">Inani Huztu — <span class="ar">إِنَّنِي عُذْتُ</span></a></li><li><a href="livre/innabna-laahi/">Innabna Laahi — <span class="ar">إِنَّ ابْنَ عَبْدِ اللَّهِ</span></a></li><li><a href="livre/inni-ukhatibu/">Inni Ukhatibu — <span class="ar">إِنِّي أُخَاطِبُ</span></a></li><li><a href="livre/innii-aquulu/">Innii Aquulu — <span class="ar">إِنِّي أَقُولُ</span></a></li><li><a href="livre/inniya-ahmadu/">Inniya Ahmadu — <span class="ar">إِنِّيَ أَحْمَدُ</span></a></li><li><a href="livre/jalibatul-maraghibi/">Jalibatul Maraghibi — <span class="ar">جَالِبَةُ الْمَرَاغِبِ</span></a></li><li><a href="livre/jawartu/">Jawartu — <span class="ar">جَاوَرْتُ</span></a></li><li><a href="livre/jazbu/">Jazbu — <span class="ar">جَذْبُ الْقُلُوبِ</span></a></li><li><a href="livre/kafaaka-rabbuka/">Kafaaka Rabbuka — <span class="ar">كَفَاكَ رَبُّكَ</span></a></li><li><a href="livre/kawin-liya/">Kawin Liya — <span class="ar">كَوِّنْ لِيَ</span></a></li><li><a href="livre/khatimatu-munajati/">Khatimatu Munajati — <span class="ar">خَاتِمَةُ الْمُنَاجَاةِ</span></a></li><li><a href="livre/khayra-dayfin/">Khayra Dayfin — <span class="ar">يَا خَيْرَ ضَيْفٍ</span></a></li><li><a href="livre/kun-katiman/">Kun Katiman — <span class="ar">كُنْ كَاتِمًا</span></a></li><li><a href="livre/lamyabdu/">Lamyabdu — <span class="ar">لَمْ يَبْدُ</span></a></li><li><a href="livre/lil-mustafa-nawaytu/">Lil Mustafa Nawaytu — <span class="ar">لِلْمُصْطَفَى نَوَيْتُ</span></a></li><li><a href="livre/lirabbin-ghafurin/">Lirabbin Ghafurin — <span class="ar">لِرَبٍّ غَفُورٍ</span></a></li><li><a href="livre/lirabbin-kariimin/">Lirabbin Kariimin — <span class="ar">لِرَبٍّ كَرِيمٍ</span></a></li><li><a href="livre/liyan-qaada/">Liyan Qaada — <span class="ar">لِيَ انْقَادَ</span></a></li><li><a href="livre/madahtu-nabiyyal-muntaqa/">Madahtu Nabiyyal Muntaqa — <span class="ar">مَدَحْتُ النَّبِيَّ الْمُنْتَقَى</span></a></li><li><a href="livre/madal-khabiru/">Madal Khabiru — <span class="ar">مَدَّ الْخَبِيرُ</span></a></li><li><a href="livre/madhun-nabiyyil-muntaqa/">Madhun Nabiyyil Muntaqa — <span class="ar">مَدْحُ النَّبِيِّ الْمُنْتَقَى</span></a></li><li><a href="livre/mafatihul-bishri/">Mafatihul Bishri — <span class="ar">مَفَاتِحُ الْبِشْرِ</span></a></li><li><a href="livre/mafatihul-jinan/">Mafatihul Jinan — <span class="ar">مَفَاتِحُ الْجِنَانِ</span></a></li><li><a href="livre/man-zanani/">Man Zanani — <span class="ar">مَنْ ظَنَّنِي</span></a></li><li><a href="livre/maramiya/">Maramiya — <span class="ar">مَرَامِيَ</span></a></li><li><a href="livre/matlabul-fawzayni/">Matlabul Fawzayni — <span class="ar">مَطْلَبُ الْفَوْزَيْنِ</span></a></li><li><a href="livre/matlabushiffa/">Matlabushiffa — <span class="ar">مَطْلَبُ الشِّفَاءِ</span></a></li><li><a href="livre/matlabut-taqabbuli/">Matlabut Taqabbuli — <span class="ar">مَطْلَبُ التَّقَبُّلِ</span></a></li><li><a href="livre/mawahibu/">Mawahibu — <span class="ar">مَوَاهِبُ النَّافِعِ</span></a></li><li><a href="livre/midadi/">Midadi — <span class="ar">مِدَادِي</span></a></li><li><a href="livre/miftahun-nasri/">Miftahun Nasri — <span class="ar">مِفْتَاحُ النَّصْرِ</span></a></li><li><a href="livre/mim-ra-shin/">Mim Ra Shin — <span class="ar">مِيمْ رَا شِينْ</span></a></li><li><a href="livre/minal-haqqi/">Minal Haqqi — <span class="ar">مِنَ الْحَقِّ</span></a></li><li><a href="livre/minal-lawhil-mahfuzi/">Minal Lawhil Mahfuzi — <span class="ar">مِنَ اللَّوْحِ الْمَحْفُوظِ</span></a></li><li><a href="livre/minanul-baaqil-qadiim/">Minanul Baaqil Qadiim — <span class="ar">مِنَنُ الْبَاقِي الْقَدِيمِ</span></a></li><li><a href="livre/mumitu/">Mumitu — <span class="ar">مُمِيتُ</span></a></li><li><a href="livre/muqadamatul-amdah/">Muqadamatul Amdah — <span class="ar">مُقَدِّمَةُ الْأَمْدَاحِ</span></a></li><li><a href="livre/nuuru-daarayni/">Nuuru Daarayni — <span class="ar">نُورُ الدَّارَيْنِ</span></a></li><li><a href="livre/qalu-liyarkan/">Qalu Liyarkan — <span class="ar">قَالُوا لِيَ ارْكَنْ</span></a></li><li><a href="livre/raa-iya/">Raa Iya — <span class="ar">رَائِيَّة</span></a></li><li><a href="livre/rabbi-karrimun/">Rabbi Karrimun — <span class="ar">رَبِّي كَرِيمٌ</span></a></li><li><a href="livre/rabbiya-ahmadu/">Rabbiya Ahmadu — <span class="ar">رَبِّيَ أَحْمَدُ</span></a></li><li><a href="livre/raditu/">Raditu — <span class="ar">رَضِيتُ</span></a></li><li><a href="livre/rumna-shukur/">Rumna Shukur — <span class="ar">رُمْنَا شُكُورَ</span></a></li><li><a href="livre/sabhun-taqii/">Sabhun Taqii — <span class="ar">سَبْعٌ تَقِي</span></a></li><li><a href="livre/safar/">Safar — <span class="ar">صَفَر</span></a></li><li><a href="livre/safaru-bamsashin/">Safaru Bamsashin — <span class="ar">صَحَّحْتَ لِي</span></a></li><li><a href="livre/sana-ilaahi/">Sana Ilaahi — <span class="ar">صَانَ إِلَاهِي</span></a></li><li><a href="livre/shakawtu/">Shakawtu — <span class="ar">شَكَوْتُ</span></a></li><li><a href="livre/shakuru-rafihu/">Shakuru Rafihu — <span class="ar">شُكْرِي لِرَبٍّ كَرِيمٍ</span></a></li><li><a href="livre/sindidi/">Sindidi — <span class="ar">الصِّنْدِيدِ</span></a></li><li><a href="livre/tawbatun-nasuuh/">Tawbatun Nasuuh — <span class="ar">تَوْبَةٌ نَصُوحٌ</span></a></li><li><a href="livre/taysirul-hasiru/">Taysirul Hasiru — <span class="ar">تَيْسِيرُ الْعَسِيرِ</span></a></li><li><a href="livre/tuhfatu-mutadarihin/">Tuhfatu Mutadarihin — <span class="ar">تُحْفَةُ الْمُتَضَرِّعِينَ</span></a></li><li><a href="livre/wa-kaana-haqqan/">Wa Kaana Haqqan — <span class="ar">وَكَانَ حَقًّا</span></a></li><li><a href="livre/wadudu/">Wadudu — <span class="ar">وَدُودُ</span></a></li><li><a href="livre/wajjahtu-hamdan/">Wajjahtu Hamdan — <span class="ar">وَجَّهْتُ حَمْدًا</span></a></li><li><a href="livre/wajjahtu-kulliya/">Wajjahtu Kulliya — <span class="ar">وَجَّهْتُ كُلِّيَ</span></a></li><li><a href="livre/wajjahtu-wajhii/">Wajjahtu Wajhii — <span class="ar">وَجَّهْتُ وَجْهِي</span></a></li><li><a href="livre/wajjahtu-wajhiya/">Wajjahtu Wajhiya — <span class="ar">وَجَّهْتُ وَجْهِيَ</span></a></li><li><a href="livre/wal-baladu/">Wal Baladu — <span class="ar">وَالْبَلَدُ</span></a></li><li><a href="livre/walaqad-karamna/">Walaqad Karamna — <span class="ar">وَلَقَدْ كَرَّمْنَا</span></a></li><li><a href="livre/waqani/">Waqani — <span class="ar">وَقَانِي</span></a></li><li><a href="livre/wawassaynal/">Wawassaynal — <span class="ar">وَوَصَّيْنَا</span></a></li><li><a href="livre/yaa-kitaabal-kariimi/">Yaa Kitaabal Kariimi — <span class="ar">يَا كِتَابَ الْكَرِيمِ</span></a></li><li><a href="livre/yaa-mukrima-dayfi/">Yaa Mukrima Dayfi — <span class="ar">يَا مُكْرِمَ الضَّيْفِ</span></a></li><li><a href="livre/yaa-rakhmanu/">Yaa Rakhmanu — <span class="ar">يَا رَحْمَانُ</span></a></li><li><a href="livre/yaa-zal-wujuudi/">Yaa Zal Wujuudi — <span class="ar">يَا ذَا الْوُجُودِ</span></a></li><li><a href="livre/yaqini/">Yaqini — <span class="ar">يَقِينِي</span></a></li><li><a href="livre/yarabbi/">Yarabbi — <span class="ar">يَا رَبِّ</span></a></li><li><a href="livre/yassara/">Yassara — <span class="ar">يَسَّرَ</span></a></li><li><a href="livre/yasurru/">Yasurru — <span class="ar">يَسُرُّ</span></a></li><li><a href="livre/zallat/">Zallat — <span class="ar">ذَلَّتْ</span></a></li></ul></section></main>
 
 <footer class="footer">
   <div class="footer-pattern"></div>
   <div class="wrap footer-grid">
     <div class="f-brand">
-      <img src="assets/brand/kiraam-logo-blanc.svg" alt="Kiraam" width="200" height="55">
+      <img src="./assets/brand/kiraam-logo-blanc.svg" alt="Kiraam" width="200" height="55">
       <p>Les écrits de Cheikh Ahmadou Bamba Khadimou Rassoul, réunis dans une bibliothèque libre : à lire en ligne, à écouter avec le cœur, à télécharger et partager.</p>
       <p class="ar f-ar">وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ</p>
     </div>
     <div>
       <h4>Explorer</h4>
-      <a href="#/bibliotheque">Bibliothèque</a><a href="#/serigne-touba">Serigne Touba</a><a href="#/galerie">Touba en images</a><a href="#/lectures">Mes lectures</a><a href="#/favoris">Favoris</a>
+      <a href="./bibliotheque/">Bibliothèque</a><a href="./serigne-touba/">Serigne Touba</a><a href="./galerie/">Touba en images</a><a href="./lectures/">Mes lectures</a><a href="./favoris/">Favoris</a>
     </div>
     <div>
       <h4>Œuvres majeures</h4>
-      <a href="#/livre/jazbu">Jazbul Qulūb</a><a href="#/livre/mawahibu">Mawāhibu Nāfiʿ</a><a href="#/livre/matlabul-fawzayni">Matlabul Fawzayni</a><a href="#/livre/nuuru-daarayni">Nuuru Daarayni</a><a href="#/livre/mafatihul-jinan">Mafātihul Jinān</a>
+      <a href="./livre/jazbu/">Jazbul Qulūb</a><a href="./livre/mawahibu/">Mawāhibu Nāfiʿ</a><a href="./livre/matlabul-fawzayni/">Matlabul Fawzayni</a><a href="./livre/nuuru-daarayni/">Nuuru Daarayni</a><a href="./livre/mafatihul-jinan/">Mafātihul Jinān</a>
     </div>
     <div>
       <h4>Kiraam</h4>
-      <a href="#/a-propos">À propos & sources</a><a href="#/charte">Charte graphique</a><a href="https://github.com/faalvisuel/kiraam" target="_blank" rel="noopener">Code source</a>
+      <a href="./a-propos/">À propos & sources</a><a href="./charte/">Charte graphique</a><a href="https://github.com/faalvisuel/kiraam" target="_blank" rel="noopener">Code source</a>
     </div>
   </div>
   <div class="wrap footer-bottom">
@@ -102,29 +113,29 @@
 </footer>
 
 <nav class="tabbar" aria-label="Navigation mobile">
-  <a href="#/" data-nav="home"><svg class="ic"><use href="#i-mihrab"/></svg>Accueil</a>
-  <a href="#/lectures" data-nav="reading"><svg class="ic"><use href="#i-fanous"/></svg>Lectures</a>
-  <a href="#/bibliotheque" data-nav="library" class="tab-main" aria-label="Bibliothèque"><span><svg class="ic"><use href="#i-rehal"/></svg></span>Livres</a>
-  <a href="#/favoris" data-nav="favs"><svg class="ic"><use href="#i-khatam"/></svg>Favoris</a>
-  <a href="#/serigne-touba" data-nav="bio"><svg class="ic"><use href="#i-minaret"/></svg>Cheikh</a>
+  <a href="./" data-nav="home"><svg class="ic"><use href="#i-mihrab"/></svg>Accueil</a>
+  <a href="./lectures/" data-nav="reading"><svg class="ic"><use href="#i-fanous"/></svg>Lectures</a>
+  <a href="./bibliotheque/" data-nav="library" class="tab-main" aria-label="Bibliothèque"><span><svg class="ic"><use href="#i-rehal"/></svg></span>Livres</a>
+  <a href="./favoris/" data-nav="favs"><svg class="ic"><use href="#i-khatam"/></svg>Favoris</a>
+  <a href="./serigne-touba/" data-nav="bio"><svg class="ic"><use href="#i-minaret"/></svg>Cheikh</a>
 </nav>
 
 <aside class="dock" id="dock" hidden aria-label="Lecteur audio"></aside>
 
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer-in">
-    <div class="drawer-top"><img src="assets/brand/kiraam-logo-blanc.svg" alt="Kiraam" height="44"><button class="hbtn" data-close-drawer aria-label="Fermer"><svg class="ic"><use href="#i-close"/></svg></button></div>
-    <a href="#/" data-nav="home"><svg class="ic"><use href="#i-mihrab"/></svg>Accueil</a>
-    <a href="#/bibliotheque" data-nav="library"><svg class="ic"><use href="#i-rehal"/></svg>Bibliothèque</a>
-    <a href="#/lectures" data-nav="reading"><svg class="ic"><use href="#i-fanous"/></svg>Mes lectures</a>
-    <a href="#/favoris" data-nav="favs"><svg class="ic"><use href="#i-khatam"/></svg>Favoris</a>
-    <a href="#/serigne-touba" data-nav="bio"><svg class="ic"><use href="#i-minaret"/></svg>Serigne Touba</a>
-    <a href="#/galerie" data-nav="gallery"><svg class="ic"><use href="#i-mihrab"/></svg>Touba en images</a>
-    <a href="#/a-propos" data-nav="about"><svg class="ic"><use href="#i-hilal"/></svg>À propos</a>
+    <div class="drawer-top"><img src="./assets/brand/kiraam-logo-blanc.svg" alt="Kiraam" height="44"><button class="hbtn" data-close-drawer aria-label="Fermer"><svg class="ic"><use href="#i-close"/></svg></button></div>
+    <a href="./" data-nav="home"><svg class="ic"><use href="#i-mihrab"/></svg>Accueil</a>
+    <a href="./bibliotheque/" data-nav="library"><svg class="ic"><use href="#i-rehal"/></svg>Bibliothèque</a>
+    <a href="./lectures/" data-nav="reading"><svg class="ic"><use href="#i-fanous"/></svg>Mes lectures</a>
+    <a href="./favoris/" data-nav="favs"><svg class="ic"><use href="#i-khatam"/></svg>Favoris</a>
+    <a href="./serigne-touba/" data-nav="bio"><svg class="ic"><use href="#i-minaret"/></svg>Serigne Touba</a>
+    <a href="./galerie/" data-nav="gallery"><svg class="ic"><use href="#i-mihrab"/></svg>Touba en images</a>
+    <a href="./a-propos/" data-nav="about"><svg class="ic"><use href="#i-hilal"/></svg>À propos</a>
     <p class="ar drawer-ar">خَادِمُ الرَّسُول</p>
   </div>
 </div>
 
-<script src="assets/app.js"></script>
+<script src="./assets/app.js"></script>
 </body>
 </html>
