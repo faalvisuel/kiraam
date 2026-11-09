@@ -743,3 +743,13 @@ body.on-hero .banner-in{padding-top:150px}
 .hbtn[data-nav=favs] .ic{color:var(--bx)}
 @media (max-width:820px){#toast{bottom:calc(100px + env(safe-area-inset-bottom));max-width:calc(100% - 24px)}.book-info .actions [data-fav]{width:100%;justify-content:center}}
 .hero-in{padding-top:120px}
+
+/* ===== v8 : bayits ajustés, jamais de débordement ===== */
+.reader .verse .ar-lines{font-size:var(--vsize,26px)!important;line-height:2.1}
+.reader .verse .ar-lines>.k{white-space:nowrap}
+.reader .verse .ar-lines.stack{grid-template-columns:1fr}
+.reader .verse .ar-lines.stack>.k{text-align:center!important}
+.reader .verse .ar-lines{gap:0 44px}
+.reader{border-width:40px;border-image:url(img/frame-border.svg) 40 round}
+.reader .rbar{margin-left:-30px;margin-right:-30px}
+@media (max-width:820px){.reader{border-width:22px}}

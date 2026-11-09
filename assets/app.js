@@ -49,6 +49,23 @@
   const mb = b => (b / 1048576 < 1 ? Math.round(b / 1024) + ' Ko' : (b / 1048576).toFixed(1).replace('.', ',') + ' Mo');
 
 
+  // ---------- Ajustement : les bayits tiennent toujours dans leur colonne ----------
+  function fitVerses() {
+    const r = $('.reader'); if (!r) return;
+    const first = r.querySelector('.ar-lines'); if (!first) return;
+    const W = first.clientWidth, em = +r.dataset.em || 10, f = prefs.fs || 1;
+    const two = matchMedia('(min-width:821px)').matches;
+    const col = two ? W / 2 - 22 : W - 8;
+    let size = Math.min(29 * f, col / em), stackAll = false;
+    if (two && size < 19) { stackAll = true; size = Math.min(29 * f, (W - 8) / em); }
+    size = Math.max(15, size);
+    r.style.setProperty('--vsize', size.toFixed(2) + 'px');
+    r.classList.toggle('stackp', stackAll || !two);
+    $$('.verse', r).forEach(v => { const w = +v.dataset.w || 0; const l = v.querySelector('.ar-lines');
+      if (l && l.children.length > 1) l.classList.toggle('stack', stackAll || !two || w * size > col); });
+  }
+  let fitT; window.addEventListener('resize', () => { clearTimeout(fitT); fitT = setTimeout(fitVerses, 120); });
+
   // ---------- Écriture : deux calques (lettres / voyelles) ----------
   const MARKS = /[ً-ٰٟۖ-ۭـ]/g;
   const PFX = ['و', 'ف', 'ب', 'ل', 'ك', 'لل', 'بال', 'وال', 'فال', 'كال', 'ولل', 'يا'];
@@ -319,7 +336,7 @@
     const langs = ['fr', 'en', 'it'].filter(has);
     const lang = prefs.lang === 'none' || langs.includes(prefs.lang) ? prefs.lang : 'fr';
     const prev = partIdx > 1 ? partIdx - 1 : null, next = partIdx < w.parts.length ? partIdx + 1 : null;
-    view.innerHTML = `<div class="wrap"><div class="reader${prefs.tr ? '' : ' hide-tr'}${lang === 'none' ? ' hide-tl' : ''}" style="--fs:${prefs.fs}">
+    view.innerHTML = `<div class="wrap"><div class="reader${prefs.tr ? '' : ' hide-tr'}${lang === 'none' ? ' hide-tl' : ''}" style="--fs:${prefs.fs}" data-em="${data.em || 10}">
       <div class="rbar">
         <a class="ibtn" href="${R}livre/${w.slug}/" aria-label="Retour au Xassida">${ic('back')}</a>
         <div class="t"><b>${esc(w.title)}</b><small>${w.parts.length > 1 ? `Partie ${partIdx} / ${w.parts.length} · ` : ''}${data.bayts.length} bayits</small></div>
@@ -339,8 +356,8 @@
         <div class="orn">${ic('khatam')}</div>
       </header>
       ${data.bayts.map(b => {
-        const stack = b.ar.map(stripAr).some(x => x.length > 30) || b.ar.length === 1;
-        return `<div class="verse" id="v${b.n}">${numBadge(b.n)}
+        const stack = b.ar.length === 1;
+        return `<div class="verse" id="v${b.n}" data-w="${b.w || 0}">${numBadge(b.n)}
           <div class="ar-lines${stack ? ' stack' : ''}">${b.ar.map(a => kline(a)).join('')}</div>
           <div class="tr">${esc(b.tr.filter(Boolean).join(' · '))}</div>
           <div class="tl">${esc(b[lang === 'none' ? 'fr' : lang] || b.fr || '')}</div></div>`;
@@ -350,6 +367,7 @@
         ${next ? `<a class="btn btn-bx" href="${R}lire/${w.slug}/${next}/">${esc(w.partNames[next - 1])}${ic('arrow')}</a>` : `<a class="btn btn-bx" href="${R}bibliotheque/">Fin · retour à la bibliothèque</a>`}
       </nav>
     </div></div>`;
+    fitVerses(); document.fonts && document.fonts.ready.then(fitVerses);
     if (w.parts.length > 1) $('#partSel').onchange = e => navigate(`lire/${w.slug}/${e.target.value}/`);
     let offset = 0;
     for (let i = 0; i < partIdx - 1; i++) { try { offset += (await getPart(w.parts[i])).bayts.length; } catch {} }
@@ -602,7 +620,7 @@
     }
     if (e.target.closest('[data-tr]')) { prefs.tr = !prefs.tr; savePrefs(); $('.reader').classList.toggle('hide-tr', !prefs.tr); e.target.closest('[data-tr]').classList.toggle('on', prefs.tr); return; }
     const fs = e.target.closest('[data-fs]');
-    if (fs) { prefs.fs = Math.min(1.6, Math.max(.8, +(prefs.fs + .1 * fs.dataset.fs).toFixed(2))); savePrefs(); $('.reader').style.setProperty('--fs', prefs.fs); }
+    if (fs) { prefs.fs = Math.min(1.6, Math.max(.8, +(prefs.fs + .1 * fs.dataset.fs).toFixed(2))); savePrefs(); $('.reader').style.setProperty('--fs', prefs.fs); fitVerses(); }
   });
   document.addEventListener('change', e => { if (e.target.id === 'lsort') { libState.sort = e.target.value; renderLib(); } });
 

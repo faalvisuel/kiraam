@@ -23,58 +23,82 @@ def medallion(cx, cy, r):
 
 def page_frame():
     W, H = 148, 210
-    o, b = 4.6, 4.4          # marge extérieure, largeur de la bande
+    a, b = 4.2, 7.4               # bord extérieur de la bande, largeur de la bande
+    c = a + b                     # bord intérieur
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}mm" height="{H}mm">',
-           f'<rect width="{W}" height="{H}" fill="{PARCH}"/>',
-           f'<rect x="{o}" y="{o}" width="{W - 2 * o}" height="{H - 2 * o}" fill="none" stroke="{BX}" stroke-width="{b}"/>',
-           f'<rect x="{o - b / 2 - .5}" y="{o - b / 2 - .5}" width="{W - 2 * o + b + 1}" height="{H - 2 * o + b + 1}" fill="none" stroke="{GOLD}" stroke-width=".3"/>',
-           f'<rect x="{o + b / 2 + .5}" y="{o + b / 2 + .5}" width="{W - 2 * o - b - 1}" height="{H - 2 * o - b - 1}" fill="none" stroke="{GOLD}" stroke-width=".3"/>',
-           f'<rect x="{o + b / 2 + 2}" y="{o + b / 2 + 2}" width="{W - 2 * o - b - 4}" height="{H - 2 * o - b - 4}" fill="none" stroke="{GOLD}" stroke-width=".15" stroke-dasharray=".6 .9"/>']
-    # chaîne d'étoiles dans la bande
-    step = 5.2
-    def chain(x0, y0, x1, y1):
-        n = max(1, round(math.hypot(x1 - x0, y1 - y0) / step))
-        for i in range(n + 1):
-            t = i / n
-            x, y = x0 + (x1 - x0) * t, y0 + (y1 - y0) * t
-            if i % 2 == 0:
-                out.append(f'<path d="{star(x, y, 1.05)}" fill="{GOLD_L}"/>')
+           f'<rect width="{W}" height="{H}" fill="{PARCH}"/>']
+    R = lambda x, sw, col, extra='': out.append(f'<rect x="{x}" y="{x}" width="{W - 2 * x}" height="{H - 2 * x}" fill="none" stroke="{col}" stroke-width="{sw}" {extra}/>')
+    # bande bordeaux + double filet or
+    out.append(f'<path fill-rule="evenodd" fill="{BX}" d="M{a} {a}H{W - a}V{H - a}H{a}Z M{c} {c}V{H - c}H{W - c}V{c}Z"/>')
+    R(a - .9, .5, GOLD); R(a + .7, .25, GOLD_L); R(c - .7, .25, GOLD_L); R(c + .9, .5, GOLD)
+    # festons (arcs) vers l'intérieur, comme les arcs de la mosquée
+    r = 2.0; step = 5.2; y0 = c + .9
+    def arcs(x0, x1, y, horiz=True, inward=1):
+        n = int((x1 - x0) / step)
+        off = ((x1 - x0) - n * step) / 2
+        for i in range(n):
+            u = x0 + off + i * step + step / 2
+            if horiz:
+                out.append(f'<path d="M{u - r:.2f} {y:.2f} A{r} {r} 0 0 {1 if inward > 0 else 0} {u + r:.2f} {y:.2f}" fill="none" stroke="{GOLD}" stroke-width=".5"/>')
+                out.append(f'<circle cx="{u:.2f}" cy="{y + inward * (r + 1.1):.2f}" r=".5" fill="{BX}"/>')
             else:
-                out.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r=".45" fill="{GOLD}"/>')
-    pad = 9
-    chain(o + pad, o, W - o - pad, o); chain(o + pad, H - o, W / 2 - 13, H - o); chain(W / 2 + 13, H - o, W - o - pad, H - o)
-    chain(o, o + pad, o, H - o - pad); chain(W - o, o + pad, W - o, H - o - pad)
-    # médaillons d'angle
-    for x, y in [(o, o), (W - o, o), (o, H - o), (W - o, H - o)]:
-        out.append(medallion(x, y, 4.2))
-    # cartouche du numéro de page (bas) et du titre (haut)
-    out.append(f'<rect x="{W / 2 - 11}" y="{H - o - 3.6}" width="22" height="7.2" rx="3.6" fill="{BX}" stroke="{GOLD}" stroke-width=".35"/>')
-    out.append(f'<path d="M{W / 2 - 15} {o} H{W / 2 - 4} M{W / 2 + 4} {o} H{W / 2 + 15}" stroke="{GOLD}" stroke-width=".3"/>')
-    out.append(medallion(W / 2, o, 3.2))
+                out.append(f'<path d="M{y:.2f} {u - r:.2f} A{r} {r} 0 0 {0 if inward > 0 else 1} {y:.2f} {u + r:.2f}" fill="none" stroke="{GOLD}" stroke-width=".5"/>')
+                out.append(f'<circle cx="{y + inward * (r + 1.1):.2f}" cy="{u:.2f}" r=".5" fill="{BX}"/>')
+    arcs(c + 8, W - c - 8, y0, True, 1); arcs(c + 8, W / 2 - 15, H - y0, True, -1); arcs(W / 2 + 15, W - c - 8, H - y0, True, -1)
+    arcs(c + 8, H - c - 8, y0, False, 1); arcs(c + 8, H - c - 8, W - y0, False, -1)
+    # chaîne d'étoiles et de losanges dans la bande
+    m = a + b / 2; st = 6.2
+    def chain(x0, y0_, x1, y1):
+        L = math.hypot(x1 - x0, y1 - y0_); n = max(1, round(L / st))
+        for i in range(n + 1):
+            t = i / n; x, y = x0 + (x1 - x0) * t, y0_ + (y1 - y0_) * t
+            if i % 2 == 0:
+                out.append(f'<path d="{star(x, y, 1.55)}" fill="{GOLD_L}"/><circle cx="{x:.2f}" cy="{y:.2f}" r=".45" fill="{BX}"/>')
+            else:
+                out.append(f'<path d="M{x:.2f} {y - 1.1:.2f} L{x + 1.1:.2f} {y:.2f} L{x:.2f} {y + 1.1:.2f} L{x - 1.1:.2f} {y:.2f}Z" fill="{GOLD}"/>')
+    pad = 12
+    chain(a + pad, m, W / 2 - 9, m); chain(W / 2 + 9, m, W - a - pad, m)
+    chain(a + pad, H - m, W / 2 - 16, H - m); chain(W / 2 + 16, H - m, W - a - pad, H - m)
+    chain(m, a + pad, m, H - a - pad); chain(W - m, a + pad, W - m, H - a - pad)
+    for x, y in [(m, m), (W - m, m), (m, H - m), (W - m, H - m)]:
+        out.append(medallion(x, y, 5.3))
+        out.append(f'<circle cx="{x}" cy="{y}" r="6.6" fill="none" stroke="{GOLD}" stroke-width=".3"/>')
+    out.append(medallion(W / 2, m, 4.6))
+    # cartouche du numéro de page
+    out.append(f'<rect x="{W / 2 - 13}" y="{H - m - 4.4}" width="26" height="8.8" rx="4.4" fill="{BX}" stroke="{GOLD}" stroke-width=".5"/>')
+    out.append(f'<rect x="{W / 2 - 11.8}" y="{H - m - 3.2}" width="23.6" height="6.4" rx="3.2" fill="none" stroke="{GOLD_L}" stroke-width=".2"/>')
     out.append('</svg>')
     return '\n'.join(out)
 
 
 def web_border():
-    """Tuile 3x3 pour border-image (cases de 30 px) : médaillons aux angles, étoiles sur les côtés."""
-    c = 30
+    """Tuile 3x3 pour border-image (cases de 40 px)."""
+    c = 40; band = 30; m = 4
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {3 * c} {3 * c}" width="{3 * c}" height="{3 * c}">']
-    band = 14
-    m = (c - band) / 2  # bande centrée dans la case
-    for (x, y, w, h) in [(c, m, c, band), (c, 2 * c + m, c, band), (m, c, band, c), (2 * c + m, c, band, c)]:
+    for (x, y, w, h) in [(c, m, c, band), (c, 3 * c - m - band, c, band), (m, c, band, c), (3 * c - m - band, c, band, c)]:
         out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{BX}"/>')
-    # liserés or
-    for (x1, y1, x2, y2) in [(c, m - 1.5, 2 * c, m - 1.5), (c, m + band + 1.5, 2 * c, m + band + 1.5),
-                             (c, 2 * c + m - 1.5, 2 * c, 2 * c + m - 1.5), (c, 2 * c + m + band + 1.5, 2 * c, 2 * c + m + band + 1.5),
-                             (m - 1.5, c, m - 1.5, 2 * c), (m + band + 1.5, c, m + band + 1.5, 2 * c),
-                             (2 * c + m - 1.5, c, 2 * c + m - 1.5, 2 * c), (2 * c + m + band + 1.5, c, 2 * c + m + band + 1.5, 2 * c)]:
-        out.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{GOLD}" stroke-width="1"/>')
-    for (x, y) in [(1.5 * c, c / 2), (1.5 * c, 2.5 * c), (c / 2, 1.5 * c), (2.5 * c, 1.5 * c)]:
-        out.append(f'<path d="{star(x, y, 4)}" fill="{GOLD_L}"/>')
-    for (x, y) in [(c, c / 2), (2 * c, c / 2), (c, 2.5 * c), (2 * c, 2.5 * c), (c / 2, c), (c / 2, 2 * c), (2.5 * c, c), (2.5 * c, 2 * c)]:
-        out.append(f'<circle cx="{x}" cy="{y}" r="1.6" fill="{GOLD}"/>')
+    for k in (m - 1.6, m + 1.2, m + band - 1.2, m + band + 1.6):
+        sw = 1.4 if k in (m - 1.6, m + band + 1.6) else .7
+        col = GOLD if sw > 1 else GOLD_L
+        out.append(f'<line x1="{c}" y1="{k}" x2="{2 * c}" y2="{k}" stroke="{col}" stroke-width="{sw}"/>')
+        out.append(f'<line x1="{c}" y1="{3 * c - k}" x2="{2 * c}" y2="{3 * c - k}" stroke="{col}" stroke-width="{sw}"/>')
+        out.append(f'<line x1="{k}" y1="{c}" x2="{k}" y2="{2 * c}" stroke="{col}" stroke-width="{sw}"/>')
+        out.append(f'<line x1="{3 * c - k}" y1="{c}" x2="{3 * c - k}" y2="{2 * c}" stroke="{col}" stroke-width="{sw}"/>')
+    mid = m + band / 2
+    for (x, y) in [(1.5 * c, mid), (1.5 * c, 3 * c - mid), (mid, 1.5 * c), (3 * c - mid, 1.5 * c)]:
+        out.append(f'<path d="{star(x, y, 5.2)}" fill="{GOLD_L}"/><circle cx="{x}" cy="{y}" r="1.5" fill="{BX}"/>')
+    for (x, y) in [(c, mid), (2 * c, mid), (c, 3 * c - mid), (2 * c, 3 * c - mid), (mid, c), (mid, 2 * c), (3 * c - mid, c), (3 * c - mid, 2 * c)]:
+        out.append(f'<path d="M{x} {y - 3.4} L{x + 3.4} {y} L{x} {y + 3.4} L{x - 3.4} {y}Z" fill="{GOLD}"/>')
+    # festons
+    e = m + band + 1.6
+    for (cx, cy, sweep, rot) in [(1.5 * c, e, 1, 'h'), (1.5 * c, 3 * c - e, 0, 'h'), (e, 1.5 * c, 0, 'v'), (3 * c - e, 1.5 * c, 1, 'v')]:
+        for d in (-10, 10):
+            if rot == 'h':
+                out.append(f'<path d="M{cx + d - 6} {cy} A6 6 0 0 {sweep} {cx + d + 6} {cy}" fill="none" stroke="{GOLD}" stroke-width=".9"/>')
+            else:
+                out.append(f'<path d="M{cx} {cy + d - 6} A6 6 0 0 {sweep} {cx} {cy + d + 6}" fill="none" stroke="{GOLD}" stroke-width=".9"/>')
     for (x, y) in [(c / 2, c / 2), (2.5 * c, c / 2), (c / 2, 2.5 * c), (2.5 * c, 2.5 * c)]:
-        out.append(medallion(x, y, 11))
+        out.append(medallion(x, y, 15))
     out.append('</svg>')
     return ''.join(out)
 

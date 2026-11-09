@@ -102,14 +102,14 @@ def cover_html(w, pal):
 
 
 CSS = """
-@page { size: 148mm 210mm; margin: 21mm 17mm 20mm 17mm; background: #FBF2D8;
-  @bottom-center { content: counter(page); font-family: Corm; font-weight: 600; font-size: 9pt; color: #F2DCA4; vertical-align: bottom; padding-bottom: 4.5mm; }
-  @top-center { content: string(booktitle); font-family: Corm; font-weight: 600; font-size: 8pt; letter-spacing: .18em; text-transform: uppercase; color: #8B5A2B; vertical-align: bottom; padding-bottom: 2.5mm; }
+@page { size: 148mm 210mm; margin: 27mm 21mm 25mm 21mm; background: #FBF2D8;
+  @bottom-center { content: counter(page); font-family: Corm; font-weight: 600; font-size: 9pt; color: #F2DCA4; vertical-align: bottom; padding-bottom: 6.2mm; }
+  @top-center { content: string(booktitle); font-family: Corm; font-weight: 600; font-size: 8pt; letter-spacing: .18em; text-transform: uppercase; color: #8B5A2B; vertical-align: bottom; padding-bottom: 3mm; }
 }
 @page cover { margin: 0; border: 0; padding: 0; @bottom-center { content: none } @top-center { content: none } }
 @page front { @bottom-center { content: none } @top-center { content: none } }
 html { font-family: Inter; color: #2A1A16; }
-.pframe { position: fixed; top: -21mm; left: -17mm; width: 148mm; height: 210mm; z-index: -1; }
+.pframe { position: fixed; top: -27mm; left: -21mm; width: 148mm; height: 210mm; z-index: -1; }
 .cover { page: cover; position: relative; width: 148mm; height: 210mm; overflow: hidden; text-align: center; }
 .spine { position: absolute; left: 0; top: 0; bottom: 0; width: 9mm; }
 .frame { position: absolute; left: 8mm; right: 8mm; top: 8mm; bottom: 8mm; border: .5mm solid; }
@@ -153,7 +153,9 @@ h2.part.newpage { break-before: page; }
 .kl { font-family: KL; color: #1A1210; }
 .km { font-family: KM; color: #D41F3F; position: absolute; left: 0; top: 0; right: 0; white-space: nowrap; }
 .kl .g { color: #1A7A42; } .kl .p { color: #1C4F9C; }
-.bayt td { font-family: KL; font-size: 13.5pt; line-height: 2; color: #1A1210; width: 47%; vertical-align: top; padding: 0 1.5mm; }
+.bayt table { table-layout: fixed; }
+.bayt td { font-family: KL; line-height: 2; color: #1A1210; vertical-align: top; padding: 0 2mm; overflow: hidden; }
+.bayt .k { white-space: nowrap; }
 .bayt td:nth-child(2) { text-align: right; }
 .bayt td:nth-child(3) { text-align: left; }
 .bayt td.wide { text-align: center; }
@@ -186,7 +188,10 @@ def pdf_html(w, parts_data, pal, mode='complet'):
 <div class="meta">Œuvre de Cheikh Ahmadou Bamba Khadimou Rassoul<br/>{nparts} {'parties' if nparts > 1 else 'partie'} · {w['bayts']} bayits · mètre {e(w['meter'])}<br/>{label}</div>
 <div class="credit">Édition Kiraam · Textes issus du « Khassida Dataset » de Daour (github.com/DaurDiop/khassida_dataset, licence MIT).<br/>Diffusion libre et gratuite. Toute erreur de saisie peut être signalée à Kiraam.</div>
 </section>""")
-    for i, (num, pname, bayts) in enumerate(parts_data):
+    for i, (num, pname, bayts, pem) in enumerate(parts_data):
+        fs2 = 45.5 / (pem * 0.3528)
+        stackp = fs2 < 11.0          # hémistiches trop longs pour deux colonnes : toute la partie en lignes centrées
+        fs = max(11.0, min(15.0, (95.0 if stackp else 45.5) / (pem * 0.3528)))
         if nparts > 1:
             body.append(f'<h2 class="part{" newpage" if True else ""}"><small>Partie {i + 1}</small>{e(pname)}</h2>')
         else:
@@ -200,7 +205,7 @@ def pdf_html(w, parts_data, pal, mode='complet'):
                 continue
             ar = b['ar']
             plain = [re.sub(r'[\u064B-\u0652\u0670\u06E1-\u06ED]', '', x) for x in ar]
-            long_ = any(len(x) > 22 for x in plain)
+            long_ = stackp or b.get('w', 0) * fs * 0.3528 > 45.5 or len(ar) == 1
             rows = ([[x] for x in ar] if long_ else [ar[j:j + 2] for j in range(0, len(ar), 2)]) or [['']]
             tr_txt = '  ·  '.join(t for t in b['tr'] if t)
             tbl = ''
@@ -208,7 +213,7 @@ def pdf_html(w, parts_data, pal, mode='complet'):
                 numcell = f'<td class="n"><span class="medal ar">{num}</span></td>' if ri == 0 else '<td class="n"></td>'
                 cells = (f'<td colspan="2" class="wide">{kline(r[0])}</td>' if long_ else ''.join(f'<td>{kline(x)}</td>' for x in r) + ('<td></td>' if len(r) == 1 else ''))
                 tbl += f'<tr>{numcell}{cells}</tr>'
-            body.append(f'<div class="bayt{band}"><table>{tbl}</table>'
+            body.append(f'<div class="bayt{band}"><table style="font-size:{fs:.2f}pt"><colgroup><col style="width:7mm"/><col/><col/></colgroup>{tbl}</table>'
                         + (f'<div class="tr">{e(tr_txt)}</div>' if show_tr and tr_txt else '')
                         + (f'<div class="fr">{e(b.get(tl) or "")}</div>' if tl and b.get(tl) else '') + '</div>')
     langs_txt = {'complet': 'Arabe · Translittération · Français', 'arabe': 'Arabe', 'phonetique': 'Arabe · Translittération',
@@ -230,7 +235,8 @@ def render(job):
     from weasyprint import HTML
     w, idx = job
     pal = PALETTES[idx % len(PALETTES)]
-    parts_data = [(n, json.load(open(f'{OUT}/data/k/{n}.json'))['name'], json.load(open(f'{OUT}/data/k/{n}.json'))['bayts']) for n in w['parts']]
+    _pd = [json.load(open(f'{OUT}/data/k/{n}.json')) for n in w['parts']]
+    parts_data = [(n, d['name'], d['bayts'], d.get('em', 10)) for n, d in zip(w['parts'], _pd)]
     pdf_path = f"{OUT}/pdf/{w['slug']}.pdf"
     sizes = {}
     for mode in MODES:
@@ -287,6 +293,7 @@ def main(only=None):
     else:
         lib_r = lib
     jobs = [(w, lib.index(w)) for w in lib_r]
+    subprocess.run(['python3', f'{OUT}/tools/measure.py'], check=True)
     with Pool(max(2, os.cpu_count() or 2)) as p:
         res = p.map(render, jobs)
     info = {s: (sz, pg, pal) for s, sz, pg, pal in res}
