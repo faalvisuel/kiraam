@@ -136,17 +136,33 @@ html { font-family: Inter; color: #2A1A16; }
 h2.part { font-family: Corm; font-weight: 600; font-size: 17pt; color: #6B1424; text-align: center; margin: 2mm 0 6mm; break-after: avoid; }
 h2.part small { display: block; font-size: 9pt; letter-spacing: .2em; text-transform: uppercase; color: #A88A5A; font-weight: 400 }
 h2.part.newpage { break-before: page; }
-.bayt { break-inside: avoid; padding: 2.6mm 0 3mm; border-bottom: .2mm solid #EADFCB; }
+.bayt { break-inside: avoid; padding: 2.8mm 2mm 3.2mm; border-radius: 2mm; margin-bottom: 1.6mm; background: #FFFDF8; border: .2mm solid #F0E4CC; }
+.bayt.alt { background: #FBF3E4; }
+.medal { display: inline-block; min-width: 6.2mm; height: 6.2mm; line-height: 6.2mm; border-radius: 3.1mm; background: #6B1424; color: #F2DCA4; font-family: Inter; font-size: 7pt; text-align: center; }
+.medal.ar { font-family: Amiri; font-size: 9pt; line-height: 6mm; }
+.tlonly { display: table; width: 100%; }
+.tlonly .mc { display: table-cell; width: 7mm; vertical-align: top; padding-top: .6mm; }
+.tlonly .tlx { display: table-cell; padding-left: 3mm; font-family: Corm; font-size: 12pt; line-height: 1.45; color: #2A1A16; }
 .bayt table { width: 100%; border-collapse: collapse; direction: rtl; }
-.bayt td { font-family: Amiri; font-size: 13.5pt; line-height: 1.8; color: #1F1310; text-align: center; width: 47%; vertical-align: top; }
+.bayt td { font-family: Amiri; font-size: 13.5pt; line-height: 1.8; color: #5A0F1E; text-align: center; width: 47%; vertical-align: top; }
 .bayt td.wide { width: 94%; }
 .bayt td.n { width: 6%; font-size: 9.5pt; color: #B48A3A; }
-.tr { font-family: Corm; font-style: italic; font-size: 10pt; color: #7A5B44; text-align: center; margin-top: .6mm; }
-.fr { font-family: Inter; font-size: 8pt; line-height: 1.55; color: #4A3830; text-align: center; margin: 1.2mm 6mm 0; }
+.tr { font-family: Corm; font-style: italic; font-size: 10pt; color: #A87A2E; text-align: center; margin-top: .6mm; }
+.fr { font-family: Inter; font-size: 8pt; line-height: 1.55; color: #3A2A24; text-align: center; margin: 1.6mm 6mm 0; padding-top: 1.4mm; border-top: .2mm dashed #E3CFA6; }
 """
 
 
-def pdf_html(w, parts_data, pal):
+MODES = {
+    'complet': ('Arabe, translittération et traduction française', True, True, 'fr'),
+    'arabe': ('Texte arabe seul', True, False, None),
+    'phonetique': ('Arabe et translittération', True, True, None),
+    'francais': ('Traduction française seule', False, False, 'fr'),
+    'anglais': ('English translation only', False, False, 'en'),
+}
+
+
+def pdf_html(w, parts_data, pal, mode='complet'):
+    label, show_ar, show_tr, tl = MODES[mode]
     body = [cover_html(w, pal)]
     nparts = len(w['parts'])
     body.append(f"""<section class="front">
@@ -155,7 +171,7 @@ def pdf_html(w, parts_data, pal):
 <h1>{e(w['title'])}</h1>
 <div class="ar" dir="rtl">{e(w['incipit'])}</div>
 <div class="orn">✦ ✦ ✦</div>
-<div class="meta">Œuvre de Cheikh Ahmadou Bamba Khadimou Rassoul<br/>{nparts} {'parties' if nparts > 1 else 'partie'} · {w['bayts']} vers · mètre {e(w['meter'])}<br/>Texte arabe, translittération et traduction française</div>
+<div class="meta">Œuvre de Cheikh Ahmadou Bamba Khadimou Rassoul<br/>{nparts} {'parties' if nparts > 1 else 'partie'} · {w['bayts']} vers · mètre {e(w['meter'])}<br/>{label}</div>
 <div class="credit">Édition Kiraam · Textes issus du « Khassida Dataset » de Daour (github.com/DaurDiop/khassida_dataset, licence MIT).<br/>Diffusion libre et gratuite. Toute erreur de saisie peut être signalée sur le dépôt Kiraam.</div>
 </section>""")
     for i, (num, pname, bayts) in enumerate(parts_data):
@@ -163,21 +179,29 @@ def pdf_html(w, parts_data, pal):
             body.append(f'<h2 class="part{" newpage" if True else ""}"><small>Partie {i + 1}</small>{e(pname)}</h2>')
         else:
             body.append(f'<h2 class="part newpage">{e(pname)}</h2>')
-        for b in bayts:
+        for k, b in enumerate(bayts):
+            num = str(b['n']).translate(AR_DIGITS)
+            band = ' alt' if k % 2 else ''
+            if not show_ar:
+                txt = b.get(tl) or b.get('fr') or ''
+                body.append(f'<div class="bayt tlonly{band}"><div class="mc"><span class="medal">{b["n"]}</span></div><div class="tlx">{e(txt)}</div></div>')
+                continue
             ar = b['ar']
             plain = [re.sub(r'[\u064B-\u0652\u0670\u06E1-\u06ED]', '', x) for x in ar]
             long_ = any(len(x) > 26 for x in plain)
             rows = ([[x] for x in ar] if long_ else [ar[j:j + 2] for j in range(0, len(ar), 2)]) or [['']]
-            trs = b['tr']
-            tr_txt = '  ·  '.join(t for t in trs if t)
+            tr_txt = '  ·  '.join(t for t in b['tr'] if t)
             tbl = ''
             for ri, r in enumerate(rows):
-                numcell = f'<td class="n">{str(b["n"]).translate(AR_DIGITS)}</td>' if ri == 0 else '<td class="n"></td>'
+                numcell = f'<td class="n"><span class="medal ar">{num}</span></td>' if ri == 0 else '<td class="n"></td>'
                 cells = (f'<td colspan="2" class="wide">{e(r[0])}</td>' if long_ else ''.join(f'<td>{e(x)}</td>' for x in r) + ('<td></td>' if len(r) == 1 else ''))
                 tbl += f'<tr>{numcell}{cells}</tr>'
-            body.append(f'<div class="bayt"><table>{tbl}</table>'
-                        + (f'<div class="tr">{e(tr_txt)}</div>' if tr_txt else '')
-                        + (f'<div class="fr">{e(b["fr"])}</div>' if b['fr'] else '') + '</div>')
+            body.append(f'<div class="bayt{band}"><table>{tbl}</table>'
+                        + (f'<div class="tr">{e(tr_txt)}</div>' if show_tr and tr_txt else '')
+                        + (f'<div class="fr">{e(b.get(tl) or "")}</div>' if tl and b.get(tl) else '') + '</div>')
+    langs_txt = {'complet': 'Arabe · Translittération · Français', 'arabe': 'Arabe', 'phonetique': 'Arabe · Translittération',
+                 'francais': 'Français', 'anglais': 'English'}[mode]
+    body.append(verso_html(w, pal, parts_data[0][2][0], langs_txt))
     return f'<!doctype html><html lang="fr"><head><meta charset="utf-8"><style>{font_faces()}{CSS}</style></head><body>{"".join(body)}</body></html>'
 
 
@@ -185,9 +209,9 @@ def cover_only_html(w, pal):
     return f'<!doctype html><html><head><meta charset="utf-8"><style>{font_faces()}{CSS}</style></head><body>{cover_html(w, pal)}</body></html>'
 
 
-from cover import cover_html, COVER_CSS, PALETTES
+from cover import cover_html, COVER_CSS, PALETTES, verso_html, VERSO_CSS
 from ar_titles import AR_TITLES
-CSS = CSS + COVER_CSS
+CSS = CSS + COVER_CSS + VERSO_CSS
 
 
 def render(job):
@@ -196,7 +220,17 @@ def render(job):
     pal = PALETTES[idx % len(PALETTES)]
     parts_data = [(n, json.load(open(f'{OUT}/data/k/{n}.json'))['name'], json.load(open(f'{OUT}/data/k/{n}.json'))['bayts']) for n in w['parts']]
     pdf_path = f"{OUT}/pdf/{w['slug']}.pdf"
-    HTML(string=pdf_html(w, parts_data, pal)).write_pdf(pdf_path)
+    sizes = {}
+    for mode in MODES:
+        pth = pdf_path if mode == 'complet' else f"{OUT}/pdf/{w['slug']}-{mode}.pdf"
+        HTML(string=pdf_html(w, parts_data, pal, mode)).write_pdf(pth)
+        sizes[mode] = os.path.getsize(pth)
+    # verso image
+    vtmp = f"/home/claude/build/tmpv-{w['slug']}"
+    HTML(string=f'<!doctype html><html><head><meta charset="utf-8"><style>{font_faces()}{CSS}</style></head><body>{verso_html(w, pal, parts_data[0][2][0], "Arabe · Translittération · Français")}</body></html>').write_pdf(vtmp + '.pdf')
+    subprocess.run(['pdftoppm', '-r', '110', '-jpeg', '-jpegopt', 'quality=86', '-singlefile', vtmp + '.pdf', vtmp], check=True)
+    subprocess.run(['python3', '-c', f"from PIL import Image;Image.open('{vtmp}.jpg').save('{OUT}/covers/{w['slug']}-verso.webp',quality=84,method=6)"], check=True)
+    os.remove(vtmp + '.pdf'); os.remove(vtmp + '.jpg')
     # cover image: render page 1 only
     tmp = f"/home/claude/build/tmp-{w['slug']}.pdf"
     HTML(string=cover_only_html(w, pal)).write_pdf(tmp)
@@ -205,7 +239,7 @@ def render(job):
     subprocess.run(['python3', '-c', f"from PIL import Image;Image.open('{base}.jpg').save('{OUT}/covers/{w['slug']}.webp',quality=84,method=6)"], check=True)
     os.remove(tmp); os.remove(base + '.jpg')
     pages = int(subprocess.run(['qpdf', '--show-npages', pdf_path], capture_output=True, text=True).stdout.strip())
-    return w['slug'], os.path.getsize(pdf_path), pages, pal['name']
+    return w['slug'], sizes, pages, pal['name']
 
 
 def main(only=None):
@@ -246,7 +280,14 @@ def main(only=None):
     info = {s: (sz, pg, pal) for s, sz, pg, pal in res}
     for w in lib:
         if w['slug'] in info:
-            w['pdfSize'], w['pages'], w['palette'] = info[w['slug']]
+            sz, w['pages'], w['palette'] = info[w['slug']]
+            w['pdfs'] = sz; w['pdfSize'] = sz['complet']
+    if only:
+        cur = json.load(open(f'{OUT}/data/library.json'))
+        for cw in cur['works']:
+            if cw['slug'] in info:
+                sz, cw['pages'], cw['palette'] = info[cw['slug']]; cw['pdfs'] = sz; cw['pdfSize'] = sz['complet']
+        json.dump(cur, open(f'{OUT}/data/library.json', 'w'), ensure_ascii=False, indent=0)
     if not only:
         json.dump({'source': 'https://github.com/DaurDiop/khassida_dataset', 'license': 'MIT', 'works': lib},
                   open(f'{OUT}/data/library.json', 'w'), ensure_ascii=False, indent=0)

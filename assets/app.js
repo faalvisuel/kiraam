@@ -30,6 +30,16 @@
   const savePrefs = () => store.set('prefs', prefs);
 
   let LIB = [], BY = {}, AUDIO = {};
+  // Numéro WhatsApp de Kiraam (format international sans + ni espaces), utilisé pour la précommande et le contact
+  const WHATSAPP = '';
+  const waLink = text => WHATSAPP ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}` : '';
+  const FORMATS = [
+    ['complet', 'Complet', 'Arabe · translittération · français'],
+    ['arabe', 'Arabe seul', 'Texte arabe vocalisé'],
+    ['phonetique', 'Arabe + phonétique', 'Arabe et translittération latine'],
+    ['francais', 'Français seul', 'Traduction française'],
+    ['anglais', 'English only', 'English translation']];
+  const pdfUrl = (w, f) => `${R}pdf/${w.slug}${f === 'complet' ? '' : '-' + f}.pdf`;
   const partCache = {};
   const PHOTOS = [
     ['mosquee-touba', 'La Grande Mosquée de Touba'], ['minaret-jour', 'Le minaret Lamp Fall'],
@@ -56,7 +66,7 @@
         ${opts.progress && p ? `<div class="progress" title="${pct}% lu"><i style="width:${pct}%"></i></div>` : ''}
         <div class="foot">
           <a class="btn btn-bx sm" href="${R}lire/${w.slug}/${p ? p.part : 1}/">${ic('read')}${p ? 'Reprendre' : 'Lire'}</a>
-          <a class="pdf" href="${R}pdf/${w.slug}.pdf" download>${ic('download')}<span>PDF · ${mb(w.pdfSize)}</span></a>
+          <a class="pdf" href="${R}livre/${w.slug}/" title="Télécharger : complet, arabe, français…">${ic('download')}<span>PDF</span></a>
         </div>
       </div>
     </article>`;
@@ -159,6 +169,10 @@
       ${galleryGrid(PHOTOS.slice(1, 6))}
     </div></section>
 
+    <section class="block" style="padding-top:0"><div class="wrap"><div class="preorder" style="padding:34px 36px">
+      <div><b style="font-size:30px">${ic('rehal')}Les khassidas en livres imprimés</b><span style="font-size:15px;max-width:560px">Kiraam prépare des éditions reliées, avec les mêmes couvertures. Précommandez votre livre depuis sa page : nous vous recontactons sur WhatsApp.</span></div>
+      <a class="btn btn-gold" href="${R}livre/jazbu/">${ic('khatam')}Choisir un livre</a></div></div></section>
+
     <section class="wrap"><div class="quote">
       <div class="arch-portrait"><img src="${R}assets/img/serigne-touba.webp" alt="Serigne Touba" loading="lazy"></div>
       <div>
@@ -232,7 +246,10 @@
     const related = LIB.filter(x => x !== w && (x.featured || x.parts.length > 1)).sort(() => .5 - Math.random()).slice(0, 4);
     view.innerHTML = banner(esc(w.title), esc(w.titleAr), 'minaret-dome', `<a href="${R}bibliotheque/">Bibliothèque</a>${ic('arrow')}${esc(w.title)}`) + `
     <div class="wrap book">
-      <div class="book-cover"><div class="cv"><img src="${R}covers/${w.slug}.webp" alt="Couverture de ${esc(w.title)}"></div></div>
+      <div class="book-cover"><div class="flip" data-flip role="button" tabindex="0" aria-label="Retourner le livre">
+        <div class="face front" style="background-image:url('${R}covers/${w.slug}.webp')" role="img" aria-label="Couverture de ${esc(w.title)}"></div>
+        <div class="face back" style="background-image:url('${R}covers/${w.slug}-verso.webp')" role="img" aria-label="Quatrième de couverture de ${esc(w.title)}"></div>
+      </div><p class="flip-hint">${ic('khatam')}Survolez ou touchez le livre pour voir le verso</p></div>
       <div class="book-info">
         <span class="eyebrow">${ic('khatam')}${w.parts.length > 1 ? `Œuvre en ${w.parts.length} parties` : 'Khassida'}</span>
         <div class="t-ar">${esc(w.titleAr)}</div>
@@ -243,10 +260,13 @@
         <div class="actions">
           <a class="btn btn-gold" href="${R}lire/${w.slug}/${p ? p.part : 1}/">${ic('read')}${p ? 'Reprendre la lecture' : 'Lire en ligne'}</a>
           ${AUDIO[w.slug] ? `<button class="btn btn-bx" data-listen="${w.slug}" data-i="0">${ic('play')}Écouter</button>` : ''}
-          <a class="btn btn-line" href="${R}pdf/${w.slug}.pdf" download>${ic('download')}Télécharger le PDF · ${mb(w.pdfSize)}</a>
+          <div class="dl"><button class="btn btn-line" data-dl aria-expanded="false">${ic('download')}Télécharger le PDF${ic('min', 'chev')}</button>
+            <div class="dl-menu" role="menu">${FORMATS.filter(([f]) => !w.pdfs || w.pdfs[f]).map(([f, n, d]) => `<a role="menuitem" href="${pdfUrl(w, f)}" download><b>${n}</b><small>${d}${w.pdfs ? ' · ' + mb(w.pdfs[f]) : ''}</small></a>`).join('')}</div></div>
           <button class="ibtn${favs.has(w.slug) ? ' on' : ''}" data-fav="${w.slug}" aria-label="Favori">${ic('khatam')}</button>
           <button class="ibtn" data-share="${w.slug}" aria-label="Partager">${ic('share')}</button>
         </div>
+        <div class="preorder"><div><b>${ic('rehal')}Bientôt en livre imprimé</b><span>Réservez votre exemplaire relié de ${esc(w.title)}. Nous vous recontactons sur WhatsApp.</span></div>
+          <button class="btn btn-gold" data-preorder="${w.slug}">${ic('khatam')}Précommander</button></div>
         ${w.parts.length > 1 ? `<div class="parts">${w.partNames.map((n, i) => `<a href="${R}lire/${w.slug}/${i + 1}/"><span>${esc(n)}</span><small>${ic('arrow')}</small></a>`).join('')}</div>` : ''}
         ${AUDIO[w.slug] ? `<div class="listen"><h3>${ic('audio')}Écouter</h3><p class="sub">${AUDIO[w.slug].length} déclamation${AUDIO[w.slug].length > 1 ? 's' : ''} par les kourels · le lecteur continue pendant que vous lisez</p>
           <div class="recs">${AUDIO[w.slug].map((r, i) => recRow(w, r, i)).join('')}</div></div>` : ''}
@@ -286,7 +306,7 @@
         <a class="ibtn" href="${R}livre/${w.slug}/" aria-label="Retour au livre">${ic('back')}</a>
         <div class="t"><b>${esc(w.title)}</b><small>${w.parts.length > 1 ? `Partie ${partIdx} / ${w.parts.length} · ` : ''}${data.bayts.length} vers</small></div>
         ${AUDIO[w.slug] ? `<button class="ibtn rb-au" data-listen="${w.slug}" data-i="0" aria-label="Écouter">${ic('audio')}</button>` : ''}
-        <a class="ibtn rb-dl" href="${R}pdf/${w.slug}.pdf" download aria-label="Télécharger le PDF">${ic('download')}</a>
+        <a class="ibtn rb-dl" href="${R}pdf/${w.slug}.pdf" download aria-label="Télécharger le PDF complet">${ic('download')}</a>
         <div class="tools">
         ${w.parts.length > 1 ? `<select class="select" id="partSel" aria-label="Partie">${w.partNames.map((n, i) => `<option value="${i + 1}"${i + 1 === partIdx ? ' selected' : ''}>${esc(n)}</option>`).join('')}</select>` : ''}
         <div class="seg" role="group" aria-label="Traduction">${langs.map(l => `<button data-lang="${l}" class="${lang === l ? 'on' : ''}">${l.toUpperCase()}</button>`).join('')}<button data-lang="none" class="${lang === 'none' ? 'on' : ''}" title="Arabe seul">ع</button></div>
@@ -372,9 +392,9 @@
       <h2>Sources</h2>
       <p>Les textes proviennent du <a href="https://github.com/DaurDiop/khassida_dataset" target="_blank" rel="noopener">Khassida Dataset</a> de Daour, publié sous licence MIT, qui intègre les traductions de l'application <a href="https://github.com/DaurDiop/karamati-khatou-yadi" target="_blank" rel="noopener">Karamati Khatou Yadi</a>. Qu'Allah les récompense. Les photographies de la Grande Mosquée de Touba sont de THIERLens.</p>
       <h2>Audio</h2>
-      <p>Les déclamations sont celles des kourels (Hizbut Tarqiyyah, Nurud Darayni, Safinatoul Amane…), diffusées par leurs propres chaînes YouTube et Audiomack. Kiraam les intègre avec les lecteurs officiels de ces plateformes, sans copier les fichiers ; les droits restent à leurs auteurs. Vous êtes un kourel et souhaitez voir vos enregistrements ici, ou les retirer ? Écrivez-nous sur le dépôt GitHub.</p>
+      <p>Les déclamations sont celles des kourels (Hizbut Tarqiyyah, Nurud Darayni, Safinatoul Amane…), publiées sur Audiomack (audio seul, sans vidéo) et, en complément, sur YouTube. Kiraam les intègre avec les lecteurs officiels de ces plateformes, sans copier les fichiers ; les droits restent à leurs auteurs. Vous êtes un kourel et souhaitez voir vos enregistrements ici, ou les retirer ? Écrivez-nous.</p>
       <h2>Signaler une erreur</h2>
-      <p>Une faute dans un vers, un titre ou une traduction ? Ouvrez une « issue » sur le <a href="https://github.com/faalvisuel/kiraam" target="_blank" rel="noopener">dépôt GitHub</a> : chaque correction profite à tous.</p>
+      <p>Une faute dans un vers, un titre ou une traduction ? Écrivez-nous ${WHATSAPP ? `sur <a href="${waLink('Assalamou aleykoum, je souhaite signaler une correction sur Kiraam : ')}" target="_blank" rel="noopener">WhatsApp</a>` : 'via la page de contact'} : chaque correction profite à tous.</p>
       <p><a href="${R}charte/">Voir la charte graphique de Kiraam →</a></p>
     </article></div>`;
   }
@@ -403,7 +423,6 @@
       <h2>Motif</h2>
       <p>Le treillis d'étoiles des vitraux de Touba, utilisé en filigrane sur les fonds et les couvertures.</p>
       <div style="height:160px;border-radius:22px;background:var(--bx-3) var(--pattern-gold);box-shadow:var(--sh)"></div>
-      <p style="margin-top:24px"><a href="https://github.com/faalvisuel/kiraam/tree/main/assets/brand" target="_blank" rel="noopener">Télécharger les fichiers du logo (SVG et PNG) →</a></p>
     </article></div>`;
   }
 
@@ -416,7 +435,7 @@
   const recThumb = r => r.type === 'youtube' ? `<img src="https://i.ytimg.com/vi/${r.id}/mqdefault.jpg" alt="" loading="lazy">` : ic('audio');
   function recRow(w, r, i) {
     return `<button class="rec" data-listen="${w.slug}" data-i="${i}"><span class="th">${recThumb(r)}</span>
-      <span style="min-width:0"><b>${esc(r.by)}</b><small>${esc(r.at || (r.type === 'youtube' ? 'YouTube' : 'Audiomack'))}</small></span>
+      <span style="min-width:0"><b>${esc(r.by)}</b><small>${r.type === 'youtube' ? 'Vidéo YouTube' : 'Audio'}${r.at ? ' · ' + esc(r.at) : ''}</small></span>
       <span class="pl">${ic('play')}</span></button>`;
   }
   const dock = $('#dock');
@@ -435,6 +454,44 @@
       ${list.length > 1 ? `<div class="dock-foot">` : ''}${list.length > 1 ? list.map((x, k) => `<button class="${k === (list[i] ? i : 0) ? 'on' : ''}" data-listen="${slug}" data-i="${k}">${esc(x.by.length > 26 ? x.by.slice(0, 24) + '…' : x.by)}</button>`).join('') + '</div>' : ''}`;
     dock.hidden = false; dock.classList.remove('min');
     $$('.rec').forEach(x => x.classList.toggle('on', x.dataset.listen === slug && +x.dataset.i === +i));
+  }
+
+  function stagger() { $$('.grid, .track').forEach(g => [...g.children].forEach((c, i) => c.style.setProperty('--i', i % 12))); }
+  // inclinaison 3D qui suit la souris
+  document.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    const cv = e.target.closest && e.target.closest('.card'); if (!cv) return;
+    const r = cv.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    cv.style.setProperty('--ry', `${(x - .5) * 26 - 6}deg`); cv.style.setProperty('--rx', `${(.5 - y) * 14}deg`);
+    cv.style.setProperty('--mx', `${x * 100}%`); cv.style.setProperty('--my', `${y * 100}%`);
+  }, { passive: true });
+
+  // ---------- Précommande ----------
+  function openPreorder(slug) {
+    const w = BY[slug];
+    let m = $('#preorder');
+    if (!m) { m = document.createElement('div'); m.id = 'preorder'; m.className = 'modal'; document.body.appendChild(m); }
+    m.innerHTML = `<form class="modal-in" id="poForm">
+      <button type="button" class="ibtn mclose" data-mclose aria-label="Fermer">${ic('close')}</button>
+      <div class="po-head"><img src="${R}covers/${w.slug}.webp" alt=""><div><span class="eyebrow">${ic('rehal')}Précommande</span><h3>${esc(w.title)}</h3><p class="ar">${esc(w.titleAr)}</p></div></div>
+      <p class="sub">Le livre imprimé est en préparation. Réservez le vôtre : nous vous recontactons sur WhatsApp pour confirmer le prix et la livraison. Aucun paiement maintenant.</p>
+      <div class="po-grid">
+        <label class="field"><span>Votre nom</span><div class="control"><input name="nom" required autocomplete="name" placeholder="Prénom et nom"></div></label>
+        <label class="field"><span>Ville</span><div class="control"><input name="ville" required autocomplete="address-level2" placeholder="Dakar, Touba, Paris…"></div></label>
+        <label class="field"><span>Édition</span><div class="control"><select name="ed">${FORMATS.slice(0, 4).map(([f, n, d]) => `<option value="${n}">${n} — ${d}</option>`).join('')}</select></div></label>
+        <label class="field"><span>Quantité</span><div class="control"><input name="qte" type="number" min="1" max="500" value="1" required></div></label>
+      </div>
+      <button class="btn btn-gold po-send" type="submit">${ic('share')}Envoyer ma précommande sur WhatsApp</button>
+      ${WHATSAPP ? '' : '<p class="count" style="margin:10px 0 0">La précommande ouvre bientôt.</p>'}
+    </form>`;
+    m.classList.add('open');
+    $('#poForm').onsubmit = ev => {
+      ev.preventDefault();
+      const f = new FormData(ev.target);
+      const msg = `Assalamou aleykoum Kiraam 🌙\nJe souhaite précommander le livre :\n📖 ${w.title} (${w.titleAr})\n• Édition : ${f.get('ed')}\n• Quantité : ${f.get('qte')}\n• Nom : ${f.get('nom')}\n• Ville : ${f.get('ville')}\n${location.origin}${R}livre/${w.slug}/`;
+      const url = waLink(msg);
+      if (url) window.open(url, '_blank', 'noopener'); else alert('La précommande ouvre très bientôt, inch Allah.');
+    };
   }
 
   // ---------- Router ----------
@@ -459,6 +516,7 @@
       default: notFound();
     }
     if (!(page === 'lire' && c)) window.scrollTo(0, 0);
+    stagger();
     onScroll();
   }
 
@@ -474,6 +532,12 @@
   function updateFavCount() { const d = $('#favCount'); d.hidden = !favs.size; d.textContent = favs.size; }
 
   document.addEventListener('click', e => {
+    const po = e.target.closest('[data-preorder]'); if (po) { openPreorder(po.dataset.preorder); return; }
+    if (e.target.closest('[data-mclose]') || e.target.classList.contains('modal')) { $('#preorder').classList.remove('open'); return; }
+    const dlb = e.target.closest('[data-dl]');
+    if (dlb) { const d = dlb.parentElement; d.classList.toggle('open'); dlb.setAttribute('aria-expanded', d.classList.contains('open')); return; }
+    if (!e.target.closest('.dl-menu')) $$('.dl.open').forEach(d => d.classList.remove('open'));
+    const fl = e.target.closest('[data-flip]'); if (fl) { fl.classList.toggle('flipped'); return; }
     const li = e.target.closest('[data-listen]');
     if (li) { openDock(li.dataset.listen, +li.dataset.i || 0); return; }
     if (e.target.closest('[data-dock-close]')) { dock.hidden = true; dock.innerHTML = ''; dockState = null; return; }
@@ -482,7 +546,8 @@
     if (fav) {
       const s = fav.dataset.fav; favs.has(s) ? favs.delete(s) : favs.add(s); store.set('favs', [...favs]);
       $$(`[data-fav="${s}"]`).forEach(x => x.classList.toggle('on', favs.has(s)));
-      updateFavCount(); return;
+      updateFavCount();
+    $$('[data-wa]').forEach(a => { if (WHATSAPP) a.href = waLink('Assalamou aleykoum Kiraam, '); else a.remove(); }); return;
     }
     const sh = e.target.closest('[data-share]');
     if (sh) {
@@ -517,7 +582,7 @@
     if (!lb) { lb = document.createElement('div'); lb.className = 'lightbox'; lb.innerHTML = `<img alt=""><button class="ibtn" aria-label="Fermer">${ic('close')}</button>`; document.body.appendChild(lb); lb.onclick = () => lb.classList.remove('open'); }
     lb.querySelector('img').src = `${R}assets/photos/${f}.webp`; lb.classList.add('open');
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); lb && lb.classList.remove('open'); } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); $('#preorder')?.classList.remove('open'); $$('.dl.open').forEach(d => d.classList.remove('open')); lb && lb.classList.remove('open'); } });
   window.addEventListener('popstate', route);
   // liens internes : navigation sans rechargement
   document.addEventListener('click', e => {

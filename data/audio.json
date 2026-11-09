@@ -1,70 +1,599 @@
 {
-  "note": "Enregistrements publics intégrés via les lecteurs officiels YouTube / Audiomack. Les droits appartiennent aux kourels et chaînes qui les publient. Ajouter une entrée : {\"type\":\"youtube\",\"id\":\"ID_VIDEO\",\"by\":\"Nom du kourel\",\"at\":\"Contexte\"}",
-  "audio": {
-    "jazbu": [
-      {"type": "youtube", "id": "GU-huBbiiuI", "by": "HT Kourel National", "at": "Grand Magal de Touba 2023"},
-      {"type": "youtube", "id": "WX6hrEa0Gxw", "by": "HT Kourel 1 National", "at": "Gamou 2022"},
-      {"type": "audiomack", "artist": "khassida227", "slug": "jazbou-darou-micro-segn-ousseynou-fall", "by": "Kourel Xassida", "at": "Daaju Darou Mouhty, micro Ousseynou Fall"}
-    ],
-    "mawahibu": [
-      {"type": "youtube", "id": "BhWaEDxeuT8", "by": "Kurel Nûrud-Dârayni HT", "at": "Grand Magal de Touba 2024"},
-      {"type": "youtube", "id": "r5HFhWSW4oI", "by": "Kourel 1 HT Touba", "at": "Baay Dame Lo"},
-      {"type": "youtube", "id": "IS5-sdS6KVE", "by": "Kourel Nuurud Daarayni HT Paris", "at": ""}
-    ],
-    "matlabul-fawzayni": [
-      {"type": "youtube", "id": "h-jXtQ7K1HM", "by": "Kourel National HTDKH", "at": ""},
-      {"type": "youtube", "id": "cC2liLZqdDk", "by": "Kourel Nurud Darayni HT Touba", "at": "Ramadan 2025"},
-      {"type": "youtube", "id": "IQAi0tCfIoM", "by": "Kurel 1 National HTDKH", "at": "Magal"}
-    ],
-    "nuuru-daarayni": [
-      {"type": "youtube", "id": "tPEeV_-O8FQ", "by": "Kourel HT Diourbel", "at": "1997"},
-      {"type": "youtube", "id": "S5MnQ2z6Qtw", "by": "Kourel Mafatihoul Bichri Touba", "at": ""}
-    ],
-    "jalibatul-maraghibi": [
-      {"type": "youtube", "id": "EGWO-CCGjJE", "by": "Kourel HT", "at": "Magal de Touba 2024"},
-      {"type": "youtube", "id": "ymndynk-3sM", "by": "Kourel Serigne Abdou Lahat Ablaye Diop HT", "at": "Magal 2024"}
-    ],
-    "mafatihul-jinan": [
-      {"type": "youtube", "id": "T8-JOur52EM", "by": "Kourel 1 HTDKH", "at": "Daaju Darou Mouhty"},
-      {"type": "youtube", "id": "nVjB6KZwivw", "by": "Kourel 1 Safinatoul Amane", "at": "Ramadan 2025"},
-      {"type": "audiomack", "artist": "khassida227", "slug": "mafatihul-jinan-wa-keur-serigne-massamba-feat-mourid", "by": "Kourel Xassida", "at": "Wa Keur Serigne Massamba"}
-    ],
-    "tawbatun-nasuuh": [
-      {"type": "youtube", "id": "lB595u7o9SA", "by": "Kourel 1 Safinatoul Amane", "at": ""},
-      {"type": "youtube", "id": "Is7iO7v3xMM", "by": "Kourel Adolescent HT", "at": "Magal Darou Khoudoss 2022"}
-    ],
-    "asma-ul-husna": [
-      {"type": "youtube", "id": "e_LLck5McZw", "by": "Kourel 1 Norou Darayni Pikine", "at": "Dundal Koor 2026"}
-    ],
-    "matlabushiffa": [
-      {"type": "youtube", "id": "ETv4uzIFF9I", "by": "Kourel Hizbut Tarqiyyah", "at": ""},
-      {"type": "youtube", "id": "SoY5yvbzySc", "by": "Kourel 1 Sopey Serigne Fallou", "at": ""}
-    ],
-    "khatimatu-munajati": [
-      {"type": "youtube", "id": "khfZf9tBeUQ", "by": "Kurel Jalibatul Marakhib Yoff", "at": ""},
-      {"type": "youtube", "id": "xFlF4FUdoew", "by": "S. Abdoul Ahad Touré et autres", "at": ""}
-    ],
-    "khayra-dayfin": [
-      {"type": "youtube", "id": "h-QOCcfqY5A", "by": "Hizbut Tarqiyyah Darou Khoudoss", "at": ""}
-    ],
-    "sindidi": [
-      {"type": "youtube", "id": "2xbEU-ZnClw", "by": "Kourel 1 Safinatoul Amane", "at": "Baye Dame Lô"},
-      {"type": "youtube", "id": "qYRe7lnEyKI", "by": "Kourel HTDKH", "at": "Rétro"}
-    ],
-    "muqadamatul-amdah": [
-      {"type": "youtube", "id": "CGT4BbG-JCk", "by": "Kourel 1 HT Touba", "at": "Porokhane 2024"},
-      {"type": "youtube", "id": "bSqpi_MhoG4", "by": "Kurel 1 National HTDKH", "at": ""}
-    ],
-    "minanul-baaqil-qadiim": [
-      {"type": "youtube", "id": "PXLtD6LFCk0", "by": "Kourel Nurud Darayni HT Touba", "at": "Ramadan 2025"},
-      {"type": "youtube", "id": "Ut5D6EzzXbY", "by": "Kourel 1 HT", "at": ""}
-    ],
-    "walaqad-karamna": [
-      {"type": "youtube", "id": "6xUSmj1k4KA", "by": "Kourel Nurud Darayni HT Thiès", "at": ""}
-    ],
-    "bismil-laahi-ikfini": [
-      {"type": "audiomack", "artist": "khassida227", "slug": "khassida-ikfini", "by": "Kourel Xassida", "at": ""},
-      {"type": "audiomack", "artist": "khassida227", "slug": "ikfini-kourel-safinatoul-amane-keur-massar", "by": "Kourel Safinatoul Amane", "at": "Keur Massar"}
-    ]
-  }
+ "note": "Priorité à l'audio Audiomack (lecteur audio, sans vidéo). YouTube en complément. Les droits appartiennent aux kourels et aux comptes qui publient.",
+ "audio": {
+  "jazbu": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "gamou-2020-jazbul-quloob-kourel-1-hizbut-tarqiyyah-bichri-tv-internation",
+    "by": "Kourel 1 Hizbut Tarqiyyah",
+    "at": "Gamou 2020"
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "khassida-jazbu-daaray-khassida2",
+    "by": "Daaray Khassida",
+    "at": ""
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "jazbou-2eme-ak-3eme-dath-kourel1-htdkh-preparation-magal-2020-daaju-wakeur",
+    "by": "Kourel 1 HTDKH",
+    "at": "Préparation Magal 2020 · 2e et 3e parties"
+   },
+   {
+    "type": "audiomack",
+    "artist": "khassida227",
+    "slug": "jazbou-darou-micro-segn-ousseynou-fall",
+    "by": "Kourel Xassida",
+    "at": "Daaju Darou Mouhty, micro Ousseynou Fall"
+   },
+   {
+    "type": "youtube",
+    "id": "GU-huBbiiuI",
+    "by": "HT Kourel National",
+    "at": "Grand Magal de Touba 2023"
+   },
+   {
+    "type": "youtube",
+    "id": "WX6hrEa0Gxw",
+    "by": "HT Kourel 1 National",
+    "at": "Gamou 2022"
+   }
+  ],
+  "mawahibu": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "khassida-mawahibou-complet-magal-touba-2014-ht-kourel-1-daaray-khassida",
+    "by": "HT Kourel 1",
+    "at": "Magal de Touba 2014 · complet"
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "mawahibu-kourel-1-hizbut-tarqiyyah-touba-21e-jour-ramadan-2021-1442h",
+    "by": "Kourel 1 Hizbut Tarqiyyah Touba",
+    "at": "Ramadan 2021"
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "muwahibunafih-kurel-1-hizbuttarqiyyah-daara-rufisque-magal-2020",
+    "by": "Kurel 1 HT Rufisque",
+    "at": "Magal 2020"
+   },
+   {
+    "type": "youtube",
+    "id": "BhWaEDxeuT8",
+    "by": "Kurel Nûrud-Dârayni HT",
+    "at": "Grand Magal de Touba 2024"
+   },
+   {
+    "type": "youtube",
+    "id": "r5HFhWSW4oI",
+    "by": "Kourel 1 HT Touba",
+    "at": "Baay Dame Lo"
+   },
+   {
+    "type": "youtube",
+    "id": "IS5-sdS6KVE",
+    "by": "Kourel Nuurud Daarayni HT Paris",
+    "at": ""
+   }
+  ],
+  "matlabul-fawzayni": [
+   {
+    "type": "youtube",
+    "id": "h-jXtQ7K1HM",
+    "by": "Kourel National HTDKH",
+    "at": ""
+   },
+   {
+    "type": "youtube",
+    "id": "cC2liLZqdDk",
+    "by": "Kourel Nurud Darayni HT Touba",
+    "at": "Ramadan 2025"
+   },
+   {
+    "type": "youtube",
+    "id": "IQAi0tCfIoM",
+    "by": "Kurel 1 National HTDKH",
+    "at": "Magal"
+   }
+  ],
+  "nuuru-daarayni": [
+   {
+    "type": "youtube",
+    "id": "tPEeV_-O8FQ",
+    "by": "Kourel HT Diourbel",
+    "at": "1997"
+   },
+   {
+    "type": "youtube",
+    "id": "S5MnQ2z6Qtw",
+    "by": "Kourel Mafatihoul Bichri Touba",
+    "at": ""
+   }
+  ],
+  "jalibatul-maraghibi": [
+   {
+    "type": "youtube",
+    "id": "EGWO-CCGjJE",
+    "by": "Kourel HT",
+    "at": "Magal de Touba 2024"
+   },
+   {
+    "type": "youtube",
+    "id": "ymndynk-3sM",
+    "by": "Kourel Serigne Abdou Lahat Ablaye Diop HT",
+    "at": "Magal 2024"
+   }
+  ],
+  "mafatihul-jinan": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "mafatikhoul-jinnan-kourel-1-ahloul-minane-ndiareme-grand-magal-de-touba-20",
+    "by": "Kourel 1 Ahloul Minane Ndiareme",
+    "at": "Grand Magal 2019"
+   },
+   {
+    "type": "audiomack",
+    "artist": "khassida227",
+    "slug": "mafatihul-jinan-wa-keur-serigne-massamba-feat-mourid",
+    "by": "Kourel Xassida",
+    "at": "Wa Keur Serigne Massamba"
+   },
+   {
+    "type": "youtube",
+    "id": "T8-JOur52EM",
+    "by": "Kourel 1 HTDKH",
+    "at": "Daaju Darou Mouhty"
+   },
+   {
+    "type": "youtube",
+    "id": "nVjB6KZwivw",
+    "by": "Kourel 1 Safinatoul Amane",
+    "at": "Ramadan 2025"
+   }
+  ],
+  "tawbatun-nasuuh": [
+   {
+    "type": "youtube",
+    "id": "lB595u7o9SA",
+    "by": "Kourel 1 Safinatoul Amane",
+    "at": ""
+   },
+   {
+    "type": "youtube",
+    "id": "Is7iO7v3xMM",
+    "by": "Kourel Adolescent HT",
+    "at": "Magal Darou Khoudoss 2022"
+   }
+  ],
+  "asma-ul-husna": [
+   {
+    "type": "youtube",
+    "id": "e_LLck5McZw",
+    "by": "Kourel 1 Norou Darayni Pikine",
+    "at": "Dundal Koor 2026"
+   }
+  ],
+  "matlabushiffa": [
+   {
+    "type": "youtube",
+    "id": "ETv4uzIFF9I",
+    "by": "Kourel Hizbut Tarqiyyah",
+    "at": ""
+   },
+   {
+    "type": "youtube",
+    "id": "SoY5yvbzySc",
+    "by": "Kourel 1 Sopey Serigne Fallou",
+    "at": ""
+   }
+  ],
+  "khatimatu-munajati": [
+   {
+    "type": "youtube",
+    "id": "khfZf9tBeUQ",
+    "by": "Kurel Jalibatul Marakhib Yoff",
+    "at": ""
+   },
+   {
+    "type": "youtube",
+    "id": "xFlF4FUdoew",
+    "by": "S. Abdoul Ahad Touré et autres",
+    "at": ""
+   }
+  ],
+  "khayra-dayfin": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "yaakhayra-dayfine-kurel-1-hizbuttarqiyyah-vivification-du-mois-b-ni-de-ra",
+    "by": "Kurel 1 Hizbut Tarqiyyah",
+    "at": "Ramadan 2021"
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "gamou-2017-kourel-1-national-hizbut-tarqiyyah-yakhayra-dayfine-bichri-tv",
+    "by": "Kourel 1 National HT",
+    "at": "Gamou 2017"
+   },
+   {
+    "type": "youtube",
+    "id": "h-QOCcfqY5A",
+    "by": "Hizbut Tarqiyyah Darou Khoudoss",
+    "at": ""
+   }
+  ],
+  "sindidi": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "sindidi-baye-dame-lo-clip-officielle-htdkh-2018-grand-magal-2018-1440h-qa",
+    "by": "HTDKH · Baye Dame Lô",
+    "at": "Grand Magal 2018"
+   },
+   {
+    "type": "youtube",
+    "id": "2xbEU-ZnClw",
+    "by": "Kourel 1 Safinatoul Amane",
+    "at": "Baye Dame Lô"
+   },
+   {
+    "type": "youtube",
+    "id": "qYRe7lnEyKI",
+    "by": "Kourel HTDKH",
+    "at": "Rétro"
+   }
+  ],
+  "muqadamatul-amdah": [
+   {
+    "type": "youtube",
+    "id": "CGT4BbG-JCk",
+    "by": "Kourel 1 HT Touba",
+    "at": "Porokhane 2024"
+   },
+   {
+    "type": "youtube",
+    "id": "bSqpi_MhoG4",
+    "by": "Kurel 1 National HTDKH",
+    "at": ""
+   }
+  ],
+  "minanul-baaqil-qadiim": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "barra-anil-b-qi-kurel-1-hizbuttarqiyyah-daara-touba-vivification-mois-de-r",
+    "by": "Kurel 1 Hizbut Tarqiyyah Touba",
+    "at": "Ramadan 2021"
+   },
+   {
+    "type": "youtube",
+    "id": "PXLtD6LFCk0",
+    "by": "Kourel Nurud Darayni HT Touba",
+    "at": "Ramadan 2025"
+   },
+   {
+    "type": "youtube",
+    "id": "Ut5D6EzzXbY",
+    "by": "Kourel 1 HT",
+    "at": ""
+   }
+  ],
+  "walaqad-karamna": [
+   {
+    "type": "youtube",
+    "id": "6xUSmj1k4KA",
+    "by": "Kourel Nurud Darayni HT Thiès",
+    "at": ""
+   }
+  ],
+  "bismil-laahi-ikfini": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "bismilahi-ikfini-kourel-adolescent-ht-al-mashrabuc-f-du-mois-de-rama",
+    "by": "Kourel Adolescent HT",
+    "at": "Ramadan 1444H"
+   },
+   {
+    "type": "audiomack",
+    "artist": "khassida227",
+    "slug": "khassida-ikfini",
+    "by": "Kourel Xassida",
+    "at": ""
+   },
+   {
+    "type": "audiomack",
+    "artist": "khassida227",
+    "slug": "ikfini-kourel-safinatoul-amane-keur-massar",
+    "by": "Kourel Safinatoul Amane",
+    "at": "Keur Massar"
+   }
+  ],
+  "bismil-ilaahil-lazi": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "khassida-bismil-ilahi-leuzi-htdk-magal-2013-daaray-khassida",
+    "by": "HTDK",
+    "at": "Magal 2013"
+   }
+  ],
+  "minal-haqqi": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "kurel-1-htdk-minal-haqqi-baye-ch-lo-magal-touba-2016-bamba-force-internat",
+    "by": "Kurel 1 HTDK",
+    "at": "Magal de Touba 2016"
+   }
+  ],
+  "midadi": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "midadi-kurel-1-hizbuttarqiyyah-vivification-mois-b-ni-de-ramadan-1442h-17",
+    "by": "Kurel 1 Hizbut Tarqiyyah",
+    "at": "Ramadan 2021"
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "midadi-kourel-1-ahloul-minane-ndiareme-grand-magal-de-touba-2019-camaseye",
+    "by": "Kourel 1 Ahloul Minane Ndiareme",
+    "at": "Grand Magal 2019"
+   }
+  ],
+  "fuzti": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "fousty-kurel-1-hizbuttarqiyyah-daara-touba-vivification-du-mois-de-ramadan",
+    "by": "Kurel 1 Hizbut Tarqiyyah Touba",
+    "at": "Ramadan 2021"
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "nouveaut-khassida-fuzti-kourel-nourou-darayni-sicap-rue-10-pr-paration-m",
+    "by": "Kourel Nourou Darayni Sicap",
+    "at": "Magal 2019"
+   }
+  ],
+  "asiru": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "assirou-kourel1-htdkh-pr-paration-magal-2020-daaju-segn-abdou-khadre-gass",
+    "by": "Kourel 1 HTDKH",
+    "at": "Préparation Magal 2020"
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "magal-2017-khassida-assirou-par-le-kourel1-de-norou-darayni-al-khadimiyya",
+    "by": "Kourel 1 Norou Darayni",
+    "at": "Magal 2017"
+   }
+  ],
+  "alaa-inani": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "ala-inani-ardio-kurel-1-ht-touba-grand-magal-de-touba-18-safar-1443h-dit",
+    "by": "Kurel 1 HT Touba",
+    "at": "Grand Magal 1443H"
+   }
+  ],
+  "alhamdu-yujaazi": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "alhamdoulilahillazi-yu-j-zi-kurel-1-hizbuttarqiyyah-vivification-mois-ram",
+    "by": "Kurel 1 Hizbut Tarqiyyah",
+    "at": "Ramadan 2021"
+   }
+  ],
+  "anta-rabbi": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "anta-rabi-kourel-1-hizbut-tarqqiyyah-thies-03e-jour-ramadan-2019-1440",
+    "by": "Kourel 1 HT Thiès",
+    "at": "Ramadan 2019"
+   }
+  ],
+  "ayyasa": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "ayassamine-niane-kourel-1-ht-touba-grand-magal-de-touba-2022",
+    "by": "Kourel 1 HT Touba",
+    "at": "Grand Magal 2022"
+   }
+  ],
+  "fazat-qilami": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "fazat-qilamil-kurel-1-hizbuttarqiyyah-daara-touba-vivification-mois-de-ramadan-1442h2021-8e-jour-al-mouridiyyah-tv",
+    "by": "Kurel 1 Hizbut Tarqiyyah Touba",
+    "at": "Ramadan 2021"
+   }
+  ],
+  "hammat-sulaymaa": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "hammat-sulaymaa-kurel-1-hizbuttarqiyyah-daara-rufisque-vivification-ramadan-1442h202111e-jour-al-mouridiyyah-tv",
+    "by": "Kurel 1 HT Rufisque",
+    "at": "Ramadan 2021"
+   }
+  ],
+  "inani-huztu": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "innani-ustu-kurel-1-ht-touba",
+    "by": "Kurel 1 HT Touba",
+    "at": ""
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "inani-huztu-scheikh-fall-khad-taaba-kourel-touba-treviso-italie-kourel",
+    "by": "Kourel Touba Treviso",
+    "at": "Italie"
+   }
+  ],
+  "ilaa-ghayrinaa": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "ila-khayrina-kourel-1-toutank-ht-cellule-dkh-gamou-2021-mback-ndiaye-se",
+    "by": "Kourel 1 HT Darou Khoudoss",
+    "at": "Gamou 2021"
+   }
+  ],
+  "raditu": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "ramadan-2022-raditou-baye-saliou-thiam-kurel-1b-h-t-touba-3-me-jour",
+    "by": "Kurel 1B HT Touba",
+    "at": "Ramadan 2022"
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "raditou-kourel-adolescents-hizbou-tarqiyyah-29-mars-vivification-du-mois-de-ramadan-2023-touba-jour7",
+    "by": "Kourel Adolescents HT",
+    "at": "Ramadan 2023"
+   }
+  ],
+  "raa-iya": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "r-iyyah-kurel-1-hizbuttarqiyyah-vivification-du-mois-b-ni-de-ramadan-144",
+    "by": "Kurel 1 Hizbut Tarqiyyah",
+    "at": "Ramadan 2021"
+   }
+  ],
+  "rumna-shukur": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "roumna-s-mbaye-diop-kourel-1-hizbut-tarqiyyah-rufisque-vivfication-ramadan",
+    "by": "Kourel 1 HT Rufisque",
+    "at": "Ramadan 2024"
+   }
+  ],
+  "madal-khabiru": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "madal-khabirou-lisanou-choukri-kourel-1-hizbut-tarqiyyah-touba-29e-jour",
+    "by": "Kourel 1 Hizbut Tarqiyyah Touba",
+    "at": "Ramadan 2021"
+   }
+  ],
+  "man-zanani": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "man-zannanii-kourel-1-ht-thies-magal-touba-2022",
+    "by": "Kourel 1 HT Thiès",
+    "at": "Magal de Touba 2022"
+   }
+  ],
+  "maramiya": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "maramiya-segn-bol-mbaye-kourel1-ht-prestation-18-safar-khassidayi-rek",
+    "by": "Kourel 1 HT",
+    "at": "18 Safar"
+   }
+  ],
+  "rabbi-karrimun": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "rabikarimun-kourel-1-hizbut-tarqiyyah-touba-magal-porokhane-2019-bichri-t",
+    "by": "Kourel 1 HT Touba",
+    "at": "Magal Porokhane 2019"
+   }
+  ],
+  "rabbiya-ahmadu": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "rabiya-ahmadou-kurel-1-hizbuttarqiyyah-vivification-du-mois-b-ni-de-ramad",
+    "by": "Kurel 1 Hizbut Tarqiyyah",
+    "at": "Ramadan 2021"
+   }
+  ],
+  "wa-kaana-haqqan": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "wakana-haqqan-kourel-1a-ht-touba-al-mashrabuc-f-du-mois-d",
+    "by": "Kourel 1A HT Touba",
+    "at": "Ramadan 1444H"
+   },
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "magal-touba-2018-wakana-kourel-hizbut-tarqiyyah-17-safar-1440-bichri-tv",
+    "by": "Kourel Hizbut Tarqiyyah",
+    "at": "Magal de Touba 2018"
+   }
+  ],
+  "waqani": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "wakhani-baye-aliou-fall-kourel-1-ht-rufisque-ramadan-1444h2023-16e-jour",
+    "by": "Kourel 1 HT Rufisque",
+    "at": "Ramadan 2023"
+   }
+  ],
+  "lirabbin-ghafurin": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "lirabine-khaforine-baye-salioun-thiam-kourel-1-htdkh-grand-magal-2018-1440h-qa-aid-tv-lofficiel",
+    "by": "Kourel 1 HTDKH",
+    "at": "Grand Magal 2018"
+   }
+  ],
+  "lil-mustafa-nawaytu": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "lil-moustapha-nawaytou-nourou-darayni-sicap-rue-10-bichri-tv-internation",
+    "by": "Kourel Nourou Darayni Sicap",
+    "at": ""
+   }
+  ],
+  "halal-muntaqa": [
+   {
+    "type": "audiomack",
+    "artist": "senengor-1",
+    "slug": "halal-mountakha-ht-kourel-1-ht-thies-12j-al-masrabous-safi-minal-manbakhi-safi-ramadan-2023",
+    "by": "Kourel 1 HT Thiès",
+    "at": "Ramadan 2023"
+   }
+  ]
+ }
 }

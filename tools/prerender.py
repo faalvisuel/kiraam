@@ -114,7 +114,7 @@ def main():
         has_audio = w['slug'] in audio
         desc = (f"{w['title']} ({w['titleAr']}), khassida de Cheikh Ahmadou Bamba (Serigne Touba) : {w['bayts']} vers"
                 f"{f' en {np} parties' if np > 1 else ''}. Texte arabe, translittération et traduction, PDF gratuit"
-                f"{', déclamation audio' if has_audio else ''}.")
+                f"{', déclamation audio' if has_audio else ''}. Versions arabe seul, phonétique, français ou anglais.")
         aka = w.get('aka', [])
         if aka:
             desc += ' Aussi écrit : ' + ', '.join(aka) + '.'
@@ -124,7 +124,8 @@ def main():
         main_html = f'''<div class="wrap book"><div class="book-cover"><div class="cv"><img src="../../covers/{w["slug"]}.webp" alt="Couverture de {e(w["title"])}" width="641" height="910"></div></div>
 <div class="book-info"><div class="t-ar">{e(w["titleAr"])}</div><h1>{e(w["title"])}</h1><p class="by">Cheikh Ahmadou Bamba Khadimou Rassoul · Serigne Touba</p>
 <p>{e(desc)}</p><p>Langues : {e(langs)}.</p>
-<div class="actions"><a class="btn btn-gold" href="../../lire/{w["slug"]}/1/">Lire en ligne</a> <a class="btn btn-bx" href="../../pdf/{w["slug"]}.pdf">Télécharger le PDF</a></div>
+<div class="actions"><a class="btn btn-gold" href="../../lire/{w["slug"]}/1/">Lire en ligne</a> <a class="btn btn-bx" href="../../pdf/{w["slug"]}.pdf">Télécharger le PDF complet</a></div>
+<p>Autres versions PDF : <a href="../../pdf/{w["slug"]}-arabe.pdf">{e(w["title"])} en arabe seul</a> · <a href="../../pdf/{w["slug"]}-phonetique.pdf">arabe et phonétique</a> · <a href="../../pdf/{w["slug"]}-francais.pdf">traduction française</a> · <a href="../../pdf/{w["slug"]}-anglais.pdf">English translation</a>.</p>
 {f'<ul>{partlinks}</ul>' if np > 1 else ''}
 <div class="excerpt"><h2>Premiers vers</h2>{verses}</div></div></div>'''
         ld = {'@context': 'https://schema.org', '@type': 'Book', 'name': w['title'], 'alternateName': [w['titleAr']] + aka,

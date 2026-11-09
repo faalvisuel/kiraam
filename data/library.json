@@ -21,9 +21,16 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 108916,
-"pages": 7,
-"palette": "bordeaux"
+"pdfSize": 156228,
+"pages": 9,
+"palette": "bordeaux",
+"pdfs": {
+"complet": 156228,
+"arabe": 122731,
+"phonetique": 127503,
+"francais": 116679,
+"anglais": 116770
+}
 },
 {
 "slug": "ahuzu-bil-laahi-min-mayli",
@@ -1109,15 +1116,22 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 283667,
-"pages": 61,
+"pdfSize": 465121,
+"pages": 66,
 "palette": "ivoire",
 "aka": [
 "Jazbul Qulub",
 "Jazbou",
 "Jazboul Khouloub",
 "Diazbou"
-]
+],
+"pdfs": {
+"complet": 465121,
+"arabe": 254666,
+"phonetique": 298701,
+"francais": 210318,
+"anglais": 208486
+}
 },
 {
 "slug": "kafaaka-rabbuka",

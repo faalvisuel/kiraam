@@ -79,7 +79,6 @@ def cover_html(w, p):
     return f"""
 <section class="kc" style="background:{p['bg']}">
   {arch_svg(p)}
-  <div class="kc-brand" style="color:{p['soft']}">K I R A A M</div>
   <div class="kc-mid"><div class="kc-cell">
     <div class="kc-ar" dir="rtl" style="color:{p['ink']};font-size:{ar_size(w['titleAr'])}pt">{e(w['titleAr'])}</div>
     <div class="kc-orn" style="color:{p['line']}">— ✦ —</div>
@@ -87,12 +86,13 @@ def cover_html(w, p):
     <div class="kc-sub" style="color:{p['soft']}">{sub}</div>
   </div></div>
   <div class="kc-author" style="color:{p['soft']}"><b style="color:{p['text']}">Cheikh Ahmadou Bamba</b><br/>Khadimou Rassoul · Serigne Touba</div>
+  <div class="kc-sign" style="color:{p['line']}">K I R A A M</div>
 </section>"""
 
 
 COVER_CSS = """
 .kc { page: cover; position: relative; width: 148mm; height: 210mm; overflow: hidden; text-align: center; }
-.kc-brand { position: absolute; top: 9.6mm; left: 0; right: 0; font-family: Corm; font-weight: 600; font-size: 8pt; letter-spacing: .12em; }
+.kc-sign { position: absolute; top: 195.2mm; left: 0; right: 0; font-family: Corm; font-weight: 600; font-size: 7.5pt; letter-spacing: .14em; }
 .kc-mid { position: absolute; top: 84mm; left: 31mm; width: 86mm; }
 .kc-cell { }
 .kc-ar { font-family: Amiri; font-weight: 700; line-height: 1.55; }
@@ -101,4 +101,54 @@ COVER_CSS = """
 .kc-sub { font-family: Corm; font-size: 9.5pt; letter-spacing: .14em; text-transform: uppercase; margin-top: 3.5mm; }
 .kc-author { position: absolute; top: 166mm; left: 32mm; width: 84mm; font-family: Corm; font-size: 9pt; line-height: 1.4; letter-spacing: .03em; }
 .kc-author b { font-weight: 600; font-size: 10.5pt; }
+"""
+
+
+def verso_svg(p):
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 210" width="148mm" height="210mm" style="position:absolute;left:0;top:0">
+<defs><radialGradient id="gv" cx="50%" cy="40%" r="75%"><stop offset="0" stop-color="{p['glow']}"/><stop offset="1" stop-color="{p['bg']}"/></radialGradient></defs>
+<rect width="148" height="210" fill="url(#gv)"/>
+{lattice(p['pat'], p['pat_op'])}
+<rect x="6" y="6" width="136" height="198" fill="none" stroke="{p['line']}" stroke-width=".45"/>
+<rect x="16" y="22" width="116" height="146" rx="2" fill="{p['arch']}" fill-opacity=".92" stroke="{p['line']}" stroke-width=".5"/>
+<path d="M60 22 A14 14 0 0 1 88 22" fill="{p['arch']}" stroke="{p['line']}" stroke-width=".5"/>
+<path d="{_star(74, 17.2, 2.4)}" fill="{p['line']}"/>
+<path d="M30 152 H62 M86 152 H118" stroke="{p['line']}" stroke-width=".3"/>
+<path d="{_star(74, 152, 1.8)}" fill="{p['line']}"/>
+</svg>'''
+
+
+def verso_html(w, p, first, langs):
+    np_ = len(w['parts'])
+    about = (f"« {e(w['title'])} » est un khassida de Cheikh Ahmadou Bamba Khadimou Rassoul, guide spirituel et fondateur de Touba. "
+             f"Cette édition réunit ses {w['bayts']} vers" + (f", répartis en {np_} parties," if np_ > 1 else "") +
+             " en arabe vocalisé, avec leur translittération et leur traduction.")
+    ar = " ۞ ".join(e(x) for x in first['ar'])
+    return f"""
+<section class="kv" style="background:{p['bg']}">
+  {verso_svg(p)}
+  <div class="kv-in">
+    <div class="kv-tar" dir="rtl" style="color:{p['ink']}">{e(w['titleAr'])}</div>
+    <div class="kv-t" style="color:{p['text']}">{e(w['title'])}</div>
+    <div class="kv-ex" dir="rtl" style="color:{p['ink']}">{ar}</div>
+    <div class="kv-fr" style="color:{p['soft']}">« {e(first['fr'])} »</div>
+    <div class="kv-about" style="color:{p['text']}">{about}</div>
+    <div class="kv-langs" style="color:{p['soft']}">{e(langs)}</div>
+  </div>
+  <div class="kv-sign" style="color:{p['line']}">K I R A A M</div>
+  <div class="kv-sub" style="color:{p['soft']}">Bibliothèque des khassidas de Serigne Touba · lecture et PDF gratuits</div>
+</section>"""
+
+
+VERSO_CSS = """
+.kv { page: cover; position: relative; width: 148mm; height: 210mm; overflow: hidden; text-align: center; break-before: page; }
+.kv-in { position: absolute; top: 30mm; left: 24mm; width: 100mm; }
+.kv-tar { font-family: Amiri; font-weight: 700; font-size: 22pt; line-height: 1.5; }
+.kv-t { font-family: Corm; font-weight: 600; font-size: 15pt; margin-bottom: 7mm; letter-spacing: .02em; }
+.kv-ex { font-family: Amiri; font-size: 13pt; line-height: 1.8; }
+.kv-fr { font-family: Corm; font-style: italic; font-size: 10.5pt; line-height: 1.4; margin: 2mm 0 7mm; }
+.kv-about { font-family: Corm; font-size: 10.5pt; line-height: 1.5; text-align: justify; }
+.kv-langs { font-family: Inter; font-size: 6.6pt; letter-spacing: .14em; text-transform: uppercase; position: absolute; top: 102mm; left: 0; right: 0; }
+.kv-sign { position: absolute; top: 178mm; left: 0; right: 0; font-family: Corm; font-weight: 600; font-size: 13pt; letter-spacing: .14em; }
+.kv-sub { position: absolute; top: 186mm; left: 0; right: 0; font-family: Inter; font-size: 6.4pt; letter-spacing: .08em; }
 """
