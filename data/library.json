@@ -5,6 +5,7 @@
 {
 "slug": "ahazanil-baaqi",
 "title": "Ahazanil Baaqi",
+"titleAr": "أَعَاذَنِي الْبَاقِي",
 "incipit": "أَعَاذَنِى الْبَاقِى مِنَ الشَّيْطَانِ",
 "parts": [
 1
@@ -20,13 +21,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 177596,
+"pdfSize": 108916,
 "pages": 7,
 "palette": "bordeaux"
 },
 {
 "slug": "ahuzu-bil-laahi-min-mayli",
 "title": "Ahuzu Bil Laahi Min Mayli",
+"titleAr": "أَعُوذُ بِاللَّهِ مِنْ مَيْلِي",
 "incipit": "أَعُوذُ بِاللَّهِ مِنْ مَّيْلِى لِغَيْرِ رِضَى",
 "parts": [
 2
@@ -42,13 +44,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 184012,
+"pdfSize": 116365,
 "pages": 9,
 "palette": "ivoire"
 },
 {
 "slug": "ahyaytu-mawlidan",
 "title": "Ahyaytu Mawlidan",
+"titleAr": "أَحْيَيْتُ مَوْلِدًا",
 "incipit": "أَحْيَيْتُ مَوْلِدَ النَّبِى مِنْ أَسَشِ",
 "parts": [
 3
@@ -64,13 +67,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 175374,
+"pdfSize": 106889,
 "pages": 6,
 "palette": "grenat"
 },
 {
 "slug": "ajabani-khayru-baaqin",
 "title": "Ajabani Khayru Baaqin",
+"titleAr": "أَجَابَنِي خَيْرُ بَاقٍ",
 "incipit": "أَجَابَنِى خَيْرُ بَاقٍ فِيهِ قَدْ طَّابَا",
 "parts": [
 4
@@ -86,13 +90,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 149284,
+"pdfSize": 80946,
 "pages": 4,
 "palette": "vin"
 },
 {
 "slug": "ajabani-rabbus-sama",
 "title": "Ajabani Rabbus Sama",
+"titleAr": "أَجَابَنِي رَبُّ السَّمَا",
 "incipit": "أَجَابَنِى رَبُّ السَّمَآ",
 "parts": [
 5,
@@ -110,13 +115,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 205235,
+"pdfSize": 137153,
 "pages": 16,
 "palette": "bordeaux"
 },
 {
 "slug": "alaa-inani",
 "title": "Alaa Inani",
+"titleAr": "أَلَا إِنَّنِي",
 "incipit": "أَلَاإِنَّنِى أُثْنِى عَلَى خَيْرِمُنْعِمِ",
 "parts": [
 7
@@ -132,13 +138,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 184077,
+"pdfSize": 115033,
 "pages": 9,
 "palette": "ivoire"
 },
 {
 "slug": "alal-mustafa-minni",
 "title": "Alal Mustafa Minni",
+"titleAr": "عَلَى الْمُصْطَفَى مِنِّي",
 "incipit": "عَلَى الْمُصْطَفَى مِنِّى صَلَاةٌ تَقِى الضَّيْرَا",
 "parts": [
 8
@@ -154,13 +161,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 162883,
+"pdfSize": 94904,
 "pages": 5,
 "palette": "grenat"
 },
 {
 "slug": "alhamdu-yujaazi",
 "title": "Alhamdu Yujaazi",
+"titleAr": "الْحَمْدُ لِلَّهِ الَّذِي يُجَازِي",
 "incipit": "الْحَمْدُ لِلَّهِ الَّذِى يُجَازِ",
 "parts": [
 9
@@ -176,13 +184,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 174405,
+"pdfSize": 106785,
 "pages": 7,
 "palette": "vin"
 },
 {
 "slug": "anta-rabbi",
 "title": "Anta Rabbi",
+"titleAr": "أَنْتَ رَبِّي",
 "incipit": "أَنْتَ رَبِّى وَكُنْتَ لِى بِوِدَادِى",
 "parts": [
 10
@@ -198,13 +207,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 179813,
+"pdfSize": 110829,
 "pages": 8,
 "palette": "bordeaux"
 },
 {
 "slug": "ashaabul-jannati",
 "title": "Ashaabul Jannati",
+"titleAr": "أَصْحَابُ الْجَنَّةِ",
 "incipit": "إِلَيْكَ يَاخَيْرَ الْبَرِيَّةِ سَلَامْ",
 "parts": [
 11
@@ -220,13 +230,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 169767,
+"pdfSize": 101350,
 "pages": 8,
 "palette": "ivoire"
 },
 {
 "slug": "ashinu",
 "title": "Ashinu",
+"titleAr": "الشِّينُ",
 "incipit": "الشِّينُ مُعْجَمَةً وَالْكَافُ وَالرَّاءُ",
 "parts": [
 12
@@ -242,13 +253,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 200047,
+"pdfSize": 130583,
 "pages": 13,
 "palette": "grenat"
 },
 {
 "slug": "ashkuru-laaha",
 "title": "Ashkuru Laaha",
+"titleAr": "أَشْكُرُ اللَّهَ",
 "incipit": "أَشْكُرُ اللَّهَ ذَا الْوَرَى بِانْتِفَاعِ",
 "parts": [
 13
@@ -264,13 +276,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 158306,
+"pdfSize": 89637,
 "pages": 5,
 "palette": "vin"
 },
 {
 "slug": "asiru",
 "title": "Asiru",
+"titleAr": "أَسِيرُ",
 "incipit": "أَسِيرُ مَعَ الْأَبْرَارِ حِينَ أَسِيرُ",
 "parts": [
 14
@@ -286,13 +299,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 212006,
+"pdfSize": 142394,
 "pages": 16,
 "palette": "bordeaux"
 },
 {
 "slug": "asma-ul-husna",
 "title": "Asma Ul Husna",
+"titleAr": "الْأَسْمَاءُ الْحُسْنَى",
 "incipit": "يَاللَّهُ يَامَنْ لَّاإِلَاهَ غَيْرُهُ",
 "parts": [
 15
@@ -308,13 +322,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 192403,
+"pdfSize": 124154,
 "pages": 10,
 "palette": "ivoire"
 },
 {
 "slug": "astaghfirulaha-bihi",
 "title": "Astaghfirulaha Bihi",
+"titleAr": "أَسْتَغْفِرُ اللَّهَ بِهِ",
 "incipit": "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ وَأَتُوبْ",
 "parts": [
 16
@@ -330,13 +345,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 156584,
+"pdfSize": 88539,
 "pages": 5,
 "palette": "grenat"
 },
 {
 "slug": "ataaba",
 "title": "Ataaba",
+"titleAr": "أَطَابَ",
 "incipit": "أَطَابَ لِى الْمَمَرَّ كَالْأَوْطَانِ",
 "parts": [
 17,
@@ -358,13 +374,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 255449,
+"pdfSize": 185670,
 "pages": 28,
 "palette": "vin"
 },
 {
 "slug": "ayyasa",
 "title": "Ayyasa",
+"titleAr": "أَيَّسَ",
 "incipit": "أَيَّسَ مِنِّى اللَّهُ عِنْدَ جِوَلِ",
 "parts": [
 21
@@ -380,13 +397,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 175471,
+"pdfSize": 105908,
 "pages": 7,
 "palette": "bordeaux"
 },
 {
 "slug": "bakh-bakhaa",
 "title": "Bakh Bakhaa",
+"titleAr": "بَخْ بَخَا",
 "incipit": "قَلَّبْتُ كُلِّ لِكَرِيمٍ وَبَخَا",
 "parts": [
 22
@@ -402,13 +420,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 171210,
+"pdfSize": 101532,
 "pages": 8,
 "palette": "ivoire"
 },
 {
 "slug": "barakatu",
 "title": "Barakatu",
+"titleAr": "بَرَكَتُ",
 "incipit": "بَرَكَتُ الَّذِى الْوُجُودُ وَالْقِدَمْ",
 "parts": [
 23
@@ -424,14 +443,15 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 165299,
+"pdfSize": 95458,
 "pages": 6,
 "palette": "grenat"
 },
 {
 "slug": "bismil-ilaahil-lazi",
 "title": "Bismil Ilaahil Lazi",
-"incipit": "لبِسْمِ الْإِلَهِ الَّذِى الْقُرْءَانُ قَدْ نَزَلَا",
+"titleAr": "بِسْمِ الْإِلَهِ الَّذِي",
+"incipit": "بِسْمِ الْإِلَهِ الَّذِى الْقُرْءَانُ قَدْ نَزَلَا",
 "parts": [
 24
 ],
@@ -446,14 +466,15 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 168585,
+"pdfSize": 100336,
 "pages": 7,
 "palette": "vin"
 },
 {
 "slug": "bismil-laahi-ikfini",
 "title": "Bismil Laahi Ikfini",
-"incipit": "لبِسْمِ الْإِلَهِ اكْفِنِى الْأَكْدَارَ يَاللَّهُ",
+"titleAr": "بِسْمِ الْإِلَهِ اكْفِنِي",
+"incipit": "بِسْمِ الْإِلَهِ اكْفِنِى الْأَكْدَارَ يَاللَّهُ",
 "parts": [
 25,
 26
@@ -470,13 +491,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 253970,
+"pdfSize": 185718,
 "pages": 28,
 "palette": "bordeaux"
 },
 {
 "slug": "bushra-lana",
 "title": "Bushra Lana",
+"titleAr": "بُشْرَى لَنَا",
 "incipit": "بُشْرَى لَنَا قَدْ أَتَانَا الْجُودُ وَالْكَرَمُ",
 "parts": [
 27
@@ -492,13 +514,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 176579,
+"pdfSize": 107360,
 "pages": 9,
 "palette": "ivoire"
 },
 {
 "slug": "faaqa-jamiha",
 "title": "Faaqa Jamiha",
+"titleAr": "فَاقَ جَمِيعَ",
 "incipit": "فَاقَ جَمِيعَ الْأَنْبِيَآ وَالرُّسُولِ",
 "parts": [
 28
@@ -514,13 +537,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 154458,
+"pdfSize": 85118,
 "pages": 5,
 "palette": "grenat"
 },
 {
 "slug": "farrij",
 "title": "Farrij",
+"titleAr": "فَرِّجْ",
 "incipit": "فَرِّجْ بِجَاهِ الْمُصْطَفَى عَنْ أُمَّتِهْ",
 "parts": [
 29
@@ -536,13 +560,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 159186,
+"pdfSize": 89401,
 "pages": 5,
 "palette": "vin"
 },
 {
 "slug": "fazal-lazina",
 "title": "Fazal Lazina",
+"titleAr": "فَازَ الَّذِينَ",
 "incipit": "فَازَالَّذِينَ حَافَظُواْ عَلَى صِيَامْ",
 "parts": [
 30
@@ -558,13 +583,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 170269,
+"pdfSize": 101284,
 "pages": 6,
 "palette": "bordeaux"
 },
 {
 "slug": "fazat-qilami",
 "title": "Fazat Qilami",
+"titleAr": "فَازَتْ قِلَامِي",
 "incipit": "فَازَتْ قِلَامَى الْيَوْمَ بِالْخَيْرَيْنِ",
 "parts": [
 31
@@ -580,13 +606,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 168117,
+"pdfSize": 99035,
 "pages": 5,
 "palette": "ivoire"
 },
 {
 "slug": "fuzti",
 "title": "Fuzti",
+"titleAr": "فُزْتِ",
 "incipit": "فُزْتِ بِظَرْ فِى الْحَسَنَاتْ",
 "parts": [
 32
@@ -602,13 +629,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 170801,
+"pdfSize": 101073,
 "pages": 6,
 "palette": "grenat"
 },
 {
 "slug": "hajat-qasa-idi",
 "title": "Hajat Qasa Idi",
+"titleAr": "هَاجَتْ قَصَائِدِي",
 "incipit": "هَاجَتْ قَصَآئِدِى قُلُوبُ الْحَمَلَهْ",
 "parts": [
 33
@@ -624,13 +652,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 187169,
+"pdfSize": 118461,
 "pages": 9,
 "palette": "vin"
 },
 {
 "slug": "halal-muntaqa",
 "title": "Halal Muntaqa",
+"titleAr": "عَلَى الْمُنْتَقَى",
 "incipit": "عَلَى الْمُنْتَقَى خَيْرِ الْبَرَايَا مُحَمَّدِ",
 "parts": [
 34
@@ -646,13 +675,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 172440,
+"pdfSize": 103539,
 "pages": 8,
 "palette": "bordeaux"
 },
 {
 "slug": "halaman",
 "title": "Halaman",
+"titleAr": "عَلَى مَنْ",
 "incipit": "عَلَى مَنْ عَلَىَّ وَلَسْتُ صَدِيحْ",
 "parts": [
 35
@@ -668,13 +698,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 177858,
+"pdfSize": 108215,
 "pages": 9,
 "palette": "ivoire"
 },
 {
 "slug": "halayka-yaa-mukhtaru",
 "title": "Halayka Yaa Mukhtaru",
+"titleAr": "عَلَيْكَ يَا مُخْتَارُ",
 "incipit": "عَلَيْكَ يَامُخْتَارُ بِاجْتِهَادِ",
 "parts": [
 36
@@ -690,13 +721,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 154058,
+"pdfSize": 85401,
 "pages": 5,
 "palette": "grenat"
 },
 {
 "slug": "hamdi-wa-shukri",
 "title": "Hamdi Wa Shukri",
+"titleAr": "حَمْدِي وَشُكْرِي",
 "incipit": "حَمْدِى وَشُكْرِى لِمَنْ كُلِّى بِهِ صَارَا",
 "parts": [
 37
@@ -712,13 +744,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 142401,
+"pdfSize": 73612,
 "pages": 3,
 "palette": "vin"
 },
 {
 "slug": "hamidtu",
 "title": "Hamidtu",
+"titleAr": "حَمِدْتُ",
 "incipit": "حَمِدْتُّ مَنْ يَّعِصِمُنِى مِنَ الضَّرَرْ",
 "parts": [
 38
@@ -734,13 +767,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 163401,
+"pdfSize": 93767,
 "pages": 6,
 "palette": "bordeaux"
 },
 {
 "slug": "hammat-sulaymaa",
 "title": "Hammat Sulaymaa",
+"titleAr": "هَمَّتْ سُلَيْمَى",
 "incipit": "هَمَّتْ سُلَيْمَى بِصَرْ فِى عَنْ مَّزِيَّاتِ",
 "parts": [
 39,
@@ -758,13 +792,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 262386,
+"pdfSize": 193637,
 "pages": 29,
 "palette": "ivoire"
 },
 {
 "slug": "huqqal-bukaa",
 "title": "Huqqal Bukaa",
+"titleAr": "حُقَّ الْبُكَاءُ",
 "incipit": "حُقَّ الْبُكَآءُ عَلَى سَدَاتٍ أَمْوَاتِ",
 "parts": [
 41,
@@ -782,13 +817,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 234660,
+"pdfSize": 165913,
 "pages": 23,
 "palette": "grenat"
 },
 {
 "slug": "ihdi-jamihana",
 "title": "Ihdi Jamihana",
+"titleAr": "اِهْدِ جَمِيعَنَا",
 "incipit": "إِهْدِ جَمِيعَنَا الصِّرَاطَى الْمُسْتَقِيمْ",
 "parts": [
 43
@@ -804,13 +840,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 155240,
+"pdfSize": 86179,
 "pages": 4,
 "palette": "vin"
 },
 {
 "slug": "ilaa-ghayrinaa",
 "title": "Ilaa Ghayrinaa",
+"titleAr": "إِلَى غَيْرِنَا",
 "incipit": "إِلَى غَيْرِنَا قَدْ وَجَّهَ الْكَيْدَ وَالسَّعْيَا",
 "parts": [
 44
@@ -826,13 +863,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 177955,
+"pdfSize": 109017,
 "pages": 10,
 "palette": "bordeaux"
 },
 {
 "slug": "ilaa-nabiyyin",
 "title": "Ilaa Nabiyyin",
+"titleAr": "إِلَى نَبِيٍّ",
 "incipit": "إِلَى نَبِىٍّ رَّسُولٍ جَآءَنَا بِهُدَى",
 "parts": [
 45
@@ -848,13 +886,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 168592,
+"pdfSize": 99561,
 "pages": 6,
 "palette": "ivoire"
 },
 {
 "slug": "inani-huztu",
 "title": "Inani Huztu",
+"titleAr": "إِنَّنِي عُذْتُ",
 "incipit": "إِنَّنِى عُذْتُ بِالْإِلَاهِ الْمُعِينِ",
 "parts": [
 46,
@@ -872,13 +911,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 209906,
+"pdfSize": 141162,
 "pages": 14,
 "palette": "grenat"
 },
 {
 "slug": "innabna-laahi",
 "title": "Innabna Laahi",
+"titleAr": "إِنَّ ابْنَ عَبْدِ اللَّهِ",
 "incipit": "إِنَّ ابْنَ عَبْدِ اللَّهِ فَاقَ كُلَّ مَنْ",
 "parts": [
 48
@@ -894,13 +934,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 178192,
+"pdfSize": 109789,
 "pages": 7,
 "palette": "vin"
 },
 {
 "slug": "inni-ukhatibu",
 "title": "Inni Ukhatibu",
+"titleAr": "إِنِّي أُخَاطِبُ",
 "incipit": "إِنِّى أُخَاطِبُ النَّصَارَى طُرَّا",
 "parts": [
 49
@@ -916,13 +957,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 166538,
+"pdfSize": 97883,
 "pages": 5,
 "palette": "bordeaux"
 },
 {
 "slug": "innii-aquulu",
 "title": "Innii Aquulu",
+"titleAr": "إِنِّي أَقُولُ",
 "incipit": "إِنِّى أَقَولُ وَإِنِّى الْيَوْمَ ذُو خَجَلِ",
 "parts": [
 50
@@ -938,13 +980,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 174721,
+"pdfSize": 105889,
 "pages": 7,
 "palette": "ivoire"
 },
 {
 "slug": "inniya-ahmadu",
 "title": "Inniya Ahmadu",
+"titleAr": "إِنِّيَ أَحْمَدُ",
 "incipit": "إِنِّىَ أَحْمَدُ مُرَبِّىَ الْوَكِيلْ",
 "parts": [
 51
@@ -960,13 +1003,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 195233,
+"pdfSize": 126488,
 "pages": 11,
 "palette": "grenat"
 },
 {
 "slug": "jalibatul-maraghibi",
 "title": "Jalibatul Maraghibi",
+"titleAr": "جَالِبَةُ الْمَرَاغِبِ",
 "incipit": "يَقُولُ عَبْدُ اللَّهِ وَهْوَ أَحْمَدُ",
 "parts": [
 52,
@@ -1000,13 +1044,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 542104,
+"pdfSize": 473588,
 "pages": 111,
 "palette": "vin"
 },
 {
 "slug": "jawartu",
 "title": "Jawartu",
+"titleAr": "جَاوَرْتُ",
 "incipit": "جَاوَرْتُ بِالْفُرْقَانِ رَبِّىَ الْمُعِينْ",
 "parts": [
 62
@@ -1022,13 +1067,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 174827,
+"pdfSize": 105332,
 "pages": 8,
 "palette": "bordeaux"
 },
 {
 "slug": "jazbu",
 "title": "Jazbu",
+"titleAr": "جَذْبُ الْقُلُوبِ",
 "incipit": "الْحَمْدُ لِلْحَقِّ الْمُبِينْ مَنْ كَوْنُهُ لِىَ يَبِينْ",
 "parts": [
 63,
@@ -1050,13 +1096,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 352657,
+"pdfSize": 283667,
 "pages": 61,
 "palette": "ivoire"
 },
 {
 "slug": "kafaaka-rabbuka",
 "title": "Kafaaka Rabbuka",
+"titleAr": "كَفَاكَ رَبُّكَ",
 "incipit": "كَفَاكَ رَبُّكَ يَكْفِيكُمْ كَفَأْكِفَةً",
 "parts": [
 67
@@ -1072,13 +1119,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 138716,
+"pdfSize": 69676,
 "pages": 3,
 "palette": "grenat"
 },
 {
 "slug": "kawin-liya",
 "title": "Kawin Liya",
+"titleAr": "كَوِّنْ لِيَ",
 "incipit": "كَوِّنْ لِىَ الْيَوْمَ نَصْرًا عَزَّ مَوْلَايَا",
 "parts": [
 68
@@ -1094,13 +1142,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 196261,
+"pdfSize": 126997,
 "pages": 12,
 "palette": "vin"
 },
 {
 "slug": "khatimatu-munajati",
 "title": "Khatimatu Munajati",
+"titleAr": "خَاتِمَةُ الْمُنَاجَاةِ",
 "incipit": "وَصَّلَ لِى الْحَقُّ مِنَ الْحَقِّ الْمُبِينْ",
 "parts": [
 69
@@ -1116,13 +1165,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 191654,
+"pdfSize": 122966,
 "pages": 11,
 "palette": "bordeaux"
 },
 {
 "slug": "khayra-dayfin",
 "title": "Khayra Dayfin",
+"titleAr": "يَا خَيْرَ ضَيْفٍ",
 "incipit": "يَاخَيْرَ ضَيْفٍ أَتَى بِالْبِشْرِ وَالْمَدَدِ",
 "parts": [
 70
@@ -1138,13 +1188,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 169933,
+"pdfSize": 100873,
 "pages": 6,
 "palette": "ivoire"
 },
 {
 "slug": "kun-katiman",
 "title": "Kun Katiman",
+"titleAr": "كُنْ كَاتِمًا",
 "incipit": "كُنْ كَاتِمًا لِّلضُّرِّ وَالْبُوسَىى تَنَلْ",
 "parts": [
 71
@@ -1160,13 +1211,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 152422,
+"pdfSize": 83322,
 "pages": 4,
 "palette": "grenat"
 },
 {
 "slug": "lamyabdu",
 "title": "Lamyabdu",
+"titleAr": "لَمْ يَبْدُ",
 "incipit": "لَمْ يَبْدُ مِثْلُ الْمُصْطَفَى مُحَمَّدِ",
 "parts": [
 72
@@ -1182,13 +1234,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 163646,
+"pdfSize": 94202,
 "pages": 5,
 "palette": "vin"
 },
 {
 "slug": "lil-mustafa-nawaytu",
 "title": "Lil Mustafa Nawaytu",
+"titleAr": "لِلْمُصْطَفَى نَوَيْتُ",
 "incipit": "لِلْمُصْطَفَى نَوَيْتُ مَا يُجَدِّدُ",
 "parts": [
 73
@@ -1204,13 +1257,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 173503,
+"pdfSize": 105237,
 "pages": 8,
 "palette": "bordeaux"
 },
 {
 "slug": "lirabbin-ghafurin",
 "title": "Lirabbin Ghafurin",
+"titleAr": "لِرَبٍّ غَفُورٍ",
 "incipit": "لِرَبٍّ غَفُورٍ قَدْ مَحَا عَنِّىَ الذَّنْبَا",
 "parts": [
 74
@@ -1226,13 +1280,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 197149,
+"pdfSize": 128122,
 "pages": 14,
 "palette": "ivoire"
 },
 {
 "slug": "lirabbin-kariimin",
 "title": "Lirabbin Kariimin",
+"titleAr": "لِرَبٍّ كَرِيمٍ",
 "incipit": "لِرَبٍّ كَرِيمٍ وَاسِعٍ خَيْرِ مَعْبُودِ",
 "parts": [
 75
@@ -1248,13 +1303,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 166744,
+"pdfSize": 97733,
 "pages": 8,
 "palette": "grenat"
 },
 {
 "slug": "liyan-qaada",
 "title": "Liyan Qaada",
+"titleAr": "لِيَ انْقَادَ",
 "incipit": "لِىَ انْقَادَ مِمَّنْ بِالَّذِى رُمْتُهُ مَنَّا",
 "parts": [
 76
@@ -1270,13 +1326,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 160895,
+"pdfSize": 91602,
 "pages": 6,
 "palette": "vin"
 },
 {
 "slug": "madahtu-nabiyyal-muntaqa",
 "title": "Madahtu Nabiyyal Muntaqa",
+"titleAr": "مَدَحْتُ النَّبِيَّ الْمُنْتَقَى",
 "incipit": "مَدَحْتُ النَّبِىَّ الْمُنْتَقَى النُّورَ أَزْمَانَا",
 "parts": [
 77
@@ -1292,13 +1349,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 165801,
+"pdfSize": 97902,
 "pages": 6,
 "palette": "bordeaux"
 },
 {
 "slug": "madal-khabiru",
 "title": "Madal Khabiru",
+"titleAr": "مَدَّ الْخَبِيرُ",
 "incipit": "مَدَّ الْخَبِيرُ لِى وَالْكَبِيرُ",
 "parts": [
 78
@@ -1314,13 +1372,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 165006,
+"pdfSize": 96236,
 "pages": 7,
 "palette": "ivoire"
 },
 {
 "slug": "madhun-nabiyyil-muntaqa",
 "title": "Madhun Nabiyyil Muntaqa",
+"titleAr": "مَدْحُ النَّبِيِّ الْمُنْتَقَى",
 "incipit": "مَدْحُ النَّبِىِّ الْمُنَتَقَى ذَادٌ إِلَى",
 "parts": [
 79
@@ -1336,13 +1395,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 155839,
+"pdfSize": 87847,
 "pages": 5,
 "palette": "grenat"
 },
 {
 "slug": "mafatihul-bishri",
 "title": "Mafatihul Bishri",
+"titleAr": "مَفَاتِحُ الْبِشْرِ",
 "incipit": "أَحَدُ صَلِّ وَلْتُسَلِّمْ سَرْمَدَا",
 "parts": [
 80,
@@ -1368,13 +1428,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 425429,
+"pdfSize": 356936,
 "pages": 77,
 "palette": "vin"
 },
 {
 "slug": "mafatihul-jinan",
 "title": "Mafatihul Jinan",
+"titleAr": "مَفَاتِحُ الْجِنَانِ",
 "incipit": "أَحْبَبْتُ رَبَّ الْعَالَمِينْ",
 "parts": [
 86,
@@ -1402,13 +1463,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 270959,
+"pdfSize": 202287,
 "pages": 36,
 "palette": "bordeaux"
 },
 {
 "slug": "man-zanani",
 "title": "Man Zanani",
+"titleAr": "مَنْ ظَنَّنِي",
 "incipit": "مَنْ ظَنَّنِى غَيْرَ خَدِيمِ الْمُصْطَفَى",
 "parts": [
 93
@@ -1424,13 +1486,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 157381,
+"pdfSize": 88292,
 "pages": 5,
 "palette": "ivoire"
 },
 {
 "slug": "maramiya",
 "title": "Maramiya",
+"titleAr": "مَرَامِيَ",
 "incipit": "مَرَامِىَ عِنْدَ اللَّهِ أَحْوِيهِ سَرْمَدًا",
 "parts": [
 94
@@ -1446,13 +1509,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 145479,
+"pdfSize": 75648,
 "pages": 4,
 "palette": "grenat"
 },
 {
 "slug": "matlabul-fawzayni",
 "title": "Matlabul Fawzayni",
+"titleAr": "مَطْلَبُ الْفَوْزَيْنِ",
 "incipit": "الْحَمْدُ لِلَّهِ الْكَرِيمِ ذِى الْمِنَنْ",
 "parts": [
 95,
@@ -1474,13 +1538,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 338339,
+"pdfSize": 269857,
 "pages": 49,
 "palette": "vin"
 },
 {
 "slug": "matlabushiffa",
 "title": "Matlabushiffa",
+"titleAr": "مَطْلَبُ الشِّفَاءِ",
 "incipit": "حَمْدًا لِّمُنْزِلِ الضَّنَى وَالدَّآءِ",
 "parts": [
 99
@@ -1496,13 +1561,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 192228,
+"pdfSize": 123608,
 "pages": 13,
 "palette": "bordeaux"
 },
 {
 "slug": "matlabut-taqabbuli",
 "title": "Matlabut Taqabbuli",
+"titleAr": "مَطْلَبُ التَّقَبُّلِ",
 "incipit": "الْحَمْدُ لِلَّهِ الَّذِى يُبَدِّلُ",
 "parts": [
 100,
@@ -1520,14 +1586,15 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 200579,
+"pdfSize": 132161,
 "pages": 14,
 "palette": "ivoire"
 },
 {
 "slug": "mawahibu",
 "title": "Mawahibu",
-"incipit": "لبِسْمِ الْإِلَهِ يَنْمُو لُهَائِى",
+"titleAr": "مَوَاهِبُ النَّافِعِ",
+"incipit": "بِسْمِ الْإِلَهِ يَنْمُو لُهَائِى",
 "parts": [
 102,
 103,
@@ -1546,13 +1613,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 275045,
+"pdfSize": 206578,
 "pages": 35,
 "palette": "grenat"
 },
 {
 "slug": "midadi",
 "title": "Midadi",
+"titleAr": "مِدَادِي",
 "incipit": "مِدَادِى وَأَقْلَامِى لِمَنْ زَحْزَحَ الْيَمَّا",
 "parts": [
 105
@@ -1568,13 +1636,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 217986,
+"pdfSize": 148093,
 "pages": 19,
 "palette": "vin"
 },
 {
 "slug": "miftahun-nasri",
 "title": "Miftahun Nasri",
+"titleAr": "مِفْتَاحُ النَّصْرِ",
 "incipit": "الْحَمْدُ لِلَّهِ الْمُجِيبِ ذِى الْقَدَرْ",
 "parts": [
 106
@@ -1590,13 +1659,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 161429,
+"pdfSize": 92795,
 "pages": 6,
 "palette": "bordeaux"
 },
 {
 "slug": "mim-ra-shin",
 "title": "Mim Ra Shin",
+"titleAr": "مِيمْ رَا شِينْ",
 "incipit": "مِدَادِى وَأَقْلَامِى وَقَلْبِى وَجُثْمَانِى",
 "parts": [
 107
@@ -1612,13 +1682,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 150468,
+"pdfSize": 81395,
 "pages": 3,
 "palette": "ivoire"
 },
 {
 "slug": "minal-haqqi",
 "title": "Minal Haqqi",
+"titleAr": "مِنَ الْحَقِّ",
 "incipit": "مِنَ الْحَقِّ جَآءَ الْحَقُّ لِلْحَقِّ فِى الصَّحْبِ",
 "parts": [
 108
@@ -1634,13 +1705,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 154996,
+"pdfSize": 85698,
 "pages": 5,
 "palette": "grenat"
 },
 {
 "slug": "minal-lawhil-mahfuzi",
 "title": "Minal Lawhil Mahfuzi",
+"titleAr": "مِنَ اللَّوْحِ الْمَحْفُوظِ",
 "incipit": "مِنِّى لِمَنْ لَّهُ الْوُجُودُ وَالْقِدَمْ",
 "parts": [
 109
@@ -1656,13 +1728,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 167299,
+"pdfSize": 99479,
 "pages": 5,
 "palette": "vin"
 },
 {
 "slug": "minanul-baaqil-qadiim",
 "title": "Minanul Baaqil Qadiim",
+"titleAr": "مِنَنُ الْبَاقِي الْقَدِيمِ",
 "incipit": "بَرَّأَنِى الْبَاقِى مِنَ الْأَمْرَاضِ",
 "parts": [
 110,
@@ -1684,13 +1757,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 327121,
+"pdfSize": 258834,
 "pages": 46,
 "palette": "bordeaux"
 },
 {
 "slug": "mumitu",
 "title": "Mumitu",
+"titleAr": "مُمِيتُ",
 "incipit": "مُمِيتُ كُفَّ مَنْ تَوَجَّهَ بِضُرّْ",
 "parts": [
 114
@@ -1706,13 +1780,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 168896,
+"pdfSize": 99020,
 "pages": 5,
 "palette": "ivoire"
 },
 {
 "slug": "muqadamatul-amdah",
 "title": "Muqadamatul Amdah",
+"titleAr": "مُقَدِّمَةُ الْأَمْدَاحِ",
 "incipit": "وَثِقْتُ بِرَبِّ الْعَرْشِ ذِى الْجُودِ وَالْعَفْوِ",
 "parts": [
 115,
@@ -1734,13 +1809,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 353424,
+"pdfSize": 284887,
 "pages": 56,
 "palette": "grenat"
 },
 {
 "slug": "nuuru-daarayni",
 "title": "Nuuru Daarayni",
+"titleAr": "نُورُ الدَّارَيْنِ",
 "incipit": "الْحَمْدُ لِلَّهِ الَّذِى يُصَلِّى",
 "parts": [
 119,
@@ -1814,13 +1890,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 1240729,
+"pdfSize": 1171963,
 "pages": 309,
 "palette": "vin"
 },
 {
 "slug": "qalu-liyarkan",
 "title": "Qalu Liyarkan",
+"titleAr": "قَالُوا لِيَ ارْكَنْ",
 "incipit": "قَالُو لِىَ ارْكَنْ لِأَبْوَابِ السَّلَاطِينِ",
 "parts": [
 149
@@ -1836,13 +1913,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 164240,
+"pdfSize": 95525,
 "pages": 5,
 "palette": "bordeaux"
 },
 {
 "slug": "raa-iya",
 "title": "Raa Iya",
+"titleAr": "رَائِيَّة",
 "incipit": "قَلْبِى لَهُ فِى عِتَابِ الْجِسْمِ تَكْرَارُ",
 "parts": [
 150
@@ -1858,13 +1936,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 197866,
+"pdfSize": 128405,
 "pages": 12,
 "palette": "ivoire"
 },
 {
 "slug": "rabbi-karrimun",
 "title": "Rabbi Karrimun",
+"titleAr": "رَبِّي كَرِيمٌ",
 "incipit": "رَبِّى كَرِيمٌ وَاسِعٌ وَيُفَضِّلُ",
 "parts": [
 151
@@ -1880,13 +1959,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 176348,
+"pdfSize": 107380,
 "pages": 6,
 "palette": "grenat"
 },
 {
 "slug": "rabbiya-ahmadu",
 "title": "Rabbiya Ahmadu",
+"titleAr": "رَبِّيَ أَحْمَدُ",
 "incipit": "رَبِّىَ أَحْمَدُ عَلَى مُحَمَّدِ",
 "parts": [
 152
@@ -1902,13 +1982,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 181705,
+"pdfSize": 113030,
 "pages": 8,
 "palette": "vin"
 },
 {
 "slug": "raditu",
 "title": "Raditu",
+"titleAr": "رَضِيتُ",
 "incipit": "رَضِيتُ عَنِ الْمَوْلَى تَعَالَى الَّذِى رَبَّى",
 "parts": [
 153
@@ -1924,13 +2005,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 226870,
+"pdfSize": 157110,
 "pages": 23,
 "palette": "bordeaux"
 },
 {
 "slug": "rumna-shukur",
 "title": "Rumna Shukur",
+"titleAr": "رُمْنَا شُكُورَ",
 "incipit": "رُمْنَا شُكُورَ الَّذِى بِالْكَافِ وَالنُّونِ",
 "parts": [
 154,
@@ -1948,13 +2030,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 246277,
+"pdfSize": 177022,
 "pages": 24,
 "palette": "ivoire"
 },
 {
 "slug": "sabhun-taqii",
 "title": "Sabhun Taqii",
+"titleAr": "سَبْعٌ تَقِي",
 "incipit": "سَبْعٌ تَقِى أَبْوَابَ كُلِّ نَارِ",
 "parts": [
 156
@@ -1970,13 +2053,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 175927,
+"pdfSize": 106788,
 "pages": 8,
 "palette": "grenat"
 },
 {
 "slug": "safar",
 "title": "Safar",
+"titleAr": "صَفَر",
 "incipit": "صَلَاةُ الَّذِى فِى كُلِّ شَهْرٍ وَفِى صَفَرْ",
 "parts": [
 157
@@ -1992,13 +2076,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 157821,
+"pdfSize": 87709,
 "pages": 6,
 "palette": "vin"
 },
 {
 "slug": "safaru-bamsashin",
 "title": "Safaru Bamsashin",
+"titleAr": "صَحَّحْتَ لِي",
 "incipit": "صَحَّحْتَ لِى رَبَّ الْبَرِيَّةِ الْبَدَنْ",
 "parts": [
 158
@@ -2014,13 +2099,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 165461,
+"pdfSize": 96400,
 "pages": 5,
 "palette": "bordeaux"
 },
 {
 "slug": "sana-ilaahi",
 "title": "Sana Ilaahi",
+"titleAr": "صَانَ إِلَاهِي",
 "incipit": "صَانَ إِلَاهِى بِالْمُنَى جِهَاتِى",
 "parts": [
 159
@@ -2036,13 +2122,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 152899,
+"pdfSize": 83943,
 "pages": 3,
 "palette": "ivoire"
 },
 {
 "slug": "shakawtu",
 "title": "Shakawtu",
+"titleAr": "شَكَوْتُ",
 "incipit": "شَكَوْتُ أُمُورِى وَذَنْبِى الْعَظِيمْ",
 "parts": [
 160
@@ -2058,13 +2145,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 153545,
+"pdfSize": 83967,
 "pages": 5,
 "palette": "grenat"
 },
 {
 "slug": "shakuru-rafihu",
 "title": "Shakuru Rafihu",
+"titleAr": "شُكْرِي لِرَبٍّ كَرِيمٍ",
 "incipit": "شُكْرِى لِرَبٍّ كَرِيمٍ كَانَ شَكَّارَا",
 "parts": [
 161
@@ -2080,13 +2168,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 160442,
+"pdfSize": 92322,
 "pages": 4,
 "palette": "vin"
 },
 {
 "slug": "sindidi",
 "title": "Sindidi",
+"titleAr": "الصِّنْدِيدِ",
 "incipit": "يَاللَّهُ بِالْمُصْطَفَى الصِّنْدِيدِ يَاللَّهُ",
 "parts": [
 162
@@ -2102,13 +2191,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 198576,
+"pdfSize": 129356,
 "pages": 14,
 "palette": "bordeaux"
 },
 {
 "slug": "tawbatun-nasuuh",
 "title": "Tawbatun Nasuuh",
+"titleAr": "تَوْبَةٌ نَصُوحٌ",
 "incipit": "حَمْدًا لِّرَبِّنَا الْقَرِيبْ",
 "parts": [
 163,
@@ -2126,13 +2216,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 220291,
+"pdfSize": 151218,
 "pages": 18,
 "palette": "ivoire"
 },
 {
 "slug": "taysirul-hasiru",
 "title": "Taysirul Hasiru",
+"titleAr": "تَيْسِيرُ الْعَسِيرِ",
 "incipit": "يَاللَّهُ يَامَنْ لَّآإِلَاهَ غَيْرُهُ",
 "parts": [
 165,
@@ -2156,13 +2247,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 381640,
+"pdfSize": 312593,
 "pages": 62,
 "palette": "grenat"
 },
 {
 "slug": "tuhfatu-mutadarihin",
 "title": "Tuhfatu Mutadarihin",
+"titleAr": "تُحْفَةُ الْمُتَضَرِّعِينَ",
 "incipit": "الْحَمْدُ لِلَّهِ وَصَلَّى أَبَدَا",
 "parts": [
 170
@@ -2178,13 +2270,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 205940,
+"pdfSize": 138008,
 "pages": 12,
 "palette": "vin"
 },
 {
 "slug": "wa-kaana-haqqan",
 "title": "Wa Kaana Haqqan",
+"titleAr": "وَكَانَ حَقًّا",
 "incipit": "وَجَّهْتُ كُلِّىَ بِحَمْدٍ وَشُكُورْ",
 "parts": [
 171,
@@ -2204,13 +2297,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 281666,
+"pdfSize": 212566,
 "pages": 33,
 "palette": "bordeaux"
 },
 {
 "slug": "wadudu",
 "title": "Wadudu",
+"titleAr": "وَدُودُ",
 "incipit": "وَدُودُ كُنْ لِّى أَبَدًا بِالْوُدِّ",
 "parts": [
 174
@@ -2226,13 +2320,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 175115,
+"pdfSize": 104849,
 "pages": 7,
 "palette": "ivoire"
 },
 {
 "slug": "wajjahtu-hamdan",
 "title": "Wajjahtu Hamdan",
+"titleAr": "وَجَّهْتُ حَمْدًا",
 "incipit": "وَجَّهْتُ لِلَّهِ حَمْدًا وَهْوَ كَرَّمَنِى",
 "parts": [
 175
@@ -2248,13 +2343,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 164332,
+"pdfSize": 95727,
 "pages": 6,
 "palette": "grenat"
 },
 {
 "slug": "wajjahtu-kulliya",
 "title": "Wajjahtu Kulliya",
+"titleAr": "وَجَّهْتُ كُلِّيَ",
 "incipit": "وَجَّهْتُ كُلِّىَ ذَا قُرْبٍ مِّنَ اللَّهِ",
 "parts": [
 176
@@ -2270,13 +2366,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 172713,
+"pdfSize": 103979,
 "pages": 8,
 "palette": "vin"
 },
 {
 "slug": "wajjahtu-wajhii",
 "title": "Wajjahtu Wajhii",
+"titleAr": "وَجَّهْتُ وَجْهِي",
 "incipit": "وَجَّهْتُ لِلَّهِ وَجْهِى وَهْوَ يُبْقِنِى",
 "parts": [
 177
@@ -2292,13 +2389,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 190022,
+"pdfSize": 120900,
 "pages": 12,
 "palette": "bordeaux"
 },
 {
 "slug": "wajjahtu-wajhiya",
 "title": "Wajjahtu Wajhiya",
+"titleAr": "وَجَّهْتُ وَجْهِيَ",
 "incipit": "وَجَّهْتُ وَجْهِىَ ذَا قُرْبٍ مِّنَ اللَّهِ",
 "parts": [
 178
@@ -2314,13 +2412,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 171901,
+"pdfSize": 102811,
 "pages": 8,
 "palette": "ivoire"
 },
 {
 "slug": "wal-baladu",
 "title": "Wal Baladu",
+"titleAr": "وَالْبَلَدُ",
 "incipit": "وَجَّهْتُ كُلِّ لِلْوَدُودِ الصَّمَدِ",
 "parts": [
 179
@@ -2336,13 +2435,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 183558,
+"pdfSize": 114119,
 "pages": 8,
 "palette": "grenat"
 },
 {
 "slug": "walaqad-karamna",
 "title": "Walaqad Karamna",
+"titleAr": "وَلَقَدْ كَرَّمْنَا",
 "incipit": "وَجَّحْتُ وَجْهِى لِمَنْ تَكْرِيمُهُ بَانَا",
 "parts": [
 180,
@@ -2362,13 +2462,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 248605,
+"pdfSize": 179936,
 "pages": 25,
 "palette": "vin"
 },
 {
 "slug": "waqani",
 "title": "Waqani",
+"titleAr": "وَقَانِي",
 "incipit": "وَقَانِى حَفِيظٌ قَاهِرٌ جَلَّ مَانِعُ",
 "parts": [
 183
@@ -2384,13 +2485,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 163482,
+"pdfSize": 93802,
 "pages": 7,
 "palette": "bordeaux"
 },
 {
 "slug": "wawassaynal",
 "title": "Wawassaynal",
+"titleAr": "وَوَصَّيْنَا",
 "incipit": "وَجَّهْتُ وَجْهِىَ لِمَنْ لِّى طَيَّا",
 "parts": [
 184
@@ -2406,13 +2508,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 167914,
+"pdfSize": 98673,
 "pages": 7,
 "palette": "ivoire"
 },
 {
 "slug": "yaa-kitaabal-kariimi",
 "title": "Yaa Kitaabal Kariimi",
+"titleAr": "يَا كِتَابَ الْكَرِيمِ",
 "incipit": "يَاكِتَابَ الْكَرِيمِ أَنْتَ حَبِيبِى",
 "parts": [
 185
@@ -2428,13 +2531,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 161049,
+"pdfSize": 92497,
 "pages": 6,
 "palette": "grenat"
 },
 {
 "slug": "yaa-mukrima-dayfi",
 "title": "Yaa Mukrima Dayfi",
+"titleAr": "يَا مُكْرِمَ الضَّيْفِ",
 "incipit": "يَامُكْرِمَ الضَّيْفِ جَارًا كَانَ أَوْزَارَا",
 "parts": [
 186
@@ -2450,13 +2554,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 163032,
+"pdfSize": 94713,
 "pages": 6,
 "palette": "vin"
 },
 {
 "slug": "yaa-rakhmanu",
 "title": "Yaa Rakhmanu",
+"titleAr": "يَا رَحْمَانُ",
 "incipit": "رَبِّى بِمَا يَشْرَهُ الْأَذْهَنَ قَدْ فَجَئَا",
 "parts": [
 187
@@ -2472,13 +2577,14 @@
 "it"
 ],
 "featured": true,
-"pdfSize": 154811,
+"pdfSize": 85405,
 "pages": 5,
 "palette": "bordeaux"
 },
 {
 "slug": "yaa-zal-wujuudi",
 "title": "Yaa Zal Wujuudi",
+"titleAr": "يَا ذَا الْوُجُودِ",
 "incipit": "يَاذَا الْوُجُودِ وَالْبَقَآءِ وَالْقِدَمْ",
 "parts": [
 188
@@ -2494,13 +2600,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 163438,
+"pdfSize": 94329,
 "pages": 5,
 "palette": "ivoire"
 },
 {
 "slug": "yaqini",
 "title": "Yaqini",
+"titleAr": "يَقِينِي",
 "incipit": "يَقِينِى إِلَى الْجَنَّاتِ مَالَيْسَ يُحْمَدُ",
 "parts": [
 189
@@ -2516,13 +2623,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 163671,
+"pdfSize": 93919,
 "pages": 6,
 "palette": "grenat"
 },
 {
 "slug": "yarabbi",
 "title": "Yarabbi",
+"titleAr": "يَا رَبِّ",
 "incipit": "يَارَبِّ بِالْمُصْطَفَى الْمُخْتَارِ مِنْ مُّضَرِ",
 "parts": [
 190
@@ -2538,13 +2646,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 149957,
+"pdfSize": 80216,
 "pages": 4,
 "palette": "vin"
 },
 {
 "slug": "yassara",
 "title": "Yassara",
+"titleAr": "يَسَّرَ",
 "incipit": "يَسَّرَ لِى مُيَسِّرُ الْعَسِيرِ",
 "parts": [
 191
@@ -2560,13 +2669,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 154097,
+"pdfSize": 84338,
 "pages": 5,
 "palette": "bordeaux"
 },
 {
 "slug": "yasurru",
 "title": "Yasurru",
+"titleAr": "يَسُرُّ",
 "incipit": "يَسُرُّ رَسُولَ اللَّهِ خَطِّى بِمَوْلِدِ",
 "parts": [
 192
@@ -2582,13 +2692,14 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 158456,
+"pdfSize": 88797,
 "pages": 5,
 "palette": "ivoire"
 },
 {
 "slug": "zallat",
 "title": "Zallat",
+"titleAr": "ذَلَّتْ",
 "incipit": "ذَلَّتْ لِعِزَّةِ رَبٍّ أَنْزَلَ السُّوَرَا",
 "parts": [
 193
@@ -2604,7 +2715,7 @@
 "it"
 ],
 "featured": false,
-"pdfSize": 154850,
+"pdfSize": 85094,
 "pages": 5,
 "palette": "grenat"
 }

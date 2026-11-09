@@ -125,8 +125,9 @@ html { font-family: Inter; color: #2A1A16; }
 .author span { font-weight: 400; font-size: 9.5pt; letter-spacing: .06em }
 
 .front { page: front; text-align: center; padding-top: 30mm; }
+.front .tar { font-family: Amiri; font-weight: 700; font-size: 30pt; color: #6B1424; margin-top: 12mm; line-height: 1.5 }
 .front .basmala { font-family: Amiri; font-size: 20pt; color: #6B1424; }
-.front h1 { font-family: Corm; font-weight: 600; font-size: 28pt; color: #6B1424; margin: 14mm 0 2mm; string-set: booktitle content(); }
+.front h1 { font-family: Corm; font-weight: 600; font-size: 28pt; color: #6B1424; margin: 2mm 0 4mm; string-set: booktitle content(); }
 .front .ar { font-family: Amiri; font-size: 14pt; color: #8B6A3E; }
 .front .meta { font-family: Corm; font-size: 11pt; color: #6E5A4A; margin-top: 10mm; line-height: 1.6 }
 .front .orn { color: #B48A3A; font-size: 12pt; margin: 8mm 0; letter-spacing: .6em }
@@ -150,6 +151,7 @@ def pdf_html(w, parts_data, pal):
     nparts = len(w['parts'])
     body.append(f"""<section class="front">
 <div class="basmala" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+<div class="tar" dir="rtl">{e(w['titleAr'])}</div>
 <h1>{e(w['title'])}</h1>
 <div class="ar" dir="rtl">{e(w['incipit'])}</div>
 <div class="orn">✦ ✦ ✦</div>
@@ -181,6 +183,11 @@ def pdf_html(w, parts_data, pal):
 
 def cover_only_html(w, pal):
     return f'<!doctype html><html><head><meta charset="utf-8"><style>{font_faces()}{CSS}</style></head><body>{cover_html(w, pal)}</body></html>'
+
+
+from cover import cover_html, COVER_CSS, PALETTES
+from ar_titles import AR_TITLES
+CSS = CSS + COVER_CSS
 
 
 def render(job):
@@ -222,8 +229,9 @@ def main(only=None):
             json.dump({'number': m['number'], 'name': m['name'], 'meter': k.get('meter', ''), 'bayts': bayts},
                       open(f"{OUT}/data/k/{m['number']}.json", 'w'), ensure_ascii=False, separators=(',', ':'))
         first = compact(load(ms[0]['number']))[0]
+        first['ar'][0] = re.sub(r'^ل(?=بِسْمِ)', '', first['ar'][0])
         lib.append({
-            'slug': slugify(title), 'title': title, 'incipit': first['ar'][0],
+            'slug': slugify(title), 'title': title, 'titleAr': AR_TITLES[title], 'incipit': first['ar'][0],
             'parts': [m['number'] for m in ms], 'partNames': [m['name'] for m in ms],
             'bayts': nb, 'meter': ms[0]['meter'], 'langs': sorted(langs),
             'featured': title in FEATURED,
