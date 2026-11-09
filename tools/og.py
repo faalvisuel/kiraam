@@ -10,7 +10,7 @@ DEEP, BX, GOLD, GOLD_L = (44, 6, 14), (107, 20, 36), (194, 155, 74), (217, 182, 
 
 corm = lambda s: ImageFont.truetype(f'{FONTS}/cormorant-garamond-latin-600-normal.ttf', s)
 inter = lambda s: ImageFont.truetype(f'{FONTS}/inter-latin-600-normal.ttf', s)
-amiri = lambda s: ImageFont.truetype(f'{FONTS}/amiri-arabic-700-normal.ttf', s, layout_engine=ImageFont.Layout.RAQM)
+amiri = lambda s: ImageFont.truetype(f'{FONTS}/ruwudu-full-700.ttf', s, layout_engine=ImageFont.Layout.RAQM)
 
 
 def background():

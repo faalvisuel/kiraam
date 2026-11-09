@@ -1,5 +1,7 @@
-@font-face{font-family:Amiri;src:url(fonts/amiri-arabic-400-normal.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF}
-@font-face{font-family:Amiri;src:url(fonts/amiri-arabic-700-normal.woff2) format("woff2");font-weight:700;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Kar;src:url(fonts/ruwudu-full-600.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Kar;src:url(fonts/ruwudu-full-700.woff2) format("woff2");font-weight:700;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:KL;src:url(fonts/ruwudu-letters-600.woff2) format("woff2");font-display:block}
+@font-face{font-family:KM;src:url(fonts/ruwudu-marks-600.woff2) format("woff2");font-display:block}
 @font-face{font-family:Cormorant;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:Cormorant;src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:Inter;src:url(fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
@@ -14,7 +16,7 @@
   --r:22px; --r-sm:14px;
   --sh:0 1px 2px rgba(70,20,25,.05),0 14px 34px -18px rgba(70,20,25,.28);
   --sh-lg:0 30px 60px -28px rgba(60,10,20,.45);
-  --serif:Cormorant,Georgia,serif; --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; --ar:Amiri,"Traditional Arabic",serif;
+  --serif:Cormorant,Georgia,serif; --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; --ar:Kar,Amiri,"Traditional Arabic",serif;
   --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23B48A3A' stroke-opacity='.13' stroke-width='.9'%3E%3Cpath d='M28 15l3.9 5.3 6.5-.6-.6 6.5L43 28l-5.2 3.8.6 6.5-6.5-.6L28 43l-3.9-5.3-6.5.6.6-6.5L13 28l5.2-3.8-.6-6.5 6.5.6z'/%3E%3Cpath d='M0 0l5 5M56 0l-5 5M0 56l5-5M56 56l-5-5M28 0v4M28 52v4M0 28h4M52 28h4'/%3E%3C/g%3E%3C/svg%3E");
   --pattern-gold:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23E2C27A' stroke-opacity='.13' stroke-width='.9'%3E%3Cpath d='M28 15l3.9 5.3 6.5-.6-.6 6.5L43 28l-5.2 3.8.6 6.5-6.5-.6L28 43l-3.9-5.3-6.5.6.6-6.5L13 28l5.2-3.8-.6-6.5 6.5.6z'/%3E%3Cpath d='M0 0l5 5M56 0l-5 5M0 56l5-5M56 56l-5-5M28 0v4M28 52v4M0 28h4M52 28h4'/%3E%3C/g%3E%3C/svg%3E");
 }
@@ -257,7 +259,7 @@ body.on-hero .banner-in{padding-top:150px}
 .excerpt .v{padding:16px 0;border-bottom:1px dashed var(--line);text-align:center}
 .excerpt .v:last-child{border:0}
 .excerpt .v .ar{font-size:24px;line-height:1.9}
-.excerpt .v .ar span{display:inline-block;margin:0 10px}
+.excerpt .v .ar>span{display:inline-block;margin:0 10px}
 .excerpt .v .tr{font-family:var(--serif);font-style:italic;color:#8A6649;font-size:16px}
 .excerpt .v .tl{font-size:14px;color:var(--ink-2)}
 .parts{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:30px}
@@ -523,7 +525,7 @@ body.on-hero .banner-in{padding-top:150px}
   .parts{grid-template-columns:1fr 1fr}
   .excerpt{padding:20px 16px}
   .excerpt .v .ar{font-size:21px}
-  .excerpt .v .ar span{display:block;margin:0}
+  .excerpt .v .ar>span{display:block;margin:0}
   .excerpt .v .ar .sep{display:none}
   .kv b{font-size:26px}
   /* lecteur : barre compacte, non collante */
@@ -574,8 +576,6 @@ body.on-hero .banner-in{padding-top:150px}
 .verse:nth-of-type(even){background:linear-gradient(180deg,#FFFBF2,#FBF3E3)}
 .verse::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(var(--gold-2),var(--bx))}
 .verse .ar-lines{color:var(--bx);text-shadow:0 1px 0 rgba(255,255,255,.6)}
-.verse .ar-lines span{position:relative}
-.verse .ar-lines:not(.stack) span+span::before{content:"۞";position:absolute;right:-22px;top:50%;transform:translateY(-50%);font-size:.5em;color:var(--gold)}
 .verse .num{background:radial-gradient(circle,var(--bx) 58%,transparent 60%);color:var(--gold-2);font-weight:700}
 .verse .num svg{color:var(--gold);fill:rgba(217,182,108,.18)}
 .verse .tr{color:#A87A2E;background:rgba(217,182,108,.12);border-radius:999px;padding:4px 14px;justify-self:center;width:fit-content;max-width:100%;margin-top:4px}
@@ -604,7 +604,6 @@ body.on-hero .banner-in{padding-top:150px}
 .flip .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#EFE4D0 center/cover no-repeat;border-radius:6px 16px 16px 6px;box-shadow:-10px 30px 60px -20px rgba(60,10,20,.55);transform:rotateY(0deg) translateZ(1px)}
 .flip .face.front::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,rgba(0,0,0,.28),rgba(255,255,255,.12) 2.5%,transparent 6%)}
 .flip .face.back{transform:rotateY(180deg) translateZ(1px);border-radius:16px 6px 6px 16px}
-@media (hover:hover){.book-cover:hover .flip{transform:rotateY(-180deg)}.book-cover:hover .flip.flipped{transform:none}}
 .flip.flipped{transform:rotateY(-180deg)}
 .flip-hint{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;color:var(--muted);margin:14px 0 0}
 .flip-hint .ic{width:14px;height:14px;color:var(--gold)}
@@ -658,3 +657,28 @@ body.on-hero .banner-in{padding-top:150px}
 @media (prefers-reduced-motion:reduce){.card:hover .cv,.flip{transform:none!important}}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== v4 : écriture sahélienne, voyelles en rouge, Allah en vert, le Prophète ﷺ en bleu ===== */
+:root{--parch:#FBF2D8;--parch-2:#FFF8E4;--vred:#D41F3F;--vgreen:#1A7A42;--vblue:#1C4F9C;--vorange:#E08A2E}
+.k{position:relative;display:inline-block}
+.kl{font-family:KL,var(--ar);color:#1A1210}
+.k>.km{font-family:KM;color:var(--vred);position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none}
+.verse .ar-lines>.k{display:block;text-align:center}
+.kl .g{color:var(--vgreen)}.kl .p{color:var(--vblue)}
+.reader .verse{background:var(--parch-2);border:2px solid #E7C987;box-shadow:inset 0 0 0 5px var(--parch-2),inset 0 0 0 6.5px #9CC7A4,0 10px 24px -18px rgba(70,20,25,.35)}
+.reader .verse:nth-of-type(even){background:#FFF3D3;box-shadow:inset 0 0 0 5px #FFF3D3,inset 0 0 0 6.5px #EBB06E,0 10px 24px -18px rgba(70,20,25,.35)}
+.reader .verse::before{width:0}
+.reader .verse .ar-lines{color:#1A1210;font-family:KL,var(--ar);font-size:calc(27px*var(--fs,1));line-height:2.15;text-shadow:none}
+.reader .verse .num{background:radial-gradient(circle,var(--vgreen) 58%,transparent 60%);color:#fff}
+.reader .verse .num svg{color:var(--vorange);fill:rgba(224,138,46,.18)}
+.reader .verse .tr{color:#B5512A;background:rgba(224,138,46,.12)}
+.reader .verse .tl{border-top-color:#E7C987}
+.reader .verse .ar-lines:not(.stack)>.k+.k::before{content:"۞";position:absolute;right:-24px;top:50%;transform:translateY(-50%);font-family:Kar,serif;font-size:.45em;color:var(--vorange)}
+.rhead .basmala{font-family:Kar,var(--ar);color:var(--vgreen)}
+.reader{background:transparent}
+.excerpt{background:var(--parch-2)}
+.excerpt .v .ar{font-family:KL,var(--ar);color:#1A1210;font-size:26px;line-height:2.1}
+.t-ar,.card .t-ar,.book-info .t-ar,.rhead .t-ar{font-family:Kar,var(--ar)}
+@media (max-width:820px){.reader .verse .ar-lines{font-size:calc(22px*var(--fs,1))}.reader .verse{padding-left:12px;padding-right:12px}.reader .verse .ar-lines>.k+.k::before{display:none}}
+/* livre : clic pour retourner (ordinateur et mobile), léger aperçu 3D au survol */
+@media (hover:hover){.book-cover:hover .flip{transform:rotateY(-16deg) rotateX(3deg)}.book-cover:hover .flip.flipped{transform:rotateY(-164deg) rotateX(3deg)}}

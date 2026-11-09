@@ -1,6 +1,8 @@
 """Kiraam build: data JSON + book PDFs (cover + text) + cover images.
 Source text: DaurDiop/khassida_dataset (MIT)."""
 import json, re, os, sys, html, subprocess, unicodedata
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from kfmt import kline
 from collections import OrderedDict
 from multiprocessing import Pool
 
@@ -56,8 +58,10 @@ def compact(k):
 def font_faces():
     f = FONTS
     return f"""
-@font-face{{font-family:Amiri;src:url(file://{f}/amiri-arabic-400-normal.ttf);font-weight:400}}
-@font-face{{font-family:Amiri;src:url(file://{f}/amiri-arabic-700-normal.ttf);font-weight:700}}
+@font-face{{font-family:Amiri;src:url(file://{f}/ruwudu-full-600.ttf);font-weight:400}}
+@font-face{{font-family:KL;src:url(file://{f}/ruwudu-letters-600.ttf)}}
+@font-face{{font-family:KM;src:url(file://{f}/ruwudu-marks-600.ttf)}}
+@font-face{{font-family:Amiri;src:url(file://{f}/ruwudu-full-700.ttf);font-weight:700}}
 @font-face{{font-family:AmiriL;src:url(file://{f}/amiri-latin-400-normal.ttf);font-weight:400}}
 @font-face{{font-family:Corm;src:url(file://{f}/cormorant-garamond-latin-400-normal.ttf);font-weight:400}}
 @font-face{{font-family:Corm;src:url(file://{f}/cormorant-garamond-latin-600-normal.ttf);font-weight:600}}
@@ -98,7 +102,7 @@ def cover_html(w, pal):
 
 
 CSS = """
-@page { size: 148mm 210mm; margin: 18mm 15mm 17mm 15mm;
+@page { size: 148mm 210mm; margin: 18mm 15mm 17mm 15mm; background: #FBF2D8;
   @bottom-center { content: counter(page); font-family: Corm; font-size: 10pt; color: #8B6A3E; }
   @top-center { content: string(booktitle); font-family: Corm; font-size: 8.5pt; letter-spacing: .18em; text-transform: uppercase; color: #A88A5A; }
 }
@@ -133,21 +137,25 @@ html { font-family: Inter; color: #2A1A16; }
 .front .orn { color: #B48A3A; font-size: 12pt; margin: 8mm 0; letter-spacing: .6em }
 .front .credit { position: absolute; bottom: 0; left: 0; right: 0; font-size: 7pt; color: #9A8676; line-height: 1.5 }
 
-h2.part { font-family: Corm; font-weight: 600; font-size: 17pt; color: #6B1424; text-align: center; margin: 2mm 0 6mm; break-after: avoid; }
+h2.part { font-family: Corm; font-weight: 600; font-size: 17pt; color: #1A7A42; text-align: center; margin: 2mm 0 6mm; break-after: avoid; }
 h2.part small { display: block; font-size: 9pt; letter-spacing: .2em; text-transform: uppercase; color: #A88A5A; font-weight: 400 }
 h2.part.newpage { break-before: page; }
-.bayt { break-inside: avoid; padding: 2.8mm 2mm 3.2mm; border-radius: 2mm; margin-bottom: 1.6mm; background: #FFFDF8; border: .2mm solid #F0E4CC; }
-.bayt.alt { background: #FBF3E4; }
-.medal { display: inline-block; min-width: 6.2mm; height: 6.2mm; line-height: 6.2mm; border-radius: 3.1mm; background: #6B1424; color: #F2DCA4; font-family: Inter; font-size: 7pt; text-align: center; }
+.bayt { break-inside: avoid; padding: 2.8mm 2mm 3.2mm; border-radius: 2mm; margin-bottom: 1.8mm; background: #FFF9E8; border: .35mm solid #E2C27A; box-shadow: inset 0 0 0 .8mm #FFF9E8, inset 0 0 0 1mm #9CC7A4; }
+.bayt.alt { background: #FFF4D6; box-shadow: inset 0 0 0 .8mm #FFF4D6, inset 0 0 0 1mm #E8A35A; }
+.medal { display: inline-block; min-width: 6.2mm; height: 6.2mm; line-height: 6.2mm; border-radius: 3.1mm; background: #1A7A42; color: #F2DCA4; font-family: Inter; font-size: 7pt; text-align: center; }
 .medal.ar { font-family: Amiri; font-size: 9pt; line-height: 6mm; }
 .tlonly { display: table; width: 100%; }
 .tlonly .mc { display: table-cell; width: 7mm; vertical-align: top; padding-top: .6mm; }
 .tlonly .tlx { display: table-cell; padding-left: 3mm; font-family: Corm; font-size: 12pt; line-height: 1.45; color: #2A1A16; }
 .bayt table { width: 100%; border-collapse: collapse; direction: rtl; }
-.bayt td { font-family: Amiri; font-size: 13.5pt; line-height: 1.8; color: #5A0F1E; text-align: center; width: 47%; vertical-align: top; }
+.k { position: relative; display: inline-block; white-space: nowrap; }
+.kl { font-family: KL; color: #1A1210; }
+.km { font-family: KM; color: #D41F3F; position: absolute; left: 0; top: 0; right: 0; white-space: nowrap; }
+.kl .g { color: #1A7A42; } .kl .p { color: #1C4F9C; }
+.bayt td { font-family: KL; font-size: 14.5pt; line-height: 2; color: #1A1210; text-align: center; width: 47%; vertical-align: top; }
 .bayt td.wide { width: 94%; }
 .bayt td.n { width: 6%; font-size: 9.5pt; color: #B48A3A; }
-.tr { font-family: Corm; font-style: italic; font-size: 10pt; color: #A87A2E; text-align: center; margin-top: .6mm; }
+.tr { font-family: Corm; font-style: italic; font-size: 10pt; color: #B5512A; text-align: center; margin-top: .6mm; }
 .fr { font-family: Inter; font-size: 8pt; line-height: 1.55; color: #3A2A24; text-align: center; margin: 1.6mm 6mm 0; padding-top: 1.4mm; border-top: .2mm dashed #E3CFA6; }
 """
 
@@ -172,7 +180,7 @@ def pdf_html(w, parts_data, pal, mode='complet'):
 <div class="ar" dir="rtl">{e(w['incipit'])}</div>
 <div class="orn">✦ ✦ ✦</div>
 <div class="meta">Œuvre de Cheikh Ahmadou Bamba Khadimou Rassoul<br/>{nparts} {'parties' if nparts > 1 else 'partie'} · {w['bayts']} vers · mètre {e(w['meter'])}<br/>{label}</div>
-<div class="credit">Édition Kiraam · Textes issus du « Khassida Dataset » de Daour (github.com/DaurDiop/khassida_dataset, licence MIT).<br/>Diffusion libre et gratuite. Toute erreur de saisie peut être signalée sur le dépôt Kiraam.</div>
+<div class="credit">Édition Kiraam · Textes issus du « Khassida Dataset » de Daour (github.com/DaurDiop/khassida_dataset, licence MIT).<br/>Diffusion libre et gratuite. Toute erreur de saisie peut être signalée à Kiraam.</div>
 </section>""")
     for i, (num, pname, bayts) in enumerate(parts_data):
         if nparts > 1:
@@ -194,7 +202,7 @@ def pdf_html(w, parts_data, pal, mode='complet'):
             tbl = ''
             for ri, r in enumerate(rows):
                 numcell = f'<td class="n"><span class="medal ar">{num}</span></td>' if ri == 0 else '<td class="n"></td>'
-                cells = (f'<td colspan="2" class="wide">{e(r[0])}</td>' if long_ else ''.join(f'<td>{e(x)}</td>' for x in r) + ('<td></td>' if len(r) == 1 else ''))
+                cells = (f'<td colspan="2" class="wide">{kline(r[0])}</td>' if long_ else ''.join(f'<td>{kline(x)}</td>' for x in r) + ('<td></td>' if len(r) == 1 else ''))
                 tbl += f'<tr>{numcell}{cells}</tr>'
             body.append(f'<div class="bayt{band}"><table>{tbl}</table>'
                         + (f'<div class="tr">{e(tr_txt)}</div>' if show_tr and tr_txt else '')

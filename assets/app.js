@@ -48,6 +48,24 @@
   ];
   const mb = b => (b / 1048576 < 1 ? Math.round(b / 1024) + ' Ko' : (b / 1048576).toFixed(1).replace('.', ',') + ' Mo');
 
+
+  // ---------- Écriture : deux calques (lettres / voyelles) ----------
+  const MARKS = /[ً-ٰٟۖ-ۭـ]/g;
+  const PFX = ['و', 'ف', 'ب', 'ل', 'ك', 'لل', 'بال', 'وال', 'فال', 'كال', 'ولل', 'يا'];
+  const GODW = new Set(['الله', 'لله', 'اله', 'الاله', 'اللهم']);
+  const PROW = new Set(['محمد', 'المصطفى', 'مصطفى', 'النبي', 'النبى', 'نبي', 'نبى', 'الرسول', 'رسول', 'المختار', 'مختار', 'طه', 'المنتقى', 'منتقى']);
+  function kind(w) {
+    const s = w.replace(MARKS, '').replace(/[ٱأإآ]/g, 'ا').replace(/[^ء-ي]/g, '');
+    const c = [s, ...PFX.filter(p => s.startsWith(p)).map(p => s.slice(p.length))];
+    if (c.some(x => GODW.has(x) || (x.startsWith('الله') && x.length <= 6))) return 'g';
+    if (c.some(x => PROW.has(x))) return 'p';
+    return '';
+  }
+  function kline(t) {
+    const a = t.split(' ').map(w => { const k = kind(w); return k ? `<span class="${k}">${esc(w)}</span>` : esc(w); }).join(' ');
+    return `<span class="k"><span class="kl">${a}</span><span class="km" aria-hidden="true">${a}</span></span>`;
+  }
+
   // ---------- Components ----------
   function card(w, opts = {}) {
     const p = progress[w.slug];
@@ -277,7 +295,7 @@
     try {
       const d = await getPart(w.parts[0]);
       const ex = $('#excerpt'); if (!ex) return;
-      ex.innerHTML = `<h3>Premiers vers</h3>` + d.bayts.slice(0, 3).map(b => `<div class="v"><div class="ar">${b.ar.map(a => `<span>${esc(a)}</span>`).join('<span class="sep">۞</span>')}</div><div class="tr">${esc(b.tr.join(' · '))}</div><div class="tl">${esc(b.fr)}</div></div>`).join('') +
+      ex.innerHTML = `<h3>Premiers vers</h3>` + d.bayts.slice(0, 3).map(b => `<div class="v"><div class="ar">${b.ar.map(a => `<span>${kline(a)}</span>`).join('<span class="sep">۞</span>')}</div><div class="tr">${esc(b.tr.join(' · '))}</div><div class="tl">${esc(b.fr)}</div></div>`).join('') +
         `<div style="text-align:center;margin-top:16px"><a class="btn btn-line sm" href="${R}lire/${w.slug}/1/">Lire la suite${ic('arrow')}</a></div>`;
     } catch {}
   }
@@ -323,7 +341,7 @@
       ${data.bayts.map(b => {
         const stack = b.ar.map(stripAr).some(x => x.length > 30) || b.ar.length === 1;
         return `<div class="verse" id="v${b.n}">${numBadge(b.n)}
-          <div class="ar-lines${stack ? ' stack' : ''}">${b.ar.map(a => `<span>${esc(a)}</span>`).join('')}</div>
+          <div class="ar-lines${stack ? ' stack' : ''}">${b.ar.map(a => kline(a)).join('')}</div>
           <div class="tr">${esc(b.tr.filter(Boolean).join(' · '))}</div>
           <div class="tl">${esc(b[lang === 'none' ? 'fr' : lang] || b.fr || '')}</div></div>`;
       }).join('')}

@@ -6,7 +6,9 @@ Usage :
 Toutes les pages utilisent des chemins relatifs : elles fonctionnent à la racine d'un domaine
 comme dans un sous-dossier (/kiraam/). Seuls canonical, sitemap et Open Graph utilisent --site.
 """
-import argparse, html, json, os, re
+import argparse, html, json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from kfmt import kline
 from datetime import date
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -56,7 +58,7 @@ def page(shell, site, path, title, desc, img, main, **kw):
 
 
 def ar_lines(b):
-    return ''.join(f'<span>{e(a)}</span>' for a in b['ar'])
+    return ''.join(kline(a) for a in b['ar'])
 
 
 def main():

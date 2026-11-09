@@ -123,7 +123,8 @@ def verso_html(w, p, first, langs):
     about = (f"« {e(w['title'])} » est un khassida de Cheikh Ahmadou Bamba Khadimou Rassoul, guide spirituel et fondateur de Touba. "
              f"Cette édition réunit ses {w['bayts']} vers" + (f", répartis en {np_} parties," if np_ > 1 else "") +
              " en arabe vocalisé, avec leur translittération et leur traduction.")
-    ar = " ۞ ".join(e(x) for x in first['ar'])
+    from kfmt import kline
+    ar = " ۞ ".join(kline(x) for x in first['ar'])
     return f"""
 <section class="kv" style="background:{p['bg']}">
   {verso_svg(p)}
@@ -145,7 +146,8 @@ VERSO_CSS = """
 .kv-in { position: absolute; top: 30mm; left: 24mm; width: 100mm; }
 .kv-tar { font-family: Amiri; font-weight: 700; font-size: 22pt; line-height: 1.5; }
 .kv-t { font-family: Corm; font-weight: 600; font-size: 15pt; margin-bottom: 7mm; letter-spacing: .02em; }
-.kv-ex { font-family: Amiri; font-size: 13pt; line-height: 1.8; }
+.kv-ex { font-family: Amiri; font-size: 13pt; line-height: 1.9; }
+.kv-ex .kl { color: inherit; } .kv-ex .km { color: #F2788C; } .kv-ex .kl .g { color: #8FD3A6; } .kv-ex .kl .p { color: #9CC0F0; }
 .kv-fr { font-family: Corm; font-style: italic; font-size: 10.5pt; line-height: 1.4; margin: 2mm 0 7mm; }
 .kv-about { font-family: Corm; font-size: 10.5pt; line-height: 1.5; text-align: justify; }
 .kv-langs { font-family: Inter; font-size: 6.6pt; letter-spacing: .14em; text-transform: uppercase; position: absolute; top: 102mm; left: 0; right: 0; }
