@@ -21,16 +21,16 @@
 "it"
 ],
 "featured": false,
-"pages": 9,
+"pages": 10,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 156235,
-"arabe": 122732,
-"phonetique": 127508,
-"francais": 116531,
-"anglais": 116614
+"complet": 164428,
+"arabe": 127100,
+"phonetique": 132747,
+"francais": 126077,
+"anglais": 126150
 },
-"pdfSize": 156235
+"pdfSize": 164428
 },
 {
 "slug": "ahuzu-bil-laahi-min-mayli",
@@ -54,13 +54,13 @@
 "pages": 11,
 "palette": "ivoire",
 "pdfs": {
-"complet": 158791,
-"arabe": 122065,
-"phonetique": 127979,
-"francais": 112607,
-"anglais": 111825
+"complet": 166426,
+"arabe": 128176,
+"phonetique": 134953,
+"francais": 121961,
+"anglais": 121203
 },
-"pdfSize": 158791
+"pdfSize": 166426
 },
 {
 "slug": "ahyaytu-mawlidan",
@@ -81,16 +81,16 @@
 "it"
 ],
 "featured": false,
-"pages": 7,
+"pages": 8,
 "palette": "grenat",
 "pdfs": {
-"complet": 149676,
-"arabe": 121518,
-"phonetique": 125680,
-"francais": 116157,
-"anglais": 115613
+"complet": 153100,
+"arabe": 123659,
+"phonetique": 127073,
+"francais": 123354,
+"anglais": 122838
 },
-"pdfSize": 149676
+"pdfSize": 153100
 },
 {
 "slug": "ajabani-khayru-baaqin",
@@ -114,13 +114,13 @@
 "pages": 5,
 "palette": "vin",
 "pdfs": {
-"complet": 115905,
-"arabe": 107337,
-"phonetique": 110224,
-"francais": 100265,
-"anglais": 99579
+"complet": 118924,
+"arabe": 111039,
+"phonetique": 113092,
+"francais": 105955,
+"anglais": 104418
 },
-"pdfSize": 115905
+"pdfSize": 118924
 },
 {
 "slug": "ajabani-rabbus-sama",
@@ -146,13 +146,13 @@
 "pages": 17,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 190825,
-"arabe": 136972,
-"phonetique": 146253,
-"francais": 124174,
-"anglais": 124001
+"complet": 203286,
+"arabe": 146721,
+"phonetique": 156524,
+"francais": 135269,
+"anglais": 135078
 },
-"pdfSize": 190825
+"pdfSize": 203286
 },
 {
 "slug": "alaa-inani",
@@ -176,13 +176,13 @@
 "pages": 11,
 "palette": "ivoire",
 "pdfs": {
-"complet": 158661,
-"arabe": 120859,
-"phonetique": 127522,
-"francais": 111929,
-"anglais": 111331
+"complet": 164669,
+"arabe": 125939,
+"phonetique": 132749,
+"francais": 121150,
+"anglais": 121177
 },
-"pdfSize": 158661
+"pdfSize": 164669
 },
 {
 "slug": "alal-mustafa-minni",
@@ -206,13 +206,13 @@
 "pages": 7,
 "palette": "grenat",
 "pdfs": {
-"complet": 131929,
-"arabe": 110699,
-"phonetique": 114229,
-"francais": 110324,
-"anglais": 109936
+"complet": 136498,
+"arabe": 114327,
+"phonetique": 118434,
+"francais": 115459,
+"anglais": 115109
 },
-"pdfSize": 131929
+"pdfSize": 136498
 },
 {
 "slug": "alhamdu-yujaazi",
@@ -233,16 +233,16 @@
 "it"
 ],
 "featured": false,
-"pages": 8,
+"pages": 9,
 "palette": "vin",
 "pdfs": {
-"complet": 143844,
-"arabe": 115107,
-"phonetique": 118831,
-"francais": 108060,
-"anglais": 107781
+"complet": 149762,
+"arabe": 118268,
+"phonetique": 122966,
+"francais": 115868,
+"anglais": 115612
 },
-"pdfSize": 143844
+"pdfSize": 149762
 },
 {
 "slug": "anta-rabbi",
@@ -266,13 +266,13 @@
 "pages": 10,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 153450,
-"arabe": 117528,
-"phonetique": 122809,
-"francais": 109938,
-"anglais": 109802
+"complet": 159741,
+"arabe": 122372,
+"phonetique": 128003,
+"francais": 119044,
+"anglais": 118840
 },
-"pdfSize": 153450
+"pdfSize": 159741
 },
 {
 "slug": "ashaabul-jannati",
@@ -293,16 +293,16 @@
 "it"
 ],
 "featured": false,
-"pages": 9,
+"pages": 10,
 "palette": "ivoire",
 "pdfs": {
-"complet": 146873,
-"arabe": 121697,
-"phonetique": 126930,
-"francais": 107735,
-"anglais": 115955
+"complet": 153451,
+"arabe": 124912,
+"phonetique": 130495,
+"francais": 115975,
+"anglais": 124227
 },
-"pdfSize": 146873
+"pdfSize": 153451
 },
 {
 "slug": "ashinu",
@@ -323,16 +323,16 @@
 "it"
 ],
 "featured": false,
-"pages": 16,
+"pages": 17,
 "palette": "grenat",
 "pdfs": {
-"complet": 208537,
-"arabe": 154133,
-"phonetique": 163054,
-"francais": 142491,
-"anglais": 141683
+"complet": 221936,
+"arabe": 164222,
+"phonetique": 174107,
+"francais": 154999,
+"anglais": 154316
 },
-"pdfSize": 208537
+"pdfSize": 221936
 },
 {
 "slug": "ashkuru-laaha",
@@ -356,13 +356,13 @@
 "pages": 6,
 "palette": "vin",
 "pdfs": {
-"complet": 120433,
-"arabe": 108068,
-"phonetique": 110142,
-"francais": 94938,
-"anglais": 94204
+"complet": 121716,
+"arabe": 108722,
+"phonetique": 110858,
+"francais": 101810,
+"anglais": 101092
 },
-"pdfSize": 120433
+"pdfSize": 121716
 },
 {
 "slug": "asiru",
@@ -383,16 +383,16 @@
 "it"
 ],
 "featured": false,
-"pages": 18,
+"pages": 21,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 208257,
-"arabe": 141986,
-"phonetique": 154268,
-"francais": 126634,
-"anglais": 125585
+"complet": 230864,
+"arabe": 156549,
+"phonetique": 170071,
+"francais": 141927,
+"anglais": 140845
 },
-"pdfSize": 208257
+"pdfSize": 230864
 },
 {
 "slug": "asma-ul-husna",
@@ -413,16 +413,16 @@
 "it"
 ],
 "featured": true,
-"pages": 12,
+"pages": 13,
 "palette": "ivoire",
 "pdfs": {
-"complet": 175827,
-"arabe": 128417,
-"phonetique": 134982,
-"francais": 119689,
-"anglais": 118901
+"complet": 186994,
+"arabe": 135665,
+"phonetique": 144098,
+"francais": 132349,
+"anglais": 131604
 },
-"pdfSize": 175827,
+"pdfSize": 186994,
 "aka": [
 "Asmaoul Husna",
 "Asmaoul Housna"
@@ -450,13 +450,13 @@
 "pages": 6,
 "palette": "grenat",
 "pdfs": {
-"complet": 119168,
-"arabe": 106596,
-"phonetique": 109509,
-"francais": 94250,
-"anglais": 93574
+"complet": 122928,
+"arabe": 109567,
+"phonetique": 112375,
+"francais": 101906,
+"anglais": 101250
 },
-"pdfSize": 119168
+"pdfSize": 122928
 },
 {
 "slug": "ataaba",
@@ -483,16 +483,16 @@
 "it"
 ],
 "featured": false,
-"pages": 31,
+"pages": 33,
 "palette": "vin",
 "pdfs": {
-"complet": 301627,
-"arabe": 188561,
-"phonetique": 205952,
-"francais": 162538,
-"anglais": 161781
+"complet": 345027,
+"arabe": 220918,
+"phonetique": 242266,
+"francais": 190263,
+"anglais": 189703
 },
-"pdfSize": 301627
+"pdfSize": 345027
 },
 {
 "slug": "ayyasa",
@@ -513,16 +513,16 @@
 "it"
 ],
 "featured": false,
-"pages": 8,
+"pages": 9,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 150315,
-"arabe": 120208,
-"phonetique": 124680,
-"francais": 113891,
-"anglais": 113490
+"complet": 157040,
+"arabe": 123583,
+"phonetique": 128941,
+"francais": 123269,
+"anglais": 122131
 },
-"pdfSize": 150315
+"pdfSize": 157040
 },
 {
 "slug": "bakh-bakhaa",
@@ -543,16 +543,16 @@
 "it"
 ],
 "featured": false,
-"pages": 9,
+"pages": 10,
 "palette": "ivoire",
 "pdfs": {
-"complet": 142929,
-"arabe": 116558,
-"phonetique": 121878,
-"francais": 101194,
-"anglais": 101137
+"complet": 151146,
+"arabe": 121029,
+"phonetique": 126968,
+"francais": 110099,
+"anglais": 110104
 },
-"pdfSize": 142929
+"pdfSize": 151146
 },
 {
 "slug": "barakatu",
@@ -576,13 +576,13 @@
 "pages": 8,
 "palette": "grenat",
 "pdfs": {
-"complet": 132807,
-"arabe": 112571,
-"phonetique": 116034,
-"francais": 97052,
-"anglais": 105067
+"complet": 136528,
+"arabe": 114880,
+"phonetique": 118686,
+"francais": 105847,
+"anglais": 113927
 },
-"pdfSize": 132807
+"pdfSize": 136528
 },
 {
 "slug": "bismil-ilaahil-lazi",
@@ -603,16 +603,16 @@
 "it"
 ],
 "featured": false,
-"pages": 9,
+"pages": 10,
 "palette": "vin",
 "pdfs": {
-"complet": 138809,
-"arabe": 116250,
-"phonetique": 121243,
-"francais": 100683,
-"anglais": 108423
+"complet": 144575,
+"arabe": 120081,
+"phonetique": 126084,
+"francais": 108474,
+"anglais": 116183
 },
-"pdfSize": 138809
+"pdfSize": 144575
 },
 {
 "slug": "bismil-laahi-ikfini",
@@ -635,16 +635,16 @@
 "it"
 ],
 "featured": false,
-"pages": 33,
+"pages": 37,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 291743,
-"arabe": 179252,
-"phonetique": 199659,
-"francais": 154371,
-"anglais": 153526
+"complet": 336765,
+"arabe": 212985,
+"phonetique": 237362,
+"francais": 178173,
+"anglais": 177237
 },
-"pdfSize": 291743,
+"pdfSize": 336765,
 "aka": [
 "Ikfini",
 "Bismil Ilahi Ikfini"
@@ -672,13 +672,13 @@
 "pages": 12,
 "palette": "ivoire",
 "pdfs": {
-"complet": 150704,
-"arabe": 120164,
-"phonetique": 126583,
-"francais": 102934,
-"anglais": 110443
+"complet": 157012,
+"arabe": 125099,
+"phonetique": 131614,
+"francais": 112498,
+"anglais": 120047
 },
-"pdfSize": 150704
+"pdfSize": 157012
 },
 {
 "slug": "faaqa-jamiha",
@@ -702,13 +702,13 @@
 "pages": 6,
 "palette": "grenat",
 "pdfs": {
-"complet": 121306,
-"arabe": 108492,
-"phonetique": 110931,
-"francais": 98791,
-"anglais": 106974
+"complet": 126447,
+"arabe": 113214,
+"phonetique": 115569,
+"francais": 106566,
+"anglais": 114731
 },
-"pdfSize": 121306
+"pdfSize": 126447
 },
 {
 "slug": "farrij",
@@ -732,13 +732,13 @@
 "pages": 7,
 "palette": "vin",
 "pdfs": {
-"complet": 122770,
-"arabe": 107133,
-"phonetique": 110546,
-"francais": 94567,
-"anglais": 93971
+"complet": 127576,
+"arabe": 110575,
+"phonetique": 114491,
+"francais": 102559,
+"anglais": 101901
 },
-"pdfSize": 122770
+"pdfSize": 127576
 },
 {
 "slug": "fazal-lazina",
@@ -759,16 +759,16 @@
 "it"
 ],
 "featured": false,
-"pages": 7,
+"pages": 8,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 134993,
-"arabe": 109258,
-"phonetique": 113278,
-"francais": 106116,
-"anglais": 106205
+"complet": 140996,
+"arabe": 113462,
+"phonetique": 117194,
+"francais": 113858,
+"anglais": 113901
 },
-"pdfSize": 134993
+"pdfSize": 140996
 },
 {
 "slug": "fazat-qilami",
@@ -792,13 +792,13 @@
 "pages": 7,
 "palette": "ivoire",
 "pdfs": {
-"complet": 132324,
-"arabe": 108124,
-"phonetique": 111930,
-"francais": 104068,
-"anglais": 103971
+"complet": 136246,
+"arabe": 110853,
+"phonetique": 115080,
+"francais": 111075,
+"anglais": 111665
 },
-"pdfSize": 132324
+"pdfSize": 136246
 },
 {
 "slug": "fuzti",
@@ -819,16 +819,16 @@
 "it"
 ],
 "featured": false,
-"pages": 7,
+"pages": 8,
 "palette": "grenat",
 "pdfs": {
-"complet": 132924,
-"arabe": 108861,
-"phonetique": 112529,
-"francais": 104823,
-"anglais": 105087
+"complet": 136835,
+"arabe": 111343,
+"phonetique": 114218,
+"francais": 111876,
+"anglais": 111567
 },
-"pdfSize": 132924
+"pdfSize": 136835
 },
 {
 "slug": "hajat-qasa-idi",
@@ -849,16 +849,16 @@
 "it"
 ],
 "featured": false,
-"pages": 10,
+"pages": 12,
 "palette": "vin",
 "pdfs": {
-"complet": 164319,
-"arabe": 125265,
-"phonetique": 130992,
-"francais": 114579,
-"anglais": 114532
+"complet": 174411,
+"arabe": 130055,
+"phonetique": 136837,
+"francais": 125793,
+"anglais": 125831
 },
-"pdfSize": 164319
+"pdfSize": 174411
 },
 {
 "slug": "halal-muntaqa",
@@ -882,13 +882,13 @@
 "pages": 10,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 148641,
-"arabe": 123765,
-"phonetique": 129437,
-"francais": 105770,
-"anglais": 113750
+"complet": 152992,
+"arabe": 126811,
+"phonetique": 132856,
+"francais": 113180,
+"anglais": 121157
 },
-"pdfSize": 148641
+"pdfSize": 152992
 },
 {
 "slug": "halaman",
@@ -909,16 +909,16 @@
 "it"
 ],
 "featured": false,
-"pages": 11,
+"pages": 12,
 "palette": "ivoire",
 "pdfs": {
-"complet": 156437,
-"arabe": 123825,
-"phonetique": 129597,
-"francais": 104052,
-"anglais": 103453
+"complet": 166757,
+"arabe": 131050,
+"phonetique": 137737,
+"francais": 115748,
+"anglais": 115134
 },
-"pdfSize": 156437
+"pdfSize": 166757
 },
 {
 "slug": "halayka-yaa-mukhtaru",
@@ -942,13 +942,13 @@
 "pages": 6,
 "palette": "grenat",
 "pdfs": {
-"complet": 120334,
-"arabe": 108245,
-"phonetique": 110801,
-"francais": 97810,
-"anglais": 105559
+"complet": 123841,
+"arabe": 111127,
+"phonetique": 113870,
+"francais": 104467,
+"anglais": 112207
 },
-"pdfSize": 120334
+"pdfSize": 123841
 },
 {
 "slug": "hamdi-wa-shukri",
@@ -972,13 +972,13 @@
 "pages": 5,
 "palette": "vin",
 "pdfs": {
-"complet": 107444,
-"arabe": 101110,
-"phonetique": 102798,
-"francais": 97458,
-"anglais": 96737
+"complet": 112017,
+"arabe": 105392,
+"phonetique": 107041,
+"francais": 102514,
+"anglais": 101814
 },
-"pdfSize": 107444
+"pdfSize": 112017
 },
 {
 "slug": "hamidtu",
@@ -1002,13 +1002,13 @@
 "pages": 8,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 129859,
-"arabe": 110416,
-"phonetique": 114297,
-"francais": 96281,
-"anglais": 95571
+"complet": 135311,
+"arabe": 114494,
+"phonetique": 119317,
+"francais": 104550,
+"anglais": 103812
 },
-"pdfSize": 129859
+"pdfSize": 135311
 },
 {
 "slug": "hammat-sulaymaa",
@@ -1031,16 +1031,16 @@
 "it"
 ],
 "featured": false,
-"pages": 35,
+"pages": 37,
 "palette": "ivoire",
 "pdfs": {
-"complet": 314649,
-"arabe": 193511,
-"phonetique": 215679,
-"francais": 161578,
-"anglais": 160307
+"complet": 357796,
+"arabe": 227778,
+"phonetique": 254361,
+"francais": 187660,
+"anglais": 186441
 },
-"pdfSize": 314649
+"pdfSize": 357796
 },
 {
 "slug": "huqqal-bukaa",
@@ -1063,16 +1063,16 @@
 "it"
 ],
 "featured": false,
-"pages": 25,
+"pages": 28,
 "palette": "grenat",
 "pdfs": {
-"complet": 249502,
-"arabe": 162208,
-"phonetique": 179025,
-"francais": 138686,
-"anglais": 138052
+"complet": 281169,
+"arabe": 185571,
+"phonetique": 205075,
+"francais": 158118,
+"anglais": 158107
 },
-"pdfSize": 249502
+"pdfSize": 281169
 },
 {
 "slug": "ihdi-jamihana",
@@ -1096,13 +1096,13 @@
 "pages": 5,
 "palette": "vin",
 "pdfs": {
-"complet": 112094,
-"arabe": 95642,
-"phonetique": 97452,
-"francais": 97518,
-"anglais": 97304
+"complet": 115696,
+"arabe": 98734,
+"phonetique": 101845,
+"francais": 104055,
+"anglais": 103821
 },
-"pdfSize": 112094
+"pdfSize": 115696
 },
 {
 "slug": "ilaa-ghayrinaa",
@@ -1126,13 +1126,13 @@
 "pages": 11,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 150280,
-"arabe": 120929,
-"phonetique": 127672,
-"francais": 103590,
-"anglais": 103070
+"complet": 156872,
+"arabe": 126960,
+"phonetique": 132967,
+"francais": 112718,
+"anglais": 112242
 },
-"pdfSize": 150280
+"pdfSize": 156872
 },
 {
 "slug": "ilaa-nabiyyin",
@@ -1153,16 +1153,16 @@
 "it"
 ],
 "featured": false,
-"pages": 7,
+"pages": 8,
 "palette": "ivoire",
 "pdfs": {
-"complet": 131617,
-"arabe": 107704,
-"phonetique": 111549,
-"francais": 103859,
-"anglais": 103496
+"complet": 136864,
+"arabe": 111681,
+"phonetique": 114671,
+"francais": 110588,
+"anglais": 110225
 },
-"pdfSize": 131617
+"pdfSize": 136864
 },
 {
 "slug": "inani-huztu",
@@ -1185,16 +1185,16 @@
 "it"
 ],
 "featured": false,
-"pages": 17,
+"pages": 19,
 "palette": "grenat",
 "pdfs": {
-"complet": 229881,
-"arabe": 167358,
-"phonetique": 175957,
-"francais": 149015,
-"anglais": 148470
+"complet": 249244,
+"arabe": 179694,
+"phonetique": 191316,
+"francais": 166044,
+"anglais": 165575
 },
-"pdfSize": 229881
+"pdfSize": 249244
 },
 {
 "slug": "innabna-laahi",
@@ -1218,13 +1218,13 @@
 "pages": 9,
 "palette": "vin",
 "pdfs": {
-"complet": 171284,
-"arabe": 138584,
-"phonetique": 143157,
-"francais": 130604,
-"anglais": 131114
+"complet": 176276,
+"arabe": 141484,
+"phonetique": 146678,
+"francais": 140044,
+"anglais": 140634
 },
-"pdfSize": 171284
+"pdfSize": 176276
 },
 {
 "slug": "inni-ukhatibu",
@@ -1248,13 +1248,13 @@
 "pages": 7,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 131930,
-"arabe": 107936,
-"phonetique": 111590,
-"francais": 103900,
-"anglais": 103147
+"complet": 136194,
+"arabe": 111101,
+"phonetique": 115345,
+"francais": 110633,
+"anglais": 109862
 },
-"pdfSize": 131930
+"pdfSize": 136194
 },
 {
 "slug": "innii-aquulu",
@@ -1275,16 +1275,16 @@
 "it"
 ],
 "featured": false,
-"pages": 9,
+"pages": 10,
 "palette": "ivoire",
 "pdfs": {
-"complet": 143738,
-"arabe": 112908,
-"phonetique": 118728,
-"francais": 105987,
-"anglais": 105769
+"complet": 151957,
+"arabe": 118945,
+"phonetique": 125213,
+"francais": 114778,
+"anglais": 114576
 },
-"pdfSize": 143738
+"pdfSize": 151957
 },
 {
 "slug": "inniya-ahmadu",
@@ -1305,16 +1305,16 @@
 "it"
 ],
 "featured": false,
-"pages": 12,
+"pages": 14,
 "palette": "grenat",
 "pdfs": {
-"complet": 185185,
-"arabe": 137260,
-"phonetique": 144316,
-"francais": 124893,
-"anglais": 124050
+"complet": 198703,
+"arabe": 144375,
+"phonetique": 154018,
+"francais": 137330,
+"anglais": 136434
 },
-"pdfSize": 185185
+"pdfSize": 198703
 },
 {
 "slug": "jalibatul-maraghibi",
@@ -1353,16 +1353,16 @@
 "it"
 ],
 "featured": true,
-"pages": 120,
+"pages": 139,
 "palette": "vin",
 "pdfs": {
-"complet": 901700,
-"arabe": 439860,
-"phonetique": 509126,
-"francais": 367218,
-"anglais": 363761
+"complet": 1138760,
+"arabe": 610761,
+"phonetique": 699529,
+"francais": 476961,
+"anglais": 473476
 },
-"pdfSize": 901700,
+"pdfSize": 1138760,
 "aka": [
 "Jalibatoul Marakhib",
 "Dialibatoul Marakhib",
@@ -1388,16 +1388,16 @@
 "it"
 ],
 "featured": false,
-"pages": 10,
+"pages": 11,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 150392,
-"arabe": 121470,
-"phonetique": 125910,
-"francais": 105406,
-"anglais": 112764
+"complet": 157982,
+"arabe": 126140,
+"phonetique": 131840,
+"francais": 115705,
+"anglais": 122239
 },
-"pdfSize": 150392
+"pdfSize": 157982
 },
 {
 "slug": "jazbu",
@@ -1427,13 +1427,13 @@
 "pages": 66,
 "palette": "ivoire",
 "pdfs": {
-"complet": 542394,
-"arabe": 325231,
-"phonetique": 368354,
-"francais": 251180,
-"anglais": 249302
+"complet": 542357,
+"arabe": 325193,
+"phonetique": 368307,
+"francais": 251143,
+"anglais": 249264
 },
-"pdfSize": 542394,
+"pdfSize": 542357,
 "aka": [
 "Jazbul Qulub",
 "Jazbou",
@@ -1463,13 +1463,13 @@
 "pages": 4,
 "palette": "grenat",
 "pdfs": {
-"complet": 94372,
-"arabe": 90372,
-"phonetique": 91372,
-"francais": 87516,
-"anglais": 87683
+"complet": 96852,
+"arabe": 92844,
+"phonetique": 93854,
+"francais": 91533,
+"anglais": 91770
 },
-"pdfSize": 94372
+"pdfSize": 96852
 },
 {
 "slug": "kawin-liya",
@@ -1490,16 +1490,16 @@
 "it"
 ],
 "featured": false,
-"pages": 15,
+"pages": 16,
 "palette": "vin",
 "pdfs": {
-"complet": 180352,
-"arabe": 131414,
-"phonetique": 140411,
-"francais": 117717,
-"anglais": 115721
+"complet": 192354,
+"arabe": 139663,
+"phonetique": 149087,
+"francais": 129497,
+"anglais": 128462
 },
-"pdfSize": 180352
+"pdfSize": 192354
 },
 {
 "slug": "khatimatu-munajati",
@@ -1520,16 +1520,16 @@
 "it"
 ],
 "featured": true,
-"pages": 13,
+"pages": 14,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 177456,
-"arabe": 130464,
-"phonetique": 138281,
-"francais": 117736,
-"anglais": 117752
+"complet": 189950,
+"arabe": 139481,
+"phonetique": 148189,
+"francais": 130131,
+"anglais": 130267
 },
-"pdfSize": 177456,
+"pdfSize": 189950,
 "aka": [
 "Khatimatoul Mounadiati",
 "Khatimatou Mounajati"
@@ -1557,13 +1557,13 @@
 "pages": 8,
 "palette": "ivoire",
 "pdfs": {
-"complet": 134765,
-"arabe": 108753,
-"phonetique": 113177,
-"francais": 104289,
-"anglais": 103383
+"complet": 138453,
+"arabe": 112693,
+"phonetique": 117125,
+"francais": 111196,
+"anglais": 109504
 },
-"pdfSize": 134765,
+"pdfSize": 138453,
 "aka": [
 "Ya Khayra Dayfin",
 "Ya Khayra Dayfi"
@@ -1591,13 +1591,13 @@
 "pages": 5,
 "palette": "grenat",
 "pdfs": {
-"complet": 110914,
-"arabe": 101616,
-"phonetique": 104804,
-"francais": 92035,
-"anglais": 91645
+"complet": 113077,
+"arabe": 104277,
+"phonetique": 106774,
+"francais": 97171,
+"anglais": 96810
 },
-"pdfSize": 110914
+"pdfSize": 113077
 },
 {
 "slug": "lamyabdu",
@@ -1621,13 +1621,13 @@
 "pages": 6,
 "palette": "vin",
 "pdfs": {
-"complet": 132219,
-"arabe": 110879,
-"phonetique": 113689,
-"francais": 109508,
-"anglais": 109125
+"complet": 136790,
+"arabe": 114700,
+"phonetique": 117598,
+"francais": 115583,
+"anglais": 115211
 },
-"pdfSize": 132219
+"pdfSize": 136790
 },
 {
 "slug": "lil-mustafa-nawaytu",
@@ -1648,16 +1648,16 @@
 "it"
 ],
 "featured": false,
-"pages": 9,
+"pages": 10,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 153681,
-"arabe": 126795,
-"phonetique": 132259,
-"francais": 110644,
-"anglais": 118249
+"complet": 161526,
+"arabe": 132313,
+"phonetique": 138259,
+"francais": 120505,
+"anglais": 128128
 },
-"pdfSize": 153681
+"pdfSize": 161526
 },
 {
 "slug": "lirabbin-ghafurin",
@@ -1681,13 +1681,13 @@
 "pages": 18,
 "palette": "ivoire",
 "pdfs": {
-"complet": 193593,
-"arabe": 144616,
-"phonetique": 155047,
-"francais": 119582,
-"anglais": 126525
+"complet": 207369,
+"arabe": 155596,
+"phonetique": 167304,
+"francais": 132203,
+"anglais": 139655
 },
-"pdfSize": 193593
+"pdfSize": 207369
 },
 {
 "slug": "lirabbin-kariimin",
@@ -1711,13 +1711,13 @@
 "pages": 9,
 "palette": "grenat",
 "pdfs": {
-"complet": 133199,
-"arabe": 112128,
-"phonetique": 116915,
-"francais": 97814,
-"anglais": 97246
+"complet": 137692,
+"arabe": 116030,
+"phonetique": 121322,
+"francais": 105426,
+"anglais": 104733
 },
-"pdfSize": 133199
+"pdfSize": 137692
 },
 {
 "slug": "liyan-qaada",
@@ -1741,13 +1741,13 @@
 "pages": 7,
 "palette": "vin",
 "pdfs": {
-"complet": 123223,
-"arabe": 108077,
-"phonetique": 111817,
-"francais": 94671,
-"anglais": 102512
+"complet": 125830,
+"arabe": 111057,
+"phonetique": 113960,
+"francais": 101382,
+"anglais": 109247
 },
-"pdfSize": 123223
+"pdfSize": 125830
 },
 {
 "slug": "madahtu-nabiyyal-muntaqa",
@@ -1768,16 +1768,16 @@
 "it"
 ],
 "featured": false,
-"pages": 7,
+"pages": 8,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 136738,
-"arabe": 113699,
-"phonetique": 117477,
-"francais": 111952,
-"anglais": 111391
+"complet": 143650,
+"arabe": 119454,
+"phonetique": 122277,
+"francais": 118034,
+"anglais": 117483
 },
-"pdfSize": 136738
+"pdfSize": 143650
 },
 {
 "slug": "madal-khabiru",
@@ -1798,16 +1798,16 @@
 "it"
 ],
 "featured": false,
-"pages": 8,
+"pages": 9,
 "palette": "ivoire",
 "pdfs": {
-"complet": 140692,
-"arabe": 119028,
-"phonetique": 123210,
-"francais": 105603,
-"anglais": 105101
+"complet": 146731,
+"arabe": 122310,
+"phonetique": 127234,
+"francais": 114189,
+"anglais": 113717
 },
-"pdfSize": 140692
+"pdfSize": 146731
 },
 {
 "slug": "madhun-nabiyyil-muntaqa",
@@ -1831,13 +1831,13 @@
 "pages": 6,
 "palette": "grenat",
 "pdfs": {
-"complet": 118602,
-"arabe": 106354,
-"phonetique": 108687,
-"francais": 95973,
-"anglais": 95808
+"complet": 122964,
+"arabe": 110061,
+"phonetique": 112423,
+"francais": 102363,
+"anglais": 102204
 },
-"pdfSize": 118602
+"pdfSize": 122964
 },
 {
 "slug": "mafatihul-bishri",
@@ -1868,16 +1868,16 @@
 "it"
 ],
 "featured": true,
-"pages": 85,
+"pages": 97,
 "palette": "vin",
 "pdfs": {
-"complet": 668017,
-"arabe": 339814,
-"phonetique": 389823,
-"francais": 286914,
-"anglais": 284637
+"complet": 836820,
+"arabe": 462352,
+"phonetique": 521785,
+"francais": 364121,
+"anglais": 361707
 },
-"pdfSize": 668017,
+"pdfSize": 836820,
 "aka": [
 "Mafatihoul Bichri",
 "Mafatihul Bichri"
@@ -1914,16 +1914,16 @@
 "it"
 ],
 "featured": true,
-"pages": 38,
+"pages": 41,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 354245,
-"arabe": 213815,
-"phonetique": 235253,
-"francais": 182396,
-"anglais": 183278
+"complet": 408352,
+"arabe": 255420,
+"phonetique": 282162,
+"francais": 219915,
+"anglais": 221003
 },
-"pdfSize": 354245,
+"pdfSize": 408352,
 "aka": [
 "Mafatihoul Jinane",
 "Mafatikhul Jinane",
@@ -1952,13 +1952,13 @@
 "pages": 7,
 "palette": "ivoire",
 "pdfs": {
-"complet": 127603,
-"arabe": 112100,
-"phonetique": 114649,
-"francais": 101532,
-"anglais": 100936
+"complet": 130954,
+"arabe": 114227,
+"phonetique": 118303,
+"francais": 108085,
+"anglais": 108144
 },
-"pdfSize": 127603
+"pdfSize": 130954
 },
 {
 "slug": "maramiya",
@@ -1982,13 +1982,13 @@
 "pages": 5,
 "palette": "grenat",
 "pdfs": {
-"complet": 107618,
-"arabe": 100539,
-"phonetique": 103073,
-"francais": 94586,
-"anglais": 93944
+"complet": 111249,
+"arabe": 103801,
+"phonetique": 106586,
+"francais": 99453,
+"anglais": 98814
 },
-"pdfSize": 107618
+"pdfSize": 111249
 },
 {
 "slug": "matlabul-fawzayni",
@@ -2015,16 +2015,16 @@
 "it"
 ],
 "featured": true,
-"pages": 55,
+"pages": 62,
 "palette": "vin",
 "pdfs": {
-"complet": 471440,
-"arabe": 260461,
-"phonetique": 292639,
-"francais": 218203,
-"anglais": 216095
+"complet": 565180,
+"arabe": 329457,
+"phonetique": 369628,
+"francais": 268966,
+"anglais": 266285
 },
-"pdfSize": 471440,
+"pdfSize": 565180,
 "aka": [
 "Matlaboul Fawzeyni",
 "Matlabul Fawzeyni",
@@ -2050,16 +2050,16 @@
 "it"
 ],
 "featured": true,
-"pages": 15,
+"pages": 17,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 186536,
-"arabe": 137844,
-"phonetique": 147258,
-"francais": 113538,
-"anglais": 122181
+"complet": 204733,
+"arabe": 150710,
+"phonetique": 161188,
+"francais": 128257,
+"anglais": 137002
 },
-"pdfSize": 186536,
+"pdfSize": 204733,
 "aka": [
 "Matlaboul Chifai",
 "Matlabou Chifai",
@@ -2087,16 +2087,16 @@
 "it"
 ],
 "featured": false,
-"pages": 17,
+"pages": 18,
 "palette": "ivoire",
 "pdfs": {
-"complet": 200547,
-"arabe": 140220,
-"phonetique": 147044,
-"francais": 126031,
-"anglais": 125369
+"complet": 219915,
+"arabe": 153971,
+"phonetique": 164478,
+"francais": 141720,
+"anglais": 141057
 },
-"pdfSize": 200547
+"pdfSize": 219915
 },
 {
 "slug": "mawahibu",
@@ -2124,13 +2124,13 @@
 "pages": 45,
 "palette": "grenat",
 "pdfs": {
-"complet": 412953,
-"arabe": 248317,
-"phonetique": 272419,
-"francais": 216434,
-"anglais": 215226
+"complet": 412928,
+"arabe": 248299,
+"phonetique": 272372,
+"francais": 216392,
+"anglais": 215184
 },
-"pdfSize": 412953,
+"pdfSize": 412928,
 "aka": [
 "Mawahibou",
 "Mawahibou Nafi",
@@ -2156,16 +2156,16 @@
 "it"
 ],
 "featured": false,
-"pages": 24,
+"pages": 25,
 "palette": "vin",
 "pdfs": {
-"complet": 225895,
-"arabe": 154145,
-"phonetique": 170242,
-"francais": 123797,
-"anglais": 131178
+"complet": 249375,
+"arabe": 173520,
+"phonetique": 190847,
+"francais": 141345,
+"anglais": 148732
 },
-"pdfSize": 225895
+"pdfSize": 249375
 },
 {
 "slug": "miftahun-nasri",
@@ -2189,13 +2189,13 @@
 "pages": 7,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 132479,
-"arabe": 116707,
-"phonetique": 119867,
-"francais": 103274,
-"anglais": 110856
+"complet": 135180,
+"arabe": 118327,
+"phonetique": 122286,
+"francais": 110925,
+"anglais": 118459
 },
-"pdfSize": 132479
+"pdfSize": 135180
 },
 {
 "slug": "mim-ra-shin",
@@ -2216,16 +2216,16 @@
 "it"
 ],
 "featured": false,
-"pages": 4,
+"pages": 5,
 "palette": "ivoire",
 "pdfs": {
-"complet": 126894,
-"arabe": 113980,
-"phonetique": 115646,
-"francais": 117745,
-"anglais": 117616
+"complet": 131907,
+"arabe": 117505,
+"phonetique": 119158,
+"francais": 122602,
+"anglais": 122486
 },
-"pdfSize": 126894
+"pdfSize": 131907
 },
 {
 "slug": "minal-haqqi",
@@ -2246,16 +2246,16 @@
 "it"
 ],
 "featured": false,
-"pages": 6,
+"pages": 7,
 "palette": "grenat",
 "pdfs": {
-"complet": 118202,
-"arabe": 106612,
-"phonetique": 109858,
-"francais": 96456,
-"anglais": 104742
+"complet": 124310,
+"arabe": 110450,
+"phonetique": 114118,
+"francais": 102857,
+"anglais": 111175
 },
-"pdfSize": 118202
+"pdfSize": 124310
 },
 {
 "slug": "minal-lawhil-mahfuzi",
@@ -2279,13 +2279,13 @@
 "pages": 7,
 "palette": "vin",
 "pdfs": {
-"complet": 133704,
-"arabe": 109407,
-"phonetique": 112400,
-"francais": 105511,
-"anglais": 104801
+"complet": 136648,
+"arabe": 111332,
+"phonetique": 115759,
+"francais": 113325,
+"anglais": 112644
 },
-"pdfSize": 133704
+"pdfSize": 136648
 },
 {
 "slug": "minanul-baaqil-qadiim",
@@ -2312,16 +2312,16 @@
 "it"
 ],
 "featured": false,
-"pages": 51,
+"pages": 58,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 450336,
-"arabe": 252266,
-"phonetique": 284643,
-"francais": 212932,
-"anglais": 213388
+"complet": 539931,
+"arabe": 318365,
+"phonetique": 356555,
+"francais": 260555,
+"anglais": 260567
 },
-"pdfSize": 450336,
+"pdfSize": 539931,
 "aka": [
 "Minanoul Bakhil Khadim",
 "Minanul Bakhil Khadim"
@@ -2349,13 +2349,13 @@
 "pages": 7,
 "palette": "ivoire",
 "pdfs": {
-"complet": 138626,
-"arabe": 114390,
-"phonetique": 118037,
-"francais": 108744,
-"anglais": 108930
+"complet": 139784,
+"arabe": 114301,
+"phonetique": 118477,
+"francais": 115353,
+"anglais": 116264
 },
-"pdfSize": 138626
+"pdfSize": 139784
 },
 {
 "slug": "muqadamatul-amdah",
@@ -2382,16 +2382,16 @@
 "it"
 ],
 "featured": false,
-"pages": 65,
+"pages": 68,
 "palette": "grenat",
 "pdfs": {
-"complet": 475056,
-"arabe": 259212,
-"phonetique": 302566,
-"francais": 214694,
-"anglais": 213530
+"complet": 563914,
+"arabe": 334606,
+"phonetique": 376284,
+"francais": 258723,
+"anglais": 257048
 },
-"pdfSize": 475056,
+"pdfSize": 563914,
 "aka": [
 "Moukhadimatoul Amdah",
 "Mouqadimatoul Amdah",
@@ -2475,16 +2475,16 @@
 "it"
 ],
 "featured": true,
-"pages": 336,
+"pages": 388,
 "palette": "vin",
 "pdfs": {
-"complet": 2343515,
-"arabe": 1034432,
-"phonetique": 1238802,
-"francais": 859878,
-"anglais": 848557
+"complet": 3056242,
+"arabe": 1568913,
+"phonetique": 1830878,
+"francais": 1169383,
+"anglais": 1157518
 },
-"pdfSize": 2343515,
+"pdfSize": 3056242,
 "aka": [
 "Nourou Darayni",
 "Nourou Daarayni",
@@ -2511,16 +2511,16 @@
 "it"
 ],
 "featured": false,
-"pages": 6,
+"pages": 7,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 125052,
-"arabe": 105037,
-"phonetique": 107551,
-"francais": 103007,
-"anglais": 102640
+"complet": 130025,
+"arabe": 108091,
+"phonetique": 111721,
+"francais": 109181,
+"anglais": 108806
 },
-"pdfSize": 125052
+"pdfSize": 130025
 },
 {
 "slug": "raa-iya",
@@ -2541,16 +2541,16 @@
 "it"
 ],
 "featured": false,
-"pages": 14,
+"pages": 16,
 "palette": "ivoire",
 "pdfs": {
-"complet": 180410,
-"arabe": 131963,
-"phonetique": 140934,
-"francais": 116971,
-"anglais": 115956
+"complet": 194114,
+"arabe": 140430,
+"phonetique": 150249,
+"francais": 128901,
+"anglais": 127209
 },
-"pdfSize": 180410
+"pdfSize": 194114
 },
 {
 "slug": "rabbi-karrimun",
@@ -2571,16 +2571,16 @@
 "it"
 ],
 "featured": false,
-"pages": 8,
+"pages": 9,
 "palette": "grenat",
 "pdfs": {
-"complet": 150494,
-"arabe": 121573,
-"phonetique": 126283,
-"francais": 113026,
-"anglais": 112533
+"complet": 153757,
+"arabe": 122226,
+"phonetique": 127601,
+"francais": 121007,
+"anglais": 120471
 },
-"pdfSize": 150494
+"pdfSize": 153757
 },
 {
 "slug": "rabbiya-ahmadu",
@@ -2601,16 +2601,16 @@
 "it"
 ],
 "featured": false,
-"pages": 9,
+"pages": 10,
 "palette": "vin",
 "pdfs": {
-"complet": 162347,
-"arabe": 126516,
-"phonetique": 131951,
-"francais": 118955,
-"anglais": 118687
+"complet": 169575,
+"arabe": 131126,
+"phonetique": 137456,
+"francais": 128036,
+"anglais": 128546
 },
-"pdfSize": 162347
+"pdfSize": 169575
 },
 {
 "slug": "raditu",
@@ -2631,16 +2631,16 @@
 "it"
 ],
 "featured": false,
-"pages": 26,
+"pages": 27,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 238744,
-"arabe": 160619,
-"phonetique": 177000,
-"francais": 127649,
-"anglais": 135003
+"complet": 264697,
+"arabe": 181069,
+"phonetique": 199777,
+"francais": 146529,
+"anglais": 153952
 },
-"pdfSize": 238744
+"pdfSize": 264697
 },
 {
 "slug": "rumna-shukur",
@@ -2663,16 +2663,16 @@
 "it"
 ],
 "featured": false,
-"pages": 28,
+"pages": 31,
 "palette": "ivoire",
 "pdfs": {
-"complet": 278888,
-"arabe": 178877,
-"phonetique": 197153,
-"francais": 152985,
-"anglais": 151849
+"complet": 316020,
+"arabe": 206788,
+"phonetique": 227821,
+"francais": 176113,
+"anglais": 174326
 },
-"pdfSize": 278888
+"pdfSize": 316020
 },
 {
 "slug": "sabhun-taqii",
@@ -2693,16 +2693,16 @@
 "it"
 ],
 "featured": false,
-"pages": 10,
+"pages": 11,
 "palette": "grenat",
 "pdfs": {
-"complet": 156699,
-"arabe": 128679,
-"phonetique": 133579,
-"francais": 108034,
-"anglais": 115838
+"complet": 163077,
+"arabe": 131314,
+"phonetique": 137916,
+"francais": 118866,
+"anglais": 126646
 },
-"pdfSize": 156699
+"pdfSize": 163077
 },
 {
 "slug": "safar",
@@ -2726,13 +2726,13 @@
 "pages": 7,
 "palette": "vin",
 "pdfs": {
-"complet": 123563,
-"arabe": 108905,
-"phonetique": 112622,
-"francais": 98428,
-"anglais": 98087
+"complet": 128114,
+"arabe": 113788,
+"phonetique": 116559,
+"francais": 106011,
+"anglais": 105658
 },
-"pdfSize": 123563
+"pdfSize": 128114
 },
 {
 "slug": "safaru-bamsashin",
@@ -2756,13 +2756,13 @@
 "pages": 6,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 127420,
-"arabe": 107030,
-"phonetique": 109325,
-"francais": 102687,
-"anglais": 102649
+"complet": 128716,
+"arabe": 107742,
+"phonetique": 111241,
+"francais": 108753,
+"anglais": 108737
 },
-"pdfSize": 127420
+"pdfSize": 128716
 },
 {
 "slug": "sana-ilaahi",
@@ -2786,13 +2786,13 @@
 "pages": 5,
 "palette": "ivoire",
 "pdfs": {
-"complet": 110385,
-"arabe": 95728,
-"phonetique": 96850,
-"francais": 97391,
-"anglais": 97207
+"complet": 113628,
+"arabe": 98682,
+"phonetique": 99759,
+"francais": 102744,
+"anglais": 102580
 },
-"pdfSize": 110385
+"pdfSize": 113628
 },
 {
 "slug": "shakawtu",
@@ -2813,16 +2813,16 @@
 "it"
 ],
 "featured": false,
-"pages": 6,
+"pages": 7,
 "palette": "grenat",
 "pdfs": {
-"complet": 115827,
-"arabe": 103359,
-"phonetique": 105801,
-"francais": 93320,
-"anglais": 92660
+"complet": 122585,
+"arabe": 107911,
+"phonetique": 110249,
+"francais": 101441,
+"anglais": 100799
 },
-"pdfSize": 115827
+"pdfSize": 122585
 },
 {
 "slug": "shakuru-rafihu",
@@ -2846,13 +2846,13 @@
 "pages": 6,
 "palette": "vin",
 "pdfs": {
-"complet": 127272,
-"arabe": 108587,
-"phonetique": 110898,
-"francais": 108329,
-"anglais": 107912
+"complet": 129238,
+"arabe": 110306,
+"phonetique": 112574,
+"francais": 113031,
+"anglais": 112666
 },
-"pdfSize": 127272
+"pdfSize": 129238
 },
 {
 "slug": "sindidi",
@@ -2873,16 +2873,16 @@
 "it"
 ],
 "featured": false,
-"pages": 17,
+"pages": 18,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 191845,
-"arabe": 141258,
-"phonetique": 152249,
-"francais": 114168,
-"anglais": 121612
+"complet": 206704,
+"arabe": 151933,
+"phonetique": 163692,
+"francais": 128317,
+"anglais": 135167
 },
-"pdfSize": 191845,
+"pdfSize": 206704,
 "aka": [
 "Sindidi",
 "As Sindidi"
@@ -2909,16 +2909,16 @@
 "it"
 ],
 "featured": true,
-"pages": 21,
+"pages": 22,
 "palette": "ivoire",
 "pdfs": {
-"complet": 217873,
-"arabe": 151819,
-"phonetique": 165149,
-"francais": 128768,
-"anglais": 128425
+"complet": 235920,
+"arabe": 166185,
+"phonetique": 179358,
+"francais": 142308,
+"anglais": 141908
 },
-"pdfSize": 217873,
+"pdfSize": 235920,
 "aka": [
 "Tawbatou Nassouh",
 "Tawbatoun Nassouha",
@@ -2952,16 +2952,16 @@
 "it"
 ],
 "featured": false,
-"pages": 68,
+"pages": 77,
 "palette": "grenat",
 "pdfs": {
-"complet": 556534,
-"arabe": 290413,
-"phonetique": 330666,
-"francais": 246640,
-"anglais": 244341
+"complet": 684881,
+"arabe": 381539,
+"phonetique": 433225,
+"francais": 309229,
+"anglais": 307575
 },
-"pdfSize": 556534,
+"pdfSize": 684881,
 "aka": [
 "Taysiroul Hasir",
 "Tayssiroul Assir"
@@ -2986,16 +2986,16 @@
 "it"
 ],
 "featured": false,
-"pages": 15,
+"pages": 17,
 "palette": "vin",
 "pdfs": {
-"complet": 203304,
-"arabe": 142512,
-"phonetique": 152573,
-"francais": 127550,
-"anglais": 126543
+"complet": 221895,
+"arabe": 155170,
+"phonetique": 166255,
+"francais": 143015,
+"anglais": 141858
 },
-"pdfSize": 203304,
+"pdfSize": 221895,
 "aka": [
 "Touhfatoul Moutadarihin"
 ]
@@ -3023,16 +3023,16 @@
 "it"
 ],
 "featured": false,
-"pages": 37,
+"pages": 42,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 357016,
-"arabe": 213015,
-"phonetique": 234395,
-"francais": 186303,
-"anglais": 185464
+"complet": 418660,
+"arabe": 257211,
+"phonetique": 283765,
+"francais": 222191,
+"anglais": 220404
 },
-"pdfSize": 357016,
+"pdfSize": 418660,
 "aka": [
 "Wa Kana Haqqan",
 "Wa Kaana Hakhan"
@@ -3057,16 +3057,16 @@
 "it"
 ],
 "featured": false,
-"pages": 8,
+"pages": 9,
 "palette": "ivoire",
 "pdfs": {
-"complet": 149957,
-"arabe": 120608,
-"phonetique": 124291,
-"francais": 113204,
-"anglais": 112658
+"complet": 156395,
+"arabe": 123977,
+"phonetique": 129044,
+"francais": 121837,
+"anglais": 121271
 },
-"pdfSize": 149957
+"pdfSize": 156395
 },
 {
 "slug": "wajjahtu-hamdan",
@@ -3087,16 +3087,16 @@
 "it"
 ],
 "featured": false,
-"pages": 8,
+"pages": 9,
 "palette": "grenat",
 "pdfs": {
-"complet": 131553,
-"arabe": 113312,
-"phonetique": 117954,
-"francais": 97746,
-"anglais": 97307
+"complet": 136378,
+"arabe": 115592,
+"phonetique": 120768,
+"francais": 105317,
+"anglais": 104857
 },
-"pdfSize": 131553
+"pdfSize": 136378
 },
 {
 "slug": "wajjahtu-kulliya",
@@ -3117,16 +3117,16 @@
 "it"
 ],
 "featured": false,
-"pages": 10,
+"pages": 11,
 "palette": "vin",
 "pdfs": {
-"complet": 146080,
-"arabe": 118685,
-"phonetique": 124844,
-"francais": 101572,
-"anglais": 109039
+"complet": 154861,
+"arabe": 124334,
+"phonetique": 131238,
+"francais": 111806,
+"anglais": 119300
 },
-"pdfSize": 146080
+"pdfSize": 154861
 },
 {
 "slug": "wajjahtu-wajhii",
@@ -3147,16 +3147,16 @@
 "it"
 ],
 "featured": false,
-"pages": 14,
+"pages": 16,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 173267,
-"arabe": 133170,
-"phonetique": 142322,
-"francais": 107924,
-"anglais": 116021
+"complet": 186058,
+"arabe": 140866,
+"phonetique": 150833,
+"francais": 119888,
+"anglais": 128046
 },
-"pdfSize": 173267
+"pdfSize": 186058
 },
 {
 "slug": "wajjahtu-wajhiya",
@@ -3177,16 +3177,16 @@
 "it"
 ],
 "featured": false,
-"pages": 10,
+"pages": 11,
 "palette": "ivoire",
 "pdfs": {
-"complet": 150225,
-"arabe": 123771,
-"phonetique": 129530,
-"francais": 106845,
-"anglais": 106043
+"complet": 160017,
+"arabe": 129453,
+"phonetique": 136163,
+"francais": 117300,
+"anglais": 116495
 },
-"pdfSize": 150225
+"pdfSize": 160017
 },
 {
 "slug": "wal-baladu",
@@ -3207,16 +3207,16 @@
 "it"
 ],
 "featured": false,
-"pages": 10,
+"pages": 11,
 "palette": "grenat",
 "pdfs": {
-"complet": 164609,
-"arabe": 127590,
-"phonetique": 132172,
-"francais": 117085,
-"anglais": 116428
+"complet": 173430,
+"arabe": 132660,
+"phonetique": 138936,
+"francais": 127243,
+"anglais": 126591
 },
-"pdfSize": 164609
+"pdfSize": 173430
 },
 {
 "slug": "walaqad-karamna",
@@ -3241,16 +3241,16 @@
 "it"
 ],
 "featured": false,
-"pages": 32,
+"pages": 33,
 "palette": "vin",
 "pdfs": {
-"complet": 282826,
-"arabe": 179500,
-"phonetique": 198456,
-"francais": 155030,
-"anglais": 153494
+"complet": 316628,
+"arabe": 205655,
+"phonetique": 226855,
+"francais": 175827,
+"anglais": 174300
 },
-"pdfSize": 282826,
+"pdfSize": 316628,
 "aka": [
 "Wa Laqad Karamna",
 "Walakhad Karamna"
@@ -3275,16 +3275,16 @@
 "it"
 ],
 "featured": false,
-"pages": 8,
+"pages": 9,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 129183,
-"arabe": 110668,
-"phonetique": 115106,
-"francais": 98446,
-"anglais": 105770
+"complet": 137353,
+"arabe": 115855,
+"phonetique": 120740,
+"francais": 106473,
+"anglais": 113858
 },
-"pdfSize": 129183
+"pdfSize": 137353
 },
 {
 "slug": "wawassaynal",
@@ -3305,16 +3305,16 @@
 "it"
 ],
 "featured": false,
-"pages": 9,
+"pages": 10,
 "palette": "ivoire",
 "pdfs": {
-"complet": 139803,
-"arabe": 115051,
-"phonetique": 120063,
-"francais": 100356,
-"anglais": 107481
+"complet": 147859,
+"arabe": 119460,
+"phonetique": 125286,
+"francais": 109143,
+"anglais": 116321
 },
-"pdfSize": 139803
+"pdfSize": 147859
 },
 {
 "slug": "yaa-kitaabal-kariimi",
@@ -3335,16 +3335,16 @@
 "it"
 ],
 "featured": false,
-"pages": 7,
+"pages": 8,
 "palette": "grenat",
 "pdfs": {
-"complet": 126790,
-"arabe": 109277,
-"phonetique": 113771,
-"francais": 96851,
-"anglais": 96386
+"complet": 131144,
+"arabe": 110806,
+"phonetique": 116017,
+"francais": 102935,
+"anglais": 102492
 },
-"pdfSize": 126790
+"pdfSize": 131144
 },
 {
 "slug": "yaa-mukrima-dayfi",
@@ -3365,16 +3365,16 @@
 "it"
 ],
 "featured": false,
-"pages": 7,
+"pages": 8,
 "palette": "vin",
 "pdfs": {
-"complet": 127691,
-"arabe": 111635,
-"phonetique": 115842,
-"francais": 96006,
-"anglais": 95568
+"complet": 131381,
+"arabe": 113982,
+"phonetique": 117393,
+"francais": 103425,
+"anglais": 103818
 },
-"pdfSize": 127691
+"pdfSize": 131381
 },
 {
 "slug": "yaa-rakhmanu",
@@ -3398,13 +3398,13 @@
 "pages": 6,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 114596,
-"arabe": 103676,
-"phonetique": 106005,
-"francais": 92629,
-"anglais": 100297
+"complet": 117553,
+"arabe": 106080,
+"phonetique": 109500,
+"francais": 99730,
+"anglais": 107428
 },
-"pdfSize": 114596,
+"pdfSize": 117553,
 "aka": [
 "Ya Rahmanou",
 "Ya Rakhmanou"
@@ -3432,13 +3432,13 @@
 "pages": 6,
 "palette": "ivoire",
 "pdfs": {
-"complet": 125303,
-"arabe": 104166,
-"phonetique": 106817,
-"francais": 102595,
-"anglais": 101824
+"complet": 129313,
+"arabe": 107469,
+"phonetique": 109967,
+"francais": 109805,
+"anglais": 109026
 },
-"pdfSize": 125303
+"pdfSize": 129313
 },
 {
 "slug": "yaqini",
@@ -3462,13 +3462,13 @@
 "pages": 9,
 "palette": "grenat",
 "pdfs": {
-"complet": 136522,
-"arabe": 117536,
-"phonetique": 121652,
-"francais": 102162,
-"anglais": 102224
+"complet": 140533,
+"arabe": 120141,
+"phonetique": 124810,
+"francais": 109837,
+"anglais": 109886
 },
-"pdfSize": 136522
+"pdfSize": 140533
 },
 {
 "slug": "yarabbi",
@@ -3492,13 +3492,13 @@
 "pages": 6,
 "palette": "vin",
 "pdfs": {
-"complet": 114135,
-"arabe": 104803,
-"phonetique": 107350,
-"francais": 95038,
-"anglais": 94292
+"complet": 117450,
+"arabe": 107903,
+"phonetique": 110463,
+"francais": 101145,
+"anglais": 100380
 },
-"pdfSize": 114135
+"pdfSize": 117450
 },
 {
 "slug": "yassara",
@@ -3522,13 +3522,13 @@
 "pages": 6,
 "palette": "bordeaux",
 "pdfs": {
-"complet": 114374,
-"arabe": 102500,
-"phonetique": 104675,
-"francais": 91228,
-"anglais": 91164
+"complet": 116311,
+"arabe": 103984,
+"phonetique": 106036,
+"francais": 97160,
+"anglais": 97092
 },
-"pdfSize": 114374
+"pdfSize": 116311
 },
 {
 "slug": "yasurru",
@@ -3552,13 +3552,13 @@
 "pages": 7,
 "palette": "ivoire",
 "pdfs": {
-"complet": 121206,
-"arabe": 106690,
-"phonetique": 110382,
-"francais": 94331,
-"anglais": 93717
+"complet": 123954,
+"arabe": 108432,
+"phonetique": 112583,
+"francais": 100632,
+"anglais": 100021
 },
-"pdfSize": 121206
+"pdfSize": 123954
 },
 {
 "slug": "zallat",
@@ -3582,13 +3582,13 @@
 "pages": 6,
 "palette": "grenat",
 "pdfs": {
-"complet": 114021,
-"arabe": 103285,
-"phonetique": 106261,
-"francais": 92096,
-"anglais": 92066
+"complet": 116066,
+"arabe": 104965,
+"phonetique": 108182,
+"francais": 98594,
+"anglais": 98653
 },
-"pdfSize": 114021
+"pdfSize": 116066
 }
 ]
 }

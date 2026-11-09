@@ -31,7 +31,7 @@
 
   let LIB = [], BY = {}, AUDIO = {};
   // Numéro WhatsApp de Kiraam (format international sans + ni espaces), utilisé pour la précommande et le contact
-  const WHATSAPP = '';
+  const WHATSAPP = '221774847284';
   const waLink = text => WHATSAPP ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}` : '';
   const FORMATS = [
     ['complet', 'Complet', 'Arabe · translittération · français'],
@@ -564,8 +564,7 @@
     if (fav) {
       const s = fav.dataset.fav; favs.has(s) ? favs.delete(s) : favs.add(s); store.set('favs', [...favs]);
       $$(`[data-fav="${s}"]`).forEach(x => x.classList.toggle('on', favs.has(s)));
-      updateFavCount();
-    $$('[data-wa]').forEach(a => { if (WHATSAPP) a.href = waLink('Assalamou aleykoum Kiraam, '); else a.remove(); }); return;
+      updateFavCount(); return;
     }
     const sh = e.target.closest('[data-share]');
     if (sh) {
@@ -623,6 +622,7 @@
     const nK = LIB.reduce((a, w) => a + w.parts.length, 0);
     $('#tbCount').textContent = `${LIB.length} livres · ${nK} khassidas`;
     updateFavCount();
+    $$('[data-wa]').forEach(a => { if (WHATSAPP) a.href = waLink('Assalamou aleykoum Kiraam, '); else a.remove(); });
     route();
   }).catch(() => { view.innerHTML = '<div class="empty"><h3>Chargement impossible</h3><p>Rechargez la page.</p></div>'; });
 })();
