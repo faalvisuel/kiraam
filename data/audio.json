@@ -1,0 +1,70 @@
+{
+  "note": "Enregistrements publics intégrés via les lecteurs officiels YouTube / Audiomack. Les droits appartiennent aux kourels et chaînes qui les publient. Ajouter une entrée : {\"type\":\"youtube\",\"id\":\"ID_VIDEO\",\"by\":\"Nom du kourel\",\"at\":\"Contexte\"}",
+  "audio": {
+    "jazbu": [
+      {"type": "youtube", "id": "GU-huBbiiuI", "by": "HT Kourel National", "at": "Grand Magal de Touba 2023"},
+      {"type": "youtube", "id": "WX6hrEa0Gxw", "by": "HT Kourel 1 National", "at": "Gamou 2022"},
+      {"type": "audiomack", "artist": "khassida227", "slug": "jazbou-darou-micro-segn-ousseynou-fall", "by": "Kourel Xassida", "at": "Daaju Darou Mouhty, micro Ousseynou Fall"}
+    ],
+    "mawahibu": [
+      {"type": "youtube", "id": "BhWaEDxeuT8", "by": "Kurel Nûrud-Dârayni HT", "at": "Grand Magal de Touba 2024"},
+      {"type": "youtube", "id": "r5HFhWSW4oI", "by": "Kourel 1 HT Touba", "at": "Baay Dame Lo"},
+      {"type": "youtube", "id": "IS5-sdS6KVE", "by": "Kourel Nuurud Daarayni HT Paris", "at": ""}
+    ],
+    "matlabul-fawzayni": [
+      {"type": "youtube", "id": "h-jXtQ7K1HM", "by": "Kourel National HTDKH", "at": ""},
+      {"type": "youtube", "id": "cC2liLZqdDk", "by": "Kourel Nurud Darayni HT Touba", "at": "Ramadan 2025"},
+      {"type": "youtube", "id": "IQAi0tCfIoM", "by": "Kurel 1 National HTDKH", "at": "Magal"}
+    ],
+    "nuuru-daarayni": [
+      {"type": "youtube", "id": "tPEeV_-O8FQ", "by": "Kourel HT Diourbel", "at": "1997"},
+      {"type": "youtube", "id": "S5MnQ2z6Qtw", "by": "Kourel Mafatihoul Bichri Touba", "at": ""}
+    ],
+    "jalibatul-maraghibi": [
+      {"type": "youtube", "id": "EGWO-CCGjJE", "by": "Kourel HT", "at": "Magal de Touba 2024"},
+      {"type": "youtube", "id": "ymndynk-3sM", "by": "Kourel Serigne Abdou Lahat Ablaye Diop HT", "at": "Magal 2024"}
+    ],
+    "mafatihul-jinan": [
+      {"type": "youtube", "id": "T8-JOur52EM", "by": "Kourel 1 HTDKH", "at": "Daaju Darou Mouhty"},
+      {"type": "youtube", "id": "nVjB6KZwivw", "by": "Kourel 1 Safinatoul Amane", "at": "Ramadan 2025"},
+      {"type": "audiomack", "artist": "khassida227", "slug": "mafatihul-jinan-wa-keur-serigne-massamba-feat-mourid", "by": "Kourel Xassida", "at": "Wa Keur Serigne Massamba"}
+    ],
+    "tawbatun-nasuuh": [
+      {"type": "youtube", "id": "lB595u7o9SA", "by": "Kourel 1 Safinatoul Amane", "at": ""},
+      {"type": "youtube", "id": "Is7iO7v3xMM", "by": "Kourel Adolescent HT", "at": "Magal Darou Khoudoss 2022"}
+    ],
+    "asma-ul-husna": [
+      {"type": "youtube", "id": "e_LLck5McZw", "by": "Kourel 1 Norou Darayni Pikine", "at": "Dundal Koor 2026"}
+    ],
+    "matlabushiffa": [
+      {"type": "youtube", "id": "ETv4uzIFF9I", "by": "Kourel Hizbut Tarqiyyah", "at": ""},
+      {"type": "youtube", "id": "SoY5yvbzySc", "by": "Kourel 1 Sopey Serigne Fallou", "at": ""}
+    ],
+    "khatimatu-munajati": [
+      {"type": "youtube", "id": "khfZf9tBeUQ", "by": "Kurel Jalibatul Marakhib Yoff", "at": ""},
+      {"type": "youtube", "id": "xFlF4FUdoew", "by": "S. Abdoul Ahad Touré et autres", "at": ""}
+    ],
+    "khayra-dayfin": [
+      {"type": "youtube", "id": "h-QOCcfqY5A", "by": "Hizbut Tarqiyyah Darou Khoudoss", "at": ""}
+    ],
+    "sindidi": [
+      {"type": "youtube", "id": "2xbEU-ZnClw", "by": "Kourel 1 Safinatoul Amane", "at": "Baye Dame Lô"},
+      {"type": "youtube", "id": "qYRe7lnEyKI", "by": "Kourel HTDKH", "at": "Rétro"}
+    ],
+    "muqadamatul-amdah": [
+      {"type": "youtube", "id": "CGT4BbG-JCk", "by": "Kourel 1 HT Touba", "at": "Porokhane 2024"},
+      {"type": "youtube", "id": "bSqpi_MhoG4", "by": "Kurel 1 National HTDKH", "at": ""}
+    ],
+    "minanul-baaqil-qadiim": [
+      {"type": "youtube", "id": "PXLtD6LFCk0", "by": "Kourel Nurud Darayni HT Touba", "at": "Ramadan 2025"},
+      {"type": "youtube", "id": "Ut5D6EzzXbY", "by": "Kourel 1 HT", "at": ""}
+    ],
+    "walaqad-karamna": [
+      {"type": "youtube", "id": "6xUSmj1k4KA", "by": "Kourel Nurud Darayni HT Thiès", "at": ""}
+    ],
+    "bismil-laahi-ikfini": [
+      {"type": "audiomack", "artist": "khassida227", "slug": "khassida-ikfini", "by": "Kourel Xassida", "at": ""},
+      {"type": "audiomack", "artist": "khassida227", "slug": "ikfini-kourel-safinatoul-amane-keur-massar", "by": "Kourel Safinatoul Amane", "at": "Keur Massar"}
+    ]
+  }
+}

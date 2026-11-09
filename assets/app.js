@@ -20,7 +20,7 @@
   const prefs = Object.assign({ lang: 'fr', tr: true, fs: 1 }, store.get('prefs', {}));
   const savePrefs = () => store.set('prefs', prefs);
 
-  let LIB = [], BY = {};
+  let LIB = [], BY = {}, AUDIO = {};
   const partCache = {};
   const PHOTOS = [
     ['mosquee-touba', 'La Grande Mosquée de Touba'], ['minaret-jour', 'Le minaret Lamp Fall'],
@@ -37,6 +37,7 @@
       <a class="cv" href="#/livre/${w.slug}" aria-label="${esc(w.title)}">
         <img src="covers/${w.slug}.webp" alt="" loading="lazy" width="641" height="910">
         ${w.parts.length > 1 ? `<span class="tag">${ic('layers')}${w.parts.length} parties</span>` : ''}
+        ${AUDIO[w.slug] ? `<span class="aud">${ic('audio')}Audio</span>` : ''}
       </a>
       <button class="fav${favs.has(w.slug) ? ' on' : ''}" data-fav="${w.slug}" aria-label="Ajouter aux favoris">${ic('khatam')}</button>
       <div class="body">
@@ -176,6 +177,7 @@
     all: ['Tous', 'rehal', () => true],
     major: ['Œuvres majeures', 'khatam', w => w.featured],
     multi: ['En plusieurs parties', 'layers', w => w.parts.length > 1],
+    audio: ['Avec audio', 'audio', w => !!AUDIO[w.slug]],
     favs: ['Mes favoris', 'khatam', w => favs.has(w.slug)]
   };
   function filtered() {
@@ -231,11 +233,14 @@
         <div class="langs"><span>العربية</span><span>Translittération</span>${w.langs.map(l => `<span>${{ fr: 'Français', en: 'English', it: 'Italiano' }[l]}</span>`).join('')}</div>
         <div class="actions">
           <a class="btn btn-gold" href="#/lire/${w.slug}/${p ? p.part : 1}">${ic('read')}${p ? 'Reprendre la lecture' : 'Lire en ligne'}</a>
-          <a class="btn btn-bx" href="pdf/${w.slug}.pdf" download>${ic('download')}Télécharger le PDF · ${mb(w.pdfSize)}</a>
+          ${AUDIO[w.slug] ? `<button class="btn btn-bx" data-listen="${w.slug}" data-i="0">${ic('play')}Écouter</button>` : ''}
+          <a class="btn btn-line" href="pdf/${w.slug}.pdf" download>${ic('download')}Télécharger le PDF · ${mb(w.pdfSize)}</a>
           <button class="ibtn${favs.has(w.slug) ? ' on' : ''}" data-fav="${w.slug}" aria-label="Favori">${ic('khatam')}</button>
           <button class="ibtn" data-share="${w.slug}" aria-label="Partager">${ic('share')}</button>
         </div>
         ${w.parts.length > 1 ? `<div class="parts">${w.partNames.map((n, i) => `<a href="#/lire/${w.slug}/${i + 1}"><span>${esc(n)}</span><small>${ic('arrow')}</small></a>`).join('')}</div>` : ''}
+        ${AUDIO[w.slug] ? `<div class="listen"><h3>${ic('audio')}Écouter</h3><p class="sub">${AUDIO[w.slug].length} déclamation${AUDIO[w.slug].length > 1 ? 's' : ''} par les kourels · le lecteur continue pendant que vous lisez</p>
+          <div class="recs">${AUDIO[w.slug].map((r, i) => recRow(w, r, i)).join('')}</div></div>` : ''}
         <div class="excerpt" id="excerpt"><h3>Premiers vers</h3><p class="count">Chargement…</p></div>
       </div>
     </div>
@@ -271,6 +276,7 @@
       <div class="rbar">
         <a class="ibtn" href="#/livre/${w.slug}" aria-label="Retour au livre">${ic('back')}</a>
         <div class="t"><b>${esc(w.title)}</b><small>${w.parts.length > 1 ? `Partie ${partIdx} / ${w.parts.length} · ` : ''}${data.bayts.length} vers</small></div>
+        ${AUDIO[w.slug] ? `<button class="ibtn rb-au" data-listen="${w.slug}" data-i="0" aria-label="Écouter">${ic('audio')}</button>` : ''}
         <a class="ibtn rb-dl" href="pdf/${w.slug}.pdf" download aria-label="Télécharger le PDF">${ic('download')}</a>
         <div class="tools">
         ${w.parts.length > 1 ? `<select class="select" id="partSel" aria-label="Partie">${w.partNames.map((n, i) => `<option value="${i + 1}"${i + 1 === partIdx ? ' selected' : ''}>${esc(n)}</option>`).join('')}</select>` : ''}
@@ -356,6 +362,8 @@
         <li>Chaque livre est disponible en PDF (format A5) avec sa couverture.</li></ul>
       <h2>Sources</h2>
       <p>Les textes proviennent du <a href="https://github.com/DaurDiop/khassida_dataset" target="_blank" rel="noopener">Khassida Dataset</a> de Daour, publié sous licence MIT, qui intègre les traductions de l'application <a href="https://github.com/DaurDiop/karamati-khatou-yadi" target="_blank" rel="noopener">Karamati Khatou Yadi</a>. Qu'Allah les récompense. Les photographies de la Grande Mosquée de Touba sont de THIERLens.</p>
+      <h2>Audio</h2>
+      <p>Les déclamations sont celles des kourels (Hizbut Tarqiyyah, Nurud Darayni, Safinatoul Amane…), diffusées par leurs propres chaînes YouTube et Audiomack. Kiraam les intègre avec les lecteurs officiels de ces plateformes, sans copier les fichiers ; les droits restent à leurs auteurs. Vous êtes un kourel et souhaitez voir vos enregistrements ici, ou les retirer ? Écrivez-nous sur le dépôt GitHub.</p>
       <h2>Signaler une erreur</h2>
       <p>Une faute dans un vers, un titre ou une traduction ? Ouvrez une « issue » sur le <a href="https://github.com/faalvisuel/kiraam" target="_blank" rel="noopener">dépôt GitHub</a> : chaque correction profite à tous.</p>
       <p><a href="#/charte">Voir la charte graphique de Kiraam →</a></p>
@@ -392,6 +400,32 @@
 
   function notFound() {
     view.innerHTML = `<div class="empty" style="padding:140px 20px"><div class="ar">؟</div><h3>Page introuvable</h3><a class="btn btn-bx" href="#/">Retour à l'accueil</a></div>`;
+  }
+
+  // ---------- Audio ----------
+  const recSrc = r => r.type === 'youtube' ? `https://www.youtube.com/watch?v=${r.id}` : `https://audiomack.com/${r.artist}/song/${r.slug}`;
+  const recThumb = r => r.type === 'youtube' ? `<img src="https://i.ytimg.com/vi/${r.id}/mqdefault.jpg" alt="" loading="lazy">` : ic('audio');
+  function recRow(w, r, i) {
+    return `<button class="rec" data-listen="${w.slug}" data-i="${i}"><span class="th">${recThumb(r)}</span>
+      <span style="min-width:0"><b>${esc(r.by)}</b><small>${esc(r.at || (r.type === 'youtube' ? 'YouTube' : 'Audiomack'))}</small></span>
+      <span class="pl">${ic('play')}</span></button>`;
+  }
+  const dock = $('#dock');
+  let dockState = null;
+  function openDock(slug, i) {
+    const w = BY[slug], list = AUDIO[slug]; if (!w || !list) return;
+    const r = list[i] || list[0];
+    dockState = { slug, i };
+    const frame = r.type === 'youtube'
+      ? `<iframe src="https://www.youtube-nocookie.com/embed/${r.id}?autoplay=1&rel=0&playsinline=1" title="${esc(w.title)} — ${esc(r.by)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
+      : `<iframe class="am" src="https://audiomack.com/embed/song/${r.artist}/${r.slug}?background=1" title="${esc(w.title)} — ${esc(r.by)}" allow="autoplay"></iframe>`;
+    dock.innerHTML = `<div class="dock-head">${ic('audio', 'a')}<div class="t"><b>${esc(w.title)} · <span class="ar" style="font-size:.9em">${esc(w.titleAr)}</span></b><small>${esc(r.by)}${r.at ? ' · ' + esc(r.at) : ''}</small></div>
+      <a class="dock-ext" href="${recSrc(r)}" target="_blank" rel="noopener" aria-label="Ouvrir sur ${r.type === 'youtube' ? 'YouTube' : 'Audiomack'}" title="Ouvrir sur ${r.type === 'youtube' ? 'YouTube' : 'Audiomack'}">${ic('share')}</a>
+      <button data-dock-min aria-label="Réduire">${ic('min')}</button><button data-dock-close aria-label="Fermer">${ic('close')}</button></div>
+      <div class="dock-body">${frame}</div>
+      ${list.length > 1 ? `<div class="dock-foot">` : ''}${list.length > 1 ? list.map((x, k) => `<button class="${k === (list[i] ? i : 0) ? 'on' : ''}" data-listen="${slug}" data-i="${k}">${esc(x.by.length > 26 ? x.by.slice(0, 24) + '…' : x.by)}</button>`).join('') + '</div>' : ''}`;
+    dock.hidden = false; dock.classList.remove('min');
+    $$('.rec').forEach(x => x.classList.toggle('on', x.dataset.listen === slug && +x.dataset.i === +i));
   }
 
   // ---------- Router ----------
@@ -431,6 +465,10 @@
   function updateFavCount() { const d = $('#favCount'); d.hidden = !favs.size; d.textContent = favs.size; }
 
   document.addEventListener('click', e => {
+    const li = e.target.closest('[data-listen]');
+    if (li) { openDock(li.dataset.listen, +li.dataset.i || 0); return; }
+    if (e.target.closest('[data-dock-close]')) { dock.hidden = true; dock.innerHTML = ''; dockState = null; return; }
+    if (e.target.closest('[data-dock-min]')) { dock.classList.toggle('min'); return; }
     const fav = e.target.closest('[data-fav]');
     if (fav) {
       const s = fav.dataset.fav; favs.has(s) ? favs.delete(s) : favs.add(s); store.set('favs', [...favs]);
@@ -474,7 +512,8 @@
   window.addEventListener('hashchange', route);
 
   // ---------- Boot ----------
-  fetch('data/library.json').then(r => r.json()).then(d => {
+  Promise.all([fetch('data/library.json').then(r => r.json()), fetch('data/audio.json').then(r => r.json()).catch(() => ({ audio: {} }))]).then(([d, a]) => {
+    AUDIO = a.audio || {};
     LIB = d.works.map(w => Object.assign(w, { _s: norm([w.title, w.titleAr, w.slug, w.incipit, ...w.partNames].join(' ')) }));
     LIB.forEach(w => BY[w.slug] = w);
     const nK = LIB.reduce((a, w) => a + w.parts.length, 0);
