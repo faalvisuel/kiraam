@@ -563,13 +563,26 @@
   const AKEY = 'kiraam:gckey';
   const getKey = () => { try { return localStorage.getItem(AKEY) || ''; } catch { return ''; } };
   let admPeriod = 7;
-  async function gapi(path, params = {}) {
-    const u = new URL(STATS + '/api/v0/' + path);
-    Object.entries(params).forEach(([k, v]) => [].concat(v).forEach(x => u.searchParams.append(k, x)));
-    const r = await fetch(u, { headers: { Authorization: 'Bearer ' + getKey(), 'Content-Type': 'application/json' } });
-    if (r.status === 401 || r.status === 403) throw new Error('auth');
-    if (!r.ok) throw new Error('http ' + r.status);
-    return r.json();
+  // GoatCounter limite à 4 requêtes/s (préflight compris) : file d'attente espacée + nouvelle tentative
+  let gq = Promise.resolve();
+  function gapi(path, params = {}) {
+    const run = async () => {
+      const u = new URL(STATS + '/api/v0/' + path);
+      Object.entries(params).forEach(([k, v]) => [].concat(v).forEach(x => u.searchParams.append(k, x)));
+      for (let t = 0; t < 4; t++) {
+        let r;
+        try { r = await fetch(u, { headers: { Authorization: 'Bearer ' + getKey() } }); }
+        catch (e) { if (t === 3) throw e; await new Promise(s => setTimeout(s, 1200 * (t + 1))); continue; }
+        if (r.status === 429) { await new Promise(s => setTimeout(s, 1200 * (t + 1))); continue; }
+        if (r.status === 401 || r.status === 403) throw new Error('auth');
+        if (!r.ok) throw new Error('http ' + r.status);
+        return r.json();
+      }
+      throw new Error('limite');
+    };
+    const p = gq.then(() => new Promise(s => setTimeout(s, 550))).then(run);
+    gq = p.catch(() => {});
+    return p;
   }
   const isoHour = d => { const x = new Date(d); x.setUTCMinutes(0, 0, 0); return x.toISOString().replace('.000', ''); };
   const SIZE_FR = { 'Phones': 'Téléphones', 'Large phones, small tablets': 'Grands téléphones', 'Tablets and small laptops': 'Tablettes', 'Computer monitors': 'Ordinateurs', 'Computer monitors larger than HD': 'Grands écrans', '(unknown)': 'Inconnu' };
@@ -619,7 +632,7 @@
     const body = $('#admBody'); if (!body) return;
     const end = new Date(), start = new Date(end - admPeriod * 864e5);
     if (admPeriod === 1) start.setHours(0, 0, 0, 0);
-    const P = { start: isoHour(start), end: isoHour(new Date(+end + 36e5)) };
+    const P = { start: isoHour(start), end: isoHour(end) };
     try {
       const [tot, h1, refs, locs, sizes, sys] = await Promise.all([
         gapi('stats/total', P), gapi('stats/hits', { ...P, limit: 100 }),
